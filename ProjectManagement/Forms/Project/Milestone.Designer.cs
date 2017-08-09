@@ -178,12 +178,13 @@
             // 
             this.cbLStatus.DisplayMember = "Text";
             this.cbLStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLStatus.FormattingEnabled = true;
-            this.cbLStatus.ItemHeight = 19;
+            this.cbLStatus.ItemHeight = 15;
             this.cbLStatus.Location = new System.Drawing.Point(99, 31);
             this.cbLStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbLStatus.Name = "cbLStatus";
-            this.cbLStatus.Size = new System.Drawing.Size(210, 25);
+            this.cbLStatus.Size = new System.Drawing.Size(210, 21);
             this.cbLStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbLStatus.TabIndex = 1;
             // 

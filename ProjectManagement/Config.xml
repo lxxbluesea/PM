@@ -35,4 +35,8 @@
   <Config name="WarnJFW1"></Config>
   <Config name="WarnJFW2"></Config>
   <Config name="WarnDeal"></Config>
+  
+  <!--是否开启履历,0不开启，1开启-->
+  <Config name="Record">0</Config>
+  
 </configuration>

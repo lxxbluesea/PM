@@ -165,7 +165,7 @@ namespace DataAccessDLL
             try
             {
                 s.BeginTransaction();
-                entity.ID = hisFlg ? Guid.NewGuid().ToString() + "-1" : Guid.NewGuid().ToString();
+                entity.ID = CommonHelper.GetConfigValue("Record") == "1" ? Guid.NewGuid().ToString() + "-1" : Guid.NewGuid().ToString();
                 if (entity.Status == null)
                     entity.Status = 1;
                 entity.CREATED = DateTime.Now;
@@ -195,7 +195,7 @@ namespace DataAccessDLL
             try
             {
                 s.BeginTransaction();
-                entity.ID = hisFlg ? Guid.NewGuid().ToString() + "-1" : Guid.NewGuid().ToString();
+                entity.ID = CommonHelper.GetConfigValue("Record") == "1" ? Guid.NewGuid().ToString() + "-1" : Guid.NewGuid().ToString();
                 if (entity.Status == null)
                     entity.Status = 1;
                 id = entity.ID;
@@ -246,7 +246,7 @@ namespace DataAccessDLL
             try
             {
                 s.BeginTransaction();
-                if (hisFlg)
+                if (CommonHelper.GetConfigValue("Record") == "1")
                 {
                     T old = new Repository<T>().Get(entity.ID);
                     old.UPDATED = DateTime.Now;
@@ -291,7 +291,7 @@ namespace DataAccessDLL
             try
             {
                 s.BeginTransaction();
-                if (hisFlg)
+                if (CommonHelper.GetConfigValue("Record") == "1")
                 {
                     T old = new Repository<T>().Get(entity.ID);
                     old.UPDATED = DateTime.Now;

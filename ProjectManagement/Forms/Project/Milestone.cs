@@ -34,9 +34,9 @@ namespace ProjectManagement.Forms.Project
             DataHelper.LoadDictItems(cbLStatus, DictCategory.Milestones_FinshStatus);
             //dtLCREATED.Value = DateTime.Now;
             LoadLCB();
-            txtLName.Focus();
-            dtLFinish.Value = DateTime.Now;
-            entity = new Milestones();
+            InitControls();
+            //dtLFinish.Value = DateTime.Now;
+            //entity = new Milestones();
         }
 
         /// <summary>
@@ -47,16 +47,29 @@ namespace ProjectManagement.Forms.Project
         /// <param name="e"></param>
         private void btnLClear_Click(object sender, EventArgs e)
         {
+            InitControls();
+        }
+
+        /// <summary>
+        /// 初始化所有控件
+        /// </summary>
+        void InitControls()
+        {
             entity = new Milestones();
             txtLName.Clear();
+            txtLName.Focus();
             //txtLName.Tag = "";
             txtLRemark.Clear();
             txtLCondition.Clear();
             //dtLCREATED.Value = DateTime.Now;
             dtLFinish.Value = DateTime.Now;
-            cbLStatus.SelectedIndex = -1;
+            if (cbLStatus.Items.Count > 0)
+                cbLStatus.SelectedIndex = 1;
+            else
+                cbLStatus.SelectedIndex = 0;
             gridLCB.GetSelectedRows().Select(false);//取消选择
         }
+
 
         /// <summary>
         /// 里程碑-保存

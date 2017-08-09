@@ -66,6 +66,8 @@
             this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.UPDATED = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.CREATED = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.labelX45 = new DevComponents.DotNetBar.LabelX();
             this.btnJPSave = new DevComponents.DotNetBar.ButtonX();
@@ -156,24 +158,25 @@
             // 
             this.cbJWay.DisplayMember = "Text";
             this.cbJWay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbJWay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJWay.FormattingEnabled = true;
             this.cbJWay.ItemHeight = 15;
             this.cbJWay.Location = new System.Drawing.Point(93, 348);
             this.cbJWay.Name = "cbJWay";
             this.cbJWay.Size = new System.Drawing.Size(191, 21);
             this.cbJWay.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbJWay.TabIndex = 16;
+            this.cbJWay.TabIndex = 12;
             // 
             // btnJSave
             // 
             this.btnJSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnJSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnJSave.Location = new System.Drawing.Point(184, 384);
+            this.btnJSave.Location = new System.Drawing.Point(93, 386);
             this.btnJSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnJSave.Name = "btnJSave";
             this.btnJSave.Size = new System.Drawing.Size(56, 18);
             this.btnJSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnJSave.TabIndex = 14;
+            this.btnJSave.TabIndex = 13;
             this.btnJSave.Text = "保存";
             this.btnJSave.Click += new System.EventHandler(this.btnJSave_Click);
             // 
@@ -181,12 +184,12 @@
             // 
             this.btnJClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnJClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnJClear.Location = new System.Drawing.Point(93, 384);
+            this.btnJClear.Location = new System.Drawing.Point(169, 386);
             this.btnJClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnJClear.Name = "btnJClear";
             this.btnJClear.Size = new System.Drawing.Size(56, 18);
             this.btnJClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnJClear.TabIndex = 15;
+            this.btnJClear.TabIndex = 14;
             this.btnJClear.Text = "清空";
             this.btnJClear.Click += new System.EventHandler(this.btnJClear_Click);
             // 
@@ -205,7 +208,7 @@
             this.txtJB_Tel.Name = "txtJB_Tel";
             this.txtJB_Tel.PreventEnterBeep = true;
             this.txtJB_Tel.Size = new System.Drawing.Size(191, 21);
-            this.txtJB_Tel.TabIndex = 8;
+            this.txtJB_Tel.TabIndex = 7;
             // 
             // txtJManagerB
             // 
@@ -222,7 +225,7 @@
             this.txtJManagerB.Name = "txtJManagerB";
             this.txtJManagerB.PreventEnterBeep = true;
             this.txtJManagerB.Size = new System.Drawing.Size(191, 21);
-            this.txtJManagerB.TabIndex = 7;
+            this.txtJManagerB.TabIndex = 6;
             // 
             // txtJB_Wechat
             // 
@@ -239,7 +242,7 @@
             this.txtJB_Wechat.Name = "txtJB_Wechat";
             this.txtJB_Wechat.PreventEnterBeep = true;
             this.txtJB_Wechat.Size = new System.Drawing.Size(191, 21);
-            this.txtJB_Wechat.TabIndex = 10;
+            this.txtJB_Wechat.TabIndex = 9;
             // 
             // txtJCost
             // 
@@ -256,7 +259,7 @@
             this.txtJCost.Name = "txtJCost";
             this.txtJCost.PreventEnterBeep = true;
             this.txtJCost.Size = new System.Drawing.Size(191, 21);
-            this.txtJCost.TabIndex = 12;
+            this.txtJCost.TabIndex = 11;
             // 
             // txtJB_Email
             // 
@@ -273,7 +276,7 @@
             this.txtJB_Email.Name = "txtJB_Email";
             this.txtJB_Email.PreventEnterBeep = true;
             this.txtJB_Email.Size = new System.Drawing.Size(191, 21);
-            this.txtJB_Email.TabIndex = 11;
+            this.txtJB_Email.TabIndex = 10;
             // 
             // txtJA_Email
             // 
@@ -290,7 +293,7 @@
             this.txtJA_Email.Name = "txtJA_Email";
             this.txtJA_Email.PreventEnterBeep = true;
             this.txtJA_Email.Size = new System.Drawing.Size(191, 21);
-            this.txtJA_Email.TabIndex = 6;
+            this.txtJA_Email.TabIndex = 5;
             // 
             // txtJA_Wechat
             // 
@@ -307,7 +310,7 @@
             this.txtJA_Wechat.Name = "txtJA_Wechat";
             this.txtJA_Wechat.PreventEnterBeep = true;
             this.txtJA_Wechat.Size = new System.Drawing.Size(191, 21);
-            this.txtJA_Wechat.TabIndex = 5;
+            this.txtJA_Wechat.TabIndex = 4;
             // 
             // txtJB_QQ
             // 
@@ -324,7 +327,7 @@
             this.txtJB_QQ.Name = "txtJB_QQ";
             this.txtJB_QQ.PreventEnterBeep = true;
             this.txtJB_QQ.Size = new System.Drawing.Size(191, 21);
-            this.txtJB_QQ.TabIndex = 9;
+            this.txtJB_QQ.TabIndex = 8;
             // 
             // txtJA_QQ
             // 
@@ -341,7 +344,7 @@
             this.txtJA_QQ.Name = "txtJA_QQ";
             this.txtJA_QQ.PreventEnterBeep = true;
             this.txtJA_QQ.Size = new System.Drawing.Size(191, 21);
-            this.txtJA_QQ.TabIndex = 4;
+            this.txtJA_QQ.TabIndex = 3;
             // 
             // txtJA_Tel
             // 
@@ -358,7 +361,7 @@
             this.txtJA_Tel.Name = "txtJA_Tel";
             this.txtJA_Tel.PreventEnterBeep = true;
             this.txtJA_Tel.Size = new System.Drawing.Size(191, 21);
-            this.txtJA_Tel.TabIndex = 3;
+            this.txtJA_Tel.TabIndex = 2;
             // 
             // txtJManagerA
             // 
@@ -375,7 +378,7 @@
             this.txtJManagerA.Name = "txtJManagerA";
             this.txtJManagerA.PreventEnterBeep = true;
             this.txtJManagerA.Size = new System.Drawing.Size(191, 21);
-            this.txtJManagerA.TabIndex = 2;
+            this.txtJManagerA.TabIndex = 1;
             // 
             // labelX36
             // 
@@ -434,7 +437,7 @@
             this.txtJCName.Name = "txtJCName";
             this.txtJCName.PreventEnterBeep = true;
             this.txtJCName.Size = new System.Drawing.Size(191, 21);
-            this.txtJCName.TabIndex = 1;
+            this.txtJCName.TabIndex = 0;
             // 
             // labelX43
             // 
@@ -546,7 +549,7 @@
             this.labelX34.Name = "labelX34";
             this.labelX34.Size = new System.Drawing.Size(91, 18);
             this.labelX34.TabIndex = 0;
-            this.labelX34.Text = "手机号码：";
+            this.labelX34.Text = "*手机号码：";
             // 
             // labelX33
             // 
@@ -675,6 +678,8 @@
             this.gridJLPJ.PrimaryGrid.Columns.Add(this.gridColumn3);
             this.gridJLPJ.PrimaryGrid.Columns.Add(this.gridColumn4);
             this.gridJLPJ.PrimaryGrid.Columns.Add(this.gridColumn5);
+            this.gridJLPJ.PrimaryGrid.Columns.Add(this.UPDATED);
+            this.gridJLPJ.PrimaryGrid.Columns.Add(this.CREATED);
             this.gridJLPJ.PrimaryGrid.ReadOnly = true;
             this.gridJLPJ.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.gridJLPJ.Size = new System.Drawing.Size(581, 249);
@@ -686,6 +691,7 @@
             // 
             this.gridColumn1.HeaderText = "编号";
             this.gridColumn1.Name = "RowNo";
+            this.gridColumn1.Width = 60;
             // 
             // gridColumn2
             // 
@@ -696,16 +702,30 @@
             // 
             this.gridColumn3.HeaderText = "评价内容";
             this.gridColumn3.Name = "Content";
+            this.gridColumn3.Width = 150;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.HeaderText = "日期";
+            this.gridColumn4.HeaderText = "评论日期";
             this.gridColumn4.Name = "JudgeDate";
+            this.gridColumn4.Width = 120;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Name = "ID";
             this.gridColumn5.Visible = false;
+            // 
+            // UPDATED
+            // 
+            this.UPDATED.HeaderText = "更新日期";
+            this.UPDATED.Name = "UPDATED";
+            this.UPDATED.Width = 120;
+            // 
+            // CREATED
+            // 
+            this.CREATED.HeaderText = "添加日期";
+            this.CREATED.Name = "CREATED";
+            this.CREATED.Visible = false;
             // 
             // panelEx2
             // 
@@ -754,12 +774,12 @@
             // 
             this.btnJPSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnJPSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnJPSave.Location = new System.Drawing.Point(185, 158);
+            this.btnJPSave.Location = new System.Drawing.Point(93, 163);
             this.btnJPSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnJPSave.Name = "btnJPSave";
             this.btnJPSave.Size = new System.Drawing.Size(56, 18);
             this.btnJPSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnJPSave.TabIndex = 18;
+            this.btnJPSave.TabIndex = 4;
             this.btnJPSave.Text = "保存";
             this.btnJPSave.Click += new System.EventHandler(this.btnJPSave_Click);
             // 
@@ -778,18 +798,18 @@
             this.txtJName.Name = "txtJName";
             this.txtJName.PreventEnterBeep = true;
             this.txtJName.Size = new System.Drawing.Size(232, 21);
-            this.txtJName.TabIndex = 16;
+            this.txtJName.TabIndex = 0;
             // 
             // btnJPClear
             // 
             this.btnJPClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnJPClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnJPClear.Location = new System.Drawing.Point(93, 158);
+            this.btnJPClear.Location = new System.Drawing.Point(175, 163);
             this.btnJPClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnJPClear.Name = "btnJPClear";
             this.btnJPClear.Size = new System.Drawing.Size(56, 18);
             this.btnJPClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnJPClear.TabIndex = 20;
+            this.btnJPClear.TabIndex = 3;
             this.btnJPClear.Text = "清空";
             this.btnJPClear.Click += new System.EventHandler(this.btnJPClear_Click);
             // 
@@ -855,7 +875,7 @@
             this.dtJDate.Name = "dtJDate";
             this.dtJDate.Size = new System.Drawing.Size(232, 21);
             this.dtJDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtJDate.TabIndex = 18;
+            this.dtJDate.TabIndex = 2;
             // 
             // labelX46
             // 
@@ -888,7 +908,7 @@
             this.txtJContent.PreventEnterBeep = true;
             this.txtJContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtJContent.Size = new System.Drawing.Size(232, 84);
-            this.txtJContent.TabIndex = 17;
+            this.txtJContent.TabIndex = 1;
             // 
             // FormSupervisor
             // 
@@ -957,5 +977,7 @@
         private Control.PagerControl gridPager;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbJWay;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn UPDATED;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn CREATED;
     }
 }

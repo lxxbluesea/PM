@@ -33,7 +33,7 @@ namespace DomainDLL
             set;
         }
 
-       public virtual DateTime? UPDATED
+        public virtual DateTime? UPDATED
         {
             get;
             set;

@@ -26,14 +26,17 @@ namespace ProjectManagement.Forms.Project
         #region 业务类初期化
 
         ProjectInfoBLL bll = new ProjectInfoBLL();
+        ContractJBXX jbxx;
+        ContractXMZQ xmzq;
+        ContractQKMS qkms;
 
         #endregion
 
         #region 画面变量
 
-        string _jbxxID;
-        string _xmzqID;
-        string _qkmsID;
+        //string _jbxxID;
+        //string _xmzqID;
+        //string _qkmsID;
         string _fileContractHTSMJName;
         string _fileContractHTDZDName;
         string _fileContractGZSMJName;
@@ -65,33 +68,35 @@ namespace ProjectManagement.Forms.Project
         private void btnSaveJBXX_Click(object sender, EventArgs e)
         {
 
-            ContractJBXX entity = new ContractJBXX();
-            entity.ID = _jbxxID;
-            entity.PID = ProjectId;
-            entity.No = txtNo.Text;
-            entity.Name = txtName.Text;
-            entity.SignDate = dtSignDate.Value;
-            entity.Amount = txtAmount.Text;
-            entity.A_Name = txtA_Name.Text;
-            entity.A_Manager = txtA_Manager.Text;
-            entity.A_ManagerTel = txtA_ManagerTel.Text;
-            entity.B_Name = txtB_Name.Text;
-            entity.B_PManager = txtB_PManager.Text;
-            entity.B_PManagerTel = txtB_PManagerTel.Text;
-            entity.B_Manager = txtB_Manager.Text;
-            entity.B_Tel = txtB_Tel.Text;
+            //ContractJBXX entity = new ContractJBXX();
+            //jbxx.ID = _jbxxID;
+            jbxx.PID = ProjectId;
+            jbxx.No = txtNo.Text;
+            jbxx.Name = txtName.Text;
+            jbxx.SignDate = dtSignDate.Value;
+            jbxx.Amount = txtAmount.Text;
+            jbxx.A_Name = txtA_Name.Text;
+            jbxx.A_Manager = txtA_Manager.Text;
+            jbxx.A_ManagerTel = txtA_ManagerTel.Text;
+            jbxx.B_Name = txtB_Name.Text;
+            jbxx.B_PManager = txtB_PManager.Text;
+            jbxx.B_PManagerTel = txtB_PManagerTel.Text;
+            jbxx.B_Manager = txtB_Manager.Text;
+            jbxx.B_Tel = txtB_Tel.Text;
 
             #region 判断是否填写完整
-            //if (string.IsNullOrEmpty(entity.No))
-            //{
-            //    MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "合同编号");
-            //    return;
-            //}
-            //if (string.IsNullOrEmpty(entity.Name))
-            //{
-            //    MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "合同名称");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(jbxx.No))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "合同编号");
+                txtNo.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(jbxx.Name))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "合同名称");
+                txtName.Focus();
+                return;
+            }
             //if (entity.SignDate == null)
             //{
             //    MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "签订日期");
@@ -134,8 +139,8 @@ namespace ProjectManagement.Forms.Project
             //}
             #endregion
 
-            JsonResult result = bll.SaveJBXX(entity);
-            _jbxxID = result.result ? (string)result.data : _jbxxID;
+            JsonResult result = bll.SaveJBXX(jbxx);
+            //_jbxxID = result.result ? (string)result.data : _jbxxID;
             MessageHelper.ShowRstMsg(result.result);
         }
 
@@ -147,13 +152,13 @@ namespace ProjectManagement.Forms.Project
         /// <param name="e"></param>
         private void btnSaveXMZQ_Click(object sender, EventArgs e)
         {
-            ContractXMZQ entity = new ContractXMZQ();
-            entity.ID = _xmzqID;
-            entity.PID = ProjectId;
-            entity.StartDate = dtStart.Value;
-            entity.EndDate = dtEnd.Value;
-            entity.TEndDate = dtTEnd.Value;
-            entity.TStartDate = dtStart.Value;
+            //ContractXMZQ entity = new ContractXMZQ();
+            //xmzq.ID = _xmzqID;
+            xmzq.PID = ProjectId;
+            xmzq.StartDate = dtStart.Value;
+            xmzq.EndDate = dtEnd.Value;
+            xmzq.TEndDate = dtTEnd.Value;
+            xmzq.TStartDate = dtStart.Value;
 
             #region 判断是否填写完整
             //if (entity.StartDate == null)
@@ -178,8 +183,8 @@ namespace ProjectManagement.Forms.Project
             //}
             #endregion
 
-            JsonResult result = bll.SaveXMZQ(entity);
-            _xmzqID = result.result ? (string)result.data : _xmzqID;
+            JsonResult result = bll.SaveXMZQ(xmzq);
+            //_xmzqID = result.result ? (string)result.data : _xmzqID;
             MessageHelper.ShowRstMsg(result.result);
         }
 
@@ -191,19 +196,19 @@ namespace ProjectManagement.Forms.Project
         /// <param name="e"></param>
         private void btnSaveQKMS_Click(object sender, EventArgs e)
         {
-            ContractQKMS entity = new ContractQKMS();
-            entity.ID = _qkmsID;
-            entity.PID = ProjectId;
-            entity.Content = txtInfo.Text;
+            //ContractQKMS entity = new ContractQKMS();
+            //qkms.ID = _qkmsID;
+            qkms.PID = ProjectId;
+            qkms.Content = txtInfo.Text;
             #region 判断是否填写完整
-            if (string.IsNullOrEmpty(entity.Content))
+            if (string.IsNullOrEmpty(qkms.Content))
             {
                 MessageHelper.ShowMsg(MessageID.E000000001, MessageType.Alert, "情况描述");
                 return;
             }
             #endregion
-            JsonResult result = bll.SaveQKMS(entity);
-            _qkmsID = result.result ? (string)result.data : _qkmsID;
+            JsonResult result = bll.SaveQKMS(qkms);
+            //_qkmsID = result.result ? (string)result.data : _qkmsID;
             MessageBox.Show(result.msg);
         }
 
@@ -503,10 +508,10 @@ namespace ProjectManagement.Forms.Project
         /// </summary>
         private void LoadJBXX()
         {
-            ContractJBXX jbxx = bll.GetJBXX(ProjectId);
+            jbxx = bll.GetJBXX(ProjectId);
             if (!string.IsNullOrEmpty(jbxx.ID))
             {
-                _jbxxID = jbxx.ID;
+                //_jbxxID = jbxx.ID;
                 txtNo.Text = jbxx.No;
                 txtName.Text = jbxx.Name;
                 dtSignDate.Value = (DateTime)jbxx.SignDate;
@@ -541,10 +546,10 @@ namespace ProjectManagement.Forms.Project
         /// </summary>
         private void LoadXMZQ()
         {
-            ContractXMZQ xmzq = bll.GetXMZQ(ProjectId);
+            xmzq = bll.GetXMZQ(ProjectId);
             if (!string.IsNullOrEmpty(xmzq.ID))
             {
-                _xmzqID = xmzq.ID;
+                //_xmzqID = xmzq.ID;
                 dtStart.Value = (DateTime)xmzq.StartDate;
                 dtEnd.Value = (DateTime)xmzq.EndDate;
                 dtTEnd.Value = (DateTime)xmzq.TEndDate;
@@ -558,10 +563,10 @@ namespace ProjectManagement.Forms.Project
         /// </summary>
         private void LoadQKMS()
         {
-            ContractQKMS qkms = bll.GetQKMS(ProjectId);
+            qkms = bll.GetQKMS(ProjectId);
             if (!string.IsNullOrEmpty(qkms.ID))
             {
-                _qkmsID = qkms.ID;
+                //_qkmsID = qkms.ID;
                 txtInfo.Text = qkms.Content;
             }
         }
@@ -675,9 +680,6 @@ namespace ProjectManagement.Forms.Project
             gridFile.PrimaryGrid.DataSource = list;
         }
         #endregion
-
-
-
 
 
     }

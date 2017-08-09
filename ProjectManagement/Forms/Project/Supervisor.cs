@@ -25,6 +25,7 @@ namespace ProjectManagement.Forms.Project
 
         #region 画面变量
         Supervisor _supervisor;
+        SupervisorJudge _supervisorJudge;
         #endregion
 
         #region 事件
@@ -71,39 +72,42 @@ namespace ProjectManagement.Forms.Project
         /// <param name="e"></param>
         private void btnJSave_Click(object sender, EventArgs e)
         {
-            Supervisor entity = new Supervisor();
-            entity.ID = _supervisor.ID;
-            entity.PID = ProjectId;
-            entity.CompanyName = txtJCName.Text;
-            entity.ManagerA = txtJManagerA.Text;
-            entity.ManagerB = txtJManagerB.Text;
-            entity.A_Email = txtJA_Email.Text;
-            entity.A_QQ = txtJA_QQ.Text;
-            entity.A_Tel = txtJA_Tel.Text;
-            entity.A_Wechat = txtJA_Wechat.Text;
-            entity.B_Email = txtJB_Email.Text;
-            entity.B_QQ = txtJB_QQ.Text;
-            entity.B_Tel = txtJB_Tel.Text;
-            entity.B_Wechat = txtJB_Wechat.Text;
-            entity.Cost = txtJCost.Text;
-            entity.Way = cbJWay.Text;
+            //Supervisor entity = new Supervisor();
+            //entity.ID = _supervisor.ID;
+            _supervisor.PID = ProjectId;
+            _supervisor.CompanyName = txtJCName.Text;
+            _supervisor.ManagerA = txtJManagerA.Text;
+            _supervisor.ManagerB = txtJManagerB.Text;
+            _supervisor.A_Email = txtJA_Email.Text;
+            _supervisor.A_QQ = txtJA_QQ.Text;
+            _supervisor.A_Tel = txtJA_Tel.Text;
+            _supervisor.A_Wechat = txtJA_Wechat.Text;
+            _supervisor.B_Email = txtJB_Email.Text;
+            _supervisor.B_QQ = txtJB_QQ.Text;
+            _supervisor.B_Tel = txtJB_Tel.Text;
+            _supervisor.B_Wechat = txtJB_Wechat.Text;
+            _supervisor.Cost = txtJCost.Text;
+            _supervisor.Way = cbJWay.Text;
 
             #region 判断空值
-            if (string.IsNullOrEmpty(entity.CompanyName))
+            if (string.IsNullOrEmpty(_supervisor.CompanyName))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "监理公司名称");
+                txtJCName.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(entity.ManagerA))
+            if (string.IsNullOrEmpty(_supervisor.ManagerA))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "监理姓名");
+                txtJManagerA.Focus();
                 return;
             }
-            //if (string.IsNullOrEmpty(entity.A_Tel))
-            //{
-            //    MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "监理手机号码");
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(_supervisor.A_Tel))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "监理手机号码");
+                txtJA_Tel.Focus();
+                return;
+            }
             //if (string.IsNullOrEmpty(entity.Cost))
             //{
             //    MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "监理费用");
@@ -115,11 +119,11 @@ namespace ProjectManagement.Forms.Project
             //    return;
             //}
             #endregion
-            JsonResult result = bll.SaveJLXX(entity);
+            JsonResult result = bll.SaveJLXX(_supervisor);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
-                _supervisor = entity;
+                //_supervisor = entity;
                 txtJName.Text = _supervisor.ManagerA;
             }
         }
@@ -143,15 +147,26 @@ namespace ProjectManagement.Forms.Project
         private void gridJLPJ_RowClick(object sender, DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs e)
         {
             dtJDate.IsInputReadOnly = false;
-            DevComponents.DotNetBar.SuperGrid.GridElement list = gridJLPJ.GetSelectedRows()[0];
-            string s = list.ToString();
-            s = s.Replace("{", ",");
-            s = s.Replace("}", ",");
-            string[] listS = s.Split(',');
-            txtJName.Tag = listS[5].Trim();
-            txtJName.Text = listS[2].Trim();
-            txtJContent.Text = listS[3].Trim();
-            dtJDate.Value = DateTime.Parse(listS[4].Trim());
+            //DevComponents.DotNetBar.SuperGrid.GridElement list = gridJLPJ.GetSelectedRows()[0];
+            //string s = list.ToString();
+            //s = s.Replace("{", ",");
+            //s = s.Replace("}", ",");
+            //string[] listS = s.Split(',');
+            //txtJName.Tag = listS[5].Trim();
+            //txtJName.Text = listS[2].Trim();
+            //txtJContent.Text = listS[3].Trim();
+            //dtJDate.Value = DateTime.Parse(listS[4].Trim());
+            DevComponents.DotNetBar.SuperGrid.GridRow row = gridJLPJ.GetSelectedRows()[0] as DevComponents.DotNetBar.SuperGrid.GridRow;
+            _supervisorJudge.ID = row.GetCell("ID").Value.ToString();
+            _supervisorJudge.PID = ProjectId;
+            _supervisorJudge.Name = row.GetCell("Name").Value.ToString();
+            _supervisorJudge.JudgeDate = DateTime.Parse(row.GetCell("JudgeDate").Value.ToString());
+            _supervisorJudge.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+            _supervisorJudge.Content = row.GetCell("Content").Value.ToString();
+
+            txtJName.Text = _supervisorJudge.Name;
+            txtJContent.Text = _supervisorJudge.Content;
+            dtJDate.Value = _supervisorJudge.JudgeDate;
         }
 
 
@@ -169,31 +184,31 @@ namespace ProjectManagement.Forms.Project
                 return;
             }
 
-            SupervisorJudge entity = new SupervisorJudge();
-            entity.ID = txtJName.Tag == null ? "" : txtJName.Tag.ToString();
-            entity.PID = ProjectId;
-            entity.Name = txtJName.Text;
-            entity.Content = txtJContent.Text;
-            entity.JudgeDate = dtJDate.Value;
+            
+            //_supervisorJudge.ID = txtJName.Tag == null ? "" : txtJName.Tag.ToString();
+            _supervisorJudge.PID = ProjectId;
+            _supervisorJudge.Name = txtJName.Text;
+            _supervisorJudge.Content = txtJContent.Text;
+            _supervisorJudge.JudgeDate = dtJDate.Value;
             #region 判断空值
-            if (string.IsNullOrEmpty(entity.Name))
+            if (string.IsNullOrEmpty(_supervisorJudge.Name))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "姓名");
                 return;
             }
-            if (string.IsNullOrEmpty(entity.Content))
+            if (string.IsNullOrEmpty(_supervisorJudge.Content))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "评价内容");
                 return;
             }
-            if (entity.JudgeDate == null || entity.JudgeDate == DateTime.Parse("0001/1/1 0:00:00"))
+            if (_supervisorJudge.JudgeDate == null || _supervisorJudge.JudgeDate == DateTime.Parse("0001/1/1 0:00:00"))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "评价日期");
                 return;
             }
             #endregion
 
-            JsonResult result = bll.SaveJLPJ(entity);
+            JsonResult result = bll.SaveJLPJ(_supervisorJudge);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
@@ -224,6 +239,10 @@ namespace ProjectManagement.Forms.Project
             txtJB_Wechat.Text = _supervisor.B_Wechat;
             txtJCost.Text = _supervisor.Cost;
             DataHelper.SetComboBoxSelectItemByText(cbJWay, _supervisor.Way);
+            if (cbJWay.Items.Count > 1)
+                cbJWay.SelectedIndex = 1;
+            else
+                cbJWay.SelectedIndex = 0;
 
         }
 
@@ -233,6 +252,7 @@ namespace ProjectManagement.Forms.Project
         /// </summary>
         private void ClearJLXX()
         {
+            _supervisor = new Supervisor();
             txtJCName.Clear();
             txtJManagerA.Clear();
             txtJManagerB.Clear();
@@ -245,7 +265,10 @@ namespace ProjectManagement.Forms.Project
             txtJB_Email.Clear();
             txtJB_Wechat.Clear();
             txtJCost.Clear();
-            cbJWay.SelectedIndex = -1;
+            if (cbJWay.Items.Count > 1)
+                cbJWay.SelectedIndex = 1;
+            else
+                cbJWay.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -254,6 +277,7 @@ namespace ProjectManagement.Forms.Project
         /// </summary>
         private void ClearJLPJ()
         {
+            _supervisorJudge = new SupervisorJudge();
             txtJName.Clear();
             txtJName.Tag = "";
             txtJContent.Clear();
