@@ -141,6 +141,10 @@ namespace CommonDLL
             }
 
         }
+        public static void ShowRstMsg(string msg)
+        {
+            MessageBox.Show(msg, "确认消息", MessageBoxButtons.OKCancel);
+        }
 
     }
 }

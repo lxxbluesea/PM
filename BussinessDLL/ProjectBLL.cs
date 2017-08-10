@@ -34,7 +34,7 @@ namespace BussinessDLL
                 if (!UniqueName(name))
                 {
                     jsonreslut.result = false;
-                    jsonreslut.msg = "项目重名，请更改！";
+                    jsonreslut.msg = "项目名称重名，请更改！";
                     return jsonreslut;
                 }
                 #endregion

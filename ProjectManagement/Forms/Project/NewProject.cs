@@ -113,7 +113,7 @@ namespace ProjectManagement.Forms.Project
                 this.DialogResult = DialogResult.OK;
             }
             else
-                MessageHelper.ShowRstMsg(result.result);
+                MessageHelper.ShowRstMsg(result.msg);
         }
 
         /// <summary>
