@@ -291,7 +291,7 @@
             this.dateCreated.Name = "dateCreated";
             this.dateCreated.Size = new System.Drawing.Size(248, 21);
             this.dateCreated.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateCreated.TabIndex = 3;
+            this.dateCreated.TabIndex = 2;
             // 
             // labelX9
             // 
@@ -300,7 +300,7 @@
             // 
             // 
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(15, 118);
+            this.labelX9.Location = new System.Drawing.Point(8, 120);
             this.labelX9.Margin = new System.Windows.Forms.Padding(2);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(88, 18);
@@ -311,12 +311,12 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(187, 154);
+            this.btnSave.Location = new System.Drawing.Point(98, 148);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 18);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -324,7 +324,7 @@
             // 
             this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Location = new System.Drawing.Point(98, 154);
+            this.btnClear.Location = new System.Drawing.Point(182, 148);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(56, 18);
@@ -350,7 +350,7 @@
             this.txtCotent.PreventEnterBeep = true;
             this.txtCotent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtCotent.Size = new System.Drawing.Size(248, 75);
-            this.txtCotent.TabIndex = 2;
+            this.txtCotent.TabIndex = 1;
             // 
             // txtName
             // 
@@ -367,7 +367,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(248, 21);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // labelX2
             // 
@@ -376,7 +376,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(15, 30);
+            this.labelX2.Location = new System.Drawing.Point(8, 32);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(91, 18);
@@ -390,7 +390,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(15, 3);
+            this.labelX1.Location = new System.Drawing.Point(8, 5);
             this.labelX1.Margin = new System.Windows.Forms.Padding(2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(91, 18);

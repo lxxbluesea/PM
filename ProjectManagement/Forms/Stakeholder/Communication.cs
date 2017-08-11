@@ -96,12 +96,12 @@ namespace ProjectManagement.Forms.Stakeholder
             }
             #endregion
 
-            communication = new DomainDLL.Communication();
+            //communication = new DomainDLL.Communication();
             communication.Content = txtCotent.Text.ToString();
             communication.Name = txtName.Text.ToString();
-            communication.CREATED = CREATED;
-            communication.UPDATED = DateTime.Now;
-            communication.ID = ID;
+            //communication.CREATED = CREATED;
+            //communication.UPDATED = DateTime.Now;
+            //communication.ID = ID;
             communication.PID = ProjectId;
 
             JsonResult json = bll.SaveCommunication(communication);
@@ -121,11 +121,26 @@ namespace ProjectManagement.Forms.Stakeholder
                 return;
             }
             GridRow row = (GridRow)rows[0];
-            txtName.Text = row.Cells["Name"].Value.ToString();
-            txtCotent.Text = row.Cells["Content"].Value.ToString();
-            ID = row.Cells["ID"].Value.ToString();
-            dateCreated.Value = string.IsNullOrEmpty(ID) ? DateTime.Now : Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
-            CREATED = Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
+            communication = new DomainDLL.Communication();
+            communication.ID = row.Cells["ID"].Value.ToString();
+            communication.PID = row.Cells["PID"].Value.ToString();
+            communication.Content = row.Cells["Content"].Value.ToString();
+            communication.Name = row.Cells["Name"].Value.ToString();
+            communication.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            communication.CREATED = Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
+            if (row.Cells["UPDATED"].Value != null && row.Cells["UPDATED"].Value.ToString() != "")
+                communication.UPDATED = Convert.ToDateTime(row.Cells["UPDATED"].Value.ToString());
+
+
+            txtName.Text = communication.Name;
+            txtCotent.Text = communication.Content;
+            dateCreated.Value = communication.CREATED;
+
+            //txtName.Text = row.Cells["Name"].Value.ToString();
+            //txtCotent.Text = row.Cells["Content"].Value.ToString();
+            //ID = row.Cells["ID"].Value.ToString();
+            //dateCreated.Value = string.IsNullOrEmpty(ID) ? DateTime.Now : Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
+            //CREATED = Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
         }
         #endregion
 
