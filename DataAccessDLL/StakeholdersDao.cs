@@ -27,11 +27,12 @@ namespace DataAccessDLL
         {
             StringBuilder QueryHead = new StringBuilder();
             StringBuilder QueryBody = new StringBuilder();
-
-            QueryHead.Append(" select s.*, s.companyname || '-' || s.name as truename, d1.Name as SendTypeName,d2.Name as TypeName");
-            QueryBody.Append(" from Stakeholders s left join DictItem d1 on s.SendType = d1.No and d1.DictNo=" + (int)DictCategory.SendType);
-            QueryBody.Append(" left join DictItem d2 on s.Type = d2.No and d2.DictNo=" + (int)DictCategory.StakehoderType);
-            QueryBody.Append(" where s.PID=@PID  and s.status=@Status order by s.updated desc,s.created desc");
+            QueryHead.Append(" select * ");
+            QueryBody.Append(" from stakeholders  where PID=@PID  and status=@Status order by created asc");
+            //QueryHead.Append(" select s.*, s.companyname || '-' || s.name as truename, d1.Name as SendTypeName,d2.Name as TypeName");
+            //QueryBody.Append(" from Stakeholders s left join DictItem d1 on s.SendType = d1.No and d1.DictNo=" + (int)DictCategory.SendType);
+            //QueryBody.Append(" left join DictItem d2 on s.Type = d2.No and d2.DictNo=" + (int)DictCategory.StakehoderType);
+            //QueryBody.Append(" where s.PID=@PID  and s.status=@Status order by s.updated desc,s.created desc");
 
             return NHHelper.GetGridData(PageIndex, PageSize, QueryHead.ToString(), QueryBody.ToString(), qlist);
         }

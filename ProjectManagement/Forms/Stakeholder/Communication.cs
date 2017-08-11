@@ -24,15 +24,18 @@ namespace ProjectManagement.Forms.Stakeholder
         #region 变量
         private string ID = null;
         private DateTime CREATED = DateTime.Now;
+        DomainDLL.Communication communication;
         #endregion
 
         #region 事件
         public Communication()
         {
             InitializeComponent();
+            InitControls();
             DataBind(null, null);
             dateCreated.Value = CREATED;
             pagerControl1.OnPageChanged += new EventHandler(DataBind);
+
         }
 
         /// <summary>
@@ -64,6 +67,15 @@ namespace ProjectManagement.Forms.Stakeholder
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            InitControls();
+        }
+
+        /// <summary>
+        /// 初始化控件
+        /// </summary>
+        void InitControls()
+        {
+            communication = new DomainDLL.Communication();
             txtCotent.Clear();
             txtName.Clear();
             ID = null;
@@ -84,7 +96,7 @@ namespace ProjectManagement.Forms.Stakeholder
             }
             #endregion
 
-            DomainDLL.Communication communication = new DomainDLL.Communication();
+            communication = new DomainDLL.Communication();
             communication.Content = txtCotent.Text.ToString();
             communication.Name = txtName.Text.ToString();
             communication.CREATED = CREATED;

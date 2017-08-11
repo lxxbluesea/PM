@@ -114,7 +114,7 @@
             // superGridControl1
             // 
             this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl1.ForeColor = System.Drawing.Color.Black;
             this.superGridControl1.Location = new System.Drawing.Point(0, 0);
@@ -134,7 +134,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn8);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(919, 245);
+            this.superGridControl1.Size = new System.Drawing.Size(919, 276);
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl1_RowClick);
@@ -157,13 +157,15 @@
             this.gridColumn3.DataPropertyName = "Content";
             this.gridColumn3.HeaderText = "详细信息";
             this.gridColumn3.Name = "Content";
-            this.gridColumn3.Width = 600;
+            this.gridColumn3.Width = 400;
             // 
             // gridColumn4
             // 
             this.gridColumn4.DataPropertyName = "CREATED";
+            this.gridColumn4.FillWeight = 130;
             this.gridColumn4.HeaderText = "添加日期";
             this.gridColumn4.Name = "CREATED";
+            this.gridColumn4.Width = 130;
             // 
             // gridColumn5
             // 
@@ -180,8 +182,9 @@
             // gridColumn7
             // 
             this.gridColumn7.DataPropertyName = "UPDATED";
+            this.gridColumn7.HeaderText = "更新日期";
             this.gridColumn7.Name = "UPDATED";
-            this.gridColumn7.Visible = false;
+            this.gridColumn7.Width = 130;
             // 
             // gridColumn8
             // 

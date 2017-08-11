@@ -33,9 +33,7 @@
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.TypeName = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -45,13 +43,11 @@
             this.gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.cmbSendType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -71,15 +67,15 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtTel = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtDuty = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.txtPosition = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtCompanyName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -161,9 +157,7 @@
             this.superGridControl1.PrimaryGrid.ColumnAutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn17);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn1);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.TypeName);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn11);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn2);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn20);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn3);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn9);
@@ -173,13 +167,11 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn7);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn8);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn16);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn10);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn12);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn13);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn14);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn15);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn19);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.RowWithCellHighlight;
             this.superGridControl1.Size = new System.Drawing.Size(934, 286);
@@ -192,9 +184,11 @@
             // 
             this.gridColumn17.DataPropertyName = "";
             this.gridColumn17.DefaultNewRowCellValue = "";
+            this.gridColumn17.FillWeight = 60;
             this.gridColumn17.HeaderText = "编号";
             this.gridColumn17.Name = "RowNo";
             this.gridColumn17.NullString = "";
+            this.gridColumn17.Width = 60;
             // 
             // gridColumn1
             // 
@@ -203,13 +197,6 @@
             this.gridColumn1.HeaderText = "企业名称";
             this.gridColumn1.Name = "CompanyName";
             // 
-            // TypeName
-            // 
-            this.TypeName.AllowEdit = false;
-            this.TypeName.DataPropertyName = "TypeName";
-            this.TypeName.HeaderText = "类型";
-            this.TypeName.Name = "TypeName";
-            // 
             // gridColumn11
             // 
             this.gridColumn11.AllowEdit = false;
@@ -217,15 +204,6 @@
             this.gridColumn11.HeaderText = "分类";
             this.gridColumn11.Name = "Type";
             this.gridColumn11.Visible = false;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AllowEdit = false;
-            this.gridColumn2.DataPropertyName = "truename";
-            this.gridColumn2.FillWeight = 150;
-            this.gridColumn2.HeaderText = "名称";
-            this.gridColumn2.Name = "turename";
-            this.gridColumn2.Visible = false;
             // 
             // gridColumn20
             // 
@@ -282,6 +260,7 @@
             this.gridColumn8.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
             this.gridColumn8.HeaderText = "项目经理";
             this.gridColumn8.Name = "IsPublic";
+            this.gridColumn8.Visible = false;
             // 
             // gridColumn16
             // 
@@ -290,23 +269,21 @@
             this.gridColumn16.Name = "SendType";
             this.gridColumn16.Visible = false;
             // 
-            // gridColumn18
-            // 
-            this.gridColumn18.DataPropertyName = "SendTypeName";
-            this.gridColumn18.HeaderText = "发送方式";
-            this.gridColumn18.Name = "SendTypeName";
-            // 
             // gridColumn10
             // 
             this.gridColumn10.DataPropertyName = "CREATED";
+            this.gridColumn10.FillWeight = 130;
             this.gridColumn10.HeaderText = "添加日期";
             this.gridColumn10.Name = "CREATED";
+            this.gridColumn10.Width = 130;
             // 
             // gridColumn12
             // 
             this.gridColumn12.DataPropertyName = "UPDATED";
+            this.gridColumn12.FillWeight = 130;
+            this.gridColumn12.HeaderText = "更新日期";
             this.gridColumn12.Name = "UPDATED";
-            this.gridColumn12.Visible = false;
+            this.gridColumn12.Width = 130;
             // 
             // gridColumn13
             // 
@@ -325,12 +302,6 @@
             this.gridColumn15.DataPropertyName = "Status";
             this.gridColumn15.Name = "Status";
             this.gridColumn15.Visible = false;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.DataPropertyName = "SendType";
-            this.gridColumn19.Name = "SendType";
-            this.gridColumn19.Visible = false;
             // 
             // groupPanel2
             // 
@@ -695,20 +666,6 @@
             this.txtTel.Size = new System.Drawing.Size(182, 21);
             this.txtTel.TabIndex = 5;
             // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(8, 164);
-            this.labelX4.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(88, 18);
-            this.labelX4.TabIndex = 0;
-            this.labelX4.Text = "手机号码：";
-            // 
             // txtDuty
             // 
             this.txtDuty.BackColor = System.Drawing.Color.White;
@@ -725,20 +682,6 @@
             this.txtDuty.PreventEnterBeep = true;
             this.txtDuty.Size = new System.Drawing.Size(182, 21);
             this.txtDuty.TabIndex = 4;
-            // 
-            // labelX8
-            // 
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(8, 132);
-            this.labelX8.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(88, 18);
-            this.labelX8.TabIndex = 0;
-            this.labelX8.Text = "职责：";
             // 
             // txtPosition
             // 
@@ -757,20 +700,6 @@
             this.txtPosition.Size = new System.Drawing.Size(182, 21);
             this.txtPosition.TabIndex = 3;
             // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(8, 100);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(88, 18);
-            this.labelX3.TabIndex = 0;
-            this.labelX3.Text = "职务：";
-            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
@@ -787,6 +716,65 @@
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(182, 21);
             this.txtName.TabIndex = 2;
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtCompanyName.Border.Class = "TextBoxBorder";
+            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
+            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.txtCompanyName.Location = new System.Drawing.Point(79, 3);
+            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.PreventEnterBeep = true;
+            this.txtCompanyName.Size = new System.Drawing.Size(182, 21);
+            this.txtCompanyName.TabIndex = 0;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(8, 164);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(88, 18);
+            this.labelX4.TabIndex = 0;
+            this.labelX4.Text = "手机号码：";
+            // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(8, 132);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(88, 18);
+            this.labelX8.TabIndex = 0;
+            this.labelX8.Text = "职责：";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(8, 100);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(88, 18);
+            this.labelX3.TabIndex = 0;
+            this.labelX3.Text = "职务：";
             // 
             // labelX10
             // 
@@ -815,23 +803,6 @@
             this.labelX2.Size = new System.Drawing.Size(88, 18);
             this.labelX2.TabIndex = 0;
             this.labelX2.Text = "*姓名：";
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtCompanyName.Border.Class = "TextBoxBorder";
-            this.txtCompanyName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCompanyName.DisabledBackColor = System.Drawing.Color.White;
-            this.txtCompanyName.ForeColor = System.Drawing.Color.Black;
-            this.txtCompanyName.Location = new System.Drawing.Point(79, 3);
-            this.txtCompanyName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.PreventEnterBeep = true;
-            this.txtCompanyName.Size = new System.Drawing.Size(182, 21);
-            this.txtCompanyName.TabIndex = 0;
             // 
             // labelX1
             // 
@@ -870,7 +841,6 @@
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
@@ -907,7 +877,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn TypeName;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -915,9 +884,7 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbSendType;
         private DevComponents.DotNetBar.LabelX labelX11;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18;
         private Control.PagerControl pagerControl1;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20;
     }
 }
