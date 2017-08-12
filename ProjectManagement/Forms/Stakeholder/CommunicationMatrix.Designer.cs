@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxAdv1 = new DevComponents.DotNetBar.ListBoxAdv();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.IsPublic = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -88,29 +88,11 @@
             this.txtFrenquence2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCommunicateDate1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtFrenquence1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtiCREATED)).BeginInit();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listBoxAdv1
-            // 
-            // 
-            // 
-            // 
-            this.listBoxAdv1.BackgroundStyle.Class = "ListBoxAdv";
-            this.listBoxAdv1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.listBoxAdv1.ContainerControlProcessDialogKey = true;
-            this.listBoxAdv1.DragDropSupport = true;
-            this.listBoxAdv1.Location = new System.Drawing.Point(267, 94);
-            this.listBoxAdv1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxAdv1.Name = "listBoxAdv1";
-            this.listBoxAdv1.Size = new System.Drawing.Size(294, 86);
-            this.listBoxAdv1.TabIndex = 0;
-            this.listBoxAdv1.Text = "listBoxAdv1";
-            this.listBoxAdv1.ItemClick += new System.EventHandler(this.listBoxAdv1_ItemClick);
             // 
             // groupPanel1
             // 
@@ -118,7 +100,6 @@
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel1.Controls.Add(this.superGridControl1);
-            this.groupPanel1.Controls.Add(this.listBoxAdv1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
@@ -189,6 +170,12 @@
             this.gridColumn1.Name = "RowNo";
             this.gridColumn1.Width = 50;
             // 
+            // gridColumn4
+            // 
+            this.gridColumn4.DataPropertyName = "showName";
+            this.gridColumn4.HeaderText = "名称";
+            this.gridColumn4.Name = "showName";
+            // 
             // gridColumn2
             // 
             this.gridColumn2.DataPropertyName = "Name";
@@ -237,7 +224,7 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.PreventEnterBeep = true;
             this.txtCompanyName.Size = new System.Drawing.Size(182, 21);
-            this.txtCompanyName.TabIndex = 1;
+            this.txtCompanyName.TabIndex = 0;
             // 
             // labelX2
             // 
@@ -268,7 +255,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(182, 21);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 1;
             // 
             // labelX3
             // 
@@ -299,7 +286,7 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.PreventEnterBeep = true;
             this.txtPosition.Size = new System.Drawing.Size(182, 21);
-            this.txtPosition.TabIndex = 3;
+            this.txtPosition.TabIndex = 2;
             // 
             // labelX4
             // 
@@ -330,7 +317,7 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.PreventEnterBeep = true;
             this.txtTel.Size = new System.Drawing.Size(182, 21);
-            this.txtTel.TabIndex = 5;
+            this.txtTel.TabIndex = 4;
             // 
             // labelX8
             // 
@@ -361,7 +348,7 @@
             this.txtDuty.Name = "txtDuty";
             this.txtDuty.PreventEnterBeep = true;
             this.txtDuty.Size = new System.Drawing.Size(182, 21);
-            this.txtDuty.TabIndex = 4;
+            this.txtDuty.TabIndex = 3;
             // 
             // labelX5
             // 
@@ -406,7 +393,7 @@
             this.txtQQ.Name = "txtQQ";
             this.txtQQ.PreventEnterBeep = true;
             this.txtQQ.Size = new System.Drawing.Size(182, 21);
-            this.txtQQ.TabIndex = 7;
+            this.txtQQ.TabIndex = 6;
             // 
             // txtEmail
             // 
@@ -423,7 +410,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PreventEnterBeep = true;
             this.txtEmail.Size = new System.Drawing.Size(182, 21);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 5;
             // 
             // labelX6
             // 
@@ -454,7 +441,7 @@
             this.txtWechat.Name = "txtWechat";
             this.txtWechat.PreventEnterBeep = true;
             this.txtWechat.Size = new System.Drawing.Size(182, 21);
-            this.txtWechat.TabIndex = 8;
+            this.txtWechat.TabIndex = 7;
             // 
             // cbIspublic
             // 
@@ -479,7 +466,7 @@
             this.btnSaveStakeholders.Name = "btnSaveStakeholders";
             this.btnSaveStakeholders.Size = new System.Drawing.Size(56, 18);
             this.btnSaveStakeholders.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveStakeholders.TabIndex = 11;
+            this.btnSaveStakeholders.TabIndex = 9;
             this.btnSaveStakeholders.Text = "保存";
             this.btnSaveStakeholders.Click += new System.EventHandler(this.btnSaveStakeholders_Click);
             // 
@@ -546,7 +533,7 @@
             this.dtiCREATED.Name = "dtiCREATED";
             this.dtiCREATED.Size = new System.Drawing.Size(182, 21);
             this.dtiCREATED.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiCREATED.TabIndex = 9;
+            this.dtiCREATED.TabIndex = 8;
             // 
             // groupPanel2
             // 
@@ -824,14 +811,15 @@
             // 
             this.cmbCommunication1.DisplayMember = "Text";
             this.cmbCommunication1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCommunication1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCommunication1.FormattingEnabled = true;
-            this.cmbCommunication1.ItemHeight = 19;
+            this.cmbCommunication1.ItemHeight = 15;
             this.cmbCommunication1.Location = new System.Drawing.Point(96, 1);
             this.cmbCommunication1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCommunication1.Name = "cmbCommunication1";
-            this.cmbCommunication1.Size = new System.Drawing.Size(190, 25);
+            this.cmbCommunication1.Size = new System.Drawing.Size(190, 21);
             this.cmbCommunication1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCommunication1.TabIndex = 11;
+            this.cmbCommunication1.TabIndex = 0;
             // 
             // txtAddress1
             // 
@@ -848,7 +836,7 @@
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.PreventEnterBeep = true;
             this.txtAddress1.Size = new System.Drawing.Size(190, 21);
-            this.txtAddress1.TabIndex = 14;
+            this.txtAddress1.TabIndex = 3;
             // 
             // txtContent1
             // 
@@ -867,7 +855,7 @@
             this.txtContent1.PreventEnterBeep = true;
             this.txtContent1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtContent1.Size = new System.Drawing.Size(190, 49);
-            this.txtContent1.TabIndex = 15;
+            this.txtContent1.TabIndex = 4;
             // 
             // txtContent2
             // 
@@ -886,7 +874,7 @@
             this.txtContent2.PreventEnterBeep = true;
             this.txtContent2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtContent2.Size = new System.Drawing.Size(190, 48);
-            this.txtContent2.TabIndex = 20;
+            this.txtContent2.TabIndex = 9;
             // 
             // txtContent3
             // 
@@ -905,7 +893,7 @@
             this.txtContent3.PreventEnterBeep = true;
             this.txtContent3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtContent3.Size = new System.Drawing.Size(190, 49);
-            this.txtContent3.TabIndex = 25;
+            this.txtContent3.TabIndex = 14;
             // 
             // txtAddress2
             // 
@@ -922,7 +910,7 @@
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.PreventEnterBeep = true;
             this.txtAddress2.Size = new System.Drawing.Size(190, 21);
-            this.txtAddress2.TabIndex = 19;
+            this.txtAddress2.TabIndex = 8;
             // 
             // txtAddress3
             // 
@@ -939,44 +927,46 @@
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.PreventEnterBeep = true;
             this.txtAddress3.Size = new System.Drawing.Size(190, 21);
-            this.txtAddress3.TabIndex = 24;
+            this.txtAddress3.TabIndex = 13;
             // 
             // cmbCommunication2
             // 
             this.cmbCommunication2.DisplayMember = "Text";
             this.cmbCommunication2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCommunication2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCommunication2.FormattingEnabled = true;
-            this.cmbCommunication2.ItemHeight = 19;
+            this.cmbCommunication2.ItemHeight = 15;
             this.cmbCommunication2.Location = new System.Drawing.Point(96, 162);
             this.cmbCommunication2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCommunication2.Name = "cmbCommunication2";
-            this.cmbCommunication2.Size = new System.Drawing.Size(190, 25);
+            this.cmbCommunication2.Size = new System.Drawing.Size(190, 21);
             this.cmbCommunication2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCommunication2.TabIndex = 16;
+            this.cmbCommunication2.TabIndex = 5;
             // 
             // cmbCommunication3
             // 
             this.cmbCommunication3.DisplayMember = "Text";
             this.cmbCommunication3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCommunication3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCommunication3.FormattingEnabled = true;
-            this.cmbCommunication3.ItemHeight = 19;
+            this.cmbCommunication3.ItemHeight = 15;
             this.cmbCommunication3.Location = new System.Drawing.Point(96, 322);
             this.cmbCommunication3.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCommunication3.Name = "cmbCommunication3";
-            this.cmbCommunication3.Size = new System.Drawing.Size(190, 25);
+            this.cmbCommunication3.Size = new System.Drawing.Size(190, 21);
             this.cmbCommunication3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCommunication3.TabIndex = 21;
+            this.cmbCommunication3.TabIndex = 10;
             // 
             // btnSaveCommunicationFXFA
             // 
             this.btnSaveCommunicationFXFA.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveCommunicationFXFA.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveCommunicationFXFA.Location = new System.Drawing.Point(96, 484);
+            this.btnSaveCommunicationFXFA.Location = new System.Drawing.Point(96, 497);
             this.btnSaveCommunicationFXFA.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveCommunicationFXFA.Name = "btnSaveCommunicationFXFA";
             this.btnSaveCommunicationFXFA.Size = new System.Drawing.Size(56, 18);
             this.btnSaveCommunicationFXFA.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveCommunicationFXFA.TabIndex = 26;
+            this.btnSaveCommunicationFXFA.TabIndex = 15;
             this.btnSaveCommunicationFXFA.Text = "保存";
             this.btnSaveCommunicationFXFA.Click += new System.EventHandler(this.btnSaveCommunicationFXFA_Click);
             // 
@@ -1069,7 +1059,7 @@
             this.txtConmunicateDate3.Name = "txtConmunicateDate3";
             this.txtConmunicateDate3.PreventEnterBeep = true;
             this.txtConmunicateDate3.Size = new System.Drawing.Size(190, 21);
-            this.txtConmunicateDate3.TabIndex = 32;
+            this.txtConmunicateDate3.TabIndex = 12;
             // 
             // txtFrenquence3
             // 
@@ -1086,7 +1076,7 @@
             this.txtFrenquence3.Name = "txtFrenquence3";
             this.txtFrenquence3.PreventEnterBeep = true;
             this.txtFrenquence3.Size = new System.Drawing.Size(190, 21);
-            this.txtFrenquence3.TabIndex = 31;
+            this.txtFrenquence3.TabIndex = 11;
             // 
             // txtConmunicateDate2
             // 
@@ -1103,7 +1093,7 @@
             this.txtConmunicateDate2.Name = "txtConmunicateDate2";
             this.txtConmunicateDate2.PreventEnterBeep = true;
             this.txtConmunicateDate2.Size = new System.Drawing.Size(190, 21);
-            this.txtConmunicateDate2.TabIndex = 30;
+            this.txtConmunicateDate2.TabIndex = 7;
             // 
             // txtFrenquence2
             // 
@@ -1120,7 +1110,7 @@
             this.txtFrenquence2.Name = "txtFrenquence2";
             this.txtFrenquence2.PreventEnterBeep = true;
             this.txtFrenquence2.Size = new System.Drawing.Size(190, 21);
-            this.txtFrenquence2.TabIndex = 29;
+            this.txtFrenquence2.TabIndex = 6;
             // 
             // txtCommunicateDate1
             // 
@@ -1137,7 +1127,7 @@
             this.txtCommunicateDate1.Name = "txtCommunicateDate1";
             this.txtCommunicateDate1.PreventEnterBeep = true;
             this.txtCommunicateDate1.Size = new System.Drawing.Size(190, 21);
-            this.txtCommunicateDate1.TabIndex = 28;
+            this.txtCommunicateDate1.TabIndex = 2;
             // 
             // txtFrenquence1
             // 
@@ -1154,13 +1144,7 @@
             this.txtFrenquence1.Name = "txtFrenquence1";
             this.txtFrenquence1.PreventEnterBeep = true;
             this.txtFrenquence1.Size = new System.Drawing.Size(190, 21);
-            this.txtFrenquence1.TabIndex = 27;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.DataPropertyName = "showName";
-            this.gridColumn4.HeaderText = "名称";
-            this.gridColumn4.Name = "showName";
+            this.txtFrenquence1.TabIndex = 1;
             // 
             // CommunicationMatrix
             // 
@@ -1184,7 +1168,6 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.ListBoxAdv listBoxAdv1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCompanyName;

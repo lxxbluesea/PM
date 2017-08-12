@@ -32,6 +32,7 @@ namespace ProjectManagement.Forms.Stakeholder
         private string FXFAID2 = null;
         private string FXFAID3 = null;
         private DateTime CREATED = DateTime.MinValue;
+        CommunicationFXFA fxfa0, fxfa1, fxfa2;
         #endregion
 
         #region 事件
@@ -42,62 +43,7 @@ namespace ProjectManagement.Forms.Stakeholder
             BindListBox();
         }
 
-        /// <summary>
-        /// 选择干系人事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void listBoxAdv1_ItemClick(object sender, EventArgs e)
-        {
-            Stakeholders stakeholders = new Stakeholders();
-            List<CommunicationFXFA> list = new List<CommunicationFXFA>();
-            bll.GetCommunicationMatix(ProjectId, listBoxAdv1.SelectedValue.ToString(), out stakeholders, out list);
-            if (stakeholders != null)
-            {
-                txtCompanyName.Text = stakeholders.CompanyName;
-                txtDuty.Text = stakeholders.Duty;
-                txtEmail.Text = stakeholders.Email;
-                txtName.Text = stakeholders.Name;
-                txtPosition.Text = stakeholders.Position;
-                txtQQ.Text = stakeholders.QQ;
-                txtTel.Text = stakeholders.Tel;
-                txtWechat.Text = stakeholders.Wechat;
-                cbIspublic.CheckValue = stakeholders.IsPublic;
-                dtiCREATED.Value = stakeholders.CREATED;
-                type = stakeholders.Type;
-                sendtype = stakeholders.SendType;
-                ID = stakeholders.ID;
-                CREATED = stakeholders.CREATED;
-            }
-            if (list != null && list.Count > 0)
-            {
-                txtAddress1.Text = list[0].Addr;
-                txtContent1.Text = list[0].Content;
-                txtCommunicateDate1.Text = list[0].CommunicateDate;
-                txtFrenquence1.Text = list[0].Frequency;
-                DataHelper.SetComboBoxSelectItemByValue(cmbCommunication1, list[0].CID);
-                FXFAID1 = list[0].ID;
-                if (list.Count > 1)
-                {
-                    txtAddress2.Text = list[1].Addr;
-                    txtContent2.Text = list[1].Content;
-                    txtConmunicateDate2.Text = list[0].CommunicateDate;
-                    txtFrenquence2.Text = list[0].Frequency;
-                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication2, list[1].CID);
-                    FXFAID2 = list[1].ID;
-                }
-                if (list.Count > 2)
-                {
-                    txtAddress3.Text = list[2].Addr;
-                    txtContent3.Text = list[2].Content;
-                    txtConmunicateDate3.Text = list[0].CommunicateDate;
-                    txtFrenquence3.Text = list[0].Frequency;
-                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication3, list[2].CID);
-                    FXFAID3 = list[2].ID;
-                }
-            }
 
-        }
 
         /// <summary>
         /// 选中
@@ -140,30 +86,42 @@ namespace ProjectManagement.Forms.Stakeholder
             }
             if (list != null && list.Count > 0)
             {
-                txtAddress1.Text = list[0].Addr;
-                txtContent1.Text = list[0].Content;
-                txtCommunicateDate1.Text = list[0].CommunicateDate;
-                txtFrenquence1.Text = list[0].Frequency;
-                DataHelper.SetComboBoxSelectItemByValue(cmbCommunication1, list[0].CID);
-                FXFAID1 = list[0].ID;
+                fxfa0 = new CommunicationFXFA();
+                fxfa0 = list[0];
+                txtAddress1.Text = fxfa0.Addr;
+                txtContent1.Text = fxfa0.Content;
+                txtCommunicateDate1.Text = fxfa0.CommunicateDate;
+                txtFrenquence1.Text = fxfa0.Frequency;
+                DataHelper.SetComboBoxSelectItemByValue(cmbCommunication1, fxfa0.CID);
+                FXFAID1 = fxfa0.ID;
                 if (list.Count > 1)
                 {
-                    txtAddress2.Text = list[1].Addr;
-                    txtContent2.Text = list[1].Content;
-                    txtConmunicateDate2.Text = list[0].CommunicateDate;
-                    txtFrenquence2.Text = list[0].Frequency;
-                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication2, list[1].CID);
-                    FXFAID2 = list[1].ID;
+                    fxfa1 = new CommunicationFXFA();
+                    fxfa1 = list[1];
+                    txtAddress2.Text = fxfa1.Addr;
+                    txtContent2.Text = fxfa1.Content;
+                    txtConmunicateDate2.Text = fxfa1.CommunicateDate;
+                    txtFrenquence2.Text = fxfa1.Frequency;
+                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication2, fxfa1.CID);
+                    FXFAID2 = fxfa1.ID;
                 }
                 if (list.Count > 2)
                 {
-                    txtAddress3.Text = list[2].Addr;
-                    txtContent3.Text = list[2].Content;
-                    txtConmunicateDate3.Text = list[0].CommunicateDate;
-                    txtFrenquence3.Text = list[0].Frequency;
-                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication3, list[2].CID);
-                    FXFAID3 = list[2].ID;
+                    fxfa2 = new CommunicationFXFA();
+                    fxfa2 = list[2];
+                    txtAddress3.Text = fxfa2.Addr;
+                    txtContent3.Text = fxfa2.Content;
+                    txtConmunicateDate3.Text = fxfa2.CommunicateDate;
+                    txtFrenquence3.Text = fxfa2.Frequency;
+                    DataHelper.SetComboBoxSelectItemByValue(cmbCommunication3, fxfa2.CID);
+                    FXFAID2 = fxfa2.ID;
                 }
+            }
+            else
+            {
+                fxfa0 = null;
+                fxfa1 = null;
+                fxfa2 = null;
             }
         }
 
@@ -179,16 +137,21 @@ namespace ProjectManagement.Forms.Stakeholder
             string flagid = string.Empty;//项目经理id
             if (superGridControl1.PrimaryGrid.Rows.Count != 0)
             {
-                foreach (var item in superGridControl1.PrimaryGrid.Rows)
+                foreach (GridRow item in superGridControl1.PrimaryGrid.Rows)
                 {
-                    string s = item.ToString();
-                    s = s.Replace("{", ",");
-                    s = s.Replace("}", ",");
-                    string[] listS = s.Split(',');
-                    if (int.Parse(listS[4].Trim()) != 0)
+                    //string s = item.ToString();
+                    //s = s.Replace("{", ",");
+                    //s = s.Replace("}", ",");
+                    //string[] listS = s.Split(',');
+                    //if (int.Parse(listS[4].Trim()) != 0)
+                    //{
+                    //    flag = 1;
+                    //    flagid = listS[3].Trim();
+                    //}
+                    if(item.GetCell("IsPublic").Value.ToString()=="1")
                     {
                         flag = 1;
-                        flagid = listS[3].Trim();
+                        flagid = item.GetCell("ID").Value.ToString();
                     }
                 }
             }
@@ -231,6 +194,7 @@ namespace ProjectManagement.Forms.Stakeholder
             stakeholders.Wechat = txtWechat.Text.ToString();
             stakeholders.SendType = sendtype;
             stakeholders.Type = type;
+            stakeholders.Status = 1;
             string _id = "";
             JsonResult json = new StakeholdersBLL().SaveStakehoders(stakeholders, out _id);
             MessageHelper.ShowRstMsg(json.result);
@@ -254,50 +218,82 @@ namespace ProjectManagement.Forms.Stakeholder
                 return;
             }
             List<CommunicationFXFA> list = new List<CommunicationFXFA>();
+
             if (!string.IsNullOrEmpty(FXFAID1) || cmbCommunication1.SelectedItem != null)
             {
-                CommunicationFXFA fxfa = new CommunicationFXFA
+                if (fxfa0 == null)
                 {
-                    Addr = txtAddress1.Text.ToString(),
-                    CID = (ComboItem)cmbCommunication1.SelectedItem != null ? ((ComboItem)cmbCommunication1.SelectedItem).Value.ToString() : "",
-                    Content = txtContent1.Text.ToString(),
-                    SID=ID,
-                    //SID = ID.Substring(0, 37) + "1",
-                    CommunicateDate = txtCommunicateDate1.Text,
-                    Frequency = txtFrenquence1.Text,
-                    ID = FXFAID1
-                };
-                list.Add(fxfa);
+                    fxfa0 = new CommunicationFXFA();
+                }
+                fxfa0.Addr = txtAddress1.Text;
+                fxfa0.Content = txtContent1.Text;
+                fxfa0.Frequency = txtFrenquence1.Text;
+                fxfa0.CID = (ComboItem)cmbCommunication1.SelectedItem != null ? ((ComboItem)cmbCommunication1.SelectedItem).Value.ToString() : "";
+                fxfa0.CommunicateDate = txtCommunicateDate1.Text;
+                fxfa0.SID = ID;
+
+                //CommunicationFXFA fxfa = new CommunicationFXFA
+                //{
+                //    Addr = txtAddress1.Text.ToString(),
+                //    CID = (ComboItem)cmbCommunication1.SelectedItem != null ? ((ComboItem)cmbCommunication1.SelectedItem).Value.ToString() : "",
+                //    Content = txtContent1.Text.ToString(),
+                //    SID=ID,
+                //    //SID = ID.Substring(0, 37) + "1",
+                //    CommunicateDate = txtCommunicateDate1.Text,
+                //    Frequency = txtFrenquence1.Text,
+                //    ID = FXFAID1
+                //};
+                list.Add(fxfa0);
             }
             if (!string.IsNullOrEmpty(FXFAID2) || cmbCommunication2.SelectedItem != null)
             {
-                CommunicationFXFA fxfa = new CommunicationFXFA
+                if (fxfa1 == null)
                 {
-                    Addr = txtAddress2.Text.ToString(),
-                    CID = (ComboItem)cmbCommunication2.SelectedItem != null ? ((ComboItem)cmbCommunication2.SelectedItem).Value.ToString() : "",
-                    Content = txtContent2.Text.ToString(),
-                    SID=ID,
-                    //SID = ID.Substring(0, 37) + "1",
-                    CommunicateDate = txtConmunicateDate2.Text,
-                    Frequency = txtFrenquence2.Text,
-                    ID = FXFAID2
-                };
-                list.Add(fxfa);
+                    fxfa1 = new CommunicationFXFA();
+                }
+                //CommunicationFXFA fxfa = new CommunicationFXFA
+                //{
+                //    Addr = txtAddress2.Text.ToString(),
+                //    CID = (ComboItem)cmbCommunication2.SelectedItem != null ? ((ComboItem)cmbCommunication2.SelectedItem).Value.ToString() : "",
+                //    Content = txtContent2.Text.ToString(),
+                //    SID=ID,
+                //    //SID = ID.Substring(0, 37) + "1",
+                //    CommunicateDate = txtConmunicateDate2.Text,
+                //    Frequency = txtFrenquence2.Text,
+                //    ID = FXFAID2
+                //};
+                fxfa1.Addr = txtAddress2.Text;
+                fxfa1.Content = txtContent2.Text;
+                fxfa1.Frequency = txtFrenquence2.Text;
+                fxfa1.CID = (ComboItem)cmbCommunication2.SelectedItem != null ? ((ComboItem)cmbCommunication2.SelectedItem).Value.ToString() : "";
+                fxfa1.CommunicateDate = txtConmunicateDate2.Text;
+                fxfa1.SID = ID;
+                list.Add(fxfa1);
             }
             if (!string.IsNullOrEmpty(FXFAID3) || cmbCommunication3.SelectedItem != null)
             {
-                CommunicationFXFA fxfa = new CommunicationFXFA
+                if (fxfa2 == null)
                 {
-                    Addr = txtAddress3.Text.ToString(),
-                    CID = (ComboItem)cmbCommunication3.SelectedItem != null ? ((ComboItem)cmbCommunication3.SelectedItem).Value.ToString() : "",
-                    Content = txtContent3.Text.ToString(),
-                    SID=ID,
-                    //SID = ID.Substring(0, 37) + "1",
-                    CommunicateDate = txtConmunicateDate3.Text,
-                    Frequency = txtFrenquence3.Text,
-                    ID = FXFAID3
-                };
-                list.Add(fxfa);
+                    fxfa2 = new CommunicationFXFA();
+                }
+                //CommunicationFXFA fxfa = new CommunicationFXFA
+                //{
+                //    Addr = txtAddress3.Text.ToString(),
+                //    CID = (ComboItem)cmbCommunication3.SelectedItem != null ? ((ComboItem)cmbCommunication3.SelectedItem).Value.ToString() : "",
+                //    Content = txtContent3.Text.ToString(),
+                //    SID=ID,
+                //    //SID = ID.Substring(0, 37) + "1",
+                //    CommunicateDate = txtConmunicateDate3.Text,
+                //    Frequency = txtFrenquence3.Text,
+                //    ID = FXFAID3
+                //};
+                fxfa2.Addr = txtAddress3.Text;
+                fxfa2.Content = txtContent3.Text;
+                fxfa2.Frequency = txtFrenquence3.Text;
+                fxfa2.CID = (ComboItem)cmbCommunication3.SelectedItem != null ? ((ComboItem)cmbCommunication3.SelectedItem).Value.ToString() : "";
+                fxfa2.CommunicateDate = txtConmunicateDate3.Text;
+                fxfa2.SID = ID;
+                list.Add(fxfa2);
             }
             JsonResult json = bll.SaveFXFA(list, out FXFAID1, out FXFAID2, out FXFAID3);
             MessageHelper.ShowRstMsg(json.result);
@@ -351,6 +347,9 @@ namespace ProjectManagement.Forms.Stakeholder
         /// </summary>
         private void ClearAll()
         {
+            //fxfa0 = new CommunicationFXFA();
+            //fxfa1 = new CommunicationFXFA();
+            //fxfa2 = new CommunicationFXFA();
             txtCompanyName.Clear();
             txtDuty.Clear();
             txtEmail.Clear();

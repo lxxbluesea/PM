@@ -19,20 +19,20 @@ namespace CommonDLL
         public static string EntityToString<T>(T t)
         {
             IsoDateTimeConverter timeFormat = new IsoDateTimeConverter();
-            timeFormat.DateTimeFormat = "yyyy-MM-dd";
+            timeFormat.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             return JsonConvert.SerializeObject(t, Formatting.Indented, timeFormat);
         }
 
         public static string ListToString<T>(List<T> tl)
         {
             IsoDateTimeConverter timeFormat = new IsoDateTimeConverter();
-            timeFormat.DateTimeFormat = "yyyy-MM-dd";
+            timeFormat.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             return JsonConvert.SerializeObject(tl, Formatting.Indented, timeFormat);
         }
         public static string TableToString(DataTable dt)
         {
             IsoDateTimeConverter timeFormat = new IsoDateTimeConverter();
-            timeFormat.DateTimeFormat = "yyyy-MM-dd";
+            timeFormat.DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
             return JsonConvert.SerializeObject(dt, Formatting.Indented, timeFormat);
         }
 

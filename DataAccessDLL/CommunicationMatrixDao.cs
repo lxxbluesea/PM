@@ -104,33 +104,36 @@ namespace DataAccessDLL
             id1 = "";
             id2 = "";
             id3 = "";
+            bool record = CommonHelper.GetConfigValue("Record") == "0" ? false : true;
             JsonResult jsonreslut = new JsonResult { result = false};
             try
             {
                 ISession s = Session;
                 s.BeginTransaction();
+
                 if (list != null && list.Count > 0)
                 {
                     if (string.IsNullOrEmpty(list[0].ID))
                     {
                         if (list[0].Status == null)
                             list[0].Status = 1;
-                        list[0].ID = Guid.NewGuid().ToString() + "-1";
+                        list[0].ID = Guid.NewGuid().ToString();
                         id1 = list[0].ID;
                         list[0].CREATED = DateTime.Now;
-                        s.Save(list[0]); 
+                        s.Save(list[0]);
                     }
                     else
                     {
-                        CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[0].ID);
-                        old.UPDATED = DateTime.Now;
-                        old.Status = 0;
-                        s.Update(old);
-                        string hisNo = list[0].ID.Substring(37);
-                        list[0].ID = list[0].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                        list[0].Status = 1;
-                        list[0].CREATED = old.CREATED;
-                        s.Save(list[0]);
+                        //CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[0].ID);
+                        //old.UPDATED = DateTime.Now;
+                        //old.Status = 0;
+                        //s.Update(old);
+                        //string hisNo = list[0].ID.Substring(37);
+                        //list[0].ID = list[0].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                        //list[0].Status = 1;
+                        //list[0].CREATED = old.CREATED;
+                        list[0].UPDATED = DateTime.Now;
+                        s.Update(list[0]);
                     }
                     if (list.Count > 1)
                     {
@@ -139,22 +142,23 @@ namespace DataAccessDLL
                         {
                             if (list[1].Status == null)
                                 list[1].Status = 1;
-                            list[1].ID = Guid.NewGuid().ToString() + "-1";
+                            list[1].ID = Guid.NewGuid().ToString();
                             id1 = list[1].ID;
                             list[1].CREATED = DateTime.Now;
                             s.Save(list[1]);
                         }
                         else
                         {
-                            CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[1].ID);
-                            old.UPDATED = DateTime.Now;
-                            old.Status = 0;
-                            s.Update(old);
-                            string hisNo = list[1].ID.Substring(37);
-                            list[1].ID = list[1].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                            list[1].Status = 1;
-                            list[1].CREATED = old.CREATED;
-                            s.Save(list[1]);
+                            //CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[1].ID);
+                            //old.UPDATED = DateTime.Now;
+                            //old.Status = 0;
+                            //s.Update(old);
+                            //string hisNo = list[1].ID.Substring(37);
+                            //list[1].ID = list[1].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                            //list[1].Status = 1;
+                            //list[1].CREATED = old.CREATED;
+                            list[1].UPDATED = DateTime.Now;
+                            s.Update(list[1]);
                         }
                     }
                     if (list.Count > 2)
@@ -164,25 +168,103 @@ namespace DataAccessDLL
                         {
                             if (list[2].Status == null)
                                 list[2].Status = 1;
-                            list[2].ID = Guid.NewGuid().ToString() + "-1";
+                            list[2].ID = Guid.NewGuid().ToString();
                             id1 = list[2].ID;
                             list[2].CREATED = DateTime.Now;
                             s.Save(list[2]);
                         }
                         else
                         {
-                            CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[2].ID);
-                            old.UPDATED = DateTime.Now;
-                            old.Status = 0;
-                            s.Update(old);
-                            string hisNo = list[2].ID.Substring(37);
-                            list[2].ID = list[2].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                            list[2].Status = 1;
-                            list[2].CREATED = old.CREATED;
-                            s.Save(list[2]);
+                            //CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[2].ID);
+                            //old.UPDATED = DateTime.Now;
+                            //old.Status = 0;
+                            //s.Update(old);
+                            //string hisNo = list[2].ID.Substring(37);
+                            //list[2].ID = list[2].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                            //list[2].Status = 1;
+                            //list[2].CREATED = old.CREATED;
+                            list[2].UPDATED = DateTime.Now;
+                            s.Update(list[2]);
                         }
                     }
                 }
+
+                #region 原来带履历的代码
+                //if (list != null && list.Count > 0)
+                //{
+                //    if (string.IsNullOrEmpty(list[0].ID))
+                //    {
+                //        if (list[0].Status == null)
+                //            list[0].Status = 1;
+                //        list[0].ID = Guid.NewGuid().ToString() + "-1";
+                //        id1 = list[0].ID;
+                //        list[0].CREATED = DateTime.Now;
+                //        s.Save(list[0]); 
+                //    }
+                //    else
+                //    {
+                //        CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[0].ID);
+                //        old.UPDATED = DateTime.Now;
+                //        old.Status = 0;
+                //        s.Update(old);
+                //        string hisNo = list[0].ID.Substring(37);
+                //        list[0].ID = list[0].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                //        list[0].Status = 1;
+                //        list[0].CREATED = old.CREATED;
+                //        s.Save(list[0]);
+                //    }
+                //    if (list.Count > 1)
+                //    {
+
+                //        if (string.IsNullOrEmpty(list[1].ID))
+                //        {
+                //            if (list[1].Status == null)
+                //                list[1].Status = 1;
+                //            list[1].ID = Guid.NewGuid().ToString() + "-1";
+                //            id1 = list[1].ID;
+                //            list[1].CREATED = DateTime.Now;
+                //            s.Save(list[1]);
+                //        }
+                //        else
+                //        {
+                //            CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[1].ID);
+                //            old.UPDATED = DateTime.Now;
+                //            old.Status = 0;
+                //            s.Update(old);
+                //            string hisNo = list[1].ID.Substring(37);
+                //            list[1].ID = list[1].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                //            list[1].Status = 1;
+                //            list[1].CREATED = old.CREATED;
+                //            s.Save(list[1]);
+                //        }
+                //    }
+                //    if (list.Count > 2)
+                //    {
+
+                //        if (string.IsNullOrEmpty(list[2].ID))
+                //        {
+                //            if (list[2].Status == null)
+                //                list[2].Status = 1;
+                //            list[2].ID = Guid.NewGuid().ToString() + "-1";
+                //            id1 = list[2].ID;
+                //            list[2].CREATED = DateTime.Now;
+                //            s.Save(list[2]);
+                //        }
+                //        else
+                //        {
+                //            CommunicationFXFA old = Session.Get<CommunicationFXFA>(list[2].ID);
+                //            old.UPDATED = DateTime.Now;
+                //            old.Status = 0;
+                //            s.Update(old);
+                //            string hisNo = list[2].ID.Substring(37);
+                //            list[2].ID = list[2].ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                //            list[2].Status = 1;
+                //            list[2].CREATED = old.CREATED;
+                //            s.Save(list[2]);
+                //        }
+                //    }
+                //}
+                #endregion
 
                 s.Transaction.Commit();
                 s.Close();
