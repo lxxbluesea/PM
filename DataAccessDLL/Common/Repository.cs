@@ -306,6 +306,7 @@ namespace DataAccessDLL
                 }
                 else
                 {
+                    entity.Status = 1;
                     id = entity.ID;
                     entity.UPDATED = DateTime.Now;
                     s.Update(entity);

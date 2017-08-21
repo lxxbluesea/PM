@@ -33,7 +33,8 @@ namespace ProjectManagement.Forms.Subcontract
         string ZGZtext = null;//一般纳税人资格证
         string DMZtext = null;//组织机构代码证
         string ID = null;
-        DateTime CREATED = DateTime.Today;
+        DateTime CREATED = DateTime.Now;
+        DomainDLL.Supplier entity;
 
         string _fileYYZZName;
         string _fileZGZName;
@@ -44,9 +45,10 @@ namespace ProjectManagement.Forms.Subcontract
         public Supplier()
         {
             InitializeComponent();
-            dtiCREATED.Value = DateTime.Today;
+            dtiCREATED.Value = DateTime.Now;
             DataBind();
             LoadFile();
+            Init_Controls();
         }
 
         /// <summary>
@@ -70,14 +72,14 @@ namespace ProjectManagement.Forms.Subcontract
             #endregion
 
             string id;
-            DomainDLL.Supplier entity = new DomainDLL.Supplier();
+            //entity = new DomainDLL.Supplier();
             entity.Addr = txtAddr.Text.ToString();
             entity.LegalMan = txtLegalMan.Text.ToString();
             entity.Manager = txtManager.Text.ToString();
             entity.Name = txtName.Text.ToString();
             entity.Tel = txtTel.Text.ToString();
-            entity.CREATED = CREATED;
-            entity.ID = ID;
+            //entity.CREATED = CREATED;
+            //entity.ID = ID;
             entity.PID = ProjectId;
             entity.PathDMZ = DMZ;
             entity.PathYYZZ = YYZZ;
@@ -168,6 +170,15 @@ namespace ProjectManagement.Forms.Subcontract
         /// <param name="e"></param>
         private void Clear_Click(object sender, EventArgs e)
         {
+            Init_Controls();
+        }
+
+        /// <summary>
+        /// 初始化控件
+        /// </summary>
+        void Init_Controls()
+        {
+            entity = new DomainDLL.Supplier();
             txtAddr.Clear();
             txtLegalMan.Clear();
             txtManager.Clear();
@@ -251,6 +262,24 @@ namespace ProjectManagement.Forms.Subcontract
                 return;
             }
             GridRow row = (GridRow)rows[0];
+
+
+            entity = new DomainDLL.Supplier();
+            entity.ID = row.Cells["ID"].Value.ToString();
+            entity.Name = row.Cells["Name"].Value.ToString();
+            entity.Addr = row.Cells["Addr"].Value.ToString();
+            entity.LegalMan = row.Cells["LegalMan"].Value.ToString();
+            entity.Manager = row.Cells["Manager"].Value.ToString();
+            entity.Tel = row.Cells["Tel"].Value.ToString();
+            entity.PathZGZ = row.Cells["PathZGZ"].Value.ToString();
+            entity.PathYYZZ = row.Cells["PathYYZZ"].Value.ToString();
+            entity.PathDMZ = row.Cells["PathDMZ"].Value.ToString();
+            entity.CREATED = Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
+            entity.PID = ProjectId;
+            entity.Status = 1;
+
+
+
             txtAddr.Text = row.Cells["Addr"].Value.ToString();
             txtLegalMan.Text = row.Cells["LegalMan"].Value.ToString();
             txtManager.Text = row.Cells["Manager"].Value.ToString();

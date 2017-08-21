@@ -31,9 +31,19 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn38 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn48 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn50 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn51 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn52 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn53 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn54 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn55 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn56 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn57 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn58 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.cmbCompanyName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnSaveContrat = new DevComponents.DotNetBar.ButtonX();
@@ -233,9 +243,19 @@
             this.superGridControl3.PrimaryGrid.AllowEdit = false;
             this.superGridControl3.PrimaryGrid.ColumnAutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.Fill;
             this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn24);
-            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn25);
-            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn26);
             this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn27);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn38);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn48);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn49);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn50);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn51);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn52);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn53);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn54);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn55);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn56);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn57);
+            this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn58);
             this.superGridControl3.PrimaryGrid.MultiSelect = false;
             this.superGridControl3.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.superGridControl3.Size = new System.Drawing.Size(276, 709);
@@ -253,28 +273,73 @@
             this.gridColumn24.Name = "RowNo";
             this.gridColumn24.Width = 40;
             // 
-            // gridColumn25
-            // 
-            this.gridColumn25.AllowEdit = false;
-            this.gridColumn25.DataPropertyName = "A";
-            this.gridColumn25.HeaderText = "主合同";
-            this.gridColumn25.Name = "A";
-            this.gridColumn25.Visible = false;
-            this.gridColumn25.Width = 80;
-            // 
-            // gridColumn26
-            // 
-            this.gridColumn26.AllowEdit = false;
-            this.gridColumn26.DataPropertyName = "B";
-            this.gridColumn26.HeaderText = "分包合同";
-            this.gridColumn26.Name = "B";
-            // 
             // gridColumn27
             // 
             this.gridColumn27.AllowEdit = false;
             this.gridColumn27.DataPropertyName = "ID";
             this.gridColumn27.Name = "ID";
             this.gridColumn27.Visible = false;
+            // 
+            // gridColumn38
+            // 
+            this.gridColumn38.Name = "PID";
+            this.gridColumn38.Visible = false;
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Name = "A_No";
+            this.gridColumn48.Visible = false;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.HeaderText = "";
+            this.gridColumn49.Name = "A_Name";
+            this.gridColumn49.Visible = false;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Name = "B_No";
+            this.gridColumn50.Visible = false;
+            // 
+            // gridColumn51
+            // 
+            this.gridColumn51.HeaderText = "分包合同名称";
+            this.gridColumn51.Name = "B_Name";
+            // 
+            // gridColumn52
+            // 
+            this.gridColumn52.Name = "CompanyName";
+            this.gridColumn52.Visible = false;
+            // 
+            // gridColumn53
+            // 
+            this.gridColumn53.Name = "Amount";
+            this.gridColumn53.Visible = false;
+            // 
+            // gridColumn54
+            // 
+            this.gridColumn54.Name = "SignDate";
+            this.gridColumn54.Visible = false;
+            // 
+            // gridColumn55
+            // 
+            this.gridColumn55.Name = "Desc";
+            this.gridColumn55.Visible = false;
+            // 
+            // gridColumn56
+            // 
+            this.gridColumn56.Name = "Status";
+            this.gridColumn56.Visible = false;
+            // 
+            // gridColumn57
+            // 
+            this.gridColumn57.Name = "CREATED";
+            this.gridColumn57.Visible = false;
+            // 
+            // gridColumn58
+            // 
+            this.gridColumn58.Name = "UPDATED";
+            this.gridColumn58.Visible = false;
             // 
             // groupPanel2
             // 
@@ -1054,8 +1119,10 @@
             // gridColumn11
             // 
             this.gridColumn11.DataPropertyName = "RowNo";
+            this.gridColumn11.FillWeight = 60;
             this.gridColumn11.HeaderText = "编号";
             this.gridColumn11.Name = "RowNo";
+            this.gridColumn11.Width = 60;
             // 
             // gridColumn12
             // 
@@ -1094,13 +1161,13 @@
             // 
             // gridColumn29
             // 
+            this.gridColumn29.HeaderText = "创建日期";
             this.gridColumn29.Name = "CREATED";
-            this.gridColumn29.Visible = false;
             // 
             // gridColumn30
             // 
+            this.gridColumn30.HeaderText = "更新日期";
             this.gridColumn30.Name = "UPDATED";
-            this.gridColumn30.Visible = false;
             // 
             // gridColumn31
             // 
@@ -2255,8 +2322,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbSKXXFinishStatus;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34;
@@ -2310,5 +2375,17 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn47;
         private DevComponents.DotNetBar.Controls.TextBoxX SKXXBatchNo;
         private DevComponents.DotNetBar.Controls.TextBoxX SKXXAmount;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn38;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn48;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn50;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn51;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn52;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn53;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn54;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn55;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn56;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn57;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn58;
     }
 }

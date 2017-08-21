@@ -24,9 +24,10 @@ namespace DataAccessDLL
         public DataTable GetContractList(List<QueryField> qf)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select c1.ID,c2.A_Name||'('||c2.A_No||')' as A,c2.B_Name as B from SubContract c1, SubContract c2");
-            sql.Append(" where substr(c1.ID, 38) = '1' and substr(c1.ID, 1, 37) = substr(c2.ID, 1, 37)");
-            sql.Append(" and c2.PID=@PID  and c2.status=@Status order by c2.A_No ");
+            //sql.Append(" select c1.ID,c2.A_Name||'('||c2.A_No||')' as A,c2.B_Name as B from SubContract c1, SubContract c2");
+            //sql.Append(" where substr(c1.ID, 38) = '1' and substr(c1.ID, 1, 37) = substr(c2.ID, 1, 37)");
+            //sql.Append(" and c2.PID=@PID  and c2.status=@Status order by c2.A_No ");
+            sql.Append("select * from subcontract where pid=@PID and status=@Status order by Created asc");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qf);
             return dt;
         }
@@ -53,7 +54,8 @@ namespace DataAccessDLL
                 {
                     if (entity.Status == null)
                         entity.Status = 1;
-                    entity.ID = Guid.NewGuid().ToString() + "-1";
+                    entity.ID = Guid.NewGuid().ToString();
+                    //entity.ID = Guid.NewGuid().ToString() + "-1";
                     entity.CREATED = DateTime.Now;
                     SubID = entity.ID;//原始版本id
                     _id = entity.ID;//实际id
@@ -61,17 +63,19 @@ namespace DataAccessDLL
                 }
                 else
                 {
-                    SubContract old = new Repository<SubContract>().Get(entity.ID);
-                    old.UPDATED = DateTime.Now;
-                    old.Status = 0;
-                    s.Update(old);
-                    string hisNo = entity.ID.Substring(37);
-                    entity.ID = entity.ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                    _id = entity.ID;//实际id
-                    SubID = entity.ID.Substring(0, 36) + "-1";//原始版本id
-                    entity.Status = 1;
-                    entity.CREATED = old.CREATED;
-                    s.Save(entity);
+                    entity.UPDATED = DateTime.Now;
+                    s.Update(entity);
+                    //SubContract old = new Repository<SubContract>().Get(entity.ID);
+                    //old.UPDATED = DateTime.Now;
+                    //old.Status = 0;
+                    //s.Update(old);
+                    //string hisNo = entity.ID.Substring(37);
+                    //entity.ID = entity.ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                    //_id = entity.ID;//实际id
+                    //SubID = entity.ID.Substring(0, 36) + "-1";//原始版本id
+                    //entity.Status = 1;
+                    //entity.CREATED = old.CREATED;
+                    //s.Save(entity);
                 }
                 #endregion
 
@@ -153,12 +157,13 @@ namespace DataAccessDLL
             qlist.Add(new QueryField() { Name = "SubID", Type = QueryFieldType.String, Value = SubID });
             
             #region  分包合同
-            sqlSub.Append(" select * from SubContract s");
-            //sqlSub.Append(" where Status=@status and substr(s.Id,1,37)||'1'=@SubID");
-            sqlSub.Append(" where Status=@status and substr(s.Id,1,36)=@SubID");
-            sqlSub.Append(" order by s.CREATED");
-            DataTable Sub = NHHelper.ExecuteDataTable(sqlSub.ToString(), qlist);
-            subContract = Sub == null ? new SubContract() : JsonHelper.TableToEntity<SubContract>(Sub);
+            subContract = null;
+            //sqlSub.Append(" select * from SubContract s");
+            ////sqlSub.Append(" where Status=@status and substr(s.Id,1,37)||'1'=@SubID");
+            //sqlSub.Append(" where Status=@status and substr(s.Id,1,36)=@SubID");
+            //sqlSub.Append(" order by s.CREATED");
+            //DataTable Sub = NHHelper.ExecuteDataTable(sqlSub.ToString(), qlist);
+            //subContract = Sub == null ? new SubContract() : JsonHelper.TableToEntity<SubContract>(Sub);
             #endregion
 
             #region 附件
@@ -172,7 +177,7 @@ namespace DataAccessDLL
             sqlLCB.Append(" select s.*,d1.Name as FinishStatusName from SubContractLCB s");
             sqlLCB.Append(" left join DictItem d1 on s.FinishStatus = d1.No and d1.DictNo=" + (int)DictCategory.Milestones_FinshStatus);
             sqlLCB.Append(" where s.SubID=@SubID and s.Status=@Status");
-            sqlLCB.Append(" order by s.CREATED");
+            sqlLCB.Append(" order by s.CREATED asc");
             LCB = NHHelper.ExecuteDataTable(sqlLCB.ToString(), qlist);
             #endregion
 
@@ -182,7 +187,7 @@ namespace DataAccessDLL
             sqlSKXX.Append(" left join DictItem d1 on s.FinishStatus = d1.No and d1.DictNo=" + (int)DictCategory.Receivables_FinshStatus);
             //sqlSKXX.Append(" left join DictItem d2 on s.BatchNo = d2.No and d2.DictNo=" + (int)DictCategory.Receivables_BatchNo);
             sqlSKXX.Append(" where SubID=@SubID and Status=@Status");
-            sqlSKXX.Append(" order by s.CREATED");
+            sqlSKXX.Append(" order by s.CREATED asc");
             SKXX = NHHelper.ExecuteDataTable(sqlSKXX.ToString(), qlist);
             #endregion
 

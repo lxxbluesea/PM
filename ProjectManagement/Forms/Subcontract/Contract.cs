@@ -37,6 +37,8 @@ namespace ProjectManagement.Forms.Subcontract
 
         private string SKXXID = null;//收款信息id
         private DateTime SKXXCREATED = DateTime.MinValue;//收款信息创建时间
+        SubContract entity;
+        SubContractLCB lcb;
 
         string _fileContractHTSMJName;
         string _fileContractHTDZDName;
@@ -53,6 +55,8 @@ namespace ProjectManagement.Forms.Subcontract
         public Contract()
         {
             InitializeComponent();
+
+            Init_Controls();
 
             //主合同编号、名称
             ContractJBXX conJBXX = new ProjectInfoBLL().GetJBXX(ProjectId);
@@ -140,17 +144,18 @@ namespace ProjectManagement.Forms.Subcontract
             #endregion
 
             #region 分包合同信息
-            SubContract entity = new SubContract();
-            entity.Desc = txtDesc.Text.ToString();
-            entity.Amount = txtAmount.Text.ToString();
+            //entity = new SubContract();
+            entity.Desc = txtDesc.Text;
+            entity.Amount = txtAmount.Text;
             entity.A_Name = txtA_Name.Text;
             entity.A_No = txtA_No.Text;
             entity.B_Name = txtB_Name.Text;
             entity.B_No = txtB_No.Text;
             entity.CompanyName = (ComboItem)cmbCompanyName.SelectedItem != null ? ((ComboItem)cmbCompanyName.SelectedItem).Value.ToString() : "";
             entity.PID = ProjectId;
+            entity.Status = 1;
             entity.SignDate = dtiSignDate.Value;
-            entity.ID = _id;
+            //entity.ID = _id;
             #endregion
 
             JsonResult json = bll.SaveSubContract(entity, dicFile, out _id);
@@ -169,6 +174,17 @@ namespace ProjectManagement.Forms.Subcontract
         /// <param name="e"></param>
         private void btnClearContract_Click(object sender, EventArgs e)
         {
+            Init_Controls();
+        }
+
+        /// <summary>
+        /// 初始化控件
+        /// </summary>
+        void Init_Controls()
+        {
+
+            entity = new SubContract();
+
             SubID = null;
             _id = null;
 
@@ -185,7 +201,7 @@ namespace ProjectManagement.Forms.Subcontract
             LoadFile();
             btnFClear_Click(null, null);
             gridFile.PrimaryGrid.DataSource = null;
-             
+
 
             btnClearLCB_Click(null, null);
             btnClearSKXX_Click(null, null);
@@ -321,27 +337,44 @@ namespace ProjectManagement.Forms.Subcontract
             btnClearLCB_Click(null, null);
 
             GridRow row = (GridRow)rows[0];
-            SubContract Sub = new SubContract();
+            entity = new SubContract();
+            entity.ID = row.GetCell("ID").Value.ToString();
+            entity.PID = row.GetCell("PID").Value.ToString();
+            entity.A_No = row.GetCell("A_No").Value.ToString();
+            entity.A_Name = row.GetCell("A_Name").Value.ToString();
+            entity.B_No = row.GetCell("B_No").Value.ToString();
+            entity.B_Name = row.GetCell("B_Name").Value.ToString();
+            entity.CompanyName = row.GetCell("CompanyName").Value.ToString();
+            entity.Amount = row.GetCell("Amount").Value.ToString();
+            entity.SignDate = DateTime.Parse(row.GetCell("SignDate").Value.ToString());
+            entity.Desc = row.GetCell("Desc").Value.ToString();
+            entity.Status = int.Parse(row.GetCell("Status").Value.ToString());
+            entity.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+            if (row.GetCell("UPDATED").Value != null && row.GetCell("UPDATED").Value.ToString()!="")
+            {
+                entity.UPDATED = DateTime.Parse(row.GetCell("UPDATED").Value.ToString());
+            }
+            //SubContract Sub = new SubContract();
             DataTable file = new DataTable();
             DataTable lcb = new DataTable();
             DataTable skxx = new DataTable();
             SubContract sub = new SubContract();
-            bll.GetSubContractAll(row.Cells["ID"].Value.ToString().Substring(0,36), out sub, out file, out lcb, out skxx);
+            bll.GetSubContractAll(row.Cells["ID"].Value.ToString(), out sub, out file, out lcb, out skxx);
 
             #region 合同信息
-            txtA_Name.Text = sub.A_Name;
-            txtAmount.Text = sub.Amount;
-            txtA_No.Text = sub.A_No;
-            txtB_Name.Text = sub.B_Name;
-            txtB_No.Text = sub.B_No;
-            cmbCompanyName.SelectedIndex = -1;
-            DataHelper.SetComboBoxSelectItemByValue(cmbCompanyName, sub.CompanyName);
+            txtA_Name.Text = entity.A_Name;
+            txtAmount.Text = entity.Amount;
+            txtA_No.Text = entity.A_No;
+            txtB_Name.Text = entity.B_Name;
+            txtB_No.Text = entity.B_No;
+            if (cmbCompanyName.Items.Count > 1)
+                DataHelper.SetComboBoxSelectItemByValue(cmbCompanyName, entity.CompanyName);
             //DataHelper.SetComboBoxSelectItemByValue(cmbCompanyName, sub.CompanyName);
-            txtDesc.Text = sub.Desc;
-            dtiSignDate.Value = sub.SignDate.Value;
-            CREATED = sub.CREATED;
-            _id = sub.ID;//实际id
-            SubID = sub.ID.Substring(0, 36);//版本id
+            txtDesc.Text = entity.Desc;
+            dtiSignDate.Value = entity.SignDate.Value;
+            CREATED = entity.CREATED;
+            _id = entity.ID;//实际id
+            SubID = entity.ID.Substring(0, 36);//版本id
             #endregion
 
             //附件信息
@@ -377,7 +410,7 @@ namespace ProjectManagement.Forms.Subcontract
                 return;
             }
             #endregion
-            SubContractLCB lcb = new SubContractLCB();
+            //lcb = new SubContractLCB();
             lcb.Condition = txtLCBCondition.Text;
             lcb.FinishDate = dtiLCBFinishDate.Value;
             ComboItem item = (ComboItem)cmbLCBFinishStatus.SelectedItem;
@@ -386,8 +419,8 @@ namespace ProjectManagement.Forms.Subcontract
             lcb.Name = txtLCBName.Text;
             lcb.Remark = txtLCBRemark.Text;
             lcb.SubID = SubID;//版本id;
-            lcb.ID = LCBID;
-            lcb.CREATED = LCBCREATED;
+            //lcb.ID = LCBID;
+            //lcb.CREATED = LCBCREATED;
             JsonResult json = bll.SaveLCB(lcb);
             MessageHelper.ShowRstMsg(json.result);
             if (json.result)
@@ -403,6 +436,7 @@ namespace ProjectManagement.Forms.Subcontract
         /// <param name="e"></param>
         private void btnClearLCB_Click(object sender, EventArgs e)
         {
+            lcb = new SubContractLCB();
             txtLCBCondition.Clear();
             dtiLCBFinishDate.Value = DateTime.Today;
             cmbLCBFinishStatus.SelectedIndex = -1;
@@ -513,6 +547,20 @@ namespace ProjectManagement.Forms.Subcontract
                 return;
             }
             GridRow row = (GridRow)rows[0];
+            lcb = new SubContractLCB();
+
+            lcb.ID = row.Cells["ID"].Value.ToString();
+            lcb.Name = row.Cells["Name"].Value.ToString();
+            lcb.Condition = row.Cells["Condition"].Value.ToString();
+            lcb.SubID = row.Cells["SubID"].Value.ToString();
+            lcb.FinishDate = DateTime.Parse(row.Cells["FinishDate"].Value.ToString());
+            lcb.Remark = row.Cells["Remark"].Value.ToString();
+            lcb.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            lcb.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            lcb.FinishStatus = int.Parse(row.Cells["FinishStatus"].Value.ToString());
+            
+
+
             txtLCBCondition.Text = row.Cells["Condition"].Value.ToString();
             txtLCBName.Text = row.Cells["Name"].Value.ToString();
             txtLCBRemark.Text = row.Cells["Remark"].Value.ToString();

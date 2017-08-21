@@ -18,7 +18,7 @@ namespace DataAccessDLL
             StringBuilder sql = new StringBuilder();
             sql.Append(" select * from Supplier");
             sql.Append(" where Status=@Status and PID=@PID");
-            sql.Append(" order by CREATED");
+            sql.Append(" order by CREATED asc");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qlist);
             if (dt != null)
             {
