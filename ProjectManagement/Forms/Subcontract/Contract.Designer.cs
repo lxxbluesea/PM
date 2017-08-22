@@ -790,7 +790,7 @@
             this.superTabControl1.SelectedTabIndex = 0;
             this.superTabControl1.Size = new System.Drawing.Size(351, 733);
             this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.superTabControl1.TabIndex = 2;
+            this.superTabControl1.TabIndex = 0;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1,
             this.superTabItem2});
@@ -1588,8 +1588,10 @@
             // gridColumn17
             // 
             this.gridColumn17.DataPropertyName = "RowNo";
+            this.gridColumn17.FillWeight = 60;
             this.gridColumn17.HeaderText = "编号";
             this.gridColumn17.Name = "RowNo";
+            this.gridColumn17.Width = 60;
             // 
             // gridColumn18
             // 
@@ -1642,14 +1644,14 @@
             // gridColumn34
             // 
             this.gridColumn34.DataPropertyName = "CREATED";
+            this.gridColumn34.HeaderText = "添加时间";
             this.gridColumn34.Name = "CREATED";
-            this.gridColumn34.Visible = false;
             // 
             // gridColumn35
             // 
             this.gridColumn35.DataPropertyName = "UPDATED";
+            this.gridColumn35.HeaderText = "更新时间";
             this.gridColumn35.Name = "UPDATED";
-            this.gridColumn35.Visible = false;
             // 
             // gridColumn36
             // 

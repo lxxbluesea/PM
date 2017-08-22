@@ -39,6 +39,7 @@ namespace ProjectManagement.Forms.Subcontract
         private DateTime SKXXCREATED = DateTime.MinValue;//收款信息创建时间
         SubContract entity;
         SubContractLCB lcb;
+        SubContractSKXX skxx;
 
         string _fileContractHTSMJName;
         string _fileContractHTDZDName;
@@ -468,7 +469,7 @@ namespace ProjectManagement.Forms.Subcontract
                 return;
             }
             #endregion
-            SubContractSKXX skxx = new SubContractSKXX();
+            //skxx = new SubContractSKXX();
             skxx.Amount = int.Parse(SKXXAmount.Text);
             //ComboItem item = (ComboItem)cmbSKXXBatchNo.SelectedItem;
             //if (item != null)
@@ -482,7 +483,7 @@ namespace ProjectManagement.Forms.Subcontract
             skxx.Ratio = itiSKXXRatio.Value;
             skxx.Remark = txtSKXXRemark.Text;
             skxx.SubID = SubID;//版本id
-            skxx.CREATED = SKXXCREATED;
+            //skxx.CREATED = SKXXCREATED;
             skxx.ID = SKXXID;
             JsonResult json = bll.SaveSKXX(skxx);
             MessageHelper.ShowRstMsg(json.result);
@@ -499,6 +500,7 @@ namespace ProjectManagement.Forms.Subcontract
         /// <param name="e"></param>
         private void btnClearSKXX_Click(object sender, EventArgs e)
         {
+            skxx = new SubContractSKXX();
             SKXXAmount.Clear();
             SKXXBatchNo.Clear();
             //cmbSKXXBatchNo.SelectedIndex = -1;
@@ -584,6 +586,22 @@ namespace ProjectManagement.Forms.Subcontract
                 return;
             }
             GridRow row = (GridRow)rows[0];
+            skxx = new SubContractSKXX();
+            skxx.ID = row.Cells["ID"].Value.ToString();
+            skxx.SubID = row.Cells["SubID"].Value.ToString();
+            skxx.Amount = int.Parse(row.Cells["Amount"].Value.ToString());
+            skxx.BatchNo = row.Cells["BatchNo"].Value.ToString();
+            skxx.Condition = row.Cells["Condition"].Value.ToString();
+            skxx.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            skxx.FinishStatus = int.Parse(row.Cells["FinishStatus"].Value.ToString());
+            skxx.Remark = row.Cells["Remark"].Value.ToString();
+            skxx.InDate = DateTime.Parse(row.Cells["InDate"].Value.ToString());
+            skxx.Ratio = int.Parse(row.Cells["Ratio"].Value.ToString());
+            skxx.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            if (row.Cells["UPDATED"].Value != null && row.Cells["UPDATED"].Value.ToString() != "")
+                skxx.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
+
             txtSKXXCondition.Text = row.Cells["Condition"].Value.ToString();
             txtSKXXRemark.Text = row.Cells["Remark"].Value.ToString();
             SKXXBatchNo.Text = row.Cells["BatchNo"].Value.ToString();
