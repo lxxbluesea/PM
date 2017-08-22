@@ -27,6 +27,7 @@ namespace ProjectManagement.Forms.Income
         #region 变量
         private string ID = null;
         private DateTime CREATED = DateTime.Now;
+        DomainDLL.Cost cost;
         #endregion
 
         #region 事件
@@ -37,7 +38,8 @@ namespace ProjectManagement.Forms.Income
         }
 
         private void Cost_Load(object sender, EventArgs e)
-        {            
+        {
+            Init_Controls();
             DataBind();           
         }
 
@@ -57,6 +59,29 @@ namespace ProjectManagement.Forms.Income
         /// <param name="e"></param>
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            Init_Controls();
+            //ID = null;
+            //txtExplanation.Clear();
+            //txtRemaining.Clear();
+            //txtRemark.Clear();
+            //txtTag.Clear();
+            ////清除预算金额，如果不清除的话，txtRemaining的值不会自动计算出来。还注销了txtRemaining.Text = "0";此行代码
+            ////liuxuexian 2017/6/30
+            //txtTotal.Clear();
+            ////结束
+            //var amount = GetAmount();
+            //txtTotal.Text = amount < 0 ? "0" : amount.ToString();
+            //txtTransit.Text = "0";
+            //txtUsed.Text = "0";
+            ////txtRemaining.Text = "0";
+            //superGridControl1.PrimaryGrid.ClearSelectedRows();
+        }
+        /// <summary>
+        /// 初始化所有的控件
+        /// </summary>
+        void Init_Controls()
+        {
+            cost = new DomainDLL.Cost();
             ID = null;
             txtExplanation.Clear();
             txtRemaining.Clear();
@@ -119,9 +144,9 @@ namespace ProjectManagement.Forms.Income
             #endregion
             #endregion
 
-            DomainDLL.Cost cost = new DomainDLL.Cost();
-            cost.ID = ID;
-            cost.CREATED = CREATED;
+            //cost = new DomainDLL.Cost();
+            //cost.ID = ID;
+            //cost.CREATED = CREATED;
             cost.Explanation = txtExplanation.Text.ToString();
             cost.Remaining = Convert.ToDecimal(string.IsNullOrEmpty(txtRemaining.Text.ToString()) ? "0" : txtRemaining.Text.ToString());
             cost.Remark = txtRemark.Text.ToString();
@@ -155,6 +180,23 @@ namespace ProjectManagement.Forms.Income
                 return;
             }
             GridRow row = (GridRow)rows[0];
+
+            cost = new DomainDLL.Cost();
+
+            cost.ID = row.Cells["ID"].Value.ToString();
+            cost.PID = row.Cells["PID"].Value.ToString();
+            cost.Tag = row.Cells["Tag"].Value.ToString();
+            cost.Explanation = row.Cells["Explanation"].Value.ToString();
+            cost.Total = int.Parse(row.Cells["Total"].Value.ToString());
+            cost.Used = int.Parse(row.Cells["Used"].Value.ToString());
+            cost.Transit = int.Parse(row.Cells["Transit"].Value.ToString());
+            cost.Remaining = int.Parse(row.Cells["Remaining"].Value.ToString());
+            cost.Remark = row.Cells["Remark"].Value.ToString();
+            cost.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            cost.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (row.Cells["UPDATED"].Value != null && row.Cells["UPDATED"].Value.ToString() != "")
+                cost.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
 
             txtExplanation.Text = row.Cells["Explanation"].Value == null ? "" : row.Cells["Explanation"].Value.ToString();
             txtRemaining.Text = row.Cells["Remaining"].Value.ToString();

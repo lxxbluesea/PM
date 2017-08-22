@@ -89,7 +89,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(874, 546);
+            this.groupPanel1.Size = new System.Drawing.Size(874, 472);
             // 
             // 
             // 
@@ -125,12 +125,12 @@
             // 
             this.ClearButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.ClearButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.ClearButton.Location = new System.Drawing.Point(320, 417);
+            this.ClearButton.Location = new System.Drawing.Point(407, 417);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(56, 19);
             this.ClearButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ClearButton.TabIndex = 7;
+            this.ClearButton.TabIndex = 8;
             this.ClearButton.Text = "清空";
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -138,12 +138,12 @@
             // 
             this.SaveButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.SaveButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.SaveButton.Location = new System.Drawing.Point(456, 417);
+            this.SaveButton.Location = new System.Drawing.Point(320, 417);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(56, 19);
             this.SaveButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SaveButton.TabIndex = 8;
+            this.SaveButton.TabIndex = 7;
             this.SaveButton.Text = "保存";
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
@@ -163,7 +163,7 @@
             this.txtRemaining.Name = "txtRemaining";
             this.txtRemaining.PreventEnterBeep = true;
             this.txtRemaining.Size = new System.Drawing.Size(167, 21);
-            this.txtRemaining.TabIndex = 2;
+            this.txtRemaining.TabIndex = 5;
             this.txtRemaining.Text = "0";
             this.txtRemaining.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -182,7 +182,7 @@
             this.txtTransit.Name = "txtTransit";
             this.txtTransit.PreventEnterBeep = true;
             this.txtTransit.Size = new System.Drawing.Size(167, 21);
-            this.txtTransit.TabIndex = 5;
+            this.txtTransit.TabIndex = 4;
             this.txtTransit.Text = "0";
             this.txtTransit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTransit.TextChanged += new System.EventHandler(this.txtTransit_TextChanged);
@@ -202,7 +202,7 @@
             this.txtUsed.Name = "txtUsed";
             this.txtUsed.PreventEnterBeep = true;
             this.txtUsed.Size = new System.Drawing.Size(167, 21);
-            this.txtUsed.TabIndex = 4;
+            this.txtUsed.TabIndex = 3;
             this.txtUsed.Text = "0";
             this.txtUsed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtUsed.TextChanged += new System.EventHandler(this.txtUsed_TextChanged);
@@ -222,7 +222,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PreventEnterBeep = true;
             this.txtTotal.Size = new System.Drawing.Size(167, 21);
-            this.txtTotal.TabIndex = 3;
+            this.txtTotal.TabIndex = 2;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
@@ -242,7 +242,7 @@
             this.txtExplanation.Name = "txtExplanation";
             this.txtExplanation.PreventEnterBeep = true;
             this.txtExplanation.Size = new System.Drawing.Size(167, 21);
-            this.txtExplanation.TabIndex = 2;
+            this.txtExplanation.TabIndex = 1;
             // 
             // labelX6
             // 
@@ -343,7 +343,7 @@
             this.txtTag.Name = "txtTag";
             this.txtTag.PreventEnterBeep = true;
             this.txtTag.Size = new System.Drawing.Size(167, 21);
-            this.txtTag.TabIndex = 1;
+            this.txtTag.TabIndex = 0;
             // 
             // labelX7
             // 
@@ -408,9 +408,11 @@
             // 
             this.gridColumn1.AllowEdit = false;
             this.gridColumn1.DataPropertyName = "RowNo";
+            this.gridColumn1.FillWeight = 60;
             this.gridColumn1.HeaderText = "编号";
             this.gridColumn1.Name = "RowNo";
             this.gridColumn1.Tag = "";
+            this.gridColumn1.Width = 60;
             // 
             // gridColumn2
             // 
@@ -476,14 +478,18 @@
             // gridColumn11
             // 
             this.gridColumn11.DataPropertyName = "CREATED";
+            this.gridColumn11.FillWeight = 130;
+            this.gridColumn11.HeaderText = "创建时间";
             this.gridColumn11.Name = "CREATED";
-            this.gridColumn11.Visible = false;
+            this.gridColumn11.Width = 130;
             // 
             // gridColumn12
             // 
             this.gridColumn12.DataPropertyName = "UPDATED";
+            this.gridColumn12.FillWeight = 130;
+            this.gridColumn12.HeaderText = "更新时间";
             this.gridColumn12.Name = "UPDATED";
-            this.gridColumn12.Visible = false;
+            this.gridColumn12.Width = 130;
             // 
             // gridColumn13
             // 
@@ -496,7 +502,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(884, 549);
+            this.ClientSize = new System.Drawing.Size(884, 475);
             this.Controls.Add(this.groupPanel1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Cost";

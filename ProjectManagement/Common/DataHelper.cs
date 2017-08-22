@@ -455,15 +455,15 @@ namespace ProjectManagement
             for (int i = 0; i < cb.Items.Count; ++i)
             {
                 ComboItem dr = (ComboItem)(cb.Items[i]);
-                if (dr.Text.ToString() == Text)
+                if (dr.Value.ToString() == Text)
                 {
                     cb.SelectedIndex = i;
                     break;
                 }
-                else
-                {
-                    continue;
-                }
+                //else
+                //{
+                //    continue;
+                //}
             }
         }
         #endregion#region 基础数据列表加载

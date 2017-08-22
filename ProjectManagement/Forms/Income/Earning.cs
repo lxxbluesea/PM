@@ -28,6 +28,7 @@ namespace ProjectManagement.Forms.Income
         private DateTime CREATED = DateTime.Now;
         private string FilePath = null;
         private int recordcount = 0;
+        DomainDLL.Income income;
         #endregion
 
         #region 事件
@@ -77,14 +78,14 @@ namespace ProjectManagement.Forms.Income
             //}
             #endregion
 
-            DomainDLL.Income income = new DomainDLL.Income();
-            income.ID = ID;
-            income.CREATED = CREATED;
+            //income = new DomainDLL.Income();
+            //income.ID = ID;
+            //income.CREATED = CREATED;
             income.Ratio = Convert.ToDecimal(string.IsNullOrEmpty(iRatio.Text.ToString()) ? "0" : iRatio.Text.ToString());
             income.Remark = txtRemark.Text.ToString();
             income.Step = txtStep.Text.ToString();
             income.Explanation = txtExplanation.Text.ToString();
-            income.UPDATED = DateTime.Now;
+            //income.UPDATED = DateTime.Now;
             ComboItem item = (ComboItem)cbSFinishStatus.SelectedItem;
             if (item != null)
                 income.FinishStatus = int.Parse(item.Value.ToString());
@@ -113,6 +114,7 @@ namespace ProjectManagement.Forms.Income
         /// <param name="e"></param>
         private void btnClear_Click(object sender, EventArgs e)
         {
+            income = new DomainDLL.Income();
             ID = null;
             FilePath = null;
             txtStep.Clear();
@@ -166,6 +168,22 @@ namespace ProjectManagement.Forms.Income
                 return;
             }
             GridRow row = (GridRow)rows[0];
+            income = new DomainDLL.Income();
+            income.ID = row.Cells["ID"].Value.ToString();
+            income.PID = row.Cells["PID"].Value.ToString();
+            income.Step = row.Cells["Step"].Value.ToString();
+            income.Ratio = int.Parse(row.Cells["Ratio"].Value.ToString());
+            income.FinishTag = row.Cells["FinishTag"].Value.ToString();
+            income.FinishStatus = int.Parse(row.Cells["FinishStatus"].Value.ToString());
+            income.FilePath = row.Cells["FilePath"].Value.ToString();
+            income.Remark = row.Cells["Remark"].Value.ToString();
+            income.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            income.Explanation = row.Cells["Explanation"].Value.ToString();
+            income.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (row.Cells["UPDATED"].Value != null && row.Cells["UPDATED"].Value.ToString()!="")
+                income.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
+
             txtFinishTag.Text = row.Cells["FinishTag"].Value == null ?"":row.Cells["FinishTag"].Value.ToString();
             DataHelper.SetComboBoxSelectItemByText(cbSFinishStatus, row.Cells["FinishStatus"].Value == null ? "-1" : row.Cells["FinishStatus"].Value.ToString());
             txtRemark.Text = row.Cells["FinishStatus"].Value == null ? "" : row.Cells["Remark"].Value.ToString();

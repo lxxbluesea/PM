@@ -61,10 +61,9 @@ namespace BussinessDLL
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select i.*,d.Name as FinishStatusName from Income i");
-            sql.Append(" left join DictItem d on d.No = i.FinishStatus and d.DictNo = " + (int)DictCategory.EarningStatus);
+            sql.Append(" select * from Income");
             sql.Append(" where PID=@PID and Status=@Status");
-            sql.Append(" order by Created");
+            sql.Append(" order by Created asc");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qf);
             return dt;
         }
