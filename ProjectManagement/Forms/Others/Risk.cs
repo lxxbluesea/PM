@@ -30,16 +30,16 @@ namespace ProjectManagement.Forms.Others
 
         #region 变量
         private string ID = null;
-        private DateTime CREATED = DateTime.MinValue;
+        private DateTime CREATED = DateTime.Now;
         #endregion
 
         #region 事件
         public Risk()
         {
             InitializeComponent();
-            dtiAccessDesc.Value = DateTime.Today;
-            dtiFindDate.Value = DateTime.Today;
-            dtiHandleDate.Value = DateTime.Today;
+            dtiAccessDesc.Value = DateTime.Now;
+            dtiFindDate.Value = DateTime.Now;
+            dtiHandleDate.Value = DateTime.Now;
         }
 
         /// <summary>

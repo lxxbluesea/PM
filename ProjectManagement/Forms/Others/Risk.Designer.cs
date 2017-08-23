@@ -215,8 +215,10 @@
             // gridColumn1
             // 
             this.gridColumn1.DataPropertyName = "RowNo";
+            this.gridColumn1.FillWeight = 60;
             this.gridColumn1.HeaderText = "编号";
             this.gridColumn1.Name = "RowNo";
+            this.gridColumn1.Width = 60;
             // 
             // gridColumn2
             // 
@@ -426,12 +428,12 @@
             // 
             this.btnSave3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave3.Location = new System.Drawing.Point(160, 210);
+            this.btnSave3.Location = new System.Drawing.Point(74, 210);
             this.btnSave3.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave3.Name = "btnSave3";
             this.btnSave3.Size = new System.Drawing.Size(56, 18);
             this.btnSave3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave3.TabIndex = 19;
+            this.btnSave3.TabIndex = 3;
             this.btnSave3.Text = "保存";
             this.btnSave3.Click += new System.EventHandler(this.btnSave3_Click);
             // 
@@ -446,7 +448,7 @@
             this.cmbHandleType.Name = "cmbHandleType";
             this.cmbHandleType.Size = new System.Drawing.Size(186, 25);
             this.cmbHandleType.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbHandleType.TabIndex = 15;
+            this.cmbHandleType.TabIndex = 0;
             // 
             // labelX9
             // 
@@ -465,12 +467,12 @@
             // 
             this.btnClear3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear3.Location = new System.Drawing.Point(74, 210);
+            this.btnClear3.Location = new System.Drawing.Point(150, 210);
             this.btnClear3.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear3.Name = "btnClear3";
             this.btnClear3.Size = new System.Drawing.Size(56, 18);
             this.btnClear3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear3.TabIndex = 18;
+            this.btnClear3.TabIndex = 4;
             this.btnClear3.Text = "清空";
             this.btnClear3.Click += new System.EventHandler(this.btnClear3_Click);
             // 
@@ -522,7 +524,7 @@
             this.dtiHandleDate.Name = "dtiHandleDate";
             this.dtiHandleDate.Size = new System.Drawing.Size(186, 21);
             this.dtiHandleDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiHandleDate.TabIndex = 17;
+            this.dtiHandleDate.TabIndex = 2;
             // 
             // cmbtDepenency
             // 
@@ -573,7 +575,7 @@
             this.txtHandleDesc.PreventEnterBeep = true;
             this.txtHandleDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtHandleDesc.Size = new System.Drawing.Size(186, 132);
-            this.txtHandleDesc.TabIndex = 16;
+            this.txtHandleDesc.TabIndex = 1;
             // 
             // labelX11
             // 
@@ -663,9 +665,9 @@
             this.advTree1.NodesConnector = this.nodeConnector1;
             this.advTree1.NodeStyle = this.elementStyle1;
             this.advTree1.PathSeparator = ";";
-            this.advTree1.Size = new System.Drawing.Size(219, 156);
+            this.advTree1.Size = new System.Drawing.Size(219, 157);
             this.advTree1.Styles.Add(this.elementStyle1);
-            this.advTree1.TabIndex = 16;
+            this.advTree1.TabIndex = 4;
             this.advTree1.Text = "advTree1";
             this.advTree1.Visible = false;
             this.advTree1.AfterCheck += new DevComponents.AdvTree.AdvTreeCellEventHandler(this.advTree1_AfterCheck);
@@ -691,19 +693,19 @@
             this.txtDependency.Location = new System.Drawing.Point(70, 93);
             this.txtDependency.Name = "txtDependency";
             this.txtDependency.Size = new System.Drawing.Size(219, 21);
-            this.txtDependency.TabIndex = 15;
+            this.txtDependency.TabIndex = 3;
             this.txtDependency.Click += new System.EventHandler(this.txtDependency_Click);
             // 
             // btnSave2
             // 
             this.btnSave2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave2.Location = new System.Drawing.Point(157, 210);
+            this.btnSave2.Location = new System.Drawing.Point(71, 210);
             this.btnSave2.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave2.Name = "btnSave2";
             this.btnSave2.Size = new System.Drawing.Size(56, 18);
             this.btnSave2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave2.TabIndex = 14;
+            this.btnSave2.TabIndex = 6;
             this.btnSave2.Text = "保存";
             this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
@@ -718,7 +720,7 @@
             this.cmbProbability.Name = "cmbProbability";
             this.cmbProbability.Size = new System.Drawing.Size(220, 25);
             this.cmbProbability.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbProbability.TabIndex = 9;
+            this.cmbProbability.TabIndex = 2;
             // 
             // cmbLevel
             // 
@@ -731,18 +733,18 @@
             this.cmbLevel.Name = "cmbLevel";
             this.cmbLevel.Size = new System.Drawing.Size(220, 25);
             this.cmbLevel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbLevel.TabIndex = 7;
+            this.cmbLevel.TabIndex = 0;
             // 
             // btnClear2
             // 
             this.btnClear2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear2.Location = new System.Drawing.Point(70, 210);
+            this.btnClear2.Location = new System.Drawing.Point(164, 210);
             this.btnClear2.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear2.Name = "btnClear2";
             this.btnClear2.Size = new System.Drawing.Size(56, 18);
             this.btnClear2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear2.TabIndex = 13;
+            this.btnClear2.TabIndex = 7;
             this.btnClear2.Text = "清空";
             this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
             // 
@@ -774,7 +776,7 @@
             this.txtCostTime.Name = "txtCostTime";
             this.txtCostTime.PreventEnterBeep = true;
             this.txtCostTime.Size = new System.Drawing.Size(219, 21);
-            this.txtCostTime.TabIndex = 8;
+            this.txtCostTime.TabIndex = 1;
             // 
             // dtiAccessDesc
             // 
@@ -824,7 +826,7 @@
             this.dtiAccessDesc.Name = "dtiAccessDesc";
             this.dtiAccessDesc.Size = new System.Drawing.Size(220, 21);
             this.dtiAccessDesc.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiAccessDesc.TabIndex = 12;
+            this.dtiAccessDesc.TabIndex = 5;
             // 
             // labelX13
             // 
@@ -966,12 +968,12 @@
             // 
             this.btnSave1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave1.Location = new System.Drawing.Point(160, 210);
+            this.btnSave1.Location = new System.Drawing.Point(74, 210);
             this.btnSave1.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave1.Name = "btnSave1";
             this.btnSave1.Size = new System.Drawing.Size(56, 18);
             this.btnSave1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave1.TabIndex = 6;
+            this.btnSave1.TabIndex = 4;
             this.btnSave1.Text = "保存";
             this.btnSave1.Click += new System.EventHandler(this.btnSave1_Click);
             // 
@@ -979,7 +981,7 @@
             // 
             this.btnClear1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear1.Location = new System.Drawing.Point(74, 210);
+            this.btnClear1.Location = new System.Drawing.Point(155, 210);
             this.btnClear1.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear1.Name = "btnClear1";
             this.btnClear1.Size = new System.Drawing.Size(56, 18);
@@ -1036,7 +1038,7 @@
             this.dtiFindDate.Name = "dtiFindDate";
             this.dtiFindDate.Size = new System.Drawing.Size(220, 21);
             this.dtiFindDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiFindDate.TabIndex = 4;
+            this.dtiFindDate.TabIndex = 3;
             // 
             // txtDesc
             // 
@@ -1055,7 +1057,7 @@
             this.txtDesc.PreventEnterBeep = true;
             this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDesc.Size = new System.Drawing.Size(220, 97);
-            this.txtDesc.TabIndex = 3;
+            this.txtDesc.TabIndex = 2;
             // 
             // txtName
             // 
@@ -1072,7 +1074,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(220, 21);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 1;
             // 
             // cmbtSource
             // 
@@ -1093,7 +1095,7 @@
             this.cmbtSource.Name = "cmbtSource";
             this.cmbtSource.Size = new System.Drawing.Size(220, 18);
             this.cmbtSource.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbtSource.TabIndex = 1;
+            this.cmbtSource.TabIndex = 0;
             // 
             // labelX4
             // 

@@ -32,7 +32,9 @@ namespace DataAccessDLL
             QueryBody.Append(" left join PNode p1 on r.Source = p1.ID");
             //QueryBody.Append(" left join PNode p2 on r.Dependency = p2.ID");
             QueryBody.Append(" left join PNode p2 on r.Dependency = p2.ID");
-            QueryBody.Append(" where r.PID=@PID  and r.status=@Status order by r.created");
+
+            //QueryBody.Append("select * from risk r");
+            QueryBody.Append(" where r.PID=@PID and r.status=@Status order by r.created asc");
 
             return NHHelper.GetGridData(PageIndex, PageSize, QueryHead.ToString(), QueryBody.ToString(), qlist);
         }
