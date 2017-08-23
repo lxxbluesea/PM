@@ -27,12 +27,14 @@ namespace ProjectManagement.Forms.Income
         #endregion
 
         #region 变量
+        Receivables entity;
         #endregion
 
         #region 事件
         public FormReceivables()
         {
             InitializeComponent();
+            Init_Controls();
             dtSInDate.Value = DateTime.Now;
             DataHelper.LoadDictItems(cbSFinishStatus, DictCategory.Receivables_FinshStatus);
             LoadSK();
@@ -57,20 +59,61 @@ namespace ProjectManagement.Forms.Income
         /// <param name="e"></param>
         private void gridSK_RowClick(object sender, DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs e)
         {
-            DevComponents.DotNetBar.SuperGrid.GridElement list = gridSK.GetSelectedRows()[0];
-            string s = list.ToString();
-            s = s.Replace("{", ",");
-            s = s.Replace("}", ",");
-            string[] listS = s.Split(',');
-            txtSBatchNo.Tag = listS[1].Trim();
-            txtSBatchNo.Text = listS[3].Trim();
-            txtExplanation.Text = listS[4] == "<null>" ? "" : listS[4].Trim();
-            intSRatio.Value = listS[5] == "<null>" ? 0 : int.Parse(listS[5].Trim());
-            txtAmount.Text = listS[6] == "<null>" ? "0" : listS[6].Trim();
-            txtSCondition.Text = listS[7] == "<null>" ? "" : listS[7].Trim();
-            dtSInDate.Value = listS[9] == "<null>" ? DateTime.Now : DateTime.Parse(listS[9].Trim());
-            DataHelper.SetComboBoxSelectItemByText(cbSFinishStatus, listS[8] == "<null>" ? "-1" : listS[8].Trim());
-            txtSRemark.Text = listS[10] == "<null>" ? "" : listS[10].Trim();
+
+            var rows = gridSK.PrimaryGrid.GetSelectedRows();
+            if (rows.Count != 1)
+            {
+                MessageBox.Show("请选择一行");
+                gridSK.PrimaryGrid.ClearSelectedColumns();
+                return;
+            }
+            GridRow row = (GridRow)rows[0];
+            entity = new Receivables();
+            entity.ID = row.GetCell("ID").Value.ToString();
+            entity.PID = row.GetCell("PID").Value.ToString();
+            entity.BatchNo = row.GetCell("BatchNo").Value.ToString();
+            entity.Explanation = row.GetCell("Explanation").Value.ToString();
+            entity.Ratio = int.Parse(row.GetCell("Ratio").Value.ToString());
+            entity.FinishStatus = int.Parse(row.GetCell("FinishStatus").Value.ToString());
+            entity.Amount = int.Parse(row.GetCell("Amount").Value.ToString());
+            entity.Condition = row.GetCell("Condition").Value.ToString();
+            entity.Remark = row.GetCell("Remark").Value.ToString();
+            entity.InDate = DateTime.Parse(row.GetCell("InDate").Value.ToString());
+            entity.Status = int.Parse(row.GetCell("Status").Value.ToString());
+            entity.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (row.Cells["UPDATED"].Value != null && row.Cells["UPDATED"].Value.ToString() != "")
+                entity.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
+
+            txtSBatchNo.Text = entity.BatchNo;
+            txtExplanation.Text = entity.Explanation;
+            intSRatio.Value = (int)entity.Ratio;
+            txtAmount.Text = entity.Amount.ToString();
+            txtSCondition.Text = entity.Condition;
+            dtSInDate.Value = (DateTime)entity.InDate;
+            txtSRemark.Text = entity.Remark;
+            DataHelper.SetComboBoxSelectItemByText(cbSFinishStatus, entity.FinishStatus.ToString());
+
+            
+
+
+
+
+            //DevComponents.DotNetBar.SuperGrid.GridElement list = gridSK.GetSelectedRows()[0];
+
+            //string s = list.ToString();
+            //s = s.Replace("{", ",");
+            //s = s.Replace("}", ",");
+            //string[] listS = s.Split(',');
+            //txtSBatchNo.Tag = listS[1].Trim();
+            //txtSBatchNo.Text = listS[3].Trim();
+            //txtExplanation.Text = listS[4] == "<null>" ? "" : listS[4].Trim();
+            //intSRatio.Value = listS[5] == "<null>" ? 0 : int.Parse(listS[5].Trim());
+            //txtAmount.Text = listS[6] == "<null>" ? "0" : listS[6].Trim();
+            //txtSCondition.Text = listS[7] == "<null>" ? "" : listS[7].Trim();
+            //dtSInDate.Value = listS[9] == "<null>" ? DateTime.Now : DateTime.Parse(listS[9].Trim());
+            //DataHelper.SetComboBoxSelectItemByText(cbSFinishStatus, listS[8] == "<null>" ? "-1" : listS[8].Trim());
+            //txtSRemark.Text = listS[10] == "<null>" ? "" : listS[10].Trim();
         }
 
         /// <summary>
@@ -81,8 +124,8 @@ namespace ProjectManagement.Forms.Income
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Receivables entity = new Receivables();
-            entity.ID = txtSBatchNo.Tag == null ? "" : txtSBatchNo.Tag.ToString();
+            //entity = new Receivables();
+            //entity.ID = txtSBatchNo.Tag == null ? "" : txtSBatchNo.Tag.ToString();
             entity.PID = ProjectId;
             entity.BatchNo = txtSBatchNo.Text;
             ComboItem item = (ComboItem)cbSFinishStatus.SelectedItem;
@@ -95,7 +138,7 @@ namespace ProjectManagement.Forms.Income
             entity.Condition = txtSCondition.Text;
             entity.Remark = txtSRemark.Text;
             entity.InDate = dtSInDate.Value;
-            entity.Explanation = txtExplanation.Text.ToString();
+            entity.Explanation = txtExplanation.Text;
             #region 判断空值
             if (string.IsNullOrEmpty(entity.BatchNo))
             {
@@ -145,6 +188,13 @@ namespace ProjectManagement.Forms.Income
         /// <param name="e"></param>
         private void btnSClear_Click(object sender, EventArgs e)
         {
+            Init_Controls();
+        }
+
+
+        void Init_Controls()
+        {
+            entity = new Receivables();
             txtSBatchNo.Tag = null;
             txtSBatchNo.Clear();
             txtExplanation.Clear();

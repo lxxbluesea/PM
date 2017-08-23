@@ -59,6 +59,10 @@
             this.intSRatio = new DevComponents.Editors.IntegerInput();
             this.labelX49 = new DevComponents.DotNetBar.LabelX();
             this.labelX48 = new DevComponents.DotNetBar.LabelX();
+            this.gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtSInDate)).BeginInit();
@@ -130,6 +134,10 @@
             this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn6);
             this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn7);
             this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn8);
+            this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn11);
+            this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn12);
+            this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn13);
+            this.gridSK.PrimaryGrid.Columns.Add(this.gridColumn14);
             this.gridSK.PrimaryGrid.MultiSelect = false;
             this.gridSK.PrimaryGrid.ReadOnly = true;
             this.gridSK.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
@@ -145,8 +153,10 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.FillWeight = 60;
             this.gridColumn1.HeaderText = "编号";
             this.gridColumn1.Name = "RowNo";
+            this.gridColumn1.Width = 60;
             // 
             // gridColumn10
             // 
@@ -179,7 +189,8 @@
             // gridColumn6
             // 
             this.gridColumn6.HeaderText = "完成情况";
-            this.gridColumn6.Name = "FinishStatusName";
+            this.gridColumn6.Name = "FinishStatus";
+            this.gridColumn6.Visible = false;
             // 
             // gridColumn7
             // 
@@ -262,7 +273,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.PreventEnterBeep = true;
             this.txtAmount.Size = new System.Drawing.Size(251, 21);
-            this.txtAmount.TabIndex = 32;
+            this.txtAmount.TabIndex = 3;
             // 
             // txtExplanation
             // 
@@ -275,7 +286,7 @@
             this.txtExplanation.Name = "txtExplanation";
             this.txtExplanation.PreventEnterBeep = true;
             this.txtExplanation.Size = new System.Drawing.Size(251, 21);
-            this.txtExplanation.TabIndex = 31;
+            this.txtExplanation.TabIndex = 1;
             // 
             // labelX1
             // 
@@ -302,7 +313,7 @@
             this.txtSBatchNo.Name = "txtSBatchNo";
             this.txtSBatchNo.PreventEnterBeep = true;
             this.txtSBatchNo.Size = new System.Drawing.Size(251, 21);
-            this.txtSBatchNo.TabIndex = 29;
+            this.txtSBatchNo.TabIndex = 0;
             // 
             // cbSFinishStatus
             // 
@@ -315,13 +326,13 @@
             this.cbSFinishStatus.Name = "cbSFinishStatus";
             this.cbSFinishStatus.Size = new System.Drawing.Size(252, 25);
             this.cbSFinishStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbSFinishStatus.TabIndex = 2;
+            this.cbSFinishStatus.TabIndex = 6;
             // 
             // btnSSave
             // 
             this.btnSSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSSave.Location = new System.Drawing.Point(566, 203);
+            this.btnSSave.Location = new System.Drawing.Point(474, 201);
             this.btnSSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSSave.Name = "btnSSave";
             this.btnSSave.Size = new System.Drawing.Size(56, 18);
@@ -334,7 +345,7 @@
             // 
             this.btnSClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSClear.Location = new System.Drawing.Point(474, 201);
+            this.btnSClear.Location = new System.Drawing.Point(546, 201);
             this.btnSClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnSClear.Name = "btnSClear";
             this.btnSClear.Size = new System.Drawing.Size(56, 18);
@@ -391,7 +402,7 @@
             this.dtSInDate.Name = "dtSInDate";
             this.dtSInDate.Size = new System.Drawing.Size(251, 21);
             this.dtSInDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtSInDate.TabIndex = 6;
+            this.dtSInDate.TabIndex = 5;
             // 
             // txtSRemark
             // 
@@ -429,7 +440,7 @@
             this.txtSCondition.PreventEnterBeep = true;
             this.txtSCondition.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtSCondition.Size = new System.Drawing.Size(251, 43);
-            this.txtSCondition.TabIndex = 5;
+            this.txtSCondition.TabIndex = 4;
             // 
             // labelX54
             // 
@@ -515,7 +526,7 @@
             this.intSRatio.Name = "intSRatio";
             this.intSRatio.ShowUpDown = true;
             this.intSRatio.Size = new System.Drawing.Size(251, 21);
-            this.intSRatio.TabIndex = 3;
+            this.intSRatio.TabIndex = 2;
             this.intSRatio.ValueChanged += new System.EventHandler(this.intSRatio_ValueChanged);
             // 
             // labelX49
@@ -545,6 +556,26 @@
             this.labelX48.Size = new System.Drawing.Size(74, 18);
             this.labelX48.TabIndex = 21;
             this.labelX48.Text = "*收款批次：";
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Name = "PID";
+            this.gridColumn11.Visible = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Name = "Status";
+            this.gridColumn12.Visible = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Name = "CREATED";
+            this.gridColumn13.Visible = false;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Name = "UPDATED";
+            this.gridColumn14.Visible = false;
             // 
             // FormReceivables
             // 
@@ -596,5 +627,9 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtAmount;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14;
     }
 }

@@ -32,11 +32,12 @@ namespace DataAccessDLL
             //return result;
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select r.id,r.BatchNo,r.Ratio,r.FinishStatus,r.Amount,r.Condition,r.Remark,");
-            sql.Append(" strftime('%Y-%m-%d',r.InDate)InDate,d1.Name FinishStatusName ");
-            sql.Append(" from Receivables r ");
-            sql.Append(" left join DictItem d1 on d1.DictNo=" + (int)DictCategory.Receivables_FinshStatus + " and r.FinishStatus=d1.No ");
-            sql.Append(" where r.PID=@PID  and r.status=1 order by r.CREATED");
+            //sql.Append(" select r.id,r.BatchNo,r.Ratio,r.FinishStatus,r.Amount,r.Condition,r.Remark,");
+            //sql.Append(" strftime('%Y-%m-%d',r.InDate)InDate,d1.Name FinishStatusName ");
+            //sql.Append(" from Receivables r ");
+            //sql.Append(" left join DictItem d1 on d1.DictNo=" + (int)DictCategory.Receivables_FinshStatus + " and r.FinishStatus=d1.No ");
+            sql.Append("select * from Receivables ");
+            sql.Append(" where PID=@PID  and status=1 order by CREATED asc");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             GridData result = new GridData();
             result.data = NHHelper.ExecuteDataTable(sql.ToString(), qf);
