@@ -73,6 +73,13 @@ namespace DomainDLL
             get;
             set;
         }
-
+        /// <summary>
+        /// 完成日期
+        /// </summary>
+        public virtual DateTime FinishDate
+        {
+            get;
+            set;
+        }
     }
 }

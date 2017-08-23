@@ -111,7 +111,19 @@ namespace ProjectManagement.Forms.Income
             {
                 MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
                 return;
-            }            
+            }    
+            if(string.IsNullOrEmpty(txtTag.Text))
+            {
+                MessageBox.Show("预算名称不能为空");
+                txtTag.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtTotal.Text) && int.Parse(txtTotal.Text) <= 0)
+            {
+                MessageBox.Show("预算不能为负数或为0");
+                txtTotal.Focus();
+                return;
+            }
             try
             {
                 var total = Convert.ToDecimal(txtTotal.Text.ToString());

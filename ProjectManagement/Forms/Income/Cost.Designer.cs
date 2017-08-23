@@ -351,7 +351,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(256, 253);
+            this.labelX7.Location = new System.Drawing.Point(256, 257);
             this.labelX7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(79, 19);
@@ -369,7 +369,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(79, 19);
             this.labelX1.TabIndex = 1;
-            this.labelX1.Text = "预算分配：";
+            this.labelX1.Text = "*预算分配：";
             // 
             // superGridControl1
             // 

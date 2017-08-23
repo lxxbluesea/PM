@@ -125,6 +125,7 @@ namespace ProjectManagement.Forms.Others
             change1.AfterInfo = dtiAfter1.Value.ToShortDateString() + "-" + dtiAfter2.Value.ToShortDateString();
             change1.BeforeInfo = dtiBefore1.Value.ToShortDateString() + "-" + dtiBefore2.Value.ToShortDateString();
             change1.Cost = txtCost.Text;
+            change1.FinishDate = DateTime.Now;
             var result = bll.Save(change1);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
@@ -147,7 +148,7 @@ namespace ProjectManagement.Forms.Others
         private void btnClearChange_Click(object sender, EventArgs e)
         {
             ClearDate(true);//清空文本框和内存中的时间变更id
-
+            superGridControl1.PrimaryGrid.DataSource = null;
             ClearDateFile();//清除附件文本框
         }
         #endregion
@@ -217,7 +218,8 @@ namespace ProjectManagement.Forms.Others
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
                 BindFile((int)ChangeType.Date);
-            btnClearFile_Click(null, null);
+            ClearDateFile();
+            //btnClearFile_Click(null, null);
         }
         #endregion
 
@@ -303,6 +305,10 @@ namespace ProjectManagement.Forms.Others
             if (!String.IsNullOrEmpty(row.Cells["UPDATED"].Value.ToString()))
             {
                 change1.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+            }
+            if (!String.IsNullOrEmpty(row.Cells["FinishDate"].Value.ToString()))
+            {
+                change1.FinishDate = DateTime.Parse(row.Cells["FinishDate"].Value.ToString());
             }
 
 
@@ -412,17 +418,18 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void btnSaveNeed_Click(object sender, EventArgs e)
         {
-            DomainDLL.Change entity = new DomainDLL.Change();
-            entity.ID = _changeneedid;
-            entity.Type = (int)ChangeType.Need;
-            entity.Name = txtNeedName.Text;
-            entity.Payment = txtNeedPayment.Text;
-            entity.PID = ProjectId;
-            entity.Reason = txtNeedReason.Text;
-            entity.AfterInfo = txtNeedAfter.Text;
-            entity.BeforeInfo = txtNeedBefore.Text;
-            entity.Cost = txtNeedCost.Text;
-            var result = bll.Save(entity);
+            //change2 = new DomainDLL.Change();
+            //entity.ID = _changeneedid;
+            change2.Type = (int)ChangeType.Need;
+            change2.Name = txtNeedName.Text;
+            change2.Payment = txtNeedPayment.Text;
+            change2.PID = ProjectId;
+            change2.Reason = txtNeedReason.Text;
+            change2.AfterInfo = txtNeedAfter.Text;
+            change2.BeforeInfo = txtNeedBefore.Text;
+            change2.Cost = txtNeedCost.Text;
+            change2.FinishDate = dtiNeedFinishDate.Value;
+            var result = bll.Save(change2);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
@@ -444,6 +451,7 @@ namespace ProjectManagement.Forms.Others
         private void btnClearNeed_Click(object sender, EventArgs e)
         {
             ClearNeed(true);
+            superGridControl2.PrimaryGrid.DataSource = null;
             ClearNeedFile();
         }
         #endregion
@@ -454,12 +462,14 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearNeed(bool IsFlag)
         {
+            change2 = new DomainDLL.Change();
             txtNeedCost.Clear();
             txtNeedPayment.Clear();
             txtNeedName.Clear();
             txtNeedAfter.Clear();
             txtNeedBefore.Clear();
             txtNeedReason.Clear();
+            dtiNeedFinishDate.Value = DateTime.Now;
             superNeed.PrimaryGrid.ClearSelectedRows();
             if (IsFlag)
             {
@@ -473,7 +483,8 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearNeedFile()
         {
-            superGridControl2.PrimaryGrid.DataSource = null;
+            changefile2 = new ChangeFiles();
+            superGridControl2.PrimaryGrid.ClearSelectedRows();
             txtNeedFileDesc.Clear();
             txtNEEDFileName.Clear();
             txtNEEDFilePath.Clear();
@@ -497,17 +508,18 @@ namespace ProjectManagement.Forms.Others
             }
             #endregion
 
-            DomainDLL.ChangeFiles entity = new DomainDLL.ChangeFiles();
-            entity.ChangeID = CHANGENEEDID;//变更版本id
-            entity.ID = _fileneedid;//附件id
-            entity.Desc = txtNeedFileDesc.Text;
-            entity.Name = txtNEEDFileName.Text;
-            entity.Path = txtNEEDFilePath.Text;
-            var result = bll.SaveFile(entity);
+            //DomainDLL.ChangeFiles entity = new DomainDLL.ChangeFiles();
+            changefile2.ChangeID = change2.ID;//变更版本id
+            //changefile2.ID = _fileneedid;//附件id
+            changefile2.Desc = txtNeedFileDesc.Text;
+            changefile2.Name = txtNEEDFileName.Text;
+            changefile2.Path = txtNEEDFilePath.Text;
+            var result = bll.SaveFile(changefile2);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
                 BindFile((int)ChangeType.Need);
-            btnClearNeedFile_Click(null, null);
+            ClearDateFile();
+            //btnClearNeedFile_Click(null, null);
         }
         #endregion
 
@@ -546,11 +558,12 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void btnClearNeedFile_Click(object sender, EventArgs e)
         {
-            txtNEEDFilePath.Clear();
-            txtNEEDFileName.Clear();
-            txtNeedFileDesc.Clear();
-            _fileneedid = null;
-            superGridControl2.PrimaryGrid.ClearSelectedRows(); ;
+            ClearNeedFile();
+            //txtNEEDFilePath.Clear();
+            //txtNEEDFileName.Clear();
+            //txtNeedFileDesc.Clear();
+            //_fileneedid = null;
+            //superGridControl2.PrimaryGrid.ClearSelectedRows(); ;
         }
         #endregion
 
@@ -570,23 +583,44 @@ namespace ProjectManagement.Forms.Others
                 superNeed.PrimaryGrid.ClearSelectedColumns();
                 return;
             }
-            btnClearNeedFile_Click(null, null);
-
+            //btnClearNeedFile_Click(null, null);
+            ClearNeedFile();
             GridRow row = (GridRow)rows[0];
-            DomainDLL.Change change = new DomainDLL.Change();
+            change2 = new DomainDLL.Change();
             DataTable files = new DataTable();
-            bll.GetChangeInfo(row.Cells["ID"].Value.ToString(), out change, out files);
+            bll.GetChangeInfo(row.Cells["ID"].Value.ToString(), out change2, out files);
             CHANGENEEDID = row.Cells["ID"].Value.ToString();
-            if (change != null)
+
+
+
+            change2.ID = row.Cells["ID"].Value.ToString();
+            change2.PID = row.Cells["PID"].Value.ToString();
+            change2.Type = int.Parse(row.Cells["Type"].Value.ToString());
+            change2.Name = row.Cells["Name"].Value.ToString();
+            change2.BeforeInfo = row.Cells["BeforeInfo"].Value.ToString();
+            change2.AfterInfo = row.Cells["AfterInfo"].Value.ToString();
+            change2.Reason = row.Cells["Reason"].Value.ToString();
+            change2.Cost = row.Cells["Cost"].Value.ToString();
+            change2.Payment = row.Cells["Payment"].Value.ToString();
+            change2.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            change2.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (!String.IsNullOrEmpty(row.Cells["UPDATED"].Value.ToString()))
             {
-                txtNeedCost.Text = change.Cost;
-                txtNeedName.Text = change.Name;
-                txtNeedPayment.Text = change.Payment;
-                txtNeedReason.Text = change.Reason;
-                txtNeedAfter.Text = change.AfterInfo;
-                txtNeedBefore.Text = change.BeforeInfo;
-                _changeneedid = change.ID;//实际id
+                change2.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
             }
+            change2.FinishDate = DateTime.Parse(row.Cells["FinishDate"].Value.ToString());
+
+
+
+
+            txtNeedCost.Text = change2.Cost;
+            txtNeedName.Text = change2.Name;
+            txtNeedPayment.Text = change2.Payment;
+            txtNeedReason.Text = change2.Reason;
+            txtNeedAfter.Text = change2.AfterInfo;
+            txtNeedBefore.Text = change2.BeforeInfo;
+            _changeneedid = change2.ID;//实际id
+            dtiNeedFinishDate.Value = change2.FinishDate;
             superGridControl2.PrimaryGrid.DataSource = files;
         }
         #endregion
@@ -608,6 +642,17 @@ namespace ProjectManagement.Forms.Others
                 return;
             }
             GridRow row = (GridRow)rows[0];
+            changefile2 = new ChangeFiles();
+            changefile2.ID = row.Cells["ID"].Value.ToString();
+            changefile2.ChangeID = change2.ID;
+            changefile2.Name = row.Cells["Name"].Value.ToString();
+            changefile2.Path = row.Cells["Path"].Value.ToString();
+            changefile2.Desc = row.Cells["Desc"].Value.ToString();
+            changefile2.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            changefile2.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (!String.IsNullOrEmpty(row.Cells["UPDATED"].Value.ToString()))
+                changefile2.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
             txtNeedFileDesc.Text = row.Cells["Desc"].Value.ToString();
             txtNEEDFileName.Text = row.Cells["Name"].Value.ToString();
             txtNEEDFilePath.Text = row.Cells["Path"].Value.ToString();
@@ -662,23 +707,43 @@ namespace ProjectManagement.Forms.Others
                 superRange.PrimaryGrid.ClearSelectedColumns();
                 return;
             }
-            btnClearRangeFile_Click(null, null);
-
+            ClearRangeFile();
             GridRow row = (GridRow)rows[0];
-            DomainDLL.Change change = new DomainDLL.Change();
+            change3 = new DomainDLL.Change();
             DataTable files = new DataTable();
-            bll.GetChangeInfo(row.Cells["ID"].Value.ToString(), out change, out files);
-            CHANGERANGEID = row.Cells["ID"].Value.ToString();//版本id
-            if (change != null)
+            bll.GetChangeInfo(row.Cells["ID"].Value.ToString(), out change3, out files);
+            CHANGERANGEID = row.Cells["ID"].Value.ToString();
+
+
+
+            change3.ID = row.Cells["ID"].Value.ToString();
+            change3.PID = row.Cells["PID"].Value.ToString();
+            change3.Type = int.Parse(row.Cells["Type"].Value.ToString());
+            change3.Name = row.Cells["Name"].Value.ToString();
+            change3.BeforeInfo = row.Cells["BeforeInfo"].Value.ToString();
+            change3.AfterInfo = row.Cells["AfterInfo"].Value.ToString();
+            change3.Reason = row.Cells["Reason"].Value.ToString();
+            change3.Cost = row.Cells["Cost"].Value.ToString();
+            change3.Payment = row.Cells["Payment"].Value.ToString();
+            change3.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            change3.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (!String.IsNullOrEmpty(row.Cells["UPDATED"].Value.ToString()))
             {
-                txtRangeCost.Text = change.Cost;
-                txtRangeName.Text = change.Name;
-                txtRangePayment.Text = change.Payment;
-                txtRangeReason.Text = change.Reason;
-                txtRangeAfter.Text = change.AfterInfo;
-                txtRangeBefore.Text = change.BeforeInfo;
-                _changerangeid = change.ID;//实际id
+                change3.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
             }
+
+            change3.FinishDate = DateTime.Parse(row.Cells["FinishDate"].Value.ToString());
+
+
+            txtRangeCost.Text = change3.Cost;
+            txtRangeName.Text = change3.Name;
+            txtRangePayment.Text = change3.Payment;
+            txtRangeReason.Text = change3.Reason;
+            txtRangeAfter.Text = change3.AfterInfo;
+            txtRangeBefore.Text = change3.BeforeInfo;
+            dtiRangeFinishDate.Value = change3.FinishDate;
+            _changerangeid = change3.ID;//实际id
+
             superGridControl3.PrimaryGrid.DataSource = files;
         }
         #endregion
@@ -692,17 +757,18 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void btnSaveRange_Click(object sender, EventArgs e)
         {
-            DomainDLL.Change entity = new DomainDLL.Change();
-            entity.ID = _changerangeid;
-            entity.Type = (int)ChangeType.Range;
-            entity.Name = txtRangeName.Text;
-            entity.Payment = txtRangePayment.Text;
-            entity.PID = ProjectId;
-            entity.Reason = txtRangeReason.Text;
-            entity.AfterInfo = txtRangeAfter.Text;
-            entity.BeforeInfo = txtRangeBefore.Text;
-            entity.Cost = txtRangeCost.Text;
-            var result = bll.Save(entity);
+            //DomainDLL.Change entity = new DomainDLL.Change();
+            //entity.ID = _changerangeid;
+            change3.Type = (int)ChangeType.Range;
+            change3.Name = txtRangeName.Text;
+            change3.Payment = txtRangePayment.Text;
+            change3.PID = ProjectId;
+            change3.Reason = txtRangeReason.Text;
+            change3.AfterInfo = txtRangeAfter.Text;
+            change3.BeforeInfo = txtRangeBefore.Text;
+            change3.Cost = txtRangeCost.Text;
+            change3.FinishDate = dtiRangeFinishDate.Value;
+            var result = bll.Save(change3);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
@@ -720,12 +786,14 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearRange(bool IsFlag)
         {
+            change3 = new DomainDLL.Change();
             txtRangeCost.Clear();
             txtRangePayment.Clear();
             txtRangeName.Clear();
             txtRangeAfter.Clear();
             txtRangeBefore.Clear();
             txtRangeReason.Clear();
+            dtiRangeFinishDate.Value = DateTime.Now;
             superRange.PrimaryGrid.ClearSelectedRows();
             if (IsFlag)
             {
@@ -739,7 +807,8 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearRangeFile()
         {
-            superGridControl3.PrimaryGrid.DataSource = null;
+            changefile3 = new ChangeFiles();
+            superGridControl3.PrimaryGrid.ClearSelectedRows();
             txtRangeFileDesc.Clear();
             txtRangeFileName.Clear();
             txtRangeFilePath.Clear();
@@ -757,6 +826,7 @@ namespace ProjectManagement.Forms.Others
         private void btnClearRange_Click(object sender, EventArgs e)
         {
             ClearRange(true);
+            superGridControl3.PrimaryGrid.DataSource = null;
             ClearRangeFile();
         }
         #endregion
@@ -804,17 +874,18 @@ namespace ProjectManagement.Forms.Others
             }
             #endregion
 
-            DomainDLL.ChangeFiles entity = new DomainDLL.ChangeFiles();
-            entity.ChangeID = CHANGERANGEID;
-            entity.ID = _filerangeid;
-            entity.Desc = txtRangeFileDesc.Text;
-            entity.Name = txtRangeFileName.Text;
-            entity.Path = txtRangeFilePath.Text;
-            var result = bll.SaveFile(entity);
+            //DomainDLL.ChangeFiles entity = new DomainDLL.ChangeFiles();
+            changefile3.ChangeID = change3.ID;
+            //changefile3.ID = _filerangeid;
+            changefile3.Desc = txtRangeFileDesc.Text;
+            changefile3.Name = txtRangeFileName.Text;
+            changefile3.Path = txtRangeFilePath.Text;
+            var result = bll.SaveFile(changefile3);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
                 BindFile((int)ChangeType.Range);
-            btnClearRangeFile_Click(null, null);
+            ClearRangeFile();
+            //btnClearRangeFile_Click(null, null);
         }
         #endregion
 
@@ -827,11 +898,13 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void btnClearRangeFile_Click(object sender, EventArgs e)
         {
-            _filerangeid = null;
-            txtRangeFileDesc.Clear();
-            txtRangeFileName.Clear();
-            txtRangeFilePath.Clear();
-            superGridControl3.PrimaryGrid.ClearSelectedRows();
+            ClearRangeFile();
+            //changefile3 = new ChangeFiles();
+            //_filerangeid = null;
+            //txtRangeFileDesc.Clear();
+            //txtRangeFileName.Clear();
+            //txtRangeFilePath.Clear();
+            //superGridControl3.PrimaryGrid.ClearSelectedRows();
         }
         #endregion
 
@@ -881,6 +954,19 @@ namespace ProjectManagement.Forms.Others
                 return;
             }
             GridRow row = (GridRow)rows[0];
+
+            changefile3 = new ChangeFiles();
+            changefile3.ID = row.Cells["ID"].Value.ToString();
+            changefile3.ChangeID = change3.ID;
+            changefile3.Name = row.Cells["Name"].Value.ToString();
+            changefile3.Path = row.Cells["Path"].Value.ToString();
+            changefile3.Desc = row.Cells["Desc"].Value.ToString();
+            changefile3.Status = int.Parse(row.Cells["Status"].Value.ToString());
+            changefile3.CREATED = DateTime.Parse(row.Cells["CREATED"].Value.ToString());
+            if (!String.IsNullOrEmpty(row.Cells["UPDATED"].Value.ToString()))
+                changefile3.UPDATED = DateTime.Parse(row.Cells["UPDATED"].Value.ToString());
+
+
             txtRangeFileDesc.Text = row.Cells["Desc"].Value.ToString();
             txtRangeFileName.Text = row.Cells["Name"].Value.ToString();
             txtRangeFilePath.Text = row.Cells["Path"].Value.ToString();

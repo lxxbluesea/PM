@@ -38,5 +38,8 @@
 		<property name="UPDATED" type="DateTime">
 			<column name="UPDATED" sql-type="datetime" not-null="false"/>
 		</property>
+    <property name="FinishDate" type="DateTime">
+      <column name="FinishDate" sql-type="datetime" not-null="false"/>
+    </property>
 	</class>
 </hibernate-mapping>
