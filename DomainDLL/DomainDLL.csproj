@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\RoutineTrace.cs" />
+    <Compile Include="Entity\TroubleTrace.cs" />
     <Compile Include="Entity\TroubleWork.cs" />
     <Compile Include="Entity\RoutineWork.cs" />
     <Compile Include="Entity\DeliverablesWork.cs" />
@@ -309,7 +310,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mapping\RoutineTrace.xml" />
+    <Content Include="Mapping\RoutineTrace.hbm.xml" />
+    <Content Include="Mapping\TroubleTrace.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

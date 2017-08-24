@@ -159,7 +159,7 @@
             this.groupPanel1.Controls.Add(this.labelX1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel1.Location = new System.Drawing.Point(301, 1);
+            this.groupPanel1.Location = new System.Drawing.Point(305, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(300, 570);
@@ -191,7 +191,7 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 2;
+            this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "日常工作内容";
             // 
             // intWorkload
@@ -202,7 +202,7 @@
             this.intWorkload.BackgroundStyle.Class = "DateTimeInputBackground";
             this.intWorkload.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.intWorkload.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.intWorkload.Location = new System.Drawing.Point(73, 300);
+            this.intWorkload.Location = new System.Drawing.Point(73, 299);
             this.intWorkload.Margin = new System.Windows.Forms.Padding(2);
             this.intWorkload.MinValue = 0;
             this.intWorkload.Name = "intWorkload";
@@ -259,7 +259,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(286, 121);
+            this.gridManager.Size = new System.Drawing.Size(262, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -305,7 +305,7 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(254, 3);
+            this.buttonX1.Location = new System.Drawing.Point(254, 5);
             this.buttonX1.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(34, 18);
@@ -346,7 +346,7 @@
             this.cmbResultStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbResultStatus.FormattingEnabled = true;
             this.cmbResultStatus.ItemHeight = 19;
-            this.cmbResultStatus.Location = new System.Drawing.Point(73, 330);
+            this.cmbResultStatus.Location = new System.Drawing.Point(73, 328);
             this.cmbResultStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbResultStatus.Name = "cmbResultStatus";
             this.cmbResultStatus.Size = new System.Drawing.Size(215, 25);
@@ -366,7 +366,7 @@
             this.cmbNode.Location = new System.Drawing.Point(73, 5);
             this.cmbNode.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNode.Name = "cmbNode";
-            this.cmbNode.Size = new System.Drawing.Size(178, 18);
+            this.cmbNode.Size = new System.Drawing.Size(178, 23);
             this.cmbNode.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbNode.TabIndex = 0;
             // 
@@ -431,7 +431,7 @@
             this.txtStartDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtStartDate.ButtonDropDown.Visible = true;
             this.txtStartDate.IsPopupCalendarOpen = false;
-            this.txtStartDate.Location = new System.Drawing.Point(73, 240);
+            this.txtStartDate.Location = new System.Drawing.Point(73, 241);
             this.txtStartDate.Margin = new System.Windows.Forms.Padding(2);
             // 
             // 
@@ -483,7 +483,7 @@
             this.txtCreateDate.ButtonDropDown.Visible = true;
             this.txtCreateDate.Enabled = false;
             this.txtCreateDate.IsPopupCalendarOpen = false;
-            this.txtCreateDate.Location = new System.Drawing.Point(73, 364);
+            this.txtCreateDate.Location = new System.Drawing.Point(73, 361);
             this.txtCreateDate.Margin = new System.Windows.Forms.Padding(2);
             // 
             // 
@@ -533,7 +533,7 @@
             this.txtResult.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtResult.DisabledBackColor = System.Drawing.Color.White;
             this.txtResult.ForeColor = System.Drawing.Color.Black;
-            this.txtResult.Location = new System.Drawing.Point(73, 146);
+            this.txtResult.Location = new System.Drawing.Point(73, 148);
             this.txtResult.Margin = new System.Windows.Forms.Padding(2);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
@@ -552,7 +552,7 @@
             this.txtDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtDesc.DisabledBackColor = System.Drawing.Color.White;
             this.txtDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtDesc.Location = new System.Drawing.Point(73, 62);
+            this.txtDesc.Location = new System.Drawing.Point(73, 65);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
@@ -597,7 +597,7 @@
             this.txtWorkName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtWorkName.DisabledBackColor = System.Drawing.Color.White;
             this.txtWorkName.ForeColor = System.Drawing.Color.Black;
-            this.txtWorkName.Location = new System.Drawing.Point(73, 32);
+            this.txtWorkName.Location = new System.Drawing.Point(73, 36);
             this.txtWorkName.Margin = new System.Windows.Forms.Padding(2);
             this.txtWorkName.Name = "txtWorkName";
             this.txtWorkName.PreventEnterBeep = true;
@@ -649,7 +649,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(3, 71);
+            this.labelX3.Location = new System.Drawing.Point(3, 65);
             this.labelX3.Margin = new System.Windows.Forms.Padding(2);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(69, 18);
@@ -662,7 +662,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(3, 38);
+            this.labelX2.Location = new System.Drawing.Point(3, 36);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(69, 18);
@@ -675,7 +675,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(3, 3);
+            this.labelX1.Location = new System.Drawing.Point(3, 10);
             this.labelX1.Margin = new System.Windows.Forms.Padding(2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(69, 18);
@@ -699,10 +699,10 @@
             this.groupPanel2.Controls.Add(this.gridFile);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupPanel2.Location = new System.Drawing.Point(601, 1);
+            this.groupPanel2.Location = new System.Drawing.Point(605, 1);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(351, 275);
+            this.groupPanel2.Size = new System.Drawing.Size(347, 275);
             // 
             // 
             // 
@@ -751,7 +751,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(188, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(207, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -770,7 +770,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(248, 21);
+            this.txtFileName.Size = new System.Drawing.Size(267, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -817,7 +817,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(248, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(267, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -838,7 +838,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(264, 116);
+            this.buttonX5.Location = new System.Drawing.Point(283, 116);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(56, 21);
@@ -895,7 +895,7 @@
             this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn9);
             this.gridFile.PrimaryGrid.MultiSelect = false;
             this.gridFile.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridFile.Size = new System.Drawing.Size(345, 107);
+            this.gridFile.Size = new System.Drawing.Size(341, 107);
             this.gridFile.TabIndex = 17;
             this.gridFile.Text = "superGridControl2";
             this.gridFile.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridFile_CellClick);
@@ -958,7 +958,7 @@
             this.groupPanel3.Location = new System.Drawing.Point(5, 1);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(296, 570);
+            this.groupPanel3.Size = new System.Drawing.Size(300, 570);
             // 
             // 
             // 
@@ -987,7 +987,7 @@
             // 
             // 
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel3.TabIndex = 2;
+            this.groupPanel3.TabIndex = 0;
             this.groupPanel3.Text = "工作列表";
             // 
             // panelEx1
@@ -1005,7 +1005,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 452);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(290, 94);
+            this.panelEx1.Size = new System.Drawing.Size(294, 94);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -1013,7 +1013,7 @@
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 4;
+            this.panelEx1.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -1213,7 +1213,7 @@
             this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn34);
             this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn35);
             this.gridRoutine.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridRoutine.Size = new System.Drawing.Size(290, 452);
+            this.gridRoutine.Size = new System.Drawing.Size(294, 452);
             this.gridRoutine.TabIndex = 0;
             this.gridRoutine.Text = "superGridControl1";
             this.gridRoutine.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridRoutine_CellClick);
@@ -1240,10 +1240,10 @@
             this.gridColumn2.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
             this.gridColumn2.DataPropertyName = "Name";
             this.gridColumn2.HeaderText = "工作名称";
-            this.gridColumn2.MinimumWidth = 100;
+            this.gridColumn2.MinimumWidth = 190;
             this.gridColumn2.Name = "Name";
             this.gridColumn2.ReadOnly = true;
-            this.gridColumn2.Width = 200;
+            this.gridColumn2.Width = 190;
             // 
             // gridColumn3
             // 
@@ -1330,9 +1330,9 @@
             this.groupPanel4.Controls.Add(this.labelX16);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupPanel4.Location = new System.Drawing.Point(601, 276);
+            this.groupPanel4.Location = new System.Drawing.Point(605, 276);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(351, 295);
+            this.groupPanel4.Size = new System.Drawing.Size(347, 295);
             // 
             // 
             // 
@@ -1380,7 +1380,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn22);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn23);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn24);
-            this.superGridControl1.Size = new System.Drawing.Size(345, 150);
+            this.superGridControl1.Size = new System.Drawing.Size(341, 150);
             this.superGridControl1.TabIndex = 2;
             this.superGridControl1.Text = "superGridControl1";
             // 
@@ -1515,7 +1515,7 @@
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.PreventEnterBeep = true;
             this.textBoxX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxX1.Size = new System.Drawing.Size(253, 53);
+            this.textBoxX1.Size = new System.Drawing.Size(267, 53);
             this.textBoxX1.TabIndex = 1;
             // 
             // labelX17
