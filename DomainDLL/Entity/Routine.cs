@@ -9,6 +9,14 @@ namespace DomainDLL
     public class Routine : PersistenceEntity
     {
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        public virtual string PID
+        {
+            get;
+            set;
+        }
+        /// <summary>
         /// 节点ID
         /// </summary>
         public virtual string NodeID

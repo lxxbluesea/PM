@@ -5,6 +5,9 @@
       <column name="ID" length="40" sql-type="varchar" not-null="true" unique="true"/>
       <generator class="assigned" />
     </id>
+    <property name="PID" type="String">
+      <column name="PID" sql-type="varchar" not-null="true"/>
+    </property>
     <property name="NodeID" type="String">
       <column name="NodeID" sql-type="varchar" not-null="true"/>
     </property>

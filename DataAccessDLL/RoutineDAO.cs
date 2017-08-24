@@ -29,17 +29,19 @@ namespace DataAccessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select r.ID,r.Name,r.Desc,r.DealResult,p.Name PName,strftime('%Y-%m-%d',r.StartDate) as StartDate,");
-            sql.Append("strftime('%Y-%m-%d',r.EndDate) as EndDate,d.Name as HandleStatus,");
+            //sql.Append(" select r.ID,r.Name,r.Desc,r.DealResult,p.Name PName,strftime('%Y-%m-%d',r.StartDate) as StartDate,");
+            //sql.Append("strftime('%Y-%m-%d',r.EndDate) as EndDate,d.Name as HandleStatus,");
 
-            //完成状态判断 参加PNode的Entity中FinishStatus说明
-            sql.Append(" case when r.FinishStatus=3 then 1   ");
-            sql.Append(" when r.EndDate<date('now') and (r.FinishStatus is null or r.FinishStatus<>3) then 3 ");
-            sql.Append(" when r.StartDate>=date('now','+1 day') and (r.FinishStatus is null or r.FinishStatus<>3) then 0 else 2 end FinishType ");
+            ////完成状态判断 参加PNode的Entity中FinishStatus说明
+            //sql.Append(" case when r.FinishStatus=3 then 1   ");
+            //sql.Append(" when r.EndDate<date('now') and (r.FinishStatus is null or r.FinishStatus<>3) then 3 ");
+            //sql.Append(" when r.StartDate>=date('now','+1 day') and (r.FinishStatus is null or r.FinishStatus<>3) then 0 else 2 end FinishType ");
 
-            sql.Append(" from Routine r inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1");
-            sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
-            sql.Append(" where r.status = 1 and p.PID = @PID ");
+            //sql.Append(" from Routine r inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1");
+            //sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
+            //sql.Append(" where r.status = 1 and p.PID = @PID ");
+
+            sql.Append("select * from Routine r where r.status=1 and r.pid=@PID ");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
 
             //开始日期
@@ -63,7 +65,7 @@ namespace DataAccessDLL
                 qf.Add(new QueryField() { Name = "key", Type = QueryFieldType.String, Value = key });
             }
 
-            sql.Append(" order by r.StartDate Desc  ");
+            sql.Append(" order by r.StartDate asc  ");
 
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
 
