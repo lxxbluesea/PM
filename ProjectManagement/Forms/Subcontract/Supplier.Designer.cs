@@ -89,7 +89,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(282, 533);
+            this.groupPanel1.Size = new System.Drawing.Size(300, 533);
             // 
             // 
             // 
@@ -148,7 +148,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn14);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(276, 509);
+            this.superGridControl1.Size = new System.Drawing.Size(294, 509);
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl1_RowClick);
@@ -259,10 +259,10 @@
             this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel2.Location = new System.Drawing.Point(287, 1);
+            this.groupPanel2.Location = new System.Drawing.Point(305, 1);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(309, 533);
+            this.groupPanel2.Size = new System.Drawing.Size(300, 533);
             // 
             // 
             // 
@@ -558,9 +558,9 @@
             this.groupPanel3.Controls.Add(this.labelX6);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel3.Location = new System.Drawing.Point(596, 1);
+            this.groupPanel3.Location = new System.Drawing.Point(605, 1);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(329, 533);
+            this.groupPanel3.Size = new System.Drawing.Size(300, 533);
             // 
             // 
             // 
@@ -635,10 +635,10 @@
             // 
             this.btnD3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnD3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD3.Location = new System.Drawing.Point(182, 94);
+            this.btnD3.Location = new System.Drawing.Point(192, 94);
             this.btnD3.Margin = new System.Windows.Forms.Padding(2);
             this.btnD3.Name = "btnD3";
-            this.btnD3.Size = new System.Drawing.Size(56, 18);
+            this.btnD3.Size = new System.Drawing.Size(40, 18);
             this.btnD3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnD3.TabIndex = 85;
             this.btnD3.Text = "下载";
@@ -648,10 +648,10 @@
             // 
             this.btnD2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnD2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD2.Location = new System.Drawing.Point(182, 55);
+            this.btnD2.Location = new System.Drawing.Point(192, 55);
             this.btnD2.Margin = new System.Windows.Forms.Padding(2);
             this.btnD2.Name = "btnD2";
-            this.btnD2.Size = new System.Drawing.Size(56, 18);
+            this.btnD2.Size = new System.Drawing.Size(40, 18);
             this.btnD2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnD2.TabIndex = 84;
             this.btnD2.Text = "下载";
@@ -661,10 +661,10 @@
             // 
             this.btnD1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnD1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD1.Location = new System.Drawing.Point(182, 20);
+            this.btnD1.Location = new System.Drawing.Point(192, 20);
             this.btnD1.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1.Name = "btnD1";
-            this.btnD1.Size = new System.Drawing.Size(56, 18);
+            this.btnD1.Size = new System.Drawing.Size(40, 18);
             this.btnD1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnD1.TabIndex = 83;
             this.btnD1.Text = "下载";
@@ -675,10 +675,10 @@
             // 
             this.btn3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn3.Location = new System.Drawing.Point(257, 96);
+            this.btn3.Location = new System.Drawing.Point(245, 96);
             this.btn3.Margin = new System.Windows.Forms.Padding(2);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(56, 18);
+            this.btn3.Size = new System.Drawing.Size(40, 18);
             this.btn3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn3.TabIndex = 20;
             this.btn3.Text = "上传";
@@ -688,10 +688,10 @@
             // 
             this.btn2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn2.Location = new System.Drawing.Point(257, 57);
+            this.btn2.Location = new System.Drawing.Point(245, 57);
             this.btn2.Margin = new System.Windows.Forms.Padding(2);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(56, 18);
+            this.btn2.Size = new System.Drawing.Size(40, 18);
             this.btn2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn2.TabIndex = 18;
             this.btn2.Text = "上传";
@@ -701,10 +701,10 @@
             // 
             this.btn1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn1.Location = new System.Drawing.Point(257, 20);
+            this.btn1.Location = new System.Drawing.Point(245, 20);
             this.btn1.Margin = new System.Windows.Forms.Padding(2);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(56, 18);
+            this.btn1.Size = new System.Drawing.Size(40, 18);
             this.btn1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn1.TabIndex = 16;
             this.btn1.Text = "上传";

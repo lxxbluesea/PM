@@ -97,7 +97,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(891, 459);
+            this.groupPanel1.Size = new System.Drawing.Size(875, 559);
             // 
             // 
             // 
@@ -139,7 +139,7 @@
             this.txtExplanation.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtExplanation.DisabledBackColor = System.Drawing.Color.White;
             this.txtExplanation.ForeColor = System.Drawing.Color.Black;
-            this.txtExplanation.Location = new System.Drawing.Point(81, 266);
+            this.txtExplanation.Location = new System.Drawing.Point(74, 341);
             this.txtExplanation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtExplanation.Name = "txtExplanation";
             this.txtExplanation.PreventEnterBeep = true;
@@ -152,7 +152,7 @@
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(7, 268);
+            this.labelX5.Location = new System.Drawing.Point(0, 343);
             this.labelX5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(79, 19);
@@ -165,7 +165,7 @@
             this.cbSFinishStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSFinishStatus.FormattingEnabled = true;
             this.cbSFinishStatus.ItemHeight = 19;
-            this.cbSFinishStatus.Location = new System.Drawing.Point(81, 347);
+            this.cbSFinishStatus.Location = new System.Drawing.Point(74, 422);
             this.cbSFinishStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbSFinishStatus.Name = "cbSFinishStatus";
             this.cbSFinishStatus.Size = new System.Drawing.Size(218, 25);
@@ -176,7 +176,7 @@
             // 
             this.btnChooseFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnChooseFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnChooseFile.Location = new System.Drawing.Point(244, 378);
+            this.btnChooseFile.Location = new System.Drawing.Point(237, 453);
             this.btnChooseFile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(56, 19);
@@ -195,7 +195,7 @@
             this.txtUpload.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtUpload.DisabledBackColor = System.Drawing.Color.White;
             this.txtUpload.ForeColor = System.Drawing.Color.Black;
-            this.txtUpload.Location = new System.Drawing.Point(82, 405);
+            this.txtUpload.Location = new System.Drawing.Point(75, 480);
             this.txtUpload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtUpload.Name = "txtUpload";
             this.txtUpload.PreventEnterBeep = true;
@@ -214,7 +214,7 @@
             this.txtFilePath.DisabledBackColor = System.Drawing.Color.White;
             this.txtFilePath.Enabled = false;
             this.txtFilePath.ForeColor = System.Drawing.Color.Black;
-            this.txtFilePath.Location = new System.Drawing.Point(82, 378);
+            this.txtFilePath.Location = new System.Drawing.Point(75, 453);
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
@@ -227,7 +227,7 @@
             // 
             // 
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(7, 408);
+            this.labelX13.Location = new System.Drawing.Point(0, 483);
             this.labelX13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(80, 19);
@@ -241,7 +241,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(7, 380);
+            this.labelX11.Location = new System.Drawing.Point(0, 455);
             this.labelX11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(80, 19);
@@ -256,7 +256,7 @@
             this.iRatio.BackgroundStyle.Class = "DateTimeInputBackground";
             this.iRatio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.iRatio.ButtonFreeText.Shortcut = DevComponents.DotNetBar.eShortcut.F2;
-            this.iRatio.Location = new System.Drawing.Point(82, 293);
+            this.iRatio.Location = new System.Drawing.Point(75, 368);
             this.iRatio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.iRatio.MaxValue = 100;
             this.iRatio.MinValue = 0;
@@ -269,7 +269,7 @@
             // 
             this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Location = new System.Drawing.Point(474, 408);
+            this.btnClear.Location = new System.Drawing.Point(471, 482);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(56, 19);
@@ -282,7 +282,7 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(393, 408);
+            this.btnSave.Location = new System.Drawing.Point(390, 482);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 19);
@@ -301,7 +301,7 @@
             this.txtFinishTag.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtFinishTag.DisabledBackColor = System.Drawing.Color.White;
             this.txtFinishTag.ForeColor = System.Drawing.Color.Black;
-            this.txtFinishTag.Location = new System.Drawing.Point(81, 320);
+            this.txtFinishTag.Location = new System.Drawing.Point(74, 395);
             this.txtFinishTag.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtFinishTag.Name = "txtFinishTag";
             this.txtFinishTag.PreventEnterBeep = true;
@@ -314,7 +314,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(7, 352);
+            this.labelX4.Location = new System.Drawing.Point(0, 427);
             this.labelX4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(79, 19);
@@ -327,7 +327,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(7, 324);
+            this.labelX3.Location = new System.Drawing.Point(0, 399);
             this.labelX3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(79, 19);
@@ -340,7 +340,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(7, 296);
+            this.labelX2.Location = new System.Drawing.Point(0, 371);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(79, 19);
@@ -357,13 +357,13 @@
             this.txtRemark.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtRemark.DisabledBackColor = System.Drawing.Color.White;
             this.txtRemark.ForeColor = System.Drawing.Color.Black;
-            this.txtRemark.Location = new System.Drawing.Point(393, 242);
+            this.txtRemark.Location = new System.Drawing.Point(390, 316);
             this.txtRemark.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.PreventEnterBeep = true;
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRemark.Size = new System.Drawing.Size(218, 155);
+            this.txtRemark.Size = new System.Drawing.Size(300, 155);
             this.txtRemark.TabIndex = 7;
             // 
             // txtStep
@@ -376,7 +376,7 @@
             this.txtStep.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtStep.DisabledBackColor = System.Drawing.Color.White;
             this.txtStep.ForeColor = System.Drawing.Color.Black;
-            this.txtStep.Location = new System.Drawing.Point(82, 239);
+            this.txtStep.Location = new System.Drawing.Point(75, 314);
             this.txtStep.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtStep.Name = "txtStep";
             this.txtStep.PreventEnterBeep = true;
@@ -389,7 +389,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(336, 242);
+            this.labelX7.Location = new System.Drawing.Point(307, 315);
             this.labelX7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(79, 19);
@@ -402,7 +402,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(7, 240);
+            this.labelX1.Location = new System.Drawing.Point(0, 315);
             this.labelX1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(79, 19);
@@ -439,7 +439,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn12);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(885, 225);
+            this.superGridControl1.Size = new System.Drawing.Size(869, 300);
             this.superGridControl1.TabIndex = 11;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.superGridControl1_CellClick);
@@ -549,7 +549,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(901, 462);
+            this.ClientSize = new System.Drawing.Size(885, 562);
             this.Controls.Add(this.groupPanel1);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Earning";

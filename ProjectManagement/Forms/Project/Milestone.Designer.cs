@@ -113,10 +113,10 @@
             this.groupPanel1.Controls.Add(this.labelX31);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupPanel1.Location = new System.Drawing.Point(5, 277);
+            this.groupPanel1.Location = new System.Drawing.Point(5, 301);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(921, 244);
+            this.groupPanel1.Size = new System.Drawing.Size(905, 259);
             // 
             // 
             // 
@@ -372,7 +372,7 @@
             this.groupPanel5.Location = new System.Drawing.Point(5, 1);
             this.groupPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel5.Name = "groupPanel5";
-            this.groupPanel5.Size = new System.Drawing.Size(921, 276);
+            this.groupPanel5.Size = new System.Drawing.Size(905, 300);
             // 
             // 
             // 
@@ -430,7 +430,7 @@
             this.gridLCB.PrimaryGrid.Columns.Add(this.LCBStatus);
             this.gridLCB.PrimaryGrid.ReadOnly = true;
             this.gridLCB.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridLCB.Size = new System.Drawing.Size(915, 252);
+            this.gridLCB.Size = new System.Drawing.Size(899, 276);
             this.gridLCB.TabIndex = 0;
             this.gridLCB.Text = "superGridControl1";
             this.gridLCB.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gridLCB_RowClick);
@@ -497,7 +497,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 523);
+            this.ClientSize = new System.Drawing.Size(915, 562);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.groupPanel5);
             this.Name = "FormMilestone";

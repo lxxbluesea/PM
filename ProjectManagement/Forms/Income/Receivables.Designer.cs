@@ -40,6 +40,10 @@
             this.gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtAmount = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtExplanation = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -59,10 +63,6 @@
             this.intSRatio = new DevComponents.Editors.IntegerInput();
             this.labelX49 = new DevComponents.DotNetBar.LabelX();
             this.labelX48 = new DevComponents.DotNetBar.LabelX();
-            this.gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtSInDate)).BeginInit();
@@ -80,7 +80,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(834, 252);
+            this.groupPanel1.Size = new System.Drawing.Size(818, 300);
             // 
             // 
             // 
@@ -141,7 +141,7 @@
             this.gridSK.PrimaryGrid.MultiSelect = false;
             this.gridSK.PrimaryGrid.ReadOnly = true;
             this.gridSK.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridSK.Size = new System.Drawing.Size(828, 228);
+            this.gridSK.Size = new System.Drawing.Size(812, 276);
             this.gridSK.TabIndex = 0;
             this.gridSK.Text = "superGridControl1";
             this.gridSK.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.gridSK_RowClick);
@@ -202,6 +202,26 @@
             this.gridColumn8.HeaderText = "备注";
             this.gridColumn8.Name = "Remark";
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Name = "PID";
+            this.gridColumn11.Visible = false;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Name = "Status";
+            this.gridColumn12.Visible = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Name = "CREATED";
+            this.gridColumn13.Visible = false;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Name = "UPDATED";
+            this.gridColumn14.Visible = false;
+            // 
             // groupPanel2
             // 
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -227,10 +247,10 @@
             this.groupPanel2.Controls.Add(this.labelX48);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupPanel2.Location = new System.Drawing.Point(5, 253);
+            this.groupPanel2.Location = new System.Drawing.Point(5, 301);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(834, 254);
+            this.groupPanel2.Size = new System.Drawing.Size(818, 259);
             // 
             // 
             // 
@@ -557,31 +577,11 @@
             this.labelX48.TabIndex = 21;
             this.labelX48.Text = "*收款批次：";
             // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Name = "PID";
-            this.gridColumn11.Visible = false;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Name = "Status";
-            this.gridColumn12.Visible = false;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Name = "CREATED";
-            this.gridColumn13.Visible = false;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.Name = "UPDATED";
-            this.gridColumn14.Visible = false;
-            // 
             // FormReceivables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 509);
+            this.ClientSize = new System.Drawing.Size(828, 562);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.Name = "FormReceivables";

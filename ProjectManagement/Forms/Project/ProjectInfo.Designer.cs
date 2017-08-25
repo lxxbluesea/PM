@@ -167,10 +167,10 @@
             this.groupPanel1.Controls.Add(this.btnUpload6);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel1.Location = new System.Drawing.Point(643, 1);
+            this.groupPanel1.Location = new System.Drawing.Point(305, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(305, 607);
+            this.groupPanel1.Size = new System.Drawing.Size(300, 607);
             // 
             // 
             // 
@@ -380,7 +380,7 @@
             this.txtFDesc.Name = "txtFDesc";
             this.txtFDesc.PreventEnterBeep = true;
             this.txtFDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFDesc.Size = new System.Drawing.Size(223, 90);
+            this.txtFDesc.Size = new System.Drawing.Size(218, 90);
             this.txtFDesc.TabIndex = 4;
             // 
             // labelX20
@@ -429,7 +429,7 @@
             this.buttonX26.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX26.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX26.Location = new System.Drawing.Point(241, 359);
+            this.buttonX26.Location = new System.Drawing.Point(236, 359);
             this.buttonX26.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX26.Name = "buttonX26";
             this.buttonX26.Size = new System.Drawing.Size(56, 18);
@@ -457,7 +457,7 @@
             this.btnFSelect.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnFSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFSelect.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnFSelect.Location = new System.Drawing.Point(241, 327);
+            this.btnFSelect.Location = new System.Drawing.Point(236, 327);
             this.btnFSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnFSelect.Name = "btnFSelect";
             this.btnFSelect.Size = new System.Drawing.Size(56, 18);
@@ -482,7 +482,7 @@
             this.txtFName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFName.Name = "txtFName";
             this.txtFName.PreventEnterBeep = true;
-            this.txtFName.Size = new System.Drawing.Size(163, 21);
+            this.txtFName.Size = new System.Drawing.Size(158, 21);
             this.txtFName.TabIndex = 2;
             // 
             // txtFPath
@@ -503,7 +503,7 @@
             this.txtFPath.Name = "txtFPath";
             this.txtFPath.PreventEnterBeep = true;
             this.txtFPath.ReadOnly = true;
-            this.txtFPath.Size = new System.Drawing.Size(163, 21);
+            this.txtFPath.Size = new System.Drawing.Size(158, 21);
             this.txtFPath.TabIndex = 0;
             // 
             // labelX55
@@ -555,7 +555,7 @@
             this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn6);
             this.gridFile.PrimaryGrid.MultiSelect = false;
             this.gridFile.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridFile.Size = new System.Drawing.Size(297, 128);
+            this.gridFile.Size = new System.Drawing.Size(292, 128);
             this.gridFile.TabIndex = 28;
             this.gridFile.Text = "superGridControl4";
             this.gridFile.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridFile_CellClick);
@@ -1589,7 +1589,7 @@
             this.groupPanel3.Location = new System.Drawing.Point(5, 1);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(299, 607);
+            this.groupPanel3.Size = new System.Drawing.Size(300, 607);
             // 
             // 
             // 
@@ -1629,7 +1629,7 @@
             this.btnSaveQKMS.Location = new System.Drawing.Point(0, 565);
             this.btnSaveQKMS.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveQKMS.Name = "btnSaveQKMS";
-            this.btnSaveQKMS.Size = new System.Drawing.Size(333, 18);
+            this.btnSaveQKMS.Size = new System.Drawing.Size(339, 18);
             this.btnSaveQKMS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSaveQKMS.TabIndex = 23;
             this.btnSaveQKMS.Text = "保存";
@@ -1649,11 +1649,14 @@
             this.txtInfo.Rtf = "{\\rtf1\\ansi\\ansicpg936\\deff0\\deflang1033\\deflangfe2052{\\fonttbl{\\f0\\fnil\\fcharset" +
     "134 \\\'cb\\\'ce\\\'cc\\\'e5;}}\r\n\\viewkind4\\uc1\\pard\\lang2052\\f0\\fs18\\par\r\n}\r\n";
             this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtInfo.Size = new System.Drawing.Size(333, 583);
+            this.txtInfo.Size = new System.Drawing.Size(339, 583);
             this.txtInfo.TabIndex = 0;
             // 
             // groupPanel4
             // 
+            this.groupPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupPanel4.AutoScroll = true;
             this.groupPanel4.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
@@ -1661,11 +1664,10 @@
             this.groupPanel4.Controls.Add(this.btnSaveQKMS);
             this.groupPanel4.Controls.Add(this.txtInfo);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel4.Location = new System.Drawing.Point(304, 1);
+            this.groupPanel4.Location = new System.Drawing.Point(605, 1);
             this.groupPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(339, 607);
+            this.groupPanel4.Size = new System.Drawing.Size(345, 607);
             // 
             // 
             // 

@@ -119,7 +119,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(884, 293);
+            this.groupPanel1.Size = new System.Drawing.Size(884, 300);
             // 
             // 
             // 
@@ -157,7 +157,7 @@
             this.pagerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pagerControl1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(78)))), ((int)(((byte)(151)))));
             this.pagerControl1.JumpText = "跳转";
-            this.pagerControl1.Location = new System.Drawing.Point(0, 240);
+            this.pagerControl1.Location = new System.Drawing.Point(0, 247);
             this.pagerControl1.Name = "pagerControl1";
             this.pagerControl1.PageIndex = 1;
             this.pagerControl1.PageSize = 10;
@@ -388,10 +388,10 @@
             this.groupPanel4.Controls.Add(this.labelX11);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel4.Location = new System.Drawing.Point(605, 294);
+            this.groupPanel4.Location = new System.Drawing.Point(605, 301);
             this.groupPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(282, 355);
+            this.groupPanel4.Size = new System.Drawing.Size(282, 348);
             // 
             // 
             // 
@@ -612,10 +612,10 @@
             this.groupPanel3.Controls.Add(this.labelX12);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel3.Location = new System.Drawing.Point(305, 294);
+            this.groupPanel3.Location = new System.Drawing.Point(305, 301);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(300, 355);
+            this.groupPanel3.Size = new System.Drawing.Size(300, 348);
             // 
             // 
             // 
@@ -929,10 +929,10 @@
             this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel2.Location = new System.Drawing.Point(5, 294);
+            this.groupPanel2.Location = new System.Drawing.Point(5, 301);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(300, 355);
+            this.groupPanel2.Size = new System.Drawing.Size(300, 348);
             // 
             // 
             // 

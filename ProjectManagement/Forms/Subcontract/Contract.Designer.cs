@@ -29,6 +29,58 @@
         private void InitializeComponent()
         {
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.gridFile = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gridColumn42 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn43 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn44 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn45 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.txtFDesc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX23 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX26 = new DevComponents.DotNetBar.ButtonX();
+            this.btnFSelect = new DevComponents.DotNetBar.ButtonX();
+            this.txtFName = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtFPath = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX55 = new DevComponents.DotNetBar.LabelX();
+            this.labelX56 = new DevComponents.DotNetBar.LabelX();
+            this.lblFile4 = new System.Windows.Forms.LinkLabel();
+            this.lblFile3 = new System.Windows.Forms.LinkLabel();
+            this.lblFile2 = new System.Windows.Forms.LinkLabel();
+            this.lblFile1 = new System.Windows.Forms.LinkLabel();
+            this.btn4 = new DevComponents.DotNetBar.ButtonX();
+            this.btn3 = new DevComponents.DotNetBar.ButtonX();
+            this.btn2 = new DevComponents.DotNetBar.ButtonX();
+            this.btn1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnD4 = new DevComponents.DotNetBar.ButtonX();
+            this.btnD3 = new DevComponents.DotNetBar.ButtonX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.btnD2 = new DevComponents.DotNetBar.ButtonX();
+            this.btnD1 = new DevComponents.DotNetBar.ButtonX();
+            this.btnFSave = new DevComponents.DotNetBar.ButtonX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.btnFClear = new DevComponents.DotNetBar.ButtonX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txtA_No = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cmbCompanyName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btnSaveContrat = new DevComponents.DotNetBar.ButtonX();
+            this.btnClearContract = new DevComponents.DotNetBar.ButtonX();
+            this.dtiSignDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtDesc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtAmount = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtB_Name = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtB_No = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtA_Name = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -45,24 +97,6 @@
             this.gridColumn57 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn58 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.cmbCompanyName = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btnSaveContrat = new DevComponents.DotNetBar.ButtonX();
-            this.btnClearContract = new DevComponents.DotNetBar.ButtonX();
-            this.dtiSignDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.txtDesc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtAmount = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtB_Name = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtB_No = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtA_Name = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtA_No = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -136,44 +170,9 @@
             this.gridColumn37 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn40 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.groupPanel5 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.gridFile = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gridColumn42 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn43 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn44 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn45 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.txtFDesc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX23 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX26 = new DevComponents.DotNetBar.ButtonX();
-            this.btnFSelect = new DevComponents.DotNetBar.ButtonX();
-            this.txtFName = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtFPath = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX55 = new DevComponents.DotNetBar.LabelX();
-            this.labelX56 = new DevComponents.DotNetBar.LabelX();
-            this.lblFile4 = new System.Windows.Forms.LinkLabel();
-            this.lblFile3 = new System.Windows.Forms.LinkLabel();
-            this.lblFile2 = new System.Windows.Forms.LinkLabel();
-            this.lblFile1 = new System.Windows.Forms.LinkLabel();
-            this.btn4 = new DevComponents.DotNetBar.ButtonX();
-            this.btn3 = new DevComponents.DotNetBar.ButtonX();
-            this.btn2 = new DevComponents.DotNetBar.ButtonX();
-            this.btn1 = new DevComponents.DotNetBar.ButtonX();
-            this.btnD4 = new DevComponents.DotNetBar.ButtonX();
-            this.btnD3 = new DevComponents.DotNetBar.ButtonX();
-            this.btnD2 = new DevComponents.DotNetBar.ButtonX();
-            this.btnD1 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.btnFClear = new DevComponents.DotNetBar.ButtonX();
-            this.btnFSave = new DevComponents.DotNetBar.ButtonX();
-            this.labelX22 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
-            this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtiSignDate)).BeginInit();
+            this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -183,7 +182,6 @@
             this.groupPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtiSKXXInDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itiSKXXRatio)).BeginInit();
-            this.groupPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -191,30 +189,40 @@
             this.groupPanel1.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.txtA_No);
-            this.groupPanel1.Controls.Add(this.cmbCompanyName);
-            this.groupPanel1.Controls.Add(this.btnSaveContrat);
-            this.groupPanel1.Controls.Add(this.btnClearContract);
-            this.groupPanel1.Controls.Add(this.dtiSignDate);
-            this.groupPanel1.Controls.Add(this.txtDesc);
-            this.groupPanel1.Controls.Add(this.txtAmount);
-            this.groupPanel1.Controls.Add(this.txtB_Name);
-            this.groupPanel1.Controls.Add(this.txtB_No);
-            this.groupPanel1.Controls.Add(this.txtA_Name);
-            this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Controls.Add(this.labelX2);
-            this.groupPanel1.Controls.Add(this.labelX3);
-            this.groupPanel1.Controls.Add(this.labelX4);
-            this.groupPanel1.Controls.Add(this.labelX5);
-            this.groupPanel1.Controls.Add(this.labelX8);
-            this.groupPanel1.Controls.Add(this.labelX6);
-            this.groupPanel1.Controls.Add(this.labelX7);
+            this.groupPanel1.Controls.Add(this.gridFile);
+            this.groupPanel1.Controls.Add(this.txtFDesc);
+            this.groupPanel1.Controls.Add(this.labelX23);
+            this.groupPanel1.Controls.Add(this.buttonX26);
+            this.groupPanel1.Controls.Add(this.btnFSelect);
+            this.groupPanel1.Controls.Add(this.txtFName);
+            this.groupPanel1.Controls.Add(this.txtFPath);
+            this.groupPanel1.Controls.Add(this.labelX55);
+            this.groupPanel1.Controls.Add(this.labelX56);
+            this.groupPanel1.Controls.Add(this.lblFile4);
+            this.groupPanel1.Controls.Add(this.lblFile3);
+            this.groupPanel1.Controls.Add(this.lblFile2);
+            this.groupPanel1.Controls.Add(this.lblFile1);
+            this.groupPanel1.Controls.Add(this.btn4);
+            this.groupPanel1.Controls.Add(this.btn3);
+            this.groupPanel1.Controls.Add(this.btn2);
+            this.groupPanel1.Controls.Add(this.btn1);
+            this.groupPanel1.Controls.Add(this.btnD4);
+            this.groupPanel1.Controls.Add(this.btnD3);
+            this.groupPanel1.Controls.Add(this.labelX9);
+            this.groupPanel1.Controls.Add(this.btnD2);
+            this.groupPanel1.Controls.Add(this.btnD1);
+            this.groupPanel1.Controls.Add(this.btnFSave);
+            this.groupPanel1.Controls.Add(this.labelX13);
+            this.groupPanel1.Controls.Add(this.labelX12);
+            this.groupPanel1.Controls.Add(this.btnFClear);
+            this.groupPanel1.Controls.Add(this.labelX10);
+            this.groupPanel1.Controls.Add(this.labelX11);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupPanel1.Location = new System.Drawing.Point(305, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(300, 737);
+            this.groupPanel1.Size = new System.Drawing.Size(300, 609);
             // 
             // 
             // 
@@ -243,12 +251,763 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 0;
-            this.groupPanel1.Text = "分包合同列表";
+            this.groupPanel1.TabIndex = 1;
+            this.groupPanel1.Text = "分包合同附件信息";
+            // 
+            // gridFile
+            // 
+            this.gridFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.gridFile.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gridFile.ForeColor = System.Drawing.Color.Black;
+            this.gridFile.Location = new System.Drawing.Point(-1, 143);
+            this.gridFile.Margin = new System.Windows.Forms.Padding(2);
+            this.gridFile.Name = "gridFile";
+            // 
+            // 
+            // 
+            this.gridFile.PrimaryGrid.AllowEdit = false;
+            this.gridFile.PrimaryGrid.AutoGenerateColumns = false;
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn42);
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn43);
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn44);
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn45);
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn46);
+            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn47);
+            this.gridFile.PrimaryGrid.MultiSelect = false;
+            this.gridFile.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.gridFile.Size = new System.Drawing.Size(293, 142);
+            this.gridFile.TabIndex = 91;
+            this.gridFile.Text = "superGridControl4";
+            this.gridFile.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridFile_CellClick);
+            // 
+            // gridColumn42
+            // 
+            this.gridColumn42.DataPropertyName = "RowNo";
+            this.gridColumn42.HeaderText = "编号";
+            this.gridColumn42.Name = "RowNo";
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.DataPropertyName = "Name";
+            this.gridColumn43.HeaderText = "名称";
+            this.gridColumn43.Name = "Name";
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.DataPropertyName = "Desc";
+            this.gridColumn44.HeaderText = "描述";
+            this.gridColumn44.Name = "Desc";
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.DefaultNewRowCellValue = "下载";
+            this.gridColumn45.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
+            this.gridColumn45.HeaderText = "下载";
+            this.gridColumn45.Name = "RowDownLoad";
+            this.gridColumn45.NullString = "下载";
+            this.gridColumn45.RenderType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
+            // 
+            // gridColumn46
+            // 
+            this.gridColumn46.DataPropertyName = "ID";
+            this.gridColumn46.Name = "ID";
+            this.gridColumn46.Visible = false;
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.DataPropertyName = "Path";
+            this.gridColumn47.Name = "Path";
+            this.gridColumn47.Visible = false;
+            // 
+            // txtFDesc
+            // 
+            this.txtFDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFDesc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtFDesc.Border.Class = "TextBoxBorder";
+            this.txtFDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtFDesc.DisabledBackColor = System.Drawing.Color.White;
+            this.txtFDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtFDesc.Location = new System.Drawing.Point(78, 362);
+            this.txtFDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFDesc.Multiline = true;
+            this.txtFDesc.Name = "txtFDesc";
+            this.txtFDesc.PreventEnterBeep = true;
+            this.txtFDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtFDesc.Size = new System.Drawing.Size(210, 70);
+            this.txtFDesc.TabIndex = 4;
+            // 
+            // labelX23
+            // 
+            // 
+            // 
+            // 
+            this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX23.Location = new System.Drawing.Point(-1, 360);
+            this.labelX23.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX23.Name = "labelX23";
+            this.labelX23.Size = new System.Drawing.Size(80, 18);
+            this.labelX23.TabIndex = 90;
+            this.labelX23.Text = "内容描述：";
+            // 
+            // buttonX26
+            // 
+            this.buttonX26.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonX26.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX26.Location = new System.Drawing.Point(233, 327);
+            this.buttonX26.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonX26.Name = "buttonX26";
+            this.buttonX26.Size = new System.Drawing.Size(56, 18);
+            this.buttonX26.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX26.TabIndex = 3;
+            this.buttonX26.Text = "上传";
+            this.buttonX26.Visible = false;
+            // 
+            // btnFSelect
+            // 
+            this.btnFSelect.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnFSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFSelect.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnFSelect.Location = new System.Drawing.Point(233, 295);
+            this.btnFSelect.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFSelect.Name = "btnFSelect";
+            this.btnFSelect.Size = new System.Drawing.Size(56, 18);
+            this.btnFSelect.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnFSelect.TabIndex = 1;
+            this.btnFSelect.Text = "选择";
+            this.btnFSelect.Click += new System.EventHandler(this.btnFSelect_Click);
+            // 
+            // txtFName
+            // 
+            this.txtFName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFName.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtFName.Border.Class = "TextBoxBorder";
+            this.txtFName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtFName.DisabledBackColor = System.Drawing.Color.White;
+            this.txtFName.ForeColor = System.Drawing.Color.Black;
+            this.txtFName.Location = new System.Drawing.Point(78, 327);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.PreventEnterBeep = true;
+            this.txtFName.Size = new System.Drawing.Size(151, 21);
+            this.txtFName.TabIndex = 2;
+            // 
+            // txtFPath
+            // 
+            this.txtFPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFPath.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtFPath.Border.Class = "TextBoxBorder";
+            this.txtFPath.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtFPath.DisabledBackColor = System.Drawing.Color.White;
+            this.txtFPath.Enabled = false;
+            this.txtFPath.ForeColor = System.Drawing.Color.Black;
+            this.txtFPath.Location = new System.Drawing.Point(78, 292);
+            this.txtFPath.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFPath.Name = "txtFPath";
+            this.txtFPath.PreventEnterBeep = true;
+            this.txtFPath.ReadOnly = true;
+            this.txtFPath.Size = new System.Drawing.Size(151, 21);
+            this.txtFPath.TabIndex = 0;
+            // 
+            // labelX55
+            // 
+            // 
+            // 
+            // 
+            this.labelX55.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX55.Location = new System.Drawing.Point(-1, 327);
+            this.labelX55.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX55.Name = "labelX55";
+            this.labelX55.Size = new System.Drawing.Size(80, 18);
+            this.labelX55.TabIndex = 87;
+            this.labelX55.Text = "*附件名称：";
+            // 
+            // labelX56
+            // 
+            // 
+            // 
+            // 
+            this.labelX56.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX56.Location = new System.Drawing.Point(1, 295);
+            this.labelX56.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX56.Name = "labelX56";
+            this.labelX56.Size = new System.Drawing.Size(80, 18);
+            this.labelX56.TabIndex = 88;
+            this.labelX56.Text = "*选择附件：";
+            // 
+            // lblFile4
+            // 
+            this.lblFile4.AutoSize = true;
+            this.lblFile4.BackColor = System.Drawing.Color.Transparent;
+            this.lblFile4.Location = new System.Drawing.Point(107, 88);
+            this.lblFile4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFile4.Name = "lblFile4";
+            this.lblFile4.Size = new System.Drawing.Size(65, 12);
+            this.lblFile4.TabIndex = 78;
+            this.lblFile4.TabStop = true;
+            this.lblFile4.Text = "工作说明书";
+            this.lblFile4.Click += new System.EventHandler(this.btnFOpen_Click);
+            // 
+            // lblFile3
+            // 
+            this.lblFile3.AutoSize = true;
+            this.lblFile3.BackColor = System.Drawing.Color.Transparent;
+            this.lblFile3.Location = new System.Drawing.Point(107, 60);
+            this.lblFile3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFile3.Name = "lblFile3";
+            this.lblFile3.Size = new System.Drawing.Size(65, 12);
+            this.lblFile3.TabIndex = 79;
+            this.lblFile3.TabStop = true;
+            this.lblFile3.Text = "工作说明书";
+            this.lblFile3.Click += new System.EventHandler(this.btnFOpen_Click);
+            // 
+            // lblFile2
+            // 
+            this.lblFile2.AutoSize = true;
+            this.lblFile2.BackColor = System.Drawing.Color.Transparent;
+            this.lblFile2.Location = new System.Drawing.Point(107, 33);
+            this.lblFile2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFile2.Name = "lblFile2";
+            this.lblFile2.Size = new System.Drawing.Size(29, 12);
+            this.lblFile2.TabIndex = 80;
+            this.lblFile2.TabStop = true;
+            this.lblFile2.Text = "合同";
+            this.lblFile2.Click += new System.EventHandler(this.btnFOpen_Click);
+            // 
+            // lblFile1
+            // 
+            this.lblFile1.AutoSize = true;
+            this.lblFile1.BackColor = System.Drawing.Color.Transparent;
+            this.lblFile1.Location = new System.Drawing.Point(107, 8);
+            this.lblFile1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFile1.Name = "lblFile1";
+            this.lblFile1.Size = new System.Drawing.Size(29, 12);
+            this.lblFile1.TabIndex = 81;
+            this.lblFile1.TabStop = true;
+            this.lblFile1.Text = "合同";
+            this.lblFile1.Click += new System.EventHandler(this.btnFOpen_Click);
+            // 
+            // btn4
+            // 
+            this.btn4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn4.Location = new System.Drawing.Point(233, 84);
+            this.btn4.Margin = new System.Windows.Forms.Padding(2);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(56, 18);
+            this.btn4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn4.TabIndex = 74;
+            this.btn4.Text = "上传";
+            this.btn4.Click += new System.EventHandler(this.File_Upload);
+            // 
+            // btn3
+            // 
+            this.btn3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn3.Location = new System.Drawing.Point(233, 56);
+            this.btn3.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(56, 18);
+            this.btn3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn3.TabIndex = 72;
+            this.btn3.Text = "上传";
+            this.btn3.Click += new System.EventHandler(this.File_Upload);
+            // 
+            // btn2
+            // 
+            this.btn2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn2.Location = new System.Drawing.Point(232, 29);
+            this.btn2.Margin = new System.Windows.Forms.Padding(2);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(56, 18);
+            this.btn2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn2.TabIndex = 70;
+            this.btn2.Text = "上传";
+            this.btn2.Click += new System.EventHandler(this.File_Upload);
+            // 
+            // btn1
+            // 
+            this.btn1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn1.Location = new System.Drawing.Point(233, 4);
+            this.btn1.Margin = new System.Windows.Forms.Padding(2);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(56, 18);
+            this.btn1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn1.TabIndex = 68;
+            this.btn1.Text = "上传";
+            this.btn1.Click += new System.EventHandler(this.File_Upload);
+            // 
+            // btnD4
+            // 
+            this.btnD4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnD4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnD4.Location = new System.Drawing.Point(173, 84);
+            this.btnD4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD4.Name = "btnD4";
+            this.btnD4.Size = new System.Drawing.Size(56, 18);
+            this.btnD4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnD4.TabIndex = 73;
+            this.btnD4.Text = "下载";
+            this.btnD4.Click += new System.EventHandler(this.File_DownLoad);
+            // 
+            // btnD3
+            // 
+            this.btnD3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnD3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnD3.Location = new System.Drawing.Point(173, 56);
+            this.btnD3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD3.Name = "btnD3";
+            this.btnD3.Size = new System.Drawing.Size(56, 18);
+            this.btnD3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnD3.TabIndex = 71;
+            this.btnD3.Text = "下载";
+            this.btnD3.Click += new System.EventHandler(this.File_DownLoad);
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(3, 6);
+            this.labelX9.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(92, 18);
+            this.labelX9.TabIndex = 62;
+            this.labelX9.Text = "合同电子档：";
+            // 
+            // btnD2
+            // 
+            this.btnD2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnD2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnD2.Location = new System.Drawing.Point(173, 29);
+            this.btnD2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD2.Name = "btnD2";
+            this.btnD2.Size = new System.Drawing.Size(56, 18);
+            this.btnD2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnD2.TabIndex = 69;
+            this.btnD2.Text = "下载";
+            this.btnD2.Click += new System.EventHandler(this.File_DownLoad);
+            // 
+            // btnD1
+            // 
+            this.btnD1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnD1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnD1.Location = new System.Drawing.Point(173, 4);
+            this.btnD1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD1.Name = "btnD1";
+            this.btnD1.Size = new System.Drawing.Size(56, 18);
+            this.btnD1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnD1.TabIndex = 67;
+            this.btnD1.Text = "下载";
+            this.btnD1.Visible = false;
+            this.btnD1.Click += new System.EventHandler(this.File_DownLoad);
+            // 
+            // btnFSave
+            // 
+            this.btnFSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnFSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnFSave.Location = new System.Drawing.Point(77, 442);
+            this.btnFSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFSave.Name = "btnFSave";
+            this.btnFSave.Size = new System.Drawing.Size(56, 18);
+            this.btnFSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnFSave.TabIndex = 5;
+            this.btnFSave.Text = "保存";
+            this.btnFSave.Click += new System.EventHandler(this.btnFSave_Click);
+            // 
+            // labelX13
+            // 
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Location = new System.Drawing.Point(1, 121);
+            this.labelX13.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(132, 18);
+            this.labelX13.TabIndex = 64;
+            this.labelX13.Text = "其它附件：";
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Location = new System.Drawing.Point(3, 86);
+            this.labelX12.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(132, 18);
+            this.labelX12.TabIndex = 64;
+            this.labelX12.Text = "工作说明书扫描件：";
+            // 
+            // btnFClear
+            // 
+            this.btnFClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnFClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnFClear.Location = new System.Drawing.Point(148, 442);
+            this.btnFClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFClear.Name = "btnFClear";
+            this.btnFClear.Size = new System.Drawing.Size(56, 18);
+            this.btnFClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnFClear.TabIndex = 6;
+            this.btnFClear.Text = "清空";
+            this.btnFClear.Click += new System.EventHandler(this.btnFClear_Click);
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Location = new System.Drawing.Point(3, 31);
+            this.labelX10.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(92, 18);
+            this.labelX10.TabIndex = 63;
+            this.labelX10.Text = "合同扫描件：";
+            // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(3, 58);
+            this.labelX11.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(132, 18);
+            this.labelX11.TabIndex = 66;
+            this.labelX11.Text = "工作说明书电子档：";
+            // 
+            // txtA_No
+            // 
+            this.txtA_No.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtA_No.Border.Class = "TextBoxBorder";
+            this.txtA_No.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtA_No.DisabledBackColor = System.Drawing.Color.White;
+            this.txtA_No.ForeColor = System.Drawing.Color.Black;
+            this.txtA_No.Location = new System.Drawing.Point(94, 267);
+            this.txtA_No.Margin = new System.Windows.Forms.Padding(2);
+            this.txtA_No.Name = "txtA_No";
+            this.txtA_No.PreventEnterBeep = true;
+            this.txtA_No.Size = new System.Drawing.Size(198, 21);
+            this.txtA_No.TabIndex = 1;
+            // 
+            // cmbCompanyName
+            // 
+            this.cmbCompanyName.DisplayMember = "Text";
+            this.cmbCompanyName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCompanyName.FormattingEnabled = true;
+            this.cmbCompanyName.ItemHeight = 15;
+            this.cmbCompanyName.Location = new System.Drawing.Point(94, 367);
+            this.cmbCompanyName.Name = "cmbCompanyName";
+            this.cmbCompanyName.Size = new System.Drawing.Size(198, 21);
+            this.cmbCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cmbCompanyName.TabIndex = 5;
+            // 
+            // btnSaveContrat
+            // 
+            this.btnSaveContrat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSaveContrat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSaveContrat.Location = new System.Drawing.Point(94, 498);
+            this.btnSaveContrat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSaveContrat.Name = "btnSaveContrat";
+            this.btnSaveContrat.Size = new System.Drawing.Size(56, 18);
+            this.btnSaveContrat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSaveContrat.TabIndex = 9;
+            this.btnSaveContrat.Text = "保存";
+            this.btnSaveContrat.Click += new System.EventHandler(this.btnSaveContrat_Click);
+            // 
+            // btnClearContract
+            // 
+            this.btnClearContract.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnClearContract.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnClearContract.Location = new System.Drawing.Point(164, 498);
+            this.btnClearContract.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearContract.Name = "btnClearContract";
+            this.btnClearContract.Size = new System.Drawing.Size(56, 18);
+            this.btnClearContract.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnClearContract.TabIndex = 10;
+            this.btnClearContract.Text = "清空";
+            this.btnClearContract.Click += new System.EventHandler(this.btnClearContract_Click);
+            // 
+            // dtiSignDate
+            // 
+            // 
+            // 
+            // 
+            this.dtiSignDate.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtiSignDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiSignDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtiSignDate.ButtonDropDown.Visible = true;
+            this.dtiSignDate.IsPopupCalendarOpen = false;
+            this.dtiSignDate.Location = new System.Drawing.Point(94, 417);
+            this.dtiSignDate.Margin = new System.Windows.Forms.Padding(2);
+            // 
+            // 
+            // 
+            this.dtiSignDate.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtiSignDate.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiSignDate.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dtiSignDate.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiSignDate.MonthCalendar.DisplayMonth = new System.DateTime(2017, 3, 1, 0, 0, 0, 0);
+            this.dtiSignDate.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+            this.dtiSignDate.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtiSignDate.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtiSignDate.MonthCalendar.TodayButtonVisible = true;
+            this.dtiSignDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtiSignDate.Name = "dtiSignDate";
+            this.dtiSignDate.Size = new System.Drawing.Size(198, 21);
+            this.dtiSignDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtiSignDate.TabIndex = 7;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtDesc.Border.Class = "TextBoxBorder";
+            this.txtDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDesc.DisabledBackColor = System.Drawing.Color.White;
+            this.txtDesc.ForeColor = System.Drawing.Color.Black;
+            this.txtDesc.Location = new System.Drawing.Point(94, 442);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.PreventEnterBeep = true;
+            this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDesc.Size = new System.Drawing.Size(198, 51);
+            this.txtDesc.TabIndex = 8;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtAmount.Border.Class = "TextBoxBorder";
+            this.txtAmount.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtAmount.DisabledBackColor = System.Drawing.Color.White;
+            this.txtAmount.ForeColor = System.Drawing.Color.Black;
+            this.txtAmount.Location = new System.Drawing.Point(94, 392);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.PreventEnterBeep = true;
+            this.txtAmount.Size = new System.Drawing.Size(198, 21);
+            this.txtAmount.TabIndex = 6;
+            // 
+            // txtB_Name
+            // 
+            this.txtB_Name.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtB_Name.Border.Class = "TextBoxBorder";
+            this.txtB_Name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtB_Name.DisabledBackColor = System.Drawing.Color.White;
+            this.txtB_Name.ForeColor = System.Drawing.Color.Black;
+            this.txtB_Name.Location = new System.Drawing.Point(94, 342);
+            this.txtB_Name.Margin = new System.Windows.Forms.Padding(2);
+            this.txtB_Name.Name = "txtB_Name";
+            this.txtB_Name.PreventEnterBeep = true;
+            this.txtB_Name.Size = new System.Drawing.Size(198, 21);
+            this.txtB_Name.TabIndex = 4;
+            // 
+            // txtB_No
+            // 
+            this.txtB_No.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtB_No.Border.Class = "TextBoxBorder";
+            this.txtB_No.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtB_No.DisabledBackColor = System.Drawing.Color.White;
+            this.txtB_No.ForeColor = System.Drawing.Color.Black;
+            this.txtB_No.Location = new System.Drawing.Point(94, 317);
+            this.txtB_No.Margin = new System.Windows.Forms.Padding(2);
+            this.txtB_No.Name = "txtB_No";
+            this.txtB_No.PreventEnterBeep = true;
+            this.txtB_No.Size = new System.Drawing.Size(198, 21);
+            this.txtB_No.TabIndex = 3;
+            // 
+            // txtA_Name
+            // 
+            this.txtA_Name.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtA_Name.Border.Class = "TextBoxBorder";
+            this.txtA_Name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtA_Name.DisabledBackColor = System.Drawing.Color.White;
+            this.txtA_Name.ForeColor = System.Drawing.Color.Black;
+            this.txtA_Name.Location = new System.Drawing.Point(94, 292);
+            this.txtA_Name.Margin = new System.Windows.Forms.Padding(2);
+            this.txtA_Name.Name = "txtA_Name";
+            this.txtA_Name.PreventEnterBeep = true;
+            this.txtA_Name.Size = new System.Drawing.Size(198, 21);
+            this.txtA_Name.TabIndex = 2;
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(0, 293);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(103, 18);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "主合同名称：";
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(0, 267);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(103, 18);
+            this.labelX2.TabIndex = 0;
+            this.labelX2.Text = "主合同编号：";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(0, 319);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(117, 18);
+            this.labelX3.TabIndex = 0;
+            this.labelX3.Text = "分包合同编号：";
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(0, 345);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(123, 18);
+            this.labelX4.TabIndex = 0;
+            this.labelX4.Text = "*分包合同名称：";
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(0, 397);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(102, 18);
+            this.labelX5.TabIndex = 0;
+            this.labelX5.Text = "分包合同金额：";
+            // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(0, 423);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(102, 18);
+            this.labelX8.TabIndex = 0;
+            this.labelX8.Text = "签订日期：";
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Location = new System.Drawing.Point(0, 371);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(102, 18);
+            this.labelX6.TabIndex = 0;
+            this.labelX6.Text = "合作商名称：";
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(0, 449);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(102, 18);
+            this.labelX7.TabIndex = 0;
+            this.labelX7.Text = "合同内容描述：";
             // 
             // superGridControl3
             // 
-            this.superGridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl3.Location = new System.Drawing.Point(0, 0);
             this.superGridControl3.Name = "superGridControl3";
@@ -273,7 +1032,7 @@
             this.superGridControl3.PrimaryGrid.Columns.Add(this.gridColumn58);
             this.superGridControl3.PrimaryGrid.MultiSelect = false;
             this.superGridControl3.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl3.Size = new System.Drawing.Size(294, 713);
+            this.superGridControl3.Size = new System.Drawing.Size(294, 256);
             this.superGridControl3.TabIndex = 0;
             this.superGridControl3.Text = "superGridControl3";
             this.superGridControl3.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl3_RowClick);
@@ -363,12 +1122,30 @@
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.superGridControl3);
+            this.groupPanel2.Controls.Add(this.txtA_No);
+            this.groupPanel2.Controls.Add(this.cmbCompanyName);
+            this.groupPanel2.Controls.Add(this.btnSaveContrat);
+            this.groupPanel2.Controls.Add(this.btnClearContract);
+            this.groupPanel2.Controls.Add(this.dtiSignDate);
+            this.groupPanel2.Controls.Add(this.txtA_Name);
+            this.groupPanel2.Controls.Add(this.txtDesc);
+            this.groupPanel2.Controls.Add(this.txtB_No);
+            this.groupPanel2.Controls.Add(this.txtB_Name);
+            this.groupPanel2.Controls.Add(this.txtAmount);
+            this.groupPanel2.Controls.Add(this.labelX7);
+            this.groupPanel2.Controls.Add(this.labelX6);
+            this.groupPanel2.Controls.Add(this.labelX8);
+            this.groupPanel2.Controls.Add(this.labelX5);
+            this.groupPanel2.Controls.Add(this.labelX4);
+            this.groupPanel2.Controls.Add(this.labelX3);
+            this.groupPanel2.Controls.Add(this.labelX2);
+            this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupPanel2.Location = new System.Drawing.Point(5, 1);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(300, 737);
+            this.groupPanel2.Size = new System.Drawing.Size(300, 609);
             // 
             // 
             // 
@@ -397,312 +1174,8 @@
             // 
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Text = "分包合同详细信息";
-            // 
-            // cmbCompanyName
-            // 
-            this.cmbCompanyName.DisplayMember = "Text";
-            this.cmbCompanyName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCompanyName.FormattingEnabled = true;
-            this.cmbCompanyName.ItemHeight = 15;
-            this.cmbCompanyName.Location = new System.Drawing.Point(90, 107);
-            this.cmbCompanyName.Name = "cmbCompanyName";
-            this.cmbCompanyName.Size = new System.Drawing.Size(187, 21);
-            this.cmbCompanyName.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cmbCompanyName.TabIndex = 4;
-            // 
-            // btnSaveContrat
-            // 
-            this.btnSaveContrat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSaveContrat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveContrat.Location = new System.Drawing.Point(90, 238);
-            this.btnSaveContrat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveContrat.Name = "btnSaveContrat";
-            this.btnSaveContrat.Size = new System.Drawing.Size(56, 18);
-            this.btnSaveContrat.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveContrat.TabIndex = 8;
-            this.btnSaveContrat.Text = "保存";
-            this.btnSaveContrat.Click += new System.EventHandler(this.btnSaveContrat_Click);
-            // 
-            // btnClearContract
-            // 
-            this.btnClearContract.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnClearContract.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearContract.Location = new System.Drawing.Point(160, 238);
-            this.btnClearContract.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClearContract.Name = "btnClearContract";
-            this.btnClearContract.Size = new System.Drawing.Size(56, 18);
-            this.btnClearContract.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearContract.TabIndex = 9;
-            this.btnClearContract.Text = "清空";
-            this.btnClearContract.Click += new System.EventHandler(this.btnClearContract_Click);
-            // 
-            // dtiSignDate
-            // 
-            // 
-            // 
-            // 
-            this.dtiSignDate.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtiSignDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiSignDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtiSignDate.ButtonDropDown.Visible = true;
-            this.dtiSignDate.IsPopupCalendarOpen = false;
-            this.dtiSignDate.Location = new System.Drawing.Point(90, 157);
-            this.dtiSignDate.Margin = new System.Windows.Forms.Padding(2);
-            // 
-            // 
-            // 
-            this.dtiSignDate.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtiSignDate.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiSignDate.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dtiSignDate.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtiSignDate.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiSignDate.MonthCalendar.DisplayMonth = new System.DateTime(2017, 3, 1, 0, 0, 0, 0);
-            this.dtiSignDate.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.dtiSignDate.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtiSignDate.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtiSignDate.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtiSignDate.MonthCalendar.TodayButtonVisible = true;
-            this.dtiSignDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtiSignDate.Name = "dtiSignDate";
-            this.dtiSignDate.Size = new System.Drawing.Size(187, 21);
-            this.dtiSignDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtiSignDate.TabIndex = 6;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtDesc.Border.Class = "TextBoxBorder";
-            this.txtDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDesc.DisabledBackColor = System.Drawing.Color.White;
-            this.txtDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtDesc.Location = new System.Drawing.Point(90, 182);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.PreventEnterBeep = true;
-            this.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDesc.Size = new System.Drawing.Size(187, 51);
-            this.txtDesc.TabIndex = 7;
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtAmount.Border.Class = "TextBoxBorder";
-            this.txtAmount.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtAmount.DisabledBackColor = System.Drawing.Color.White;
-            this.txtAmount.ForeColor = System.Drawing.Color.Black;
-            this.txtAmount.Location = new System.Drawing.Point(90, 132);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.PreventEnterBeep = true;
-            this.txtAmount.Size = new System.Drawing.Size(187, 21);
-            this.txtAmount.TabIndex = 5;
-            // 
-            // txtB_Name
-            // 
-            this.txtB_Name.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtB_Name.Border.Class = "TextBoxBorder";
-            this.txtB_Name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtB_Name.DisabledBackColor = System.Drawing.Color.White;
-            this.txtB_Name.ForeColor = System.Drawing.Color.Black;
-            this.txtB_Name.Location = new System.Drawing.Point(90, 82);
-            this.txtB_Name.Margin = new System.Windows.Forms.Padding(2);
-            this.txtB_Name.Name = "txtB_Name";
-            this.txtB_Name.PreventEnterBeep = true;
-            this.txtB_Name.Size = new System.Drawing.Size(187, 21);
-            this.txtB_Name.TabIndex = 3;
-            // 
-            // txtB_No
-            // 
-            this.txtB_No.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtB_No.Border.Class = "TextBoxBorder";
-            this.txtB_No.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtB_No.DisabledBackColor = System.Drawing.Color.White;
-            this.txtB_No.ForeColor = System.Drawing.Color.Black;
-            this.txtB_No.Location = new System.Drawing.Point(90, 57);
-            this.txtB_No.Margin = new System.Windows.Forms.Padding(2);
-            this.txtB_No.Name = "txtB_No";
-            this.txtB_No.PreventEnterBeep = true;
-            this.txtB_No.Size = new System.Drawing.Size(187, 21);
-            this.txtB_No.TabIndex = 2;
-            // 
-            // txtA_Name
-            // 
-            this.txtA_Name.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtA_Name.Border.Class = "TextBoxBorder";
-            this.txtA_Name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtA_Name.DisabledBackColor = System.Drawing.Color.White;
-            this.txtA_Name.ForeColor = System.Drawing.Color.Black;
-            this.txtA_Name.Location = new System.Drawing.Point(90, 32);
-            this.txtA_Name.Margin = new System.Windows.Forms.Padding(2);
-            this.txtA_Name.Name = "txtA_Name";
-            this.txtA_Name.PreventEnterBeep = true;
-            this.txtA_Name.Size = new System.Drawing.Size(187, 21);
-            this.txtA_Name.TabIndex = 1;
-            // 
-            // txtA_No
-            // 
-            this.txtA_No.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtA_No.Border.Class = "TextBoxBorder";
-            this.txtA_No.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtA_No.DisabledBackColor = System.Drawing.Color.White;
-            this.txtA_No.ForeColor = System.Drawing.Color.Black;
-            this.txtA_No.Location = new System.Drawing.Point(90, 7);
-            this.txtA_No.Margin = new System.Windows.Forms.Padding(2);
-            this.txtA_No.Name = "txtA_No";
-            this.txtA_No.PreventEnterBeep = true;
-            this.txtA_No.Size = new System.Drawing.Size(187, 21);
-            this.txtA_No.TabIndex = 0;
-            // 
-            // labelX7
-            // 
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(1, 188);
-            this.labelX7.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(102, 18);
-            this.labelX7.TabIndex = 0;
-            this.labelX7.Text = "合同内容描述：";
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(1, 110);
-            this.labelX6.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(102, 18);
-            this.labelX6.TabIndex = 0;
-            this.labelX6.Text = "合作商名称：";
-            // 
-            // labelX8
-            // 
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(1, 162);
-            this.labelX8.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(102, 18);
-            this.labelX8.TabIndex = 0;
-            this.labelX8.Text = "签订日期：";
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(1, 136);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(102, 18);
-            this.labelX5.TabIndex = 0;
-            this.labelX5.Text = "分包合同金额：";
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(1, 84);
-            this.labelX4.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(123, 18);
-            this.labelX4.TabIndex = 0;
-            this.labelX4.Text = "*分包合同名称：";
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(1, 58);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(117, 18);
-            this.labelX3.TabIndex = 0;
-            this.labelX3.Text = "分包合同编号：";
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(1, 6);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(103, 18);
-            this.labelX2.TabIndex = 0;
-            this.labelX2.Text = "主合同编号：";
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(1, 32);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(103, 18);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "主合同名称：";
+            this.groupPanel2.TabIndex = 0;
+            this.groupPanel2.Text = "分包合同列表";
             // 
             // gridColumn1
             // 
@@ -775,18 +1248,19 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.ControlBox.Visible = false;
-            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControl1.ForeColor = System.Drawing.Color.Black;
-            this.superTabControl1.Location = new System.Drawing.Point(617, 230);
+            this.superTabControl1.Location = new System.Drawing.Point(605, 1);
             this.superTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
             this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
-            this.superTabControl1.Size = new System.Drawing.Size(351, 737);
+            this.superTabControl1.Size = new System.Drawing.Size(345, 609);
             this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.superTabControl1.TabIndex = 0;
+            this.superTabControl1.TabIndex = 2;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1,
             this.superTabItem2});
@@ -801,7 +1275,7 @@
             this.superTabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(351, 711);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(345, 583);
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
@@ -823,10 +1297,11 @@
             this.groupPanel3.Controls.Add(this.labelX30);
             this.groupPanel3.Controls.Add(this.labelX31);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel3.Location = new System.Drawing.Point(0, 251);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(351, 460);
+            this.groupPanel3.Size = new System.Drawing.Size(345, 332);
             // 
             // 
             // 
@@ -882,7 +1357,7 @@
             this.cmbLCBFinishStatus.Location = new System.Drawing.Point(74, 59);
             this.cmbLCBFinishStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLCBFinishStatus.Name = "cmbLCBFinishStatus";
-            this.cmbLCBFinishStatus.Size = new System.Drawing.Size(269, 25);
+            this.cmbLCBFinishStatus.Size = new System.Drawing.Size(263, 25);
             this.cmbLCBFinishStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbLCBFinishStatus.TabIndex = 2;
             // 
@@ -934,7 +1409,7 @@
             this.dtiLCBFinishDate.MonthCalendar.TodayButtonVisible = true;
             this.dtiLCBFinishDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtiLCBFinishDate.Name = "dtiLCBFinishDate";
-            this.dtiLCBFinishDate.Size = new System.Drawing.Size(269, 21);
+            this.dtiLCBFinishDate.Size = new System.Drawing.Size(263, 21);
             this.dtiLCBFinishDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtiLCBFinishDate.TabIndex = 1;
             // 
@@ -984,7 +1459,7 @@
             this.txtLCBRemark.Name = "txtLCBRemark";
             this.txtLCBRemark.PreventEnterBeep = true;
             this.txtLCBRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLCBRemark.Size = new System.Drawing.Size(269, 67);
+            this.txtLCBRemark.Size = new System.Drawing.Size(263, 67);
             this.txtLCBRemark.TabIndex = 4;
             // 
             // btnClearLCB
@@ -1016,7 +1491,7 @@
             this.txtLCBCondition.Margin = new System.Windows.Forms.Padding(2);
             this.txtLCBCondition.Name = "txtLCBCondition";
             this.txtLCBCondition.PreventEnterBeep = true;
-            this.txtLCBCondition.Size = new System.Drawing.Size(269, 21);
+            this.txtLCBCondition.Size = new System.Drawing.Size(263, 21);
             this.txtLCBCondition.TabIndex = 3;
             // 
             // txtLCBName
@@ -1034,7 +1509,7 @@
             this.txtLCBName.Location = new System.Drawing.Point(74, 0);
             this.txtLCBName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLCBName.Name = "txtLCBName";
-            this.txtLCBName.Size = new System.Drawing.Size(269, 21);
+            this.txtLCBName.Size = new System.Drawing.Size(263, 21);
             this.txtLCBName.TabIndex = 0;
             // 
             // labelX29
@@ -1106,7 +1581,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn39);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(351, 251);
+            this.superGridControl1.Size = new System.Drawing.Size(345, 251);
             this.superGridControl1.TabIndex = 21;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl1_RowClick);
@@ -1195,7 +1670,7 @@
             this.superTabControlPanel2.Location = new System.Drawing.Point(0, 26);
             this.superTabControlPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(351, 707);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(345, 583);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -1225,7 +1700,7 @@
             this.groupPanel4.Location = new System.Drawing.Point(0, 251);
             this.groupPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(351, 456);
+            this.groupPanel4.Size = new System.Drawing.Size(345, 332);
             // 
             // 
             // 
@@ -1254,7 +1729,7 @@
             // 
             // 
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel4.TabIndex = 3;
+            this.groupPanel4.TabIndex = 1;
             this.groupPanel4.Text = "编辑付款信息";
             // 
             // cmbSKXXFinishStatus
@@ -1268,7 +1743,7 @@
             this.cmbSKXXFinishStatus.Location = new System.Drawing.Point(68, 118);
             this.cmbSKXXFinishStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSKXXFinishStatus.Name = "cmbSKXXFinishStatus";
-            this.cmbSKXXFinishStatus.Size = new System.Drawing.Size(275, 25);
+            this.cmbSKXXFinishStatus.Size = new System.Drawing.Size(269, 25);
             this.cmbSKXXFinishStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbSKXXFinishStatus.TabIndex = 4;
             // 
@@ -1333,7 +1808,7 @@
             this.dtiSKXXInDate.MonthCalendar.TodayButtonVisible = true;
             this.dtiSKXXInDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtiSKXXInDate.Name = "dtiSKXXInDate";
-            this.dtiSKXXInDate.Size = new System.Drawing.Size(275, 21);
+            this.dtiSKXXInDate.Size = new System.Drawing.Size(269, 21);
             this.dtiSKXXInDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtiSKXXInDate.TabIndex = 5;
             // 
@@ -1355,7 +1830,7 @@
             this.txtSKXXRemark.Name = "txtSKXXRemark";
             this.txtSKXXRemark.PreventEnterBeep = true;
             this.txtSKXXRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSKXXRemark.Size = new System.Drawing.Size(275, 36);
+            this.txtSKXXRemark.Size = new System.Drawing.Size(269, 36);
             this.txtSKXXRemark.TabIndex = 6;
             // 
             // SKXXBatchNo
@@ -1374,7 +1849,7 @@
             this.SKXXBatchNo.Margin = new System.Windows.Forms.Padding(2);
             this.SKXXBatchNo.Name = "SKXXBatchNo";
             this.SKXXBatchNo.PreventEnterBeep = true;
-            this.SKXXBatchNo.Size = new System.Drawing.Size(275, 21);
+            this.SKXXBatchNo.Size = new System.Drawing.Size(269, 21);
             this.SKXXBatchNo.TabIndex = 0;
             // 
             // SKXXAmount
@@ -1393,7 +1868,7 @@
             this.SKXXAmount.Margin = new System.Windows.Forms.Padding(2);
             this.SKXXAmount.Name = "SKXXAmount";
             this.SKXXAmount.PreventEnterBeep = true;
-            this.SKXXAmount.Size = new System.Drawing.Size(275, 21);
+            this.SKXXAmount.Size = new System.Drawing.Size(269, 21);
             this.SKXXAmount.TabIndex = 2;
             // 
             // txtSKXXCondition
@@ -1412,7 +1887,7 @@
             this.txtSKXXCondition.Margin = new System.Windows.Forms.Padding(2);
             this.txtSKXXCondition.Name = "txtSKXXCondition";
             this.txtSKXXCondition.PreventEnterBeep = true;
-            this.txtSKXXCondition.Size = new System.Drawing.Size(275, 21);
+            this.txtSKXXCondition.Size = new System.Drawing.Size(269, 21);
             this.txtSKXXCondition.TabIndex = 3;
             // 
             // labelX52
@@ -1514,7 +1989,7 @@
             this.itiSKXXRatio.MinValue = 0;
             this.itiSKXXRatio.Name = "itiSKXXRatio";
             this.itiSKXXRatio.ShowUpDown = true;
-            this.itiSKXXRatio.Size = new System.Drawing.Size(275, 21);
+            this.itiSKXXRatio.Size = new System.Drawing.Size(269, 21);
             this.itiSKXXRatio.TabIndex = 1;
             this.itiSKXXRatio.ValueChanged += new System.EventHandler(this.itiSKXXRatio_ValueChanged);
             // 
@@ -1575,8 +2050,8 @@
             this.superGridControl2.PrimaryGrid.Columns.Add(this.gridColumn40);
             this.superGridControl2.PrimaryGrid.MultiSelect = false;
             this.superGridControl2.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl2.Size = new System.Drawing.Size(351, 251);
-            this.superGridControl2.TabIndex = 29;
+            this.superGridControl2.Size = new System.Drawing.Size(345, 251);
+            this.superGridControl2.TabIndex = 0;
             this.superGridControl2.Text = "superGridControl2";
             this.superGridControl2.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl2_RowClick);
             // 
@@ -1673,538 +2148,20 @@
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "付款信息";
             // 
-            // groupPanel5
-            // 
-            this.groupPanel5.AutoScroll = true;
-            this.groupPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.groupPanel5.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel5.Controls.Add(this.gridFile);
-            this.groupPanel5.Controls.Add(this.txtFDesc);
-            this.groupPanel5.Controls.Add(this.labelX23);
-            this.groupPanel5.Controls.Add(this.buttonX26);
-            this.groupPanel5.Controls.Add(this.btnFSelect);
-            this.groupPanel5.Controls.Add(this.txtFName);
-            this.groupPanel5.Controls.Add(this.txtFPath);
-            this.groupPanel5.Controls.Add(this.labelX55);
-            this.groupPanel5.Controls.Add(this.labelX56);
-            this.groupPanel5.Controls.Add(this.lblFile4);
-            this.groupPanel5.Controls.Add(this.lblFile3);
-            this.groupPanel5.Controls.Add(this.lblFile2);
-            this.groupPanel5.Controls.Add(this.lblFile1);
-            this.groupPanel5.Controls.Add(this.btn4);
-            this.groupPanel5.Controls.Add(this.btn3);
-            this.groupPanel5.Controls.Add(this.btn2);
-            this.groupPanel5.Controls.Add(this.btn1);
-            this.groupPanel5.Controls.Add(this.btnD4);
-            this.groupPanel5.Controls.Add(this.btnD3);
-            this.groupPanel5.Controls.Add(this.btnD2);
-            this.groupPanel5.Controls.Add(this.btnD1);
-            this.groupPanel5.Controls.Add(this.labelX12);
-            this.groupPanel5.Controls.Add(this.labelX10);
-            this.groupPanel5.Controls.Add(this.labelX11);
-            this.groupPanel5.Controls.Add(this.labelX9);
-            this.groupPanel5.Controls.Add(this.btnFClear);
-            this.groupPanel5.Controls.Add(this.btnFSave);
-            this.groupPanel5.Controls.Add(this.labelX22);
-            this.groupPanel5.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel5.Location = new System.Drawing.Point(757, 6);
-            this.groupPanel5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupPanel5.Name = "groupPanel5";
-            this.groupPanel5.Size = new System.Drawing.Size(318, 452);
-            // 
-            // 
-            // 
-            this.groupPanel5.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel5.Style.BackColorGradientAngle = 90;
-            this.groupPanel5.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel5.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel5.Style.BorderBottomWidth = 1;
-            this.groupPanel5.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel5.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel5.Style.BorderLeftWidth = 1;
-            this.groupPanel5.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel5.Style.BorderRightWidth = 1;
-            this.groupPanel5.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel5.Style.BorderTopWidth = 1;
-            this.groupPanel5.Style.CornerDiameter = 4;
-            this.groupPanel5.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel5.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel5.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel5.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.groupPanel5.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.groupPanel5.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel5.TabIndex = 9;
-            this.groupPanel5.Text = "相关附件";
-            // 
-            // gridFile
-            // 
-            this.gridFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.gridFile.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gridFile.ForeColor = System.Drawing.Color.Black;
-            this.gridFile.Location = new System.Drawing.Point(4, 124);
-            this.gridFile.Margin = new System.Windows.Forms.Padding(2);
-            this.gridFile.Name = "gridFile";
-            // 
-            // 
-            // 
-            this.gridFile.PrimaryGrid.AllowEdit = false;
-            this.gridFile.PrimaryGrid.AutoGenerateColumns = false;
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn42);
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn43);
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn44);
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn45);
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn46);
-            this.gridFile.PrimaryGrid.Columns.Add(this.gridColumn47);
-            this.gridFile.PrimaryGrid.MultiSelect = false;
-            this.gridFile.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridFile.Size = new System.Drawing.Size(285, 108);
-            this.gridFile.TabIndex = 91;
-            this.gridFile.Text = "superGridControl4";
-            this.gridFile.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridFile_CellClick);
-            // 
-            // gridColumn42
-            // 
-            this.gridColumn42.DataPropertyName = "RowNo";
-            this.gridColumn42.HeaderText = "编号";
-            this.gridColumn42.Name = "RowNo";
-            // 
-            // gridColumn43
-            // 
-            this.gridColumn43.DataPropertyName = "Name";
-            this.gridColumn43.HeaderText = "名称";
-            this.gridColumn43.Name = "Name";
-            // 
-            // gridColumn44
-            // 
-            this.gridColumn44.DataPropertyName = "Desc";
-            this.gridColumn44.HeaderText = "描述";
-            this.gridColumn44.Name = "Desc";
-            // 
-            // gridColumn45
-            // 
-            this.gridColumn45.DefaultNewRowCellValue = "下载";
-            this.gridColumn45.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
-            this.gridColumn45.HeaderText = "下载";
-            this.gridColumn45.Name = "RowDownLoad";
-            this.gridColumn45.NullString = "下载";
-            this.gridColumn45.RenderType = typeof(DevComponents.DotNetBar.SuperGrid.GridButtonXEditControl);
-            // 
-            // gridColumn46
-            // 
-            this.gridColumn46.DataPropertyName = "ID";
-            this.gridColumn46.Name = "ID";
-            this.gridColumn46.Visible = false;
-            // 
-            // gridColumn47
-            // 
-            this.gridColumn47.DataPropertyName = "Path";
-            this.gridColumn47.Name = "Path";
-            this.gridColumn47.Visible = false;
-            // 
-            // txtFDesc
-            // 
-            this.txtFDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFDesc.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtFDesc.Border.Class = "TextBoxBorder";
-            this.txtFDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFDesc.DisabledBackColor = System.Drawing.Color.White;
-            this.txtFDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtFDesc.Location = new System.Drawing.Point(81, 290);
-            this.txtFDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFDesc.Multiline = true;
-            this.txtFDesc.Name = "txtFDesc";
-            this.txtFDesc.PreventEnterBeep = true;
-            this.txtFDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFDesc.Size = new System.Drawing.Size(211, 54);
-            this.txtFDesc.TabIndex = 2;
-            // 
-            // labelX23
-            // 
-            // 
-            // 
-            // 
-            this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX23.Location = new System.Drawing.Point(2, 292);
-            this.labelX23.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(80, 18);
-            this.labelX23.TabIndex = 90;
-            this.labelX23.Text = "内容描述：";
-            // 
-            // buttonX26
-            // 
-            this.buttonX26.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX26.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX26.Location = new System.Drawing.Point(236, 267);
-            this.buttonX26.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonX26.Name = "buttonX26";
-            this.buttonX26.Size = new System.Drawing.Size(56, 18);
-            this.buttonX26.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX26.TabIndex = 89;
-            this.buttonX26.Text = "上传";
-            this.buttonX26.Visible = false;
-            // 
-            // btnFSelect
-            // 
-            this.btnFSelect.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnFSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFSelect.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnFSelect.Location = new System.Drawing.Point(236, 242);
-            this.btnFSelect.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFSelect.Name = "btnFSelect";
-            this.btnFSelect.Size = new System.Drawing.Size(56, 18);
-            this.btnFSelect.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnFSelect.TabIndex = 83;
-            this.btnFSelect.Text = "选择";
-            this.btnFSelect.Click += new System.EventHandler(this.btnFSelect_Click);
-            // 
-            // txtFName
-            // 
-            this.txtFName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFName.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtFName.Border.Class = "TextBoxBorder";
-            this.txtFName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFName.DisabledBackColor = System.Drawing.Color.White;
-            this.txtFName.ForeColor = System.Drawing.Color.Black;
-            this.txtFName.Location = new System.Drawing.Point(80, 264);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFName.Name = "txtFName";
-            this.txtFName.PreventEnterBeep = true;
-            this.txtFName.Size = new System.Drawing.Size(152, 21);
-            this.txtFName.TabIndex = 1;
-            // 
-            // txtFPath
-            // 
-            this.txtFPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFPath.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtFPath.Border.Class = "TextBoxBorder";
-            this.txtFPath.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtFPath.DisabledBackColor = System.Drawing.Color.White;
-            this.txtFPath.Enabled = false;
-            this.txtFPath.ForeColor = System.Drawing.Color.Black;
-            this.txtFPath.Location = new System.Drawing.Point(80, 239);
-            this.txtFPath.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFPath.Name = "txtFPath";
-            this.txtFPath.PreventEnterBeep = true;
-            this.txtFPath.ReadOnly = true;
-            this.txtFPath.Size = new System.Drawing.Size(152, 21);
-            this.txtFPath.TabIndex = 0;
-            // 
-            // labelX55
-            // 
-            // 
-            // 
-            // 
-            this.labelX55.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX55.Location = new System.Drawing.Point(2, 266);
-            this.labelX55.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX55.Name = "labelX55";
-            this.labelX55.Size = new System.Drawing.Size(80, 18);
-            this.labelX55.TabIndex = 87;
-            this.labelX55.Text = "*附件名称：";
-            // 
-            // labelX56
-            // 
-            // 
-            // 
-            // 
-            this.labelX56.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX56.Location = new System.Drawing.Point(2, 239);
-            this.labelX56.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX56.Name = "labelX56";
-            this.labelX56.Size = new System.Drawing.Size(80, 18);
-            this.labelX56.TabIndex = 88;
-            this.labelX56.Text = "*选择附件：";
-            // 
-            // lblFile4
-            // 
-            this.lblFile4.AutoSize = true;
-            this.lblFile4.BackColor = System.Drawing.Color.Transparent;
-            this.lblFile4.Location = new System.Drawing.Point(110, 86);
-            this.lblFile4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFile4.Name = "lblFile4";
-            this.lblFile4.Size = new System.Drawing.Size(65, 12);
-            this.lblFile4.TabIndex = 78;
-            this.lblFile4.TabStop = true;
-            this.lblFile4.Text = "工作说明书";
-            this.lblFile4.Click += new System.EventHandler(this.btnFOpen_Click);
-            // 
-            // lblFile3
-            // 
-            this.lblFile3.AutoSize = true;
-            this.lblFile3.BackColor = System.Drawing.Color.Transparent;
-            this.lblFile3.Location = new System.Drawing.Point(110, 58);
-            this.lblFile3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFile3.Name = "lblFile3";
-            this.lblFile3.Size = new System.Drawing.Size(65, 12);
-            this.lblFile3.TabIndex = 79;
-            this.lblFile3.TabStop = true;
-            this.lblFile3.Text = "工作说明书";
-            this.lblFile3.Click += new System.EventHandler(this.btnFOpen_Click);
-            // 
-            // lblFile2
-            // 
-            this.lblFile2.AutoSize = true;
-            this.lblFile2.BackColor = System.Drawing.Color.Transparent;
-            this.lblFile2.Location = new System.Drawing.Point(110, 31);
-            this.lblFile2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFile2.Name = "lblFile2";
-            this.lblFile2.Size = new System.Drawing.Size(29, 12);
-            this.lblFile2.TabIndex = 80;
-            this.lblFile2.TabStop = true;
-            this.lblFile2.Text = "合同";
-            this.lblFile2.Click += new System.EventHandler(this.btnFOpen_Click);
-            // 
-            // lblFile1
-            // 
-            this.lblFile1.AutoSize = true;
-            this.lblFile1.BackColor = System.Drawing.Color.Transparent;
-            this.lblFile1.Location = new System.Drawing.Point(110, 6);
-            this.lblFile1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFile1.Name = "lblFile1";
-            this.lblFile1.Size = new System.Drawing.Size(29, 12);
-            this.lblFile1.TabIndex = 81;
-            this.lblFile1.TabStop = true;
-            this.lblFile1.Text = "合同";
-            this.lblFile1.Click += new System.EventHandler(this.btnFOpen_Click);
-            // 
-            // btn4
-            // 
-            this.btn4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn4.Location = new System.Drawing.Point(236, 82);
-            this.btn4.Margin = new System.Windows.Forms.Padding(2);
-            this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(56, 18);
-            this.btn4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn4.TabIndex = 74;
-            this.btn4.Text = "上传";
-            this.btn4.Click += new System.EventHandler(this.File_Upload);
-            // 
-            // btn3
-            // 
-            this.btn3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn3.Location = new System.Drawing.Point(236, 54);
-            this.btn3.Margin = new System.Windows.Forms.Padding(2);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(56, 18);
-            this.btn3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn3.TabIndex = 72;
-            this.btn3.Text = "上传";
-            this.btn3.Click += new System.EventHandler(this.File_Upload);
-            // 
-            // btn2
-            // 
-            this.btn2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn2.Location = new System.Drawing.Point(235, 27);
-            this.btn2.Margin = new System.Windows.Forms.Padding(2);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(56, 18);
-            this.btn2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn2.TabIndex = 70;
-            this.btn2.Text = "上传";
-            this.btn2.Click += new System.EventHandler(this.File_Upload);
-            // 
-            // btn1
-            // 
-            this.btn1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn1.Location = new System.Drawing.Point(236, 2);
-            this.btn1.Margin = new System.Windows.Forms.Padding(2);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(56, 18);
-            this.btn1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn1.TabIndex = 68;
-            this.btn1.Text = "上传";
-            this.btn1.Click += new System.EventHandler(this.File_Upload);
-            // 
-            // btnD4
-            // 
-            this.btnD4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnD4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD4.Location = new System.Drawing.Point(176, 82);
-            this.btnD4.Margin = new System.Windows.Forms.Padding(2);
-            this.btnD4.Name = "btnD4";
-            this.btnD4.Size = new System.Drawing.Size(56, 18);
-            this.btnD4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnD4.TabIndex = 73;
-            this.btnD4.Text = "下载";
-            this.btnD4.Click += new System.EventHandler(this.File_DownLoad);
-            // 
-            // btnD3
-            // 
-            this.btnD3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnD3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD3.Location = new System.Drawing.Point(176, 54);
-            this.btnD3.Margin = new System.Windows.Forms.Padding(2);
-            this.btnD3.Name = "btnD3";
-            this.btnD3.Size = new System.Drawing.Size(56, 18);
-            this.btnD3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnD3.TabIndex = 71;
-            this.btnD3.Text = "下载";
-            this.btnD3.Click += new System.EventHandler(this.File_DownLoad);
-            // 
-            // btnD2
-            // 
-            this.btnD2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnD2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD2.Location = new System.Drawing.Point(176, 27);
-            this.btnD2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnD2.Name = "btnD2";
-            this.btnD2.Size = new System.Drawing.Size(56, 18);
-            this.btnD2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnD2.TabIndex = 69;
-            this.btnD2.Text = "下载";
-            this.btnD2.Click += new System.EventHandler(this.File_DownLoad);
-            // 
-            // btnD1
-            // 
-            this.btnD1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnD1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnD1.Location = new System.Drawing.Point(176, 2);
-            this.btnD1.Margin = new System.Windows.Forms.Padding(2);
-            this.btnD1.Name = "btnD1";
-            this.btnD1.Size = new System.Drawing.Size(56, 18);
-            this.btnD1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnD1.TabIndex = 67;
-            this.btnD1.Text = "下载";
-            this.btnD1.Visible = false;
-            this.btnD1.Click += new System.EventHandler(this.File_DownLoad);
-            // 
-            // labelX12
-            // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(4, 80);
-            this.labelX12.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(132, 18);
-            this.labelX12.TabIndex = 64;
-            this.labelX12.Text = "工作说明书扫描件：";
-            // 
-            // labelX10
-            // 
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(4, 25);
-            this.labelX10.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(92, 18);
-            this.labelX10.TabIndex = 63;
-            this.labelX10.Text = "合同扫描件：";
-            // 
-            // labelX11
-            // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(4, 52);
-            this.labelX11.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(132, 18);
-            this.labelX11.TabIndex = 66;
-            this.labelX11.Text = "工作说明书电子档：";
-            // 
-            // labelX9
-            // 
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(4, 0);
-            this.labelX9.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(92, 18);
-            this.labelX9.TabIndex = 62;
-            this.labelX9.Text = "合同电子档：";
-            // 
-            // btnFClear
-            // 
-            this.btnFClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnFClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnFClear.Location = new System.Drawing.Point(152, 352);
-            this.btnFClear.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFClear.Name = "btnFClear";
-            this.btnFClear.Size = new System.Drawing.Size(56, 18);
-            this.btnFClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnFClear.TabIndex = 4;
-            this.btnFClear.Text = "清空";
-            this.btnFClear.Click += new System.EventHandler(this.btnFClear_Click);
-            // 
-            // btnFSave
-            // 
-            this.btnFSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnFSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnFSave.Location = new System.Drawing.Point(81, 352);
-            this.btnFSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFSave.Name = "btnFSave";
-            this.btnFSave.Size = new System.Drawing.Size(56, 18);
-            this.btnFSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnFSave.TabIndex = 3;
-            this.btnFSave.Text = "保存";
-            this.btnFSave.Click += new System.EventHandler(this.btnFSave_Click);
-            // 
-            // labelX22
-            // 
-            this.labelX22.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX22.Location = new System.Drawing.Point(4, 102);
-            this.labelX22.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(130, 18);
-            this.labelX22.TabIndex = 55;
-            this.labelX22.Text = "其它附件：";
-            // 
             // Contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 740);
+            this.ClientSize = new System.Drawing.Size(955, 612);
             this.Controls.Add(this.superTabControl1);
-            this.Controls.Add(this.groupPanel5);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.groupPanel2);
             this.Name = "Contract";
             this.Text = "分包合同";
             this.groupPanel1.ResumeLayout(false);
-            this.groupPanel2.ResumeLayout(false);
+            this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtiSignDate)).EndInit();
+            this.groupPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
@@ -2214,8 +2171,6 @@
             this.groupPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtiSKXXInDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itiSKXXRatio)).EndInit();
-            this.groupPanel5.ResumeLayout(false);
-            this.groupPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2316,8 +2271,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn39;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn41;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cmbCompanyName;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel5;
-        private DevComponents.DotNetBar.LabelX labelX22;
         private System.Windows.Forms.LinkLabel lblFile4;
         private System.Windows.Forms.LinkLabel lblFile3;
         private System.Windows.Forms.LinkLabel lblFile2;
@@ -2365,5 +2318,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn56;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn57;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn58;
+        private DevComponents.DotNetBar.LabelX labelX13;
     }
 }

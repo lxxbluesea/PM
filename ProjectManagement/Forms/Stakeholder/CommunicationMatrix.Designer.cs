@@ -223,7 +223,7 @@
             this.txtCompanyName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.PreventEnterBeep = true;
-            this.txtCompanyName.Size = new System.Drawing.Size(182, 21);
+            this.txtCompanyName.Size = new System.Drawing.Size(199, 21);
             this.txtCompanyName.TabIndex = 0;
             // 
             // labelX2
@@ -254,7 +254,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
-            this.txtName.Size = new System.Drawing.Size(182, 21);
+            this.txtName.Size = new System.Drawing.Size(199, 21);
             this.txtName.TabIndex = 1;
             // 
             // labelX3
@@ -285,7 +285,7 @@
             this.txtPosition.Margin = new System.Windows.Forms.Padding(2);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.PreventEnterBeep = true;
-            this.txtPosition.Size = new System.Drawing.Size(182, 21);
+            this.txtPosition.Size = new System.Drawing.Size(199, 21);
             this.txtPosition.TabIndex = 2;
             // 
             // labelX4
@@ -316,7 +316,7 @@
             this.txtTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtTel.Name = "txtTel";
             this.txtTel.PreventEnterBeep = true;
-            this.txtTel.Size = new System.Drawing.Size(182, 21);
+            this.txtTel.Size = new System.Drawing.Size(199, 21);
             this.txtTel.TabIndex = 4;
             // 
             // labelX8
@@ -347,7 +347,7 @@
             this.txtDuty.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuty.Name = "txtDuty";
             this.txtDuty.PreventEnterBeep = true;
-            this.txtDuty.Size = new System.Drawing.Size(182, 21);
+            this.txtDuty.Size = new System.Drawing.Size(199, 21);
             this.txtDuty.TabIndex = 3;
             // 
             // labelX5
@@ -392,7 +392,7 @@
             this.txtQQ.Margin = new System.Windows.Forms.Padding(2);
             this.txtQQ.Name = "txtQQ";
             this.txtQQ.PreventEnterBeep = true;
-            this.txtQQ.Size = new System.Drawing.Size(182, 21);
+            this.txtQQ.Size = new System.Drawing.Size(199, 21);
             this.txtQQ.TabIndex = 6;
             // 
             // txtEmail
@@ -409,7 +409,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PreventEnterBeep = true;
-            this.txtEmail.Size = new System.Drawing.Size(182, 21);
+            this.txtEmail.Size = new System.Drawing.Size(199, 21);
             this.txtEmail.TabIndex = 5;
             // 
             // labelX6
@@ -440,7 +440,7 @@
             this.txtWechat.Margin = new System.Windows.Forms.Padding(2);
             this.txtWechat.Name = "txtWechat";
             this.txtWechat.PreventEnterBeep = true;
-            this.txtWechat.Size = new System.Drawing.Size(182, 21);
+            this.txtWechat.Size = new System.Drawing.Size(199, 21);
             this.txtWechat.TabIndex = 7;
             // 
             // cbIspublic
@@ -531,7 +531,7 @@
             this.dtiCREATED.MonthCalendar.TodayButtonVisible = true;
             this.dtiCREATED.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtiCREATED.Name = "dtiCREATED";
-            this.dtiCREATED.Size = new System.Drawing.Size(182, 21);
+            this.dtiCREATED.Size = new System.Drawing.Size(199, 21);
             this.dtiCREATED.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtiCREATED.TabIndex = 8;
             // 
@@ -565,7 +565,7 @@
             this.groupPanel2.Location = new System.Drawing.Point(305, 1);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(275, 547);
+            this.groupPanel2.Size = new System.Drawing.Size(300, 547);
             // 
             // 
             // 
@@ -1009,10 +1009,10 @@
             this.groupPanel3.Controls.Add(this.labelX9);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupPanel3.Location = new System.Drawing.Point(580, 1);
+            this.groupPanel3.Location = new System.Drawing.Point(605, 1);
             this.groupPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel3.Name = "groupPanel3";
-            this.groupPanel3.Size = new System.Drawing.Size(297, 547);
+            this.groupPanel3.Size = new System.Drawing.Size(300, 547);
             // 
             // 
             // 
