@@ -45,6 +45,9 @@ namespace ProjectManagement.Forms.Others
         #region 业务类初期化
 
         RoutineBLL routineBLL = new RoutineBLL();
+        DomainDLL.Routine routine;
+        DomainDLL.RoutineTrace  routineTrace;
+        DomainDLL.RoutineFiles routineFile;
 
         #endregion
 
@@ -79,6 +82,7 @@ namespace ProjectManagement.Forms.Others
         private void btnWorkClear_Click(object sender, EventArgs e)
         {
             ClearWork();
+            RoutineTrace_Clear();
         }
 
 
@@ -471,6 +475,7 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         public void init()
         {
+            routine = new DomainDLL.Routine();
             DataHelper.SetComboxTreeData(this.cmbNode, ProjectId);//加载WBS结点下拉列表
             DataHelper.LoadDictItems(cmbResultStatus, DictCategory.WorkHandleStatus);//加载完成情况下拉列表
             Search(); //加载日常工作列表
@@ -517,25 +522,32 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void LoadContent()
         {
-            DomainDLL.Routine obj = routineBLL.GetRoutineObject(WorkId, _nodeID);
-            PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
+            routine = new DomainDLL.Routine();
+            routine = routineBLL.GetRoutineObject(WorkId, _nodeID);
+            //DomainDLL.Routine obj = routineBLL.GetRoutineObject(WorkId, _nodeID);
+            PNode parentNode = new WBSBLL().GetParentNode(routine.NodeID); //日常工作挂靠的节点
             DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
-            _nodeID = obj.NodeID;
-            WorkId = obj.ID;
-            txtWorkName.Text = obj.Name;
-            txtDesc.Text = obj.Desc;//工作描述
-            txtResult.Text = obj.DealResult;//处理结果
-            if (obj.StartDate.HasValue)//开始日期
-                txtStartDate.Text = obj.StartDate.Value.ToShortDateString();
-            if (obj.EndDate.HasValue)//结束日期
-                txtEndDate.Text = obj.EndDate.Value.ToShortDateString();
-            DataHelper.SetComboBoxSelectItemByValue(cmbResultStatus, obj.FinishStatus.ToString());//完成情况
-            txtCreateDate.Text = obj.CREATED.ToShortDateString();//添加日期
-            intWorkload.Value = (int)obj.Workload;//工作量
+            _nodeID = routine.NodeID;
+            WorkId = routine.ID;
+            txtWorkName.Text = routine.Name;
+            txtDesc.Text = routine.Desc;//工作描述
+            txtResult.Text = routine.DealResult;//处理结果
+            if (routine.StartDate.HasValue)//开始日期
+                txtStartDate.Text = routine.StartDate.Value.ToShortDateString();
+            if (routine.EndDate.HasValue)//结束日期
+                txtEndDate.Text = routine.EndDate.Value.ToShortDateString();
+            DataHelper.SetComboBoxSelectItemByValue(cmbResultStatus, routine.FinishStatus.ToString());//完成情况
+            txtCreateDate.Text = routine.CREATED.ToShortDateString();//添加日期
+            intWorkload.Value = (int)routine.Workload;//工作量
 
             //加载责任人列表
-            var list = routineBLL.GetRoutinWorkList(obj.ID);
+            var list = routineBLL.GetRoutinWorkList(routine.ID);
             gridManager.PrimaryGrid.DataSource = list;
+
+            //加载跟进情况
+
+            var listTrace = routineBLL.GetRoutineTrace(routine.ID);
+            RoutineTrace_Grid.PrimaryGrid.DataSource = listTrace;
         }
 
         /// <summary>
@@ -645,6 +657,7 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearWork()
         {
+            routine = new DomainDLL.Routine();
             //节点
             cmbNode.SelectedIndex = -1;
             //工作名称
@@ -666,9 +679,10 @@ namespace ProjectManagement.Forms.Others
             //清空责任人
             gridManager.PrimaryGrid.DataSource = null;
 
+            routineFile = new RoutineFiles();
             //附件列表加载
             gridFile.PrimaryGrid.DataSource = new List<RoutineFiles>();
-            //选择附件
+            //选择附件hhhhhhhhhhhhhhhg
             txtFilePath.Text = string.Empty;
             //附件名称
             txtFileName.Text = string.Empty;
@@ -678,8 +692,18 @@ namespace ProjectManagement.Forms.Others
             WorkId = string.Empty;
             //文件ID
             _fileId = string.Empty;
+
+
+
         }
         #endregion
 
+        void RoutineTrace_Clear()
+        {
+            routineTrace = new DomainDLL.RoutineTrace();
+            RoutineTrace_Grid.PrimaryGrid.DataSource = null;
+            dt_routineTrace_TraceDate.Value = DateTime.Now;
+            txt_routineTrace_content.Text = "";
+        }
     }
 }

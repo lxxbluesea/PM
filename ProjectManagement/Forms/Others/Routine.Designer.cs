@@ -100,7 +100,7 @@
             this.gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.RoutineTrace_Grid = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -108,10 +108,11 @@
             this.gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.dt_routineTrace_TraceDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btn_routineTrace_Clear = new DevComponents.DotNetBar.ButtonX();
+            this.btn_routineTrace_Save = new DevComponents.DotNetBar.ButtonX();
+            this.txt_routineTrace_content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
@@ -125,7 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStart)).BeginInit();
             this.groupPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_routineTrace_TraceDate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -244,7 +245,7 @@
             this.gridManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridManager.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridManager.ForeColor = System.Drawing.Color.Black;
-            this.gridManager.Location = new System.Drawing.Point(2, 395);
+            this.gridManager.Location = new System.Drawing.Point(0, 391);
             this.gridManager.Margin = new System.Windows.Forms.Padding(2);
             this.gridManager.Name = "gridManager";
             // 
@@ -259,7 +260,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(262, 121);
+            this.gridManager.Size = new System.Drawing.Size(288, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -636,7 +637,7 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(0, 147);
+            this.labelX14.Location = new System.Drawing.Point(0, 148);
             this.labelX14.Margin = new System.Windows.Forms.Padding(2);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(69, 18);
@@ -662,7 +663,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(3, 36);
+            this.labelX2.Location = new System.Drawing.Point(3, 39);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(69, 18);
@@ -751,7 +752,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(207, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(189, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -770,7 +771,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(267, 21);
+            this.txtFileName.Size = new System.Drawing.Size(249, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -817,7 +818,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(267, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(249, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -838,7 +839,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(283, 116);
+            this.buttonX5.Location = new System.Drawing.Point(265, 116);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(56, 21);
@@ -1321,11 +1322,11 @@
             // 
             this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel4.Controls.Add(this.superGridControl1);
-            this.groupPanel4.Controls.Add(this.dateTimeInput1);
-            this.groupPanel4.Controls.Add(this.buttonX3);
-            this.groupPanel4.Controls.Add(this.buttonX2);
-            this.groupPanel4.Controls.Add(this.textBoxX1);
+            this.groupPanel4.Controls.Add(this.RoutineTrace_Grid);
+            this.groupPanel4.Controls.Add(this.dt_routineTrace_TraceDate);
+            this.groupPanel4.Controls.Add(this.btn_routineTrace_Clear);
+            this.groupPanel4.Controls.Add(this.btn_routineTrace_Save);
+            this.groupPanel4.Controls.Add(this.txt_routineTrace_content);
             this.groupPanel4.Controls.Add(this.labelX17);
             this.groupPanel4.Controls.Add(this.labelX16);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
@@ -1364,25 +1365,26 @@
             this.groupPanel4.TabIndex = 3;
             this.groupPanel4.Text = "跟进明细";
             // 
-            // superGridControl1
+            // RoutineTrace_Grid
             // 
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.superGridControl1.Name = "superGridControl1";
+            this.RoutineTrace_Grid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RoutineTrace_Grid.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.RoutineTrace_Grid.Location = new System.Drawing.Point(0, 0);
+            this.RoutineTrace_Grid.Name = "RoutineTrace_Grid";
             // 
             // 
             // 
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn19);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn20);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn25);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn21);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn22);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn23);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn24);
-            this.superGridControl1.Size = new System.Drawing.Size(341, 150);
-            this.superGridControl1.TabIndex = 2;
-            this.superGridControl1.Text = "superGridControl1";
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn19);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn20);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn25);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn21);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn22);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn23);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn24);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn5);
+            this.RoutineTrace_Grid.Size = new System.Drawing.Size(341, 150);
+            this.RoutineTrace_Grid.TabIndex = 2;
+            this.RoutineTrace_Grid.Text = "superGridControl1";
             // 
             // gridColumn19
             // 
@@ -1423,100 +1425,105 @@
             this.gridColumn24.Name = "UPDATED";
             this.gridColumn24.Visible = false;
             // 
-            // dateTimeInput1
+            // gridColumn5
+            // 
+            this.gridColumn5.Name = "Status";
+            this.gridColumn5.Visible = false;
+            // 
+            // dt_routineTrace_TraceDate
             // 
             // 
             // 
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(72, 156);
+            this.dt_routineTrace_TraceDate.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dt_routineTrace_TraceDate.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dt_routineTrace_TraceDate.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dt_routineTrace_TraceDate.ButtonDropDown.Visible = true;
+            this.dt_routineTrace_TraceDate.IsPopupCalendarOpen = false;
+            this.dt_routineTrace_TraceDate.Location = new System.Drawing.Point(72, 156);
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dt_routineTrace_TraceDate.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.dt_routineTrace_TraceDate.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.dt_routineTrace_TraceDate.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dt_routineTrace_TraceDate.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dt_routineTrace_TraceDate.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.dt_routineTrace_TraceDate.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dt_routineTrace_TraceDate.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(270, 21);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 0;
+            this.dt_routineTrace_TraceDate.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dt_routineTrace_TraceDate.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dt_routineTrace_TraceDate.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dt_routineTrace_TraceDate.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dt_routineTrace_TraceDate.MonthCalendar.TodayButtonVisible = true;
+            this.dt_routineTrace_TraceDate.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dt_routineTrace_TraceDate.Name = "dt_routineTrace_TraceDate";
+            this.dt_routineTrace_TraceDate.Size = new System.Drawing.Size(270, 21);
+            this.dt_routineTrace_TraceDate.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dt_routineTrace_TraceDate.TabIndex = 0;
             // 
-            // buttonX3
+            // btn_routineTrace_Clear
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(150, 244);
-            this.buttonX3.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(56, 18);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 3;
-            this.buttonX3.Text = "清空";
-            this.buttonX3.Click += new System.EventHandler(this.btnFileClear_Click);
+            this.btn_routineTrace_Clear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_routineTrace_Clear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_routineTrace_Clear.Location = new System.Drawing.Point(150, 244);
+            this.btn_routineTrace_Clear.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_routineTrace_Clear.Name = "btn_routineTrace_Clear";
+            this.btn_routineTrace_Clear.Size = new System.Drawing.Size(56, 18);
+            this.btn_routineTrace_Clear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_routineTrace_Clear.TabIndex = 3;
+            this.btn_routineTrace_Clear.Text = "清空";
+            this.btn_routineTrace_Clear.Click += new System.EventHandler(this.btnFileClear_Click);
             // 
-            // buttonX2
+            // btn_routineTrace_Save
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(72, 244);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(56, 18);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 2;
-            this.buttonX2.Text = "保存";
-            this.buttonX2.Click += new System.EventHandler(this.btnFileSave_Click);
+            this.btn_routineTrace_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_routineTrace_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_routineTrace_Save.Location = new System.Drawing.Point(72, 244);
+            this.btn_routineTrace_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_routineTrace_Save.Name = "btn_routineTrace_Save";
+            this.btn_routineTrace_Save.Size = new System.Drawing.Size(56, 18);
+            this.btn_routineTrace_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_routineTrace_Save.TabIndex = 2;
+            this.btn_routineTrace_Save.Text = "保存";
+            this.btn_routineTrace_Save.Click += new System.EventHandler(this.btnFileSave_Click);
             // 
-            // textBoxX1
+            // txt_routineTrace_content
             // 
-            this.textBoxX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_routineTrace_content.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.txt_routineTrace_content.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(72, 184);
-            this.textBoxX1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxX1.Size = new System.Drawing.Size(267, 53);
-            this.textBoxX1.TabIndex = 1;
+            this.txt_routineTrace_content.Border.Class = "TextBoxBorder";
+            this.txt_routineTrace_content.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_routineTrace_content.DisabledBackColor = System.Drawing.Color.White;
+            this.txt_routineTrace_content.ForeColor = System.Drawing.Color.Black;
+            this.txt_routineTrace_content.Location = new System.Drawing.Point(72, 184);
+            this.txt_routineTrace_content.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_routineTrace_content.Multiline = true;
+            this.txt_routineTrace_content.Name = "txt_routineTrace_content";
+            this.txt_routineTrace_content.PreventEnterBeep = true;
+            this.txt_routineTrace_content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_routineTrace_content.Size = new System.Drawing.Size(263, 53);
+            this.txt_routineTrace_content.TabIndex = 1;
             // 
             // labelX17
             // 
@@ -1569,7 +1576,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStart)).EndInit();
             this.groupPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_routineTrace_TraceDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1637,7 +1644,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtFileName;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFilePath;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl RoutineTrace_Grid;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25;
@@ -1645,10 +1652,10 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dt_routineTrace_TraceDate;
+        private DevComponents.DotNetBar.ButtonX btn_routineTrace_Clear;
+        private DevComponents.DotNetBar.ButtonX btn_routineTrace_Save;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_routineTrace_content;
         private DevComponents.DotNetBar.LabelX labelX17;
         private DevComponents.DotNetBar.LabelX labelX16;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26;
@@ -1662,5 +1669,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35;
         private DevComponents.DotNetBar.PanelEx panelEx1;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
     }
 }

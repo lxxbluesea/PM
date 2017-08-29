@@ -172,6 +172,38 @@ namespace BussinessDLL
         }
 
         /// <summary>
+        /// 日常工作跟进情况保存
+        ///  Created:20170330(Xuxb)
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public JsonResult SaveRoutineTrace(RoutineTrace entity)
+        {
+            JsonResult jsonreslut = new JsonResult();
+            try
+            {
+                string _id;
+                if (string.IsNullOrEmpty(entity.ID))
+                    new Repository<RoutineTrace>().Insert(entity, true, out _id);
+                else
+                    new Repository<RoutineTrace>().Update(entity, true, out _id);
+                jsonreslut.data = _id;
+                jsonreslut.result = true;
+                jsonreslut.msg = "保存成功！";
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteException(ex, LogType.BussinessDLL);
+                jsonreslut.result = false;
+                jsonreslut.msg = ex.Message;
+            }
+            return jsonreslut;
+        }
+
+
+
+
+        /// <summary>
         /// 通过NodeID获取日常工作实体
         /// Created:201700606(ChengMengjia)
         /// </summary>
@@ -246,6 +278,29 @@ namespace BussinessDLL
             }
             return list;
         }
+
+
+        /// <summary>
+        /// 根据RountineID获取-日常工作文件
+        /// Created:20170330(Xuxb)
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public List<RoutineTrace> GetRoutineTrace(string RountineID)
+        {
+            List<RoutineTrace> list = new List<RoutineTrace>();
+            if (!string.IsNullOrEmpty(RountineID))
+            {
+                List<QueryField> qf = new List<QueryField>();
+                qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = RountineID.Substring(0, 36) });
+                qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
+                SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
+                list = new Repository<RoutineTrace>().GetList(qf, sf) as List<RoutineTrace>;
+            }
+            return list;
+        }
+
+
 
         /// <summary>
         /// 根据NodeID获取-日常工作文件
