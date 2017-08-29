@@ -63,6 +63,7 @@ namespace DomainDLL
         public virtual int? Weight
         {
             get;
+
             set;
         }
 

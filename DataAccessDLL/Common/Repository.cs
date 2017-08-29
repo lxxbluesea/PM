@@ -196,8 +196,9 @@ namespace DataAccessDLL
             {
                 s.BeginTransaction();
                 entity.ID = CommonHelper.GetConfigValue("Record") == "1" ? Guid.NewGuid().ToString() + "-1" : Guid.NewGuid().ToString();
-                if (entity.Status == null)
-                    entity.Status = 1;
+                //if (entity.Status == null)
+                //    entity.Status = 1;
+                entity.Status = 1;
                 id = entity.ID;
                 entity.CREATED = DateTime.Now;
                 s.Save(entity);

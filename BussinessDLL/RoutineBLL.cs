@@ -39,9 +39,9 @@ namespace BussinessDLL
                     if (!string.IsNullOrEmpty(entity.NodeID))
                     {
                         node = new PNode();
-                        node.ID = Guid.NewGuid().ToString() + "-1";
+                        node.ID = Guid.NewGuid().ToString();
                         node.Name = entity.Name;
-                        node.ParentID = entity.NodeID.Substring(0, 36);
+                        node.ParentID = entity.NodeID;//.Substring(0, 36);
                         node.PID = ProjectID;
                         node.PType = 2;
                         node.Status = 1;
@@ -49,10 +49,11 @@ namespace BussinessDLL
                     }
                     #endregion
                     #region 新插入实体
-                    entity.NodeID = node == null ? null : node.ID.Substring(0, 36);
-                    entity.ID = Guid.NewGuid().ToString() + "-1";
+                    //entity.NodeID = node == null ? null : node.ID.Substring(0, 36);
+                    entity.ID = Guid.NewGuid().ToString();// +"-1";
                     entity.CREATED = DateTime.Now;
                     entity.Status = 1;
+                    entity.Weight = 1;
                     #endregion
                     dao.AddRoutine(entity, node, listWork);
                     jsonreslut.data = entity.ID;
@@ -60,46 +61,61 @@ namespace BussinessDLL
                 //编辑
                 else
                 {
-                    #region 更新实体
-                    Routine oldEntity = new Repository<Routine>().Get(entity.ID);
-                    oldEntity.Status = 0;
-                    oldEntity.UPDATED = DateTime.Now;
-                    #endregion
-                    #region 修改WBS节点
-                    PNode oldNode = null;
-                    if (!string.IsNullOrEmpty(oldEntity.NodeID))
+                    PNode node = new WBSBLL().GetNode(entity.NodeID);
+                    if (node != null)
                     {
-                        oldNode = new WBSBLL().GetNode(oldEntity.NodeID);
-                        oldNode.Status = 0;
-                        oldNode.UPDATED = DateTime.Now;
+                        node.Name = entity.Name;
+                        //node.ParentID = entity.NodeID;
+                        //node.PID = ProjectID;
+                        //node.PType = 2;
+                        //node.Status = 1;
+                        node.UPDATED = DateTime.Now;
                     }
-                    #endregion
-                    #region 新增WBS节点
-                    PNode newNode = null;
-                    if (!string.IsNullOrEmpty(entity.NodeID))
-                    {
-                        newNode = new PNode();
-                        if (oldNode == null)
-                            newNode.ID = Guid.NewGuid().ToString() + "-1";
-                        else
-                            newNode.ID = oldNode.ID.Substring(0, 36) + "-" + (int.Parse(oldNode.ID.Substring(37)) + 1).ToString();
-                        newNode.Name = entity.Name;
-                        newNode.ParentID = entity.NodeID.Substring(0, 36);
-                        newNode.PID = ProjectID;
-                        newNode.PType = 2;
-                        newNode.Status = 1;
-                        newNode.CREATED = DateTime.Now;
-                    }
-                    #endregion
-                    #region 新插入实体
-                    string hisNo = oldEntity.ID.Substring(37);
-                    entity.ID = oldEntity.ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                    entity.NodeID = newNode == null ? null : newNode.ID.Substring(0, 36);
-                    entity.Status = 1;
-                    entity.CREATED = DateTime.Now;
-                    #endregion
-                    dao.UpdateRoutine(entity, oldEntity, newNode, oldNode, listWork);
+                    entity.UPDATED = DateTime.Now;
+                    dao.UpdateRoutine(entity, node, listWork);
+                    //dao.UpdateRoutine(entity, oldEntity, newNode, oldNode, listWork);
                     jsonreslut.data = entity.ID;
+
+                    //#region 更新实体
+                    //Routine oldEntity = new Repository<Routine>().Get(entity.ID);
+                    //oldEntity.Status = 0;
+                    //oldEntity.UPDATED = DateTime.Now;
+                    //#endregion
+                    //#region 修改WBS节点
+                    //PNode oldNode = null;
+                    //if (!string.IsNullOrEmpty(oldEntity.NodeID))
+                    //{
+                    //oldNode = new WBSBLL().GetNode(oldEntity.NodeID);
+                    //    oldNode.Status = 0;
+                    //    oldNode.UPDATED = DateTime.Now;
+                    //}
+                    //#endregion
+                    //#region 新增WBS节点
+                    //PNode newNode = null;
+                    //if (!string.IsNullOrEmpty(entity.NodeID))
+                    //{
+                    //    newNode = new PNode();
+                    //    if (oldNode == null)
+                    //        newNode.ID = Guid.NewGuid().ToString() + "-1";
+                    //    else
+                    //        newNode.ID = oldNode.ID.Substring(0, 36) + "-" + (int.Parse(oldNode.ID.Substring(37)) + 1).ToString();
+                    //    newNode.Name = entity.Name;
+                    //    newNode.ParentID = entity.NodeID.Substring(0, 36);
+                    //    newNode.PID = ProjectID;
+                    //    newNode.PType = 2;
+                    //    newNode.Status = 1;
+                    //    newNode.CREATED = DateTime.Now;
+                    //}
+                    //#endregion
+                    //#region 新插入实体
+                    //string hisNo = oldEntity.ID.Substring(37);
+                    //entity.ID = oldEntity.ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
+                    //entity.NodeID = newNode == null ? null : newNode.ID.Substring(0, 36);
+                    //entity.Status = 1;
+                    //entity.CREATED = DateTime.Now;
+                    //#endregion
+                    //dao.UpdateRoutine(entity, oldEntity, newNode, oldNode, listWork);
+                    //jsonreslut.data = entity.ID;
                 }
                 jsonreslut.result = true;
                 jsonreslut.msg = "保存成功！";

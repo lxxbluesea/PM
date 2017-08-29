@@ -41,31 +41,31 @@ namespace DataAccessDLL
             //sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
             //sql.Append(" where r.status = 1 and p.PID = @PID ");
 
-            sql.Append("select * from Routine r where r.status=1 and r.pid=@PID ");
+            sql.Append("select * from Routine  where status=1 and pid=@PID ");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
 
             //开始日期
             if (!string.IsNullOrEmpty(startDate))
             {
-                sql.Append(" and date(r.StartDate) >= date(@startDate)");
+                sql.Append(" and date(StartDate) >= date(@startDate)");
                 qf.Add(new QueryField() { Name = "startDate", Type = QueryFieldType.String, Value = DateTime.Parse(startDate).ToString("yyyy-MM-dd") });
             }
 
             //结束日期
             if (!string.IsNullOrEmpty(endDate))
             {
-                sql.Append(" and (date(r.EndDate) <= date(@endDate) or r.EndDate is null )");
+                sql.Append(" and (date(EndDate) <= date(@endDate) or EndDate is null )");
                 qf.Add(new QueryField() { Name = "endDate", Type = QueryFieldType.String, Value = DateTime.Parse(endDate).ToString("yyyy-MM-dd") });
             }
 
             //关键字
             if (!string.IsNullOrEmpty(key))
             {
-                sql.Append(" and (r.Name like '%' || @key || '%' or r.Desc like '%' || @key || '%' or r.DealResult like '%' || @key || '%') ");
+                sql.Append(" and (Name like '%' || @key || '%' or Desc like '%' || @key || '%' or DealResult like '%' || @key || '%') ");
                 qf.Add(new QueryField() { Name = "key", Type = QueryFieldType.String, Value = key });
             }
 
-            sql.Append(" order by r.StartDate asc  ");
+            sql.Append(" order by StartDate asc  ");
 
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
 
@@ -92,7 +92,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = entity.ID.Substring(0, 36);
+                        item.RoutineID = entity.ID;//.Substring(0, 36);
                         s.Save(item);
                     }
                 UpdateProject(s);//更新项目时间
@@ -128,6 +128,49 @@ namespace DataAccessDLL
 
                 //删除责任人
                 s.CreateQuery("delete from RoutineWork where RoutineID='" + oldeEntity.ID.Substring(0, 36) + "';").ExecuteUpdate();
+                //保存新的责任人
+                if (listWork != null)
+                    foreach (RoutineWork item in listWork)
+                    {
+                        item.ID = Guid.NewGuid().ToString();
+                        item.Status = 1;
+                        item.CREATED = DateTime.Now;
+                        item.RoutineID = newEntity.ID.Substring(0, 36);
+                        s.Save(item);
+                    }
+
+                UpdateProject(s);//更新项目时间
+                s.Transaction.Commit();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                s.Transaction.Rollback();
+                s.Close();
+                throw new Exception("插入实体失败", ex);
+            }
+        }
+        /// <summary>
+        /// 更新日常工作
+        /// 2017/06/01(zhuguanjun)
+        /// </summary>
+        /// <param name="entity">日常工作实体</param>
+        /// <param name="listWork">负责人列表</param>
+        public void UpdateRoutine(Routine newEntity, PNode newNode, List<RoutineWork> listWork)
+        {
+            ISession s = NHHelper.GetCurrentSession();
+            try
+            {
+                s.BeginTransaction();
+                //s.Update(oldeEntity);
+                s.Update(newEntity);
+                if (newNode != null)
+                    s.Update(newNode);
+                //if (oldNode != null)
+                //    s.Update(oldNode);
+
+                //删除责任人
+                s.CreateQuery("delete from RoutineWork where RoutineID='" + newEntity.ID + "';").ExecuteUpdate();
                 //保存新的责任人
                 if (listWork != null)
                     foreach (RoutineWork item in listWork)

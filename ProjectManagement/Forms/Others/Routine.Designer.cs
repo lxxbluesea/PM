@@ -75,6 +75,22 @@
             this.gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.gridRoutine = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn36 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn37 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn38 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn39 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn40 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn41 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn42 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn43 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn44 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn45 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn48 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.txtSearchEnd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -83,15 +99,13 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.gridRoutine = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -103,7 +117,6 @@
             this.RoutineTrace_Grid = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -115,6 +128,7 @@
             this.txt_routineTrace_content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
@@ -260,7 +274,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(288, 121);
+            this.gridManager.Size = new System.Drawing.Size(282, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -752,7 +766,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(189, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(206, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -771,7 +785,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(249, 21);
+            this.txtFileName.Size = new System.Drawing.Size(264, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -818,7 +832,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(249, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(264, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -839,7 +853,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(265, 116);
+            this.buttonX5.Location = new System.Drawing.Point(282, 119);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(56, 21);
@@ -952,8 +966,8 @@
             this.groupPanel3.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel3.Controls.Add(this.panelEx1);
             this.groupPanel3.Controls.Add(this.gridRoutine);
+            this.groupPanel3.Controls.Add(this.panelEx1);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupPanel3.Location = new System.Drawing.Point(5, 1);
@@ -991,6 +1005,113 @@
             this.groupPanel3.TabIndex = 0;
             this.groupPanel3.Text = "工作列表";
             // 
+            // gridRoutine
+            // 
+            this.gridRoutine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridRoutine.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.gridRoutine.Location = new System.Drawing.Point(0, 94);
+            this.gridRoutine.Name = "gridRoutine";
+            // 
+            // 
+            // 
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn1);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn17);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn36);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn37);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn38);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn39);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn40);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn41);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn42);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn43);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn44);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn45);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn46);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn47);
+            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn48);
+            this.gridRoutine.Size = new System.Drawing.Size(294, 452);
+            this.gridRoutine.TabIndex = 1;
+            this.gridRoutine.Text = "superGridControl1";
+            this.gridRoutine.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridRoutine_CellClick);
+            this.gridRoutine.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.gridRoutine_DataBindingComplete);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.HeaderText = "编号";
+            this.gridColumn1.Name = "RowNo";
+            this.gridColumn1.Width = 60;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Name = "ID";
+            this.gridColumn17.Visible = false;
+            // 
+            // gridColumn36
+            // 
+            this.gridColumn36.Name = "PID";
+            this.gridColumn36.Visible = false;
+            // 
+            // gridColumn37
+            // 
+            this.gridColumn37.Name = "NodeID";
+            this.gridColumn37.Visible = false;
+            // 
+            // gridColumn38
+            // 
+            this.gridColumn38.HeaderText = "工作名称";
+            this.gridColumn38.Name = "Name";
+            this.gridColumn38.Width = 190;
+            // 
+            // gridColumn39
+            // 
+            this.gridColumn39.Name = "Desc";
+            this.gridColumn39.Visible = false;
+            // 
+            // gridColumn40
+            // 
+            this.gridColumn40.Name = "StartDate";
+            this.gridColumn40.Visible = false;
+            // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Name = "EndDate";
+            this.gridColumn41.Visible = false;
+            // 
+            // gridColumn42
+            // 
+            this.gridColumn42.Name = "FinishStatus";
+            this.gridColumn42.Visible = false;
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.Name = "DealResult";
+            this.gridColumn43.Visible = false;
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Name = "Status";
+            this.gridColumn44.Visible = false;
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Name = "CREATED";
+            this.gridColumn45.Visible = false;
+            // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Name = "UPDATED";
+            this.gridColumn46.Visible = false;
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Name = "Weight";
+            this.gridColumn47.Visible = false;
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Name = "Workload";
+            this.gridColumn48.Visible = false;
+            // 
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
@@ -1003,8 +1124,8 @@
             this.panelEx1.Controls.Add(this.labelX9);
             this.panelEx1.Controls.Add(this.labelX10);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 452);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
             this.panelEx1.Size = new System.Drawing.Size(294, 94);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
@@ -1185,56 +1306,21 @@
             this.labelX10.TabIndex = 1;
             this.labelX10.Text = "关键字：";
             // 
-            // gridRoutine
-            // 
-            this.gridRoutine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.gridRoutine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridRoutine.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.gridRoutine.ForeColor = System.Drawing.Color.Black;
-            this.gridRoutine.Location = new System.Drawing.Point(0, 0);
-            this.gridRoutine.Margin = new System.Windows.Forms.Padding(2);
-            this.gridRoutine.Name = "gridRoutine";
-            // 
-            // 
-            // 
-            this.gridRoutine.PrimaryGrid.AutoGenerateColumns = false;
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn1);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn12);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn2);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn3);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn4);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn26);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn27);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn28);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn29);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn30);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn31);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn32);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn33);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn34);
-            this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn35);
-            this.gridRoutine.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridRoutine.Size = new System.Drawing.Size(294, 452);
-            this.gridRoutine.TabIndex = 0;
-            this.gridRoutine.Text = "superGridControl1";
-            this.gridRoutine.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridRoutine_CellClick);
-            this.gridRoutine.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.gridRoutine_DataBindingComplete);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.gridColumn1.DataPropertyName = "RowNo";
-            this.gridColumn1.HeaderText = "编号";
-            this.gridColumn1.MinimumWidth = 60;
-            this.gridColumn1.Name = "RowNo";
-            this.gridColumn1.ReadOnly = true;
-            this.gridColumn1.Width = 60;
-            // 
             // gridColumn12
             // 
             this.gridColumn12.DataPropertyName = "ID";
             this.gridColumn12.Name = "ID";
             this.gridColumn12.Visible = false;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Name = "PID";
+            this.gridColumn26.Visible = false;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Name = "NodeID";
+            this.gridColumn27.Visible = false;
             // 
             // gridColumn2
             // 
@@ -1245,6 +1331,11 @@
             this.gridColumn2.Name = "Name";
             this.gridColumn2.ReadOnly = true;
             this.gridColumn2.Width = 190;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Name = "Desc";
+            this.gridColumn28.Visible = false;
             // 
             // gridColumn3
             // 
@@ -1267,21 +1358,6 @@
             this.gridColumn4.ReadOnly = true;
             this.gridColumn4.Visible = false;
             this.gridColumn4.Width = 80;
-            // 
-            // gridColumn26
-            // 
-            this.gridColumn26.Name = "PID";
-            this.gridColumn26.Visible = false;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Name = "NodeID";
-            this.gridColumn27.Visible = false;
-            // 
-            // gridColumn28
-            // 
-            this.gridColumn28.Name = "Desc";
-            this.gridColumn28.Visible = false;
             // 
             // gridColumn29
             // 
@@ -1376,7 +1452,7 @@
             // 
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn19);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn20);
-            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn25);
+            this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn49);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn21);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn22);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn23);
@@ -1397,11 +1473,6 @@
             // 
             this.gridColumn20.Name = "ID";
             this.gridColumn20.Visible = false;
-            // 
-            // gridColumn25
-            // 
-            this.gridColumn25.Name = "RID";
-            this.gridColumn25.Visible = false;
             // 
             // gridColumn21
             // 
@@ -1489,7 +1560,7 @@
             this.btn_routineTrace_Clear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_routineTrace_Clear.TabIndex = 3;
             this.btn_routineTrace_Clear.Text = "清空";
-            this.btn_routineTrace_Clear.Click += new System.EventHandler(this.btnFileClear_Click);
+            this.btn_routineTrace_Clear.Click += new System.EventHandler(this.btn_routineTrace_Clear_Click);
             // 
             // btn_routineTrace_Save
             // 
@@ -1502,7 +1573,7 @@
             this.btn_routineTrace_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_routineTrace_Save.TabIndex = 2;
             this.btn_routineTrace_Save.Text = "保存";
-            this.btn_routineTrace_Save.Click += new System.EventHandler(this.btnFileSave_Click);
+            this.btn_routineTrace_Save.Click += new System.EventHandler(this.btn_routineTrace_Save_Click);
             // 
             // txt_routineTrace_content
             // 
@@ -1522,7 +1593,7 @@
             this.txt_routineTrace_content.Name = "txt_routineTrace_content";
             this.txt_routineTrace_content.PreventEnterBeep = true;
             this.txt_routineTrace_content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_routineTrace_content.Size = new System.Drawing.Size(263, 53);
+            this.txt_routineTrace_content.Size = new System.Drawing.Size(261, 53);
             this.txt_routineTrace_content.TabIndex = 1;
             // 
             // labelX17
@@ -1550,6 +1621,11 @@
             this.labelX16.Size = new System.Drawing.Size(75, 23);
             this.labelX16.TabIndex = 0;
             this.labelX16.Text = "跟进日期：";
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Name = "RoutineID";
+            this.gridColumn49.Visible = false;
             // 
             // Routine
             // 
@@ -1598,8 +1674,6 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.Controls.ComboTree cmbNode;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl gridRoutine;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4;
@@ -1647,7 +1721,6 @@
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl RoutineTrace_Grid;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23;
@@ -1670,5 +1743,22 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl gridRoutine;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn36;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn37;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn38;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn39;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn40;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn41;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn42;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn43;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn44;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn45;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn46;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn47;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn48;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49;
     }
 }

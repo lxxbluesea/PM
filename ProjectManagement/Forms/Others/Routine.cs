@@ -82,7 +82,7 @@ namespace ProjectManagement.Forms.Others
         private void btnWorkClear_Click(object sender, EventArgs e)
         {
             ClearWork();
-            RoutineTrace_Clear();
+            //RoutineTrace_Clear();
         }
 
 
@@ -142,31 +142,32 @@ namespace ProjectManagement.Forms.Others
             List<RoutineWork> listWork = new List<RoutineWork>();
             if (!GetEditManager(ref listWork, true)) return;//如果填写无误
 
-            DomainDLL.Routine obj = new DomainDLL.Routine();
-            obj.ID = WorkId;//日常工作ID
+            //DomainDLL.Routine obj = new DomainDLL.Routine();
+            routine.PID = ProjectId;
+            routine.ID = WorkId;//日常工作ID
             #region 赋值
             //节点(如果关联结点未选择时，默认设定为项目结点)
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
-                obj.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
+                routine.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                obj.NodeID = cmbNode.SelectedNode.Name.Substring(0, 36);
+                routine.NodeID = cmbNode.SelectedNode.Name.Substring(0, 36);
             //工作名称
-            obj.Name = txtWorkName.Text;
+            routine.Name = txtWorkName.Text;
             //工作描述
-            obj.Desc = txtDesc.Text;
+            routine.Desc = txtDesc.Text;
             //处理结果
-            obj.DealResult = txtResult.Text;
+            routine.DealResult = txtResult.Text;
             //预期工作量
-            obj.Workload = intWorkload.Value;
+            routine.Workload = intWorkload.Value;
             //开始日期
             if (!string.IsNullOrEmpty(txtStartDate.Text))
-                obj.StartDate = DateTime.Parse(txtStartDate.Text);
+                routine.StartDate = txtStartDate.Value;
             //结束日期
             if (!string.IsNullOrEmpty(txtEndDate.Text))
-                obj.EndDate = DateTime.Parse(txtEndDate.Text);
+                routine.EndDate = txtEndDate.Value;
             //完成情况
             if (cmbResultStatus.SelectedIndex > -1)
-                obj.FinishStatus = int.Parse(((ComboItem)cmbResultStatus.SelectedItem).Value.ToString());
+                routine.FinishStatus = int.Parse(((ComboItem)cmbResultStatus.SelectedItem).Value.ToString());
             #endregion
 
             bool IsEdit = false;
@@ -178,7 +179,7 @@ namespace ProjectManagement.Forms.Others
                 oldPath = FileHelper.GetWorkdir() + FileHelper.GetUploadPath(UploadType.Routine, ProjectId, _nodeID);
             }
 
-            JsonResult result = routineBLL.SaveRoutine(ProjectId, obj, listWork);
+            JsonResult result = routineBLL.SaveRoutine(ProjectId, routine, listWork);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
@@ -220,7 +221,7 @@ namespace ProjectManagement.Forms.Others
             //文件描述
             file.Desc = txtFileDesc.Text;
 
-            DomainDLL.Routine routine = routineBLL.GetRoutineObject(WorkId, "");//需要获取日常工作作为节点的ID
+            //DomainDLL.Routine routine = routineBLL.GetRoutineObject(WorkId, "");//需要获取日常工作作为节点的ID
 
             //上传文件名
             if (_fileSelectFlg)
@@ -321,6 +322,7 @@ namespace ProjectManagement.Forms.Others
             {
                 LoadContent();
                 LoadFileList();//加载日常工作文件列表
+                LoadTraceList();//加载跟进信息
             }
         }
         /// <summary>
@@ -336,7 +338,7 @@ namespace ProjectManagement.Forms.Others
             foreach (DevComponents.DotNetBar.SuperGrid.GridElement obj in listRow)
             {
                 DevComponents.DotNetBar.SuperGrid.GridRow row = (DevComponents.DotNetBar.SuperGrid.GridRow)obj;
-                int.TryParse(row.GetCell("FinishType").Value.ToString(), out type);
+                int.TryParse(row.GetCell("FinishStatus").Value.ToString(), out type);
                 row.CellStyles = DataHelper.MatchRowColor(type);
                 type = 0;
             }
@@ -612,7 +614,9 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void Search()
         {
-            gridRoutine.PrimaryGrid.DataSource = routineBLL.GetRoutinList(ProjectId, this.txtSearchStart.Text, this.txtSearchEnd.Text, txtSearchKey.Text);
+            DataTable tmpTable = routineBLL.GetRoutinList(ProjectId, this.txtSearchStart.Text, this.txtSearchEnd.Text, txtSearchKey.Text);
+            if (tmpTable != null && tmpTable.Rows.Count > 0)
+                gridRoutine.PrimaryGrid.DataSource = tmpTable;
         }
 
         /// <summary>
@@ -675,7 +679,7 @@ namespace ProjectManagement.Forms.Others
             //完成情况
             cmbResultStatus.SelectedIndex = -1;
             //添加日期
-            txtCreateDate.Text = DateTime.Now.ToShortDateString();
+            txtCreateDate.Value = DateTime.Now;
             //清空责任人
             gridManager.PrimaryGrid.DataSource = null;
 
@@ -693,17 +697,50 @@ namespace ProjectManagement.Forms.Others
             //文件ID
             _fileId = string.Empty;
 
+            RoutineTrace_Clear();
 
 
         }
         #endregion
-
+        /// <summary>
+        /// 清空跟进信息
+        /// </summary>
         void RoutineTrace_Clear()
         {
             routineTrace = new DomainDLL.RoutineTrace();
             RoutineTrace_Grid.PrimaryGrid.DataSource = null;
             dt_routineTrace_TraceDate.Value = DateTime.Now;
             txt_routineTrace_content.Text = "";
+        }
+        /// <summary>
+        /// 加载跟进列表
+        /// </summary>
+        void LoadTraceList()
+        {
+            if (routine == null)
+                return;
+            List<RoutineTrace> traceList = routineBLL.GetRoutineTrace(routine.ID);
+            RoutineTrace_Grid.PrimaryGrid.DataSource = traceList;
+        }
+
+        private void btn_routineTrace_Save_Click(object sender, EventArgs e)
+        {
+            routineTrace.RoutineID = routine.ID;
+            routineTrace.Content = txt_routineTrace_content.Text;
+            routineTrace.TraceDate = dt_routineTrace_TraceDate.Value;
+
+            JsonResult result = routineBLL.SaveRoutineTrace(routineTrace);
+            MessageHelper.ShowRstMsg(result.result);
+            if (result.result)
+            {
+                RoutineTrace_Clear();
+                LoadTraceList();
+            }
+        }
+
+        private void btn_routineTrace_Clear_Click(object sender, EventArgs e)
+        {
+            RoutineTrace_Clear();
         }
     }
 }
