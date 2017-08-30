@@ -13,6 +13,7 @@ using BussinessDLL;
 using DomainDLL;
 using DevComponents.Editors;
 using System.IO;
+using DevComponents.DotNetBar.SuperGrid;
 
 namespace ProjectManagement.Forms.Others
 {
@@ -94,6 +95,12 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void btnFileClear_Click(object sender, EventArgs e)
         {
+            RoutineFile_Clear();
+        }
+
+        void RoutineFile_Clear()
+        {
+            routineFile = new RoutineFiles();
             //选择附件
             txtFilePath.Text = string.Empty;
             //附件名称
@@ -241,6 +248,7 @@ namespace ProjectManagement.Forms.Others
             _fileId = result.result ? (string)result.data : _fileId;
             if (result.result)
             {
+                RoutineFile_Clear();
                 //附件列表加载
                 LoadFileList();
             }
@@ -683,20 +691,20 @@ namespace ProjectManagement.Forms.Others
             //清空责任人
             gridManager.PrimaryGrid.DataSource = null;
 
-            routineFile = new RoutineFiles();
             //附件列表加载
-            gridFile.PrimaryGrid.DataSource = new List<RoutineFiles>();
-            //选择附件hhhhhhhhhhhhhhhg
-            txtFilePath.Text = string.Empty;
-            //附件名称
-            txtFileName.Text = string.Empty;
-            //附件描述
-            txtFileDesc.Text = string.Empty;
-            //日常工作ID
-            WorkId = string.Empty;
-            //文件ID
-            _fileId = string.Empty;
-
+            gridFile.PrimaryGrid.DataSource = null;
+            ////选择附件hhhhhhhhhhhhhhhg
+            //txtFilePath.Text = string.Empty;
+            ////附件名称
+            //txtFileName.Text = string.Empty;
+            ////附件描述
+            //txtFileDesc.Text = string.Empty;
+            ////日常工作ID
+            //WorkId = string.Empty;
+            ////文件ID
+            //_fileId = string.Empty;
+            //routineFile = new RoutineFiles();
+            RoutineFile_Clear();
             RoutineTrace_Clear();
 
 
@@ -725,6 +733,21 @@ namespace ProjectManagement.Forms.Others
 
         private void btn_routineTrace_Save_Click(object sender, EventArgs e)
         {
+            //保存前检查
+            //日常工作内容是否创建
+            if (string.IsNullOrEmpty(WorkId))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000006, MessageType.Alert, "日常工作内容");
+                return;
+            }
+
+            //文件名称未输入
+            if (string.IsNullOrEmpty(txt_routineTrace_content.Text))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "内容不能为空");
+                txt_routineTrace_content.Focus();
+                return;
+            }
             routineTrace.RoutineID = routine.ID;
             routineTrace.Content = txt_routineTrace_content.Text;
             routineTrace.TraceDate = dt_routineTrace_TraceDate.Value;
@@ -741,6 +764,29 @@ namespace ProjectManagement.Forms.Others
         private void btn_routineTrace_Clear_Click(object sender, EventArgs e)
         {
             RoutineTrace_Clear();
+        }
+
+        private void RoutineTrace_Grid_CellClick(object sender, DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs e)
+        {
+            routineTrace = new RoutineTrace();
+            if(RoutineTrace_Grid.GetSelectedRows().Count>0)
+            {
+                GridRow row = (GridRow)RoutineTrace_Grid.GetSelectedRows()[0];
+                routineTrace.ID = row.GetCell("ID").Value.ToString();
+                routineTrace.RoutineID = row.GetCell("RoutineID").Value.ToString();
+                routineTrace.Content = row.GetCell("Content").Value.ToString();
+                routineTrace.TraceDate = DateTime.Parse(row.GetCell("TraceDate").Value.ToString());
+                routineTrace.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+                routineTrace.Status = int.Parse(row.GetCell("Status").Value.ToString());
+                if (row.GetCell("UPDATED").Value!=null && row.GetCell("UPDATED").Value.ToString()!="")
+                {
+                    routineTrace.UPDATED = DateTime.Parse(row.GetCell("UPDATED").Value.ToString());
+                }
+
+                dt_routineTrace_TraceDate.Value = routineTrace.TraceDate;
+                txt_routineTrace_content.Text = routineTrace.Content;
+
+            }
         }
     }
 }

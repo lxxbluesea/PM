@@ -10,7 +10,7 @@
 
 
   <!--基本设置-->
-  <Config name="WorkDir">C:\Project\</Config>
+  <Config name="WorkDir">D:\Project\</Config>
   <Config name="UserName"></Config>
 
   <!--周报设置-->

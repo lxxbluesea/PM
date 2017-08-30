@@ -117,6 +117,7 @@
             this.RoutineTrace_Grid = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -128,7 +129,6 @@
             this.txt_routineTrace_content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
@@ -274,7 +274,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(282, 121);
+            this.gridManager.Size = new System.Drawing.Size(264, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -766,7 +766,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(206, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(188, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -785,7 +785,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(264, 21);
+            this.txtFileName.Size = new System.Drawing.Size(246, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -832,7 +832,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(264, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(246, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -853,7 +853,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(282, 119);
+            this.buttonX5.Location = new System.Drawing.Point(264, 119);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(56, 21);
@@ -1029,6 +1029,7 @@
             this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn46);
             this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn47);
             this.gridRoutine.PrimaryGrid.Columns.Add(this.gridColumn48);
+            this.gridRoutine.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.gridRoutine.Size = new System.Drawing.Size(294, 452);
             this.gridRoutine.TabIndex = 1;
             this.gridRoutine.Text = "superGridControl1";
@@ -1458,9 +1459,11 @@
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn23);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn24);
             this.RoutineTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn5);
+            this.RoutineTrace_Grid.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.RoutineTrace_Grid.Size = new System.Drawing.Size(341, 150);
             this.RoutineTrace_Grid.TabIndex = 2;
             this.RoutineTrace_Grid.Text = "superGridControl1";
+            this.RoutineTrace_Grid.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.RoutineTrace_Grid_CellClick);
             // 
             // gridColumn19
             // 
@@ -1473,6 +1476,11 @@
             // 
             this.gridColumn20.Name = "ID";
             this.gridColumn20.Visible = false;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Name = "RoutineID";
+            this.gridColumn49.Visible = false;
             // 
             // gridColumn21
             // 
@@ -1493,8 +1501,8 @@
             // 
             // gridColumn24
             // 
+            this.gridColumn24.HeaderText = "更新时间";
             this.gridColumn24.Name = "UPDATED";
-            this.gridColumn24.Visible = false;
             // 
             // gridColumn5
             // 
@@ -1593,7 +1601,7 @@
             this.txt_routineTrace_content.Name = "txt_routineTrace_content";
             this.txt_routineTrace_content.PreventEnterBeep = true;
             this.txt_routineTrace_content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_routineTrace_content.Size = new System.Drawing.Size(261, 53);
+            this.txt_routineTrace_content.Size = new System.Drawing.Size(243, 53);
             this.txt_routineTrace_content.TabIndex = 1;
             // 
             // labelX17
@@ -1621,11 +1629,6 @@
             this.labelX16.Size = new System.Drawing.Size(75, 23);
             this.labelX16.TabIndex = 0;
             this.labelX16.Text = "跟进日期：";
-            // 
-            // gridColumn49
-            // 
-            this.gridColumn49.Name = "RoutineID";
-            this.gridColumn49.Visible = false;
             // 
             // Routine
             // 

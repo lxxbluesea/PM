@@ -307,6 +307,8 @@ namespace ProjectManagement
         /// <param name="value"></param>
         public static void SetComboxTreeSelectByValue(DevComponents.DotNetBar.Controls.ComboTree advTree1, string value)
         {
+            if (string.IsNullOrEmpty(value))
+                return;
             int currentIndex = 0;
             bool catchFlg = false;
             for (int i = 0; i < advTree1.Nodes.Count; ++i)
