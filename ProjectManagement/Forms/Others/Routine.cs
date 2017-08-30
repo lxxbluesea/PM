@@ -727,8 +727,8 @@ namespace ProjectManagement.Forms.Others
         {
             if (routine == null)
                 return;
-            List<RoutineTrace> traceList = routineBLL.GetRoutineTrace(routine.ID);
-            RoutineTrace_Grid.PrimaryGrid.DataSource = traceList;
+            DataTable  dt = routineBLL.GetRoutineTrace(routine.ID);
+            RoutineTrace_Grid.PrimaryGrid.DataSource = dt;
         }
 
         private void btn_routineTrace_Save_Click(object sender, EventArgs e)
@@ -763,7 +763,10 @@ namespace ProjectManagement.Forms.Others
 
         private void btn_routineTrace_Clear_Click(object sender, EventArgs e)
         {
-            RoutineTrace_Clear();
+            routineTrace = new DomainDLL.RoutineTrace();
+            //RoutineTrace_Grid.PrimaryGrid.DataSource = null;
+            dt_routineTrace_TraceDate.Value = DateTime.Now;
+            txt_routineTrace_content.Text = "";
         }
 
         private void RoutineTrace_Grid_CellClick(object sender, DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs e)

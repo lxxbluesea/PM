@@ -43,7 +43,6 @@
             this.gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.buttonX8 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnClear = new DevComponents.DotNetBar.ButtonX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.buttonX7 = new DevComponents.DotNetBar.ButtonX();
@@ -57,7 +56,6 @@
             this.cmbHandleStatus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtTroubleDesc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cmbNode = new DevComponents.DotNetBar.Controls.ComboTree();
-            this.txtCreated = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtEndDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtStartDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
@@ -72,7 +70,13 @@
             this.gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.txtSearchEnd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSearchStart = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSearchKey = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -108,7 +112,7 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.TroubleTrace_Grid = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -117,15 +121,15 @@
             this.gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.DtTroubleTrace_Date = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.btn_TroubleTrace_Clear = new DevComponents.DotNetBar.ButtonX();
+            this.btn_TroubleTrace_Save = new DevComponents.DotNetBar.ButtonX();
+            this.txt_TroubleTrace_Content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreated)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchEnd)).BeginInit();
@@ -134,7 +138,7 @@
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtTroubleTrace_Date)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel3
@@ -151,7 +155,6 @@
             this.groupPanel3.Controls.Add(this.gridManager);
             this.groupPanel3.Controls.Add(this.labelX17);
             this.groupPanel3.Controls.Add(this.buttonX8);
-            this.groupPanel3.Controls.Add(this.labelX4);
             this.groupPanel3.Controls.Add(this.btnClear);
             this.groupPanel3.Controls.Add(this.labelX5);
             this.groupPanel3.Controls.Add(this.buttonX7);
@@ -165,7 +168,6 @@
             this.groupPanel3.Controls.Add(this.cmbHandleStatus);
             this.groupPanel3.Controls.Add(this.txtTroubleDesc);
             this.groupPanel3.Controls.Add(this.cmbNode);
-            this.groupPanel3.Controls.Add(this.txtCreated);
             this.groupPanel3.Controls.Add(this.txtEndDate);
             this.groupPanel3.Controls.Add(this.txtStartDate);
             this.groupPanel3.DisabledBackColor = System.Drawing.Color.Empty;
@@ -228,7 +230,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(1, 3);
+            this.labelX1.Location = new System.Drawing.Point(1, 7);
             this.labelX1.Margin = new System.Windows.Forms.Padding(2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(69, 18);
@@ -294,7 +296,7 @@
             this.gridManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridManager.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridManager.ForeColor = System.Drawing.Color.Black;
-            this.gridManager.Location = new System.Drawing.Point(0, 382);
+            this.gridManager.Location = new System.Drawing.Point(0, 345);
             this.gridManager.Margin = new System.Windows.Forms.Padding(2);
             this.gridManager.Name = "gridManager";
             // 
@@ -309,7 +311,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn20);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn19);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(289, 121);
+            this.gridManager.Size = new System.Drawing.Size(286, 158);
             this.gridManager.TabIndex = 11;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -363,7 +365,7 @@
             // 
             this.buttonX8.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX8.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX8.Location = new System.Drawing.Point(259, 7);
+            this.buttonX8.Location = new System.Drawing.Point(259, 3);
             this.buttonX8.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX8.Name = "buttonX8";
             this.buttonX8.Size = new System.Drawing.Size(30, 18);
@@ -371,19 +373,6 @@
             this.buttonX8.TabIndex = 1;
             this.buttonX8.Text = "清空";
             this.buttonX8.Click += new System.EventHandler(this.buttonX8_Click);
-            // 
-            // labelX4
-            // 
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(1, 351);
-            this.labelX4.Margin = new System.Windows.Forms.Padding(2);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(69, 18);
-            this.labelX4.TabIndex = 0;
-            this.labelX4.Text = "添加日期：";
             // 
             // btnClear
             // 
@@ -574,57 +563,6 @@
             this.cmbNode.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cmbNode.TabIndex = 0;
             // 
-            // txtCreated
-            // 
-            // 
-            // 
-            // 
-            this.txtCreated.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.txtCreated.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCreated.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.txtCreated.ButtonDropDown.Visible = true;
-            this.txtCreated.Enabled = false;
-            this.txtCreated.IsPopupCalendarOpen = false;
-            this.txtCreated.Location = new System.Drawing.Point(74, 348);
-            this.txtCreated.Margin = new System.Windows.Forms.Padding(2);
-            // 
-            // 
-            // 
-            this.txtCreated.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.txtCreated.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCreated.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.txtCreated.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.txtCreated.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCreated.MonthCalendar.DisplayMonth = new System.DateTime(2017, 3, 1, 0, 0, 0, 0);
-            this.txtCreated.MonthCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.txtCreated.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.txtCreated.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.txtCreated.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.txtCreated.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.txtCreated.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.txtCreated.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtCreated.MonthCalendar.TodayButtonVisible = true;
-            this.txtCreated.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.txtCreated.Name = "txtCreated";
-            this.txtCreated.Size = new System.Drawing.Size(212, 21);
-            this.txtCreated.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.txtCreated.TabIndex = 10;
-            // 
             // txtEndDate
             // 
             // 
@@ -799,6 +737,13 @@
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn9);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn10);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn13);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn23);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn29);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn30);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn31);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn32);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn33);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn34);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn17);
             this.gridTrouble.Size = new System.Drawing.Size(294, 446);
             this.gridTrouble.TabIndex = 0;
@@ -868,10 +813,40 @@
             this.gridColumn13.Name = "ID";
             this.gridColumn13.Visible = false;
             // 
-            // gridColumn17
+            // gridColumn23
             // 
-            this.gridColumn17.Name = "FinishType";
-            this.gridColumn17.Visible = false;
+            this.gridColumn23.Name = "NodeID";
+            this.gridColumn23.Visible = false;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Name = "Desc";
+            this.gridColumn29.Visible = false;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Name = "HandleResult";
+            this.gridColumn30.Visible = false;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Name = "Status";
+            this.gridColumn31.Visible = false;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Name = "CREATED";
+            this.gridColumn32.Visible = false;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Name = "UPDATED";
+            this.gridColumn33.Visible = false;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Name = "Workload";
+            this.gridColumn34.Visible = false;
             // 
             // txtSearchEnd
             // 
@@ -1507,11 +1482,11 @@
             // 
             this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel4.Controls.Add(this.superGridControl1);
-            this.groupPanel4.Controls.Add(this.dateTimeInput1);
-            this.groupPanel4.Controls.Add(this.buttonX3);
-            this.groupPanel4.Controls.Add(this.buttonX2);
-            this.groupPanel4.Controls.Add(this.textBoxX1);
+            this.groupPanel4.Controls.Add(this.TroubleTrace_Grid);
+            this.groupPanel4.Controls.Add(this.DtTroubleTrace_Date);
+            this.groupPanel4.Controls.Add(this.btn_TroubleTrace_Clear);
+            this.groupPanel4.Controls.Add(this.btn_TroubleTrace_Save);
+            this.groupPanel4.Controls.Add(this.txt_TroubleTrace_Content);
             this.groupPanel4.Controls.Add(this.labelX16);
             this.groupPanel4.Controls.Add(this.labelX21);
             this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
@@ -1550,26 +1525,28 @@
             this.groupPanel4.TabIndex = 3;
             this.groupPanel4.Text = "跟进明细";
             // 
-            // superGridControl1
+            // TroubleTrace_Grid
             // 
-            this.superGridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.superGridControl1.Name = "superGridControl1";
+            this.TroubleTrace_Grid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TroubleTrace_Grid.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.TroubleTrace_Grid.Location = new System.Drawing.Point(0, 0);
+            this.TroubleTrace_Grid.Name = "TroubleTrace_Grid";
             // 
             // 
             // 
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn18);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn21);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn22);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn24);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn25);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn26);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn27);
-            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn28);
-            this.superGridControl1.Size = new System.Drawing.Size(389, 150);
-            this.superGridControl1.TabIndex = 0;
-            this.superGridControl1.Text = "superGridControl1";
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn18);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn21);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn22);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn24);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn25);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn26);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn27);
+            this.TroubleTrace_Grid.PrimaryGrid.Columns.Add(this.gridColumn28);
+            this.TroubleTrace_Grid.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
+            this.TroubleTrace_Grid.Size = new System.Drawing.Size(389, 150);
+            this.TroubleTrace_Grid.TabIndex = 0;
+            this.TroubleTrace_Grid.Text = "superGridControl1";
+            this.TroubleTrace_Grid.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.TroubleTrace_Grid_CellClick);
             // 
             // gridColumn18
             // 
@@ -1607,6 +1584,7 @@
             // 
             // gridColumn27
             // 
+            this.gridColumn27.HeaderText = "更新日期";
             this.gridColumn27.Name = "UPDATED";
             this.gridColumn27.Visible = false;
             // 
@@ -1615,100 +1593,102 @@
             this.gridColumn28.Name = "Status";
             this.gridColumn28.Visible = false;
             // 
-            // dateTimeInput1
+            // DtTroubleTrace_Date
             // 
-            this.dateTimeInput1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DtTroubleTrace_Date.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(72, 156);
+            this.DtTroubleTrace_Date.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.DtTroubleTrace_Date.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DtTroubleTrace_Date.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.DtTroubleTrace_Date.ButtonDropDown.Visible = true;
+            this.DtTroubleTrace_Date.IsPopupCalendarOpen = false;
+            this.DtTroubleTrace_Date.Location = new System.Drawing.Point(72, 156);
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.DtTroubleTrace_Date.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.DtTroubleTrace_Date.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DtTroubleTrace_Date.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
+            this.DtTroubleTrace_Date.MonthCalendar.ClearButtonVisible = true;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.DtTroubleTrace_Date.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DtTroubleTrace_Date.MonthCalendar.DisplayMonth = new System.DateTime(2017, 8, 1, 0, 0, 0, 0);
+            this.DtTroubleTrace_Date.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.DtTroubleTrace_Date.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(317, 21);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 1;
+            this.DtTroubleTrace_Date.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.DtTroubleTrace_Date.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.DtTroubleTrace_Date.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.DtTroubleTrace_Date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.DtTroubleTrace_Date.MonthCalendar.TodayButtonVisible = true;
+            this.DtTroubleTrace_Date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.DtTroubleTrace_Date.Name = "DtTroubleTrace_Date";
+            this.DtTroubleTrace_Date.Size = new System.Drawing.Size(317, 21);
+            this.DtTroubleTrace_Date.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.DtTroubleTrace_Date.TabIndex = 1;
             // 
-            // buttonX3
+            // btn_TroubleTrace_Clear
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(150, 244);
-            this.buttonX3.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(56, 18);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 4;
-            this.buttonX3.Text = "清空";
+            this.btn_TroubleTrace_Clear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_TroubleTrace_Clear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_TroubleTrace_Clear.Location = new System.Drawing.Point(150, 244);
+            this.btn_TroubleTrace_Clear.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_TroubleTrace_Clear.Name = "btn_TroubleTrace_Clear";
+            this.btn_TroubleTrace_Clear.Size = new System.Drawing.Size(56, 18);
+            this.btn_TroubleTrace_Clear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_TroubleTrace_Clear.TabIndex = 4;
+            this.btn_TroubleTrace_Clear.Text = "清空";
+            this.btn_TroubleTrace_Clear.Click += new System.EventHandler(this.btn_TroubleTrace_Clear_Click);
             // 
-            // buttonX2
+            // btn_TroubleTrace_Save
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(72, 244);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(56, 18);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 3;
-            this.buttonX2.Text = "保存";
+            this.btn_TroubleTrace_Save.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_TroubleTrace_Save.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_TroubleTrace_Save.Location = new System.Drawing.Point(72, 244);
+            this.btn_TroubleTrace_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_TroubleTrace_Save.Name = "btn_TroubleTrace_Save";
+            this.btn_TroubleTrace_Save.Size = new System.Drawing.Size(56, 18);
+            this.btn_TroubleTrace_Save.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_TroubleTrace_Save.TabIndex = 3;
+            this.btn_TroubleTrace_Save.Text = "保存";
+            this.btn_TroubleTrace_Save.Click += new System.EventHandler(this.btn_TroubleTrace_Save_Click);
             // 
-            // textBoxX1
+            // txt_TroubleTrace_Content
             // 
-            this.textBoxX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_TroubleTrace_Content.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxX1.BackColor = System.Drawing.Color.White;
+            this.txt_TroubleTrace_Content.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.DisabledBackColor = System.Drawing.Color.White;
-            this.textBoxX1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxX1.Location = new System.Drawing.Point(72, 184);
-            this.textBoxX1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxX1.Size = new System.Drawing.Size(317, 53);
-            this.textBoxX1.TabIndex = 2;
+            this.txt_TroubleTrace_Content.Border.Class = "TextBoxBorder";
+            this.txt_TroubleTrace_Content.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_TroubleTrace_Content.DisabledBackColor = System.Drawing.Color.White;
+            this.txt_TroubleTrace_Content.ForeColor = System.Drawing.Color.Black;
+            this.txt_TroubleTrace_Content.Location = new System.Drawing.Point(72, 184);
+            this.txt_TroubleTrace_Content.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_TroubleTrace_Content.Multiline = true;
+            this.txt_TroubleTrace_Content.Name = "txt_TroubleTrace_Content";
+            this.txt_TroubleTrace_Content.PreventEnterBeep = true;
+            this.txt_TroubleTrace_Content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_TroubleTrace_Content.Size = new System.Drawing.Size(317, 53);
+            this.txt_TroubleTrace_Content.TabIndex = 2;
             // 
             // labelX16
             // 
@@ -1736,6 +1716,11 @@
             this.labelX21.TabIndex = 6;
             this.labelX21.Text = "跟进日期：";
             // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Name = "PID";
+            this.gridColumn17.Visible = false;
+            // 
             // Trouble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1750,7 +1735,6 @@
             this.Load += new System.EventHandler(this.Trouble_Load);
             this.groupPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStartDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchEnd)).EndInit();
@@ -1760,7 +1744,7 @@
             this.groupPanel1.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.groupPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtTroubleTrace_Date)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1794,13 +1778,11 @@
         private DevComponents.DotNetBar.Controls.ComboTree cmbNode;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtEndDate;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtStartDate;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput txtCreated;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTroubleDesc;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTroubleName;
         private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -1844,10 +1826,9 @@
         private DevComponents.Editors.IntegerInput intWorkload;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20;
-        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17;
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl TroubleTrace_Grid;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22;
@@ -1856,11 +1837,19 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput DtTroubleTrace_Date;
+        private DevComponents.DotNetBar.ButtonX btn_TroubleTrace_Clear;
+        private DevComponents.DotNetBar.ButtonX btn_TroubleTrace_Save;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_TroubleTrace_Content;
         private DevComponents.DotNetBar.LabelX labelX16;
         private DevComponents.DotNetBar.LabelX labelX21;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17;
     }
 }

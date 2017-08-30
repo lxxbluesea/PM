@@ -296,25 +296,25 @@ namespace BussinessDLL
         }
 
 
-        /// <summary>
-        /// 根据RountineID获取-日常工作文件
-        /// Created:20170330(Xuxb)
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <returns></returns>
-        public List<RoutineTrace> GetRoutineTrace(string RountineID)
-        {
-            List<RoutineTrace> list = new List<RoutineTrace>();
-            if (!string.IsNullOrEmpty(RountineID))
-            {
-                List<QueryField> qf = new List<QueryField>();
-                qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = RountineID.Substring(0, 36) });
-                qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
-                SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
-                list = new Repository<RoutineTrace>().GetList(qf, sf) as List<RoutineTrace>;
-            }
-            return list;
-        }
+        ///// <summary>
+        ///// 根据RountineID获取-日常工作文件
+        ///// Created:20170330(Xuxb)
+        ///// </summary>
+        ///// <param name="ID"></param>
+        ///// <returns></returns>
+        //public List<RoutineTrace> GetRoutineTrace(string RountineID)
+        //{
+        //    List<RoutineTrace> list = new List<RoutineTrace>();
+        //    if (!string.IsNullOrEmpty(RountineID))
+        //    {
+        //        List<QueryField> qf = new List<QueryField>();
+        //        qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = RountineID.Substring(0, 36) });
+        //        qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
+        //        SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Asc };
+        //        list = new Repository<RoutineTrace>().GetList(qf, sf) as List<RoutineTrace>;
+        //    }
+        //    return list;
+        //}
 
 
 
@@ -338,6 +338,11 @@ namespace BussinessDLL
         public DataTable GetRoutinWorkList(string RoutineID)
         {
             return new RoutineDAO().GetRoutinWorkList(RoutineID.Substring(0, 36));
+        }
+
+        public DataTable GetRoutineTrace(string routineID)
+        {
+            return new RoutineDAO().GetRoutineTrace(routineID);
         }
     }
 }

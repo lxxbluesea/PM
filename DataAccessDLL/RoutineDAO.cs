@@ -135,7 +135,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = newEntity.ID.Substring(0, 36);
+                        item.RoutineID = newEntity.ID;//.Substring(0, 36);
                         s.Save(item);
                     }
 
@@ -178,7 +178,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = newEntity.ID.Substring(0, 36);
+                        item.RoutineID = newEntity.ID;//.Substring(0, 36);
                         s.Save(item);
                     }
 
@@ -200,7 +200,7 @@ namespace DataAccessDLL
             qf.Add(new QueryField() { Name = "ROUTINEID", Type = QueryFieldType.String, Value = RoutineID });
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT r.*,s.Name as ManagerName FROM ROUTINEWORK r");
-            sql.Append(" LEFT JOIN STAKEHOLDERS s ON r.Manager= substr(s.Id,0,37)  and s.status=1  ");
+            sql.Append(" LEFT JOIN STAKEHOLDERS s ON r.Manager= s.Id and s.status=1  ");
             sql.Append(" WHERE r.ROUTINEID =@ROUTINEID ");
 
 
@@ -229,7 +229,7 @@ namespace DataAccessDLL
             qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Value = NodeID.Substring(0,36) });
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT a.*  FROM RoutineFiles a");
-            sql.Append(" LEFT JOIN Routine b ON a.RoutineID= substr(b.ID,1,36) and b.Status=1 ");
+            sql.Append(" LEFT JOIN Routine b ON a.RoutineID= b.ID and b.Status=1 ");
             sql.Append(" WHERE a.Status =1 and b.NodeID=@NodeID ");
             DataSet ds = NHHelper.ExecuteDataset(sql.ToString(), qf);
             if (ds != null && ds.Tables.Count > 0)
@@ -240,6 +240,16 @@ namespace DataAccessDLL
             {
                 return new List<RoutineFiles>();
             }
+        }
+        public DataTable GetRoutineTrace(string routineID)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = routineID.Substring(0, 36) });
+            StringBuilder sql = new StringBuilder();
+            sql.Append(" SELECT a.*  FROM RoutineTrace a");
+            sql.Append(" WHERE a.Status =1 and a.RoutineID=@RoutineID order by a.CREATED asc ");
+            return NHHelper.ExecuteDataTable(sql.ToString(), qf);
+
         }
 
     }

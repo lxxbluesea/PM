@@ -110,41 +110,42 @@ namespace DataAccessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select r.ID,r.Name,r.Desc,r.HandleResult,strftime('%Y-%m-%d',r.StarteDate) as StartDate, ");
-            sql.Append(" strftime('%Y-%m-%d',r.EndDate) as EndDate,d.Name as HandleStatus,d1.Name as Level, ");
+            //sql.Append(" select r.ID,r.Name,r.Desc,r.HandleResult,strftime('%Y-%m-%d',r.StarteDate) as StartDate, ");
+            //sql.Append(" strftime('%Y-%m-%d',r.EndDate) as EndDate,d.Name as HandleStatus,d1.Name as Level, ");
 
-            //完成状态判断 参加PNode的Entity中FinishStatus说明
-            sql.Append(" case when r.HandleStatus=3 then 1   ");
-            sql.Append(" when r.EndDate<date('now') and (r.HandleStatus is null or r.HandleStatus<>3) then 3 ");
-            sql.Append(" when r.StarteDate>=date('now','+1 day') and (r.HandleStatus is null or r.HandleStatus<>3) then 0 else 2 end FinishType ");
+            ////完成状态判断 参加PNode的Entity中FinishStatus说明
+            //sql.Append(" case when r.HandleStatus=3 then 1   ");
+            //sql.Append(" when r.EndDate<date('now') and (r.HandleStatus is null or r.HandleStatus<>3) then 3 ");
+            //sql.Append(" when r.StarteDate>=date('now','+1 day') and (r.HandleStatus is null or r.HandleStatus<>3) then 0 else 2 end FinishType ");
 
-            sql.Append(" from Trouble r inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1");
-            sql.Append(" left join DictItem d on r.HandleStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.TroubleHandleStatus);
-            sql.Append(" left join DictItem d1 on r.Level = d1.No and d1.DictNo = " + (int)CommonDLL.DictCategory.TroubleLevel);
-            sql.Append(" where r.status = 1 and p.PID = @PID ");
+            //sql.Append(" from Trouble r inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1");
+            //sql.Append(" left join DictItem d on r.HandleStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.TroubleHandleStatus);
+            //sql.Append(" left join DictItem d1 on r.Level = d1.No and d1.DictNo = " + (int)CommonDLL.DictCategory.TroubleLevel);
+            sql.Append("select * from trouble ");
+            sql.Append(" where status = 1 and PID = @PID ");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
 
             //开始日期
             if (!string.IsNullOrEmpty(startDate))
             {
-                sql.Append(" and date(r.StarteDate) >= date(@startDate)");
+                sql.Append(" and date(StarteDate) >= date(@startDate)");
                 qf.Add(new QueryField() { Name = "startDate", Type = QueryFieldType.String, Value = DateTime.Parse(startDate).ToString("yyyy-MM-dd") });
             }
 
             //结束日期
             if (!string.IsNullOrEmpty(endDate))
             {
-                sql.Append(" and date(r.EndDate) <= date(@endDate) )");
+                sql.Append(" and date(EndDate) <= date(@endDate) )");
                 qf.Add(new QueryField() { Name = "endDate", Type = QueryFieldType.String, Value = DateTime.Parse(endDate).ToString("yyyy-MM-dd") });
             }
             //关键字
             if (!string.IsNullOrEmpty(key))
             {
-                sql.Append(" and (r.Name like '%' || @key || '%' or r.Desc like '%' || @key || '%' or r.DealResult like '%' || @key || '%') ");
+                sql.Append(" and (Name like '%' || @key || '%' or Desc like '%' || @key || '%' or DealResult like '%' || @key || '%') ");
                 qf.Add(new QueryField() { Name = "key", Type = QueryFieldType.String, Value = key });
             }
 
-            sql.Append(" order by r.StarteDate Desc  ");
+            sql.Append(" order by StarteDate Desc  ");
 
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
         }
@@ -192,6 +193,17 @@ namespace DataAccessDLL
             }
 
             sql.Append(" order by r.StarteDate Desc  ");
+            return NHHelper.ExecuteDataTable(sql.ToString(), qf);
+        }
+
+        public DataTable GetTroubleTrace(string troubleID)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            qf.Add(new QueryField() { Name = "TroubleID", Type = QueryFieldType.String, Value = troubleID.Substring(0, 36) });
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select * from TroubleTrace ");
+            sql.Append("where status=1 and TroubleID=@TroubleID ");
+            sql.Append(" order by StarteDate Desc  ");
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
         }
 

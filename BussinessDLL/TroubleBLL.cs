@@ -284,6 +284,11 @@ namespace BussinessDLL
             return dao.GetTroubleWorkList(TroubleID.Substring(0, 36));
         }
 
+        public DataTable GetTroubleTrace(string TroubleID)
+        {
+            return dao.GetTroubleTrace(TroubleID);
+        }
+
 
         /// <summary>
         /// 根据NodeID获取-项目问题文件

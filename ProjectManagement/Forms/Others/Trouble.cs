@@ -12,6 +12,7 @@ using BussinessDLL;
 using CommonDLL;
 using DomainDLL;
 using DevComponents.Editors;
+using DevComponents.DotNetBar.SuperGrid;
 
 namespace ProjectManagement.Forms.Others
 {
@@ -46,6 +47,10 @@ namespace ProjectManagement.Forms.Others
         TroubleBLL troubleBLL = new TroubleBLL();
         //干系人业务操作类初期化
         StakeholdersBLL stakeholderBLL = new StakeholdersBLL();
+
+        DomainDLL.Trouble trouble;
+        DomainDLL.TroubleFiles troubleFile;
+        DomainDLL.TroubleTrace troubleTrace;
 
         #endregion
 
@@ -105,7 +110,7 @@ namespace ProjectManagement.Forms.Others
             foreach (DevComponents.DotNetBar.SuperGrid.GridElement obj in listRow)
             {
                 DevComponents.DotNetBar.SuperGrid.GridRow row = (DevComponents.DotNetBar.SuperGrid.GridRow)obj;
-                int.TryParse(row.GetCell("FinishType").Value.ToString(), out type);
+                int.TryParse(row.GetCell("HandleStatus").Value.ToString(), out type);
                 row.CellStyles = DataHelper.MatchRowColor(type);
                 type = 0;
             }
@@ -118,6 +123,13 @@ namespace ProjectManagement.Forms.Others
         /// <param name="e"></param>
         private void gridTrouble_CellClick(object sender, DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs e)
         {
+            //if (gridTrouble.GetSelectedRows().Count == 0)
+            //    return;
+            //trouble = new DomainDLL.Trouble();
+            //GridRow row = (GridRow)gridTrouble.GetSelectedRows()[0];
+
+            //trouble.ID = row.GetCell("ID").Value.ToString();
+
             TroubleId = e.GridCell.GridRow.Cells["ID"].Value.ToString();
             if (!string.IsNullOrEmpty(TroubleId))
             {
@@ -503,48 +515,56 @@ namespace ProjectManagement.Forms.Others
         private void LoadPageData()
         {
             //日常工作取得
-            DomainDLL.Trouble obj = troubleBLL.GetTroubleObject(TroubleId, _nodeID);
-            if (!string.IsNullOrEmpty(obj.ID))
+            trouble = new DomainDLL.Trouble();
+            trouble = troubleBLL.GetTroubleObject(TroubleId, _nodeID);
+            if (!string.IsNullOrEmpty(trouble.ID))
             {
-                PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
+                PNode parentNode = new WBSBLL().GetParentNode(trouble.NodeID); //日常工作挂靠的节点
                 //节点
                 DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
-                TroubleId = obj.ID;
-                _nodeID = obj.NodeID;
+                TroubleId = trouble.ID;
+                _nodeID = trouble.NodeID;
                 //问题名称
-                txtTroubleName.Text = obj.Name;
+                txtTroubleName.Text = trouble.Name;
                 //问题描述
-                txtTroubleDesc.Text = obj.Desc;
+                txtTroubleDesc.Text = trouble.Desc;
                 //处理结果
-                txtTroubleResult.Text = obj.HandleResult;
+                txtTroubleResult.Text = trouble.HandleResult;
                 //开始日期
-                if (obj.StarteDate.HasValue)
-                    txtStartDate.Text = obj.StarteDate.Value.ToShortDateString();
+                if (trouble.StarteDate.HasValue)
+                    txtStartDate.Text = trouble.StarteDate.Value.ToShortDateString();
                 //结束日期
-                if (obj.EndDate.HasValue)
-                    txtEndDate.Text = obj.EndDate.Value.ToShortDateString();
+                if (trouble.EndDate.HasValue)
+                    txtEndDate.Text = trouble.EndDate.Value.ToShortDateString();
                 //工作量 
-                intWorkload.Value = (int)obj.Workload;
+                intWorkload.Value = (int)trouble.Workload;
                 //加载责任人列表
-                var list = troubleBLL.GetTroubleWorkList(obj.ID);
+                var list = troubleBLL.GetTroubleWorkList(trouble.ID);
                 gridManager.PrimaryGrid.DataSource = list;
                 //问题级别
-                DataHelper.SetComboBoxSelectItemByValue(cmbTroubleLevel, obj.Level.ToString());
+                DataHelper.SetComboBoxSelectItemByValue(cmbTroubleLevel, trouble.Level.ToString());
                 //处理情况
-                DataHelper.SetComboBoxSelectItemByValue(cmbHandleStatus, obj.HandleStatus.ToString());
+                DataHelper.SetComboBoxSelectItemByValue(cmbHandleStatus, trouble.HandleStatus.ToString());
                 //处理日期
                 //if (obj.HandleDate.HasValue)
                 //    txtHandleDate.Text = obj.HandleDate.Value.ToShortDateString();
                 //添加日期
-                txtCreated.Text = obj.CREATED.ToShortDateString();
+                //txtCreated.Text = obj.CREATED.ToShortDateString();
 
                 //附件列表加载
-                LoadFileList(obj.ID.Substring(0, 36));
-                LoadSpecFiles(obj.ID.Substring(0, 36));
+                LoadFileList(trouble.ID.Substring(0, 36));
+                LoadSpecFiles(trouble.ID.Substring(0, 36));
 
                 txtFilePath.Text = string.Empty;
                 txtFileName.Text = string.Empty;
                 txtFileDesc.Text = string.Empty;
+
+                LoadTroubleTrace();
+
+                DtTroubleTrace_Date.Value = DateTime.Now;
+                txt_TroubleTrace_Content.Text = "";
+
+
             }
         }
 
@@ -557,6 +577,8 @@ namespace ProjectManagement.Forms.Others
             _nodeID = NodeID;
             //日常工作取得
             DomainDLL.Trouble obj = troubleBLL.GetTroubleObject("", _nodeID);
+            if (obj == null)
+                return;
             TroubleId = obj.ID;
             PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
             //节点
@@ -581,7 +603,7 @@ namespace ProjectManagement.Forms.Others
             //if (obj.HandleDate.HasValue)
             //    txtHandleDate.Text = obj.HandleDate.Value.ToShortDateString();
             //添加日期
-            txtCreated.Text = obj.CREATED.ToShortDateString();
+            //txtCreated.Text = obj.CREATED.ToShortDateString();
             //工作量 
             intWorkload.Value = (int)obj.Workload;
             //加载责任人列表
@@ -593,6 +615,12 @@ namespace ProjectManagement.Forms.Others
             txtFilePath.Text = string.Empty;
             txtFileName.Text = string.Empty;
             txtFileDesc.Text = string.Empty;
+
+
+            LoadTroubleTrace();
+
+            DtTroubleTrace_Date.Value = DateTime.Now;
+            txt_TroubleTrace_Content.Text = "";
         }
 
         /// <summary>
@@ -601,6 +629,9 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void ClearTrouble()
         {
+            trouble = new DomainDLL.Trouble();
+            troubleFile = new TroubleFiles();
+            troubleTrace = new TroubleTrace();
             //节点
             cmbNode.SelectedIndex = -1;
             //问题名称
@@ -622,7 +653,7 @@ namespace ProjectManagement.Forms.Others
             //处理日期
             //txtHandleDate.Text = string.Empty;
             //添加日期
-            txtCreated.Text = DateTime.Now.ToShortDateString();
+            //txtCreated.Text = DateTime.Now.ToShortDateString();
 
             //附件列表加载
             gridFile.PrimaryGrid.DataSource = new List<TroubleFiles>();
@@ -638,6 +669,8 @@ namespace ProjectManagement.Forms.Others
 
             //清空责任人
             gridManager.PrimaryGrid.DataSource = null;
+
+            TroubleTrace_Clear();
         }
 
         /// <summary>
@@ -889,6 +922,61 @@ namespace ProjectManagement.Forms.Others
 
         #endregion
 
+
+        void LoadTroubleTrace()
+        {
+            if (trouble == null)
+                return;
+            var dt = troubleBLL.GetTroubleTrace(trouble.ID);
+            TroubleTrace_Grid.PrimaryGrid.DataSource = dt;
+        }
+
+        void TroubleTrace_Clear()
+        {
+            troubleTrace = new TroubleTrace();
+            TroubleTrace_Grid.PrimaryGrid.DataSource = null;
+            DtTroubleTrace_Date.Value = DateTime.Now;
+            txt_TroubleTrace_Content.Text = "";
+        }
+
+        private void btn_TroubleTrace_Clear_Click(object sender, EventArgs e)
+        {
+            troubleTrace = new TroubleTrace();
+            //TroubleTrace_Grid.PrimaryGrid.SetSelectedRows = null;
+            DtTroubleTrace_Date.Value = DateTime.Now;
+            txt_TroubleTrace_Content.Text = "";
+        }
+
+        private void btn_TroubleTrace_Save_Click(object sender, EventArgs e)
+        {
+
+
+            TroubleTrace_Clear();
+        }
+
+        private void TroubleTrace_Grid_CellClick(object sender, GridCellClickEventArgs e)
+        {
+            troubleTrace = new TroubleTrace();
+            if(TroubleTrace_Grid.GetSelectedRows().Count>0)
+            {
+                GridRow row = (GridRow)TroubleTrace_Grid.GetSelectedRows()[0];
+                troubleTrace.ID = row.GetCell("ID").Value.ToString();
+
+                troubleTrace.TroubleID = row.GetCell("TroubleID").Value.ToString();
+                troubleTrace.Content = row.GetCell("Content").Value.ToString();
+                troubleTrace.TraceDate = DateTime.Parse(row.GetCell("TraceDate").Value.ToString());
+                troubleTrace.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+                troubleTrace.Status = int.Parse(row.GetCell("Status").Value.ToString());
+                if (row.GetCell("UPDATED").Value != null && row.GetCell("UPDATED").Value.ToString() != "")
+                {
+                    troubleTrace.UPDATED = DateTime.Parse(row.GetCell("UPDATED").Value.ToString());
+                }
+
+                DtTroubleTrace_Date.Value = troubleTrace.TraceDate;
+                txt_TroubleTrace_Content.Text = troubleTrace.Content;
+            }
+
+        }
 
     }
 }

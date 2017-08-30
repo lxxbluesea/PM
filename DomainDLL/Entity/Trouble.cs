@@ -10,6 +10,14 @@ namespace DomainDLL
     public class Trouble : PersistenceEntity
     {
         /// <summary>
+        /// 项目ID
+        /// </summary>
+        public virtual string PID
+        {
+            get;
+            set;
+        }
+        /// <summary>
         /// 节点ID
         /// </summary>
         public virtual string NodeID
@@ -73,14 +81,7 @@ namespace DomainDLL
             get;
             set;
         }
-        /// <summary>
-        /// 处理日期
-        /// </summary>
-        public virtual DateTime? HandleDate
-        {
-            get;
-            set;
-        }
+
         /// <summary>
         /// 处理结果
         /// </summary>
