@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.RibbonBtn_Routine = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Trouble = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Trouble = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_WeeklyHistory = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Earning = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Receivables = new DevComponents.DotNetBar.ButtonItem();
@@ -40,9 +40,6 @@
             this.RibbonBtn_CommunicationMatrix = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Milestone = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Supervisor = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Repost_Cost = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_Earning = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_Receivables = new DevComponents.DotNetBar.ButtonItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.CloseTabContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CloseAllWindows = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +48,8 @@
             this.toolNodeUp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolNodeExchange = new System.Windows.Forms.ToolStripMenuItem();
             this.toolNodeRename = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnProIn = new DevComponents.DotNetBar.ButtonItem();
-            this.btnProOut = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_ProjectInfo = new DevComponents.DotNetBar.ButtonItem();
-            this.RibbonBtn_Report_Plan = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_Subcontract = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_Supplier = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_ProIn = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_ProOut = new DevComponents.DotNetBar.ButtonItem();
             this.applicationButton1 = new DevComponents.DotNetBar.ApplicationButton();
             this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
             this.galleryContainer1 = new DevComponents.DotNetBar.GalleryContainer();
@@ -67,78 +60,68 @@
             this.toolProRename = new System.Windows.Forms.ToolStripMenuItem();
             this.collapsibleSplitContainer1 = new DevComponents.DotNetBar.Controls.CollapsibleSplitContainer();
             this.WbsTree = new DevComponents.AdvTree.AdvTree();
-            this.node1 = new DevComponents.AdvTree.Node();
-            this.node2 = new DevComponents.AdvTree.Node();
-            this.node8 = new DevComponents.AdvTree.Node();
-            this.node3 = new DevComponents.AdvTree.Node();
-            this.node9 = new DevComponents.AdvTree.Node();
-            this.node10 = new DevComponents.AdvTree.Node();
-            this.node11 = new DevComponents.AdvTree.Node();
-            this.node4 = new DevComponents.AdvTree.Node();
-            this.node5 = new DevComponents.AdvTree.Node();
-            this.node6 = new DevComponents.AdvTree.Node();
-            this.node7 = new DevComponents.AdvTree.Node();
-            this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
-            this.bar1 = new DevComponents.DotNetBar.Bar();
+            this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
+            this.Bar_ToolBar = new DevComponents.DotNetBar.Bar();
             this.btnReload = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
             this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
             this.buttonItem10 = new DevComponents.DotNetBar.ButtonItem();
             this.MainSuperTabControl = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.metroStatusBar1 = new DevComponents.DotNetBar.Metro.MetroStatusBar();
             this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
             this.MainRibbonControl = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_OtherMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_Risk = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Change = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer7 = new DevComponents.DotNetBar.ItemContainer();
             this.RibbonBtn_Weekly = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Setting = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar7 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_CostMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_Cost = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer11 = new DevComponents.DotNetBar.ItemContainer();
-            this.ribbonBar6 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_InfoMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_InfomationPublish = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_PublishConfigure = new DevComponents.DotNetBar.ButtonItem();
-            this.WarningMG = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_WarningMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_WarningConfigure = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_WarningList = new DevComponents.DotNetBar.ButtonItem();
-            this.ContractMG = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_ContractMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_Supplier = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_Contract = new DevComponents.DotNetBar.ButtonItem();
-            this.SkateholderMG = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_SkateholderMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_Stakeholder = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
-            this.WBSMG = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_WBSMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_CreateWBS = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer12 = new DevComponents.DotNetBar.ItemContainer();
-            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_ProjectMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_ProjectInfo = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer10 = new DevComponents.DotNetBar.ItemContainer();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_ReportMG = new DevComponents.DotNetBar.RibbonBar();
             this.itemContainer5 = new DevComponents.DotNetBar.ItemContainer();
-            this.itemContainer8 = new DevComponents.DotNetBar.ItemContainer();
+            this.RibbonBtn_Report_ProjectInfo = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_Plan = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer9 = new DevComponents.DotNetBar.ItemContainer();
-            this.Ribbon_Report_RecentWork = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_ToBeSolvedTrouble = new DevComponents.DotNetBar.ButtonItem();
-            this.Ribbon_Report_Weekly = new DevComponents.DotNetBar.ButtonItem();
-            this.MemberContributionRate = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
-            this.DifficutyDegree = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_Subcontract = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_Supplier = new DevComponents.DotNetBar.ButtonItem();
+            this.itemContainer8 = new DevComponents.DotNetBar.ItemContainer();
+            this.RibbonBtn_Report_MemberExecutiveEfficiency = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_DifficutyDegree = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_Weekly = new DevComponents.DotNetBar.ButtonItem();
+            this.RibbonBtn_Report_MemberContributionRate = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBar_TemplateMG = new DevComponents.DotNetBar.RibbonBar();
             this.RibbonBtn_UpdateTemplate = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.ribbonTabItem4 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.TabItem_ProcessMG = new DevComponents.DotNetBar.RibbonTabItem();
+            this.TabItem_ReportMG = new DevComponents.DotNetBar.RibbonTabItem();
+            this.TabItem_TemplateMG = new DevComponents.DotNetBar.RibbonTabItem();
+            this.TabItem_PowerMG = new DevComponents.DotNetBar.RibbonTabItem();
             this.MF_ProjectManagement = new DevComponents.DotNetBar.ApplicationButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -172,7 +155,7 @@
             this.collapsibleSplitContainer1.Panel2.SuspendLayout();
             this.collapsibleSplitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WbsTree)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bar_ToolBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainSuperTabControl)).BeginInit();
             this.MainSuperTabControl.SuspendLayout();
             this.MainRibbonControl.SuspendLayout();
@@ -188,12 +171,12 @@
             this.RibbonBtn_Routine.Text = "日常工作";
             this.RibbonBtn_Routine.Click += new System.EventHandler(this.RibbonBtn_Routine_Click);
             // 
-            // Ribbon_Trouble
+            // RibbonBtn_Trouble
             // 
-            this.Ribbon_Trouble.Name = "Ribbon_Trouble";
-            this.Ribbon_Trouble.SubItemsExpandWidth = 14;
-            this.Ribbon_Trouble.Text = "问题管理";
-            this.Ribbon_Trouble.Click += new System.EventHandler(this.Ribbon_Trouble_Click);
+            this.RibbonBtn_Trouble.Name = "RibbonBtn_Trouble";
+            this.RibbonBtn_Trouble.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Trouble.Text = "问题管理";
+            this.RibbonBtn_Trouble.Click += new System.EventHandler(this.Ribbon_Trouble_Click);
             // 
             // RibbonBtn_WeeklyHistory
             // 
@@ -245,25 +228,6 @@
             this.RibbonBtn_Supervisor.Name = "RibbonBtn_Supervisor";
             this.RibbonBtn_Supervisor.Text = "监理信息";
             this.RibbonBtn_Supervisor.Click += new System.EventHandler(this.RibbonBtn_Supervisor_Click);
-            // 
-            // Ribbon_Repost_Cost
-            // 
-            this.Ribbon_Repost_Cost.Name = "Ribbon_Repost_Cost";
-            this.Ribbon_Repost_Cost.SubItemsExpandWidth = 14;
-            this.Ribbon_Repost_Cost.Text = "成本使用情况";
-            this.Ribbon_Repost_Cost.Click += new System.EventHandler(this.Ribbon_Repost_Cost_Click);
-            // 
-            // Ribbon_Report_Earning
-            // 
-            this.Ribbon_Report_Earning.Name = "Ribbon_Report_Earning";
-            this.Ribbon_Report_Earning.Text = "实际收入情况";
-            this.Ribbon_Report_Earning.Click += new System.EventHandler(this.Ribbon_Report_Earning_Click);
-            // 
-            // Ribbon_Report_Receivables
-            // 
-            this.Ribbon_Report_Receivables.Name = "Ribbon_Report_Receivables";
-            this.Ribbon_Report_Receivables.Text = "实际收款情况";
-            this.Ribbon_Report_Receivables.Click += new System.EventHandler(this.Ribbon_Report_Receivables_Click);
             // 
             // styleManager1
             // 
@@ -324,44 +288,17 @@
             this.toolNodeRename.Text = "修改名称";
             this.toolNodeRename.Click += new System.EventHandler(this.toolNodeRename_Click);
             // 
-            // btnProIn
+            // RibbonBtn_ProIn
             // 
-            this.btnProIn.Name = "btnProIn";
-            this.btnProIn.Text = "结构导入";
-            this.btnProIn.Click += new System.EventHandler(this.btnProIn_Click);
+            this.RibbonBtn_ProIn.Name = "RibbonBtn_ProIn";
+            this.RibbonBtn_ProIn.Text = "结构导入";
+            this.RibbonBtn_ProIn.Click += new System.EventHandler(this.btnProIn_Click);
             // 
-            // btnProOut
+            // RibbonBtn_ProOut
             // 
-            this.btnProOut.Name = "btnProOut";
-            this.btnProOut.Text = "结构导出";
-            this.btnProOut.Click += new System.EventHandler(this.btnProOut_Click);
-            // 
-            // Ribbon_Report_ProjectInfo
-            // 
-            this.Ribbon_Report_ProjectInfo.Name = "Ribbon_Report_ProjectInfo";
-            this.Ribbon_Report_ProjectInfo.SubItemsExpandWidth = 14;
-            this.Ribbon_Report_ProjectInfo.Text = "项目基本情况";
-            this.Ribbon_Report_ProjectInfo.Click += new System.EventHandler(this.Ribbon_Report_ProjectInfo_Click);
-            // 
-            // RibbonBtn_Report_Plan
-            // 
-            this.RibbonBtn_Report_Plan.Name = "RibbonBtn_Report_Plan";
-            this.RibbonBtn_Report_Plan.SubItemsExpandWidth = 14;
-            this.RibbonBtn_Report_Plan.Text = "项目计划表";
-            this.RibbonBtn_Report_Plan.Click += new System.EventHandler(this.RibbonBtn_Report_Plan_Click);
-            // 
-            // Ribbon_Report_Subcontract
-            // 
-            this.Ribbon_Report_Subcontract.Name = "Ribbon_Report_Subcontract";
-            this.Ribbon_Report_Subcontract.SubItemsExpandWidth = 14;
-            this.Ribbon_Report_Subcontract.Text = "项目分包信息";
-            this.Ribbon_Report_Subcontract.Click += new System.EventHandler(this.Ribbon_Report_Subcontract_Click);
-            // 
-            // Ribbon_Report_Supplier
-            // 
-            this.Ribbon_Report_Supplier.Name = "Ribbon_Report_Supplier";
-            this.Ribbon_Report_Supplier.Text = "供应商信息";
-            this.Ribbon_Report_Supplier.Click += new System.EventHandler(this.Ribbon_Report_Supplier_Click);
+            this.RibbonBtn_ProOut.Name = "RibbonBtn_ProOut";
+            this.RibbonBtn_ProOut.Text = "结构导出";
+            this.RibbonBtn_ProOut.Click += new System.EventHandler(this.btnProOut_Click);
             // 
             // applicationButton1
             // 
@@ -447,7 +384,7 @@
             // collapsibleSplitContainer1.Panel1
             // 
             this.collapsibleSplitContainer1.Panel1.Controls.Add(this.WbsTree);
-            this.collapsibleSplitContainer1.Panel1.Controls.Add(this.bar1);
+            this.collapsibleSplitContainer1.Panel1.Controls.Add(this.Bar_ToolBar);
             // 
             // collapsibleSplitContainer1.Panel2
             // 
@@ -472,8 +409,6 @@
             this.WbsTree.Location = new System.Drawing.Point(0, 26);
             this.WbsTree.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.WbsTree.Name = "WbsTree";
-            this.WbsTree.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node1});
             this.WbsTree.NodesConnector = this.nodeConnector1;
             this.WbsTree.NodeStyle = this.elementStyle1;
             this.WbsTree.PathSeparator = ";";
@@ -485,83 +420,6 @@
             this.WbsTree.BeforeNodeSelect += new DevComponents.AdvTree.AdvTreeNodeCancelEventHandler(this.WbsTree_BeforeNodeSelect);
             this.WbsTree.NodeMouseDown += new DevComponents.AdvTree.TreeNodeMouseEventHandler(this.WbsTree_NodeMouseDown);
             // 
-            // node1
-            // 
-            this.node1.Expanded = true;
-            this.node1.Name = "node1";
-            this.node1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node2,
-            this.node3,
-            this.node4,
-            this.node5,
-            this.node6,
-            this.node7});
-            this.node1.Style = this.elementStyle2;
-            this.node1.Text = "徐州肉菜项目";
-            // 
-            // node2
-            // 
-            this.node2.Expanded = true;
-            this.node2.Name = "node2";
-            this.node2.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node8});
-            this.node2.Text = "项目启动";
-            // 
-            // node8
-            // 
-            this.node8.Name = "node8";
-            this.node8.Text = "项目启动会";
-            // 
-            // node3
-            // 
-            this.node3.Expanded = true;
-            this.node3.Name = "node3";
-            this.node3.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
-            this.node9,
-            this.node10,
-            this.node11});
-            this.node3.Text = "项目规划";
-            // 
-            // node9
-            // 
-            this.node9.Name = "node9";
-            this.node9.Text = "工作分解";
-            // 
-            // node10
-            // 
-            this.node10.Name = "node10";
-            this.node10.Text = "项目计划";
-            // 
-            // node11
-            // 
-            this.node11.Name = "node11";
-            this.node11.Text = "风险识别";
-            // 
-            // node4
-            // 
-            this.node4.Name = "node4";
-            this.node4.Text = "项目执行";
-            // 
-            // node5
-            // 
-            this.node5.Name = "node5";
-            this.node5.Text = "项目收尾";
-            // 
-            // node6
-            // 
-            this.node6.Name = "node6";
-            this.node6.Text = "例会";
-            // 
-            // node7
-            // 
-            this.node7.Name = "node7";
-            this.node7.Text = "阶段汇报";
-            // 
-            // elementStyle2
-            // 
-            this.elementStyle2.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.elementStyle2.Name = "elementStyle2";
-            // 
             // nodeConnector1
             // 
             this.nodeConnector1.LineColor = System.Drawing.SystemColors.ControlText;
@@ -572,26 +430,31 @@
             this.elementStyle1.Name = "elementStyle1";
             this.elementStyle1.TextColor = System.Drawing.SystemColors.ControlText;
             // 
-            // bar1
+            // elementStyle2
             // 
-            this.bar1.AntiAlias = true;
-            this.bar1.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
-            this.bar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.elementStyle2.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.elementStyle2.Name = "elementStyle2";
+            // 
+            // Bar_ToolBar
+            // 
+            this.Bar_ToolBar.AntiAlias = true;
+            this.Bar_ToolBar.BarType = DevComponents.DotNetBar.eBarType.StatusBar;
+            this.Bar_ToolBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bar_ToolBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.Bar_ToolBar.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnReload,
             this.labelItem1,
             this.textBoxItem1,
             this.buttonItem10});
-            this.bar1.Location = new System.Drawing.Point(0, 0);
-            this.bar1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.bar1.Name = "bar1";
-            this.bar1.Size = new System.Drawing.Size(157, 26);
-            this.bar1.Stretch = true;
-            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.bar1.TabIndex = 0;
-            this.bar1.TabStop = false;
-            this.bar1.Text = "bar1";
+            this.Bar_ToolBar.Location = new System.Drawing.Point(0, 0);
+            this.Bar_ToolBar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Bar_ToolBar.Name = "Bar_ToolBar";
+            this.Bar_ToolBar.Size = new System.Drawing.Size(157, 26);
+            this.Bar_ToolBar.Stretch = true;
+            this.Bar_ToolBar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.Bar_ToolBar.TabIndex = 0;
+            this.Bar_ToolBar.TabStop = false;
+            this.Bar_ToolBar.Text = "bar1";
             // 
             // btnReload
             // 
@@ -646,8 +509,6 @@
             this.MainSuperTabControl.Size = new System.Drawing.Size(897, 250);
             this.MainSuperTabControl.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MainSuperTabControl.TabIndex = 7;
-            this.MainSuperTabControl.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem1});
             this.MainSuperTabControl.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.Office2010BackstageBlue;
             this.MainSuperTabControl.Text = "主框架";
             this.MainSuperTabControl.TabItemClose += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripTabItemCloseEventArgs>(this.superTabControl1_TabItemClose);
@@ -658,19 +519,11 @@
             // 
             this.superTabControlPanel1.AutoScroll = true;
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(897, 220);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(897, 250);
             this.superTabControlPanel1.TabIndex = 0;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "superTabItem1";
             // 
             // metroStatusBar1
             // 
@@ -712,10 +565,10 @@
             this.MainRibbonControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainRibbonControl.ForeColor = System.Drawing.Color.Black;
             this.MainRibbonControl.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.ribbonTabItem1,
-            this.ribbonTabItem3,
-            this.ribbonTabItem4,
-            this.ribbonTabItem2});
+            this.TabItem_ProcessMG,
+            this.TabItem_ReportMG,
+            this.TabItem_TemplateMG,
+            this.TabItem_PowerMG});
             this.MainRibbonControl.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.MainRibbonControl.Location = new System.Drawing.Point(5, 1);
             this.MainRibbonControl.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -743,20 +596,20 @@
             this.MainRibbonControl.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
             this.MainRibbonControl.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
             this.MainRibbonControl.TabGroupHeight = 14;
-            this.MainRibbonControl.TabIndex = 1;
+            this.MainRibbonControl.TabIndex = 0;
             this.MainRibbonControl.Text = "ribbonControl1";
             // 
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.ribbonBar4);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar7);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar6);
-            this.ribbonPanel1.Controls.Add(this.WarningMG);
-            this.ribbonPanel1.Controls.Add(this.ContractMG);
-            this.ribbonPanel1.Controls.Add(this.SkateholderMG);
-            this.ribbonPanel1.Controls.Add(this.WBSMG);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar3);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_OtherMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_CostMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_InfoMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_WarningMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_ContractMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_SkateholderMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_WBSMG);
+            this.ribbonPanel1.Controls.Add(this.RibbonBar_ProjectMG);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -777,41 +630,41 @@
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
             // 
-            // ribbonBar4
+            // RibbonBar_OtherMG
             // 
-            this.ribbonBar4.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_OtherMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar4.ContainerControlProcessDialogKey = true;
-            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar4.DragDropSupport = true;
-            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_OtherMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_OtherMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_OtherMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_OtherMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_OtherMG.DragDropSupport = true;
+            this.RibbonBar_OtherMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Risk,
             this.RibbonBtn_Change,
             this.itemContainer7,
             this.RibbonBtn_Weekly,
             this.RibbonBtn_Setting});
-            this.ribbonBar4.Location = new System.Drawing.Point(891, 0);
-            this.ribbonBar4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar4.Name = "ribbonBar4";
-            this.ribbonBar4.Size = new System.Drawing.Size(288, 70);
-            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar4.TabIndex = 3;
-            this.ribbonBar4.Text = "其它过程";
+            this.RibbonBar_OtherMG.Location = new System.Drawing.Point(904, 0);
+            this.RibbonBar_OtherMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_OtherMG.Name = "RibbonBar_OtherMG";
+            this.RibbonBar_OtherMG.Size = new System.Drawing.Size(288, 70);
+            this.RibbonBar_OtherMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_OtherMG.TabIndex = 7;
+            this.RibbonBar_OtherMG.Text = "其它过程";
             // 
             // 
             // 
-            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_OtherMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_OtherMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_Risk
             // 
@@ -837,7 +690,7 @@
             this.itemContainer7.Name = "itemContainer7";
             this.itemContainer7.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Routine,
-            this.Ribbon_Trouble});
+            this.RibbonBtn_Trouble});
             // 
             // 
             // 
@@ -859,38 +712,38 @@
             this.RibbonBtn_Setting.Text = "基本配置";
             this.RibbonBtn_Setting.Click += new System.EventHandler(this.RibbonBtn_Setting_Click);
             // 
-            // ribbonBar7
+            // RibbonBar_CostMG
             // 
-            this.ribbonBar7.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar7.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_CostMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar7.ContainerControlProcessDialogKey = true;
-            this.ribbonBar7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar7.DragDropSupport = true;
-            this.ribbonBar7.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_CostMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_CostMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_CostMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_CostMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_CostMG.DragDropSupport = true;
+            this.RibbonBar_CostMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Cost,
             this.itemContainer11});
-            this.ribbonBar7.Location = new System.Drawing.Point(775, 0);
-            this.ribbonBar7.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar7.Name = "ribbonBar7";
-            this.ribbonBar7.Size = new System.Drawing.Size(116, 70);
-            this.ribbonBar7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar7.TabIndex = 6;
-            this.ribbonBar7.Text = "营收管理";
+            this.RibbonBar_CostMG.Location = new System.Drawing.Point(775, 0);
+            this.RibbonBar_CostMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_CostMG.Name = "RibbonBar_CostMG";
+            this.RibbonBar_CostMG.Size = new System.Drawing.Size(129, 70);
+            this.RibbonBar_CostMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_CostMG.TabIndex = 6;
+            this.RibbonBar_CostMG.Text = "营收管理";
             // 
             // 
             // 
-            this.ribbonBar7.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_CostMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar7.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_CostMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_Cost
             // 
@@ -916,38 +769,38 @@
             this.itemContainer11.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemContainer11.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
             // 
-            // ribbonBar6
+            // RibbonBar_InfoMG
             // 
-            this.ribbonBar6.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar6.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_InfoMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar6.ContainerControlProcessDialogKey = true;
-            this.ribbonBar6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar6.DragDropSupport = true;
-            this.ribbonBar6.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_InfoMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_InfoMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_InfoMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_InfoMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_InfoMG.DragDropSupport = true;
+            this.RibbonBar_InfoMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_InfomationPublish,
             this.RibbonBtn_PublishConfigure});
-            this.ribbonBar6.Location = new System.Drawing.Point(635, 0);
-            this.ribbonBar6.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar6.Name = "ribbonBar6";
-            this.ribbonBar6.Size = new System.Drawing.Size(140, 70);
-            this.ribbonBar6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar6.TabIndex = 5;
-            this.ribbonBar6.Text = "信息发布";
+            this.RibbonBar_InfoMG.Location = new System.Drawing.Point(635, 0);
+            this.RibbonBar_InfoMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_InfoMG.Name = "RibbonBar_InfoMG";
+            this.RibbonBar_InfoMG.Size = new System.Drawing.Size(140, 70);
+            this.RibbonBar_InfoMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_InfoMG.TabIndex = 5;
+            this.RibbonBar_InfoMG.Text = "信息发布";
             // 
             // 
             // 
-            this.ribbonBar6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_InfoMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar6.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_InfoMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_InfomationPublish
             // 
@@ -964,38 +817,38 @@
             this.RibbonBtn_PublishConfigure.Text = "发布配置";
             this.RibbonBtn_PublishConfigure.Click += new System.EventHandler(this.RibbonBtn_PublishConfigure_Click);
             // 
-            // WarningMG
+            // RibbonBar_WarningMG
             // 
-            this.WarningMG.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.WarningMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WarningMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.WarningMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.WarningMG.ContainerControlProcessDialogKey = true;
-            this.WarningMG.Dock = System.Windows.Forms.DockStyle.Left;
-            this.WarningMG.DragDropSupport = true;
-            this.WarningMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_WarningMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_WarningMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WarningMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_WarningMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_WarningMG.DragDropSupport = true;
+            this.RibbonBar_WarningMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_WarningConfigure,
             this.RibbonBtn_WarningList});
-            this.WarningMG.Location = new System.Drawing.Point(516, 0);
-            this.WarningMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.WarningMG.Name = "WarningMG";
-            this.WarningMG.Size = new System.Drawing.Size(119, 70);
-            this.WarningMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.WarningMG.TabIndex = 4;
-            this.WarningMG.Text = "预警管理";
+            this.RibbonBar_WarningMG.Location = new System.Drawing.Point(516, 0);
+            this.RibbonBar_WarningMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_WarningMG.Name = "RibbonBar_WarningMG";
+            this.RibbonBar_WarningMG.Size = new System.Drawing.Size(119, 70);
+            this.RibbonBar_WarningMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_WarningMG.TabIndex = 4;
+            this.RibbonBar_WarningMG.Text = "预警管理";
             // 
             // 
             // 
-            this.WarningMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WarningMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.WarningMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WarningMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_WarningConfigure
             // 
@@ -1012,38 +865,38 @@
             this.RibbonBtn_WarningList.Text = "预警信息";
             this.RibbonBtn_WarningList.Click += new System.EventHandler(this.RibbonBtn_WarningList_Click);
             // 
-            // ContractMG
+            // RibbonBar_ContractMG
             // 
-            this.ContractMG.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ContractMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ContractMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ContractMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ContractMG.ContainerControlProcessDialogKey = true;
-            this.ContractMG.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ContractMG.DragDropSupport = true;
-            this.ContractMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_ContractMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_ContractMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ContractMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_ContractMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_ContractMG.DragDropSupport = true;
+            this.RibbonBar_ContractMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Supplier,
             this.RibbonBtn_Contract});
-            this.ContractMG.Location = new System.Drawing.Point(402, 0);
-            this.ContractMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ContractMG.Name = "ContractMG";
-            this.ContractMG.Size = new System.Drawing.Size(114, 70);
-            this.ContractMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ContractMG.TabIndex = 2;
-            this.ContractMG.Text = "分包管理";
+            this.RibbonBar_ContractMG.Location = new System.Drawing.Point(402, 0);
+            this.RibbonBar_ContractMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_ContractMG.Name = "RibbonBar_ContractMG";
+            this.RibbonBar_ContractMG.Size = new System.Drawing.Size(114, 70);
+            this.RibbonBar_ContractMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_ContractMG.TabIndex = 3;
+            this.RibbonBar_ContractMG.Text = "分包管理";
             // 
             // 
             // 
-            this.ContractMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ContractMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ContractMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ContractMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_Supplier
             // 
@@ -1059,38 +912,38 @@
             this.RibbonBtn_Contract.Text = "分包合同";
             this.RibbonBtn_Contract.Click += new System.EventHandler(this.RibbonBtn_Contract_Click);
             // 
-            // SkateholderMG
+            // RibbonBar_SkateholderMG
             // 
-            this.SkateholderMG.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.SkateholderMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_SkateholderMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.SkateholderMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.SkateholderMG.ContainerControlProcessDialogKey = true;
-            this.SkateholderMG.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SkateholderMG.DragDropSupport = true;
-            this.SkateholderMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_SkateholderMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_SkateholderMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_SkateholderMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_SkateholderMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_SkateholderMG.DragDropSupport = true;
+            this.RibbonBar_SkateholderMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Stakeholder,
             this.itemContainer6});
-            this.SkateholderMG.Location = new System.Drawing.Point(259, 0);
-            this.SkateholderMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.SkateholderMG.Name = "SkateholderMG";
-            this.SkateholderMG.Size = new System.Drawing.Size(143, 70);
-            this.SkateholderMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.SkateholderMG.TabIndex = 1;
-            this.SkateholderMG.Text = "干系人";
+            this.RibbonBar_SkateholderMG.Location = new System.Drawing.Point(259, 0);
+            this.RibbonBar_SkateholderMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_SkateholderMG.Name = "RibbonBar_SkateholderMG";
+            this.RibbonBar_SkateholderMG.Size = new System.Drawing.Size(143, 70);
+            this.RibbonBar_SkateholderMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_SkateholderMG.TabIndex = 2;
+            this.RibbonBar_SkateholderMG.Text = "干系人";
             // 
             // 
             // 
-            this.SkateholderMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_SkateholderMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.SkateholderMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_SkateholderMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_Stakeholder
             // 
@@ -1116,38 +969,38 @@
             this.itemContainer6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemContainer6.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
             // 
-            // WBSMG
+            // RibbonBar_WBSMG
             // 
-            this.WBSMG.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.WBSMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WBSMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.WBSMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.WBSMG.ContainerControlProcessDialogKey = true;
-            this.WBSMG.Dock = System.Windows.Forms.DockStyle.Left;
-            this.WBSMG.DragDropSupport = true;
-            this.WBSMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_WBSMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_WBSMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WBSMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_WBSMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_WBSMG.DragDropSupport = true;
+            this.RibbonBar_WBSMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_CreateWBS,
             this.itemContainer12});
-            this.WBSMG.Location = new System.Drawing.Point(138, 0);
-            this.WBSMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.WBSMG.Name = "WBSMG";
-            this.WBSMG.Size = new System.Drawing.Size(121, 70);
-            this.WBSMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.WBSMG.TabIndex = 0;
-            this.WBSMG.Text = "WBS";
+            this.RibbonBar_WBSMG.Location = new System.Drawing.Point(138, 0);
+            this.RibbonBar_WBSMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_WBSMG.Name = "RibbonBar_WBSMG";
+            this.RibbonBar_WBSMG.Size = new System.Drawing.Size(121, 70);
+            this.RibbonBar_WBSMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_WBSMG.TabIndex = 1;
+            this.RibbonBar_WBSMG.Text = "WBS";
             // 
             // 
             // 
-            this.WBSMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WBSMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.WBSMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_WBSMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_CreateWBS
             // 
@@ -1165,46 +1018,46 @@
             this.itemContainer12.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.itemContainer12.Name = "itemContainer12";
             this.itemContainer12.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnProIn,
-            this.btnProOut});
+            this.RibbonBtn_ProIn,
+            this.RibbonBtn_ProOut});
             // 
             // 
             // 
             this.itemContainer12.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemContainer12.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
             // 
-            // ribbonBar3
+            // RibbonBar_ProjectMG
             // 
-            this.ribbonBar3.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ProjectMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar3.ContainerControlProcessDialogKey = true;
-            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar3.DragDropSupport = true;
-            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_ProjectMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_ProjectMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ProjectMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_ProjectMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_ProjectMG.DragDropSupport = true;
+            this.RibbonBar_ProjectMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_ProjectInfo,
             this.itemContainer10});
-            this.ribbonBar3.Location = new System.Drawing.Point(2, 0);
-            this.ribbonBar3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(136, 70);
-            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar3.TabIndex = 7;
-            this.ribbonBar3.Text = "项目信息";
+            this.RibbonBar_ProjectMG.Location = new System.Drawing.Point(2, 0);
+            this.RibbonBar_ProjectMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_ProjectMG.Name = "RibbonBar_ProjectMG";
+            this.RibbonBar_ProjectMG.Size = new System.Drawing.Size(136, 70);
+            this.RibbonBar_ProjectMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_ProjectMG.TabIndex = 0;
+            this.RibbonBar_ProjectMG.Text = "项目信息";
             // 
             // 
             // 
-            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ProjectMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ProjectMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_ProjectInfo
             // 
@@ -1233,13 +1086,13 @@
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar2);
+            this.ribbonPanel3.Controls.Add(this.RibbonBar_ReportMG);
             this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 54);
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(2, 0, 2, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1065, 78);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1065, 73);
             // 
             // 
             // 
@@ -1255,45 +1108,40 @@
             this.ribbonPanel3.TabIndex = 3;
             this.ribbonPanel3.Visible = false;
             // 
-            // ribbonBar2
+            // RibbonBar_ReportMG
             // 
-            this.ribbonBar2.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ReportMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar2.ContainerControlProcessDialogKey = true;
-            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar2.DragDropSupport = true;
-            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_ReportMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_ReportMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ReportMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_ReportMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_ReportMG.DragDropSupport = true;
+            this.RibbonBar_ReportMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.itemContainer5,
-            this.itemContainer8,
             this.itemContainer9,
-            this.Ribbon_Report_RecentWork,
-            this.Ribbon_Report_ToBeSolvedTrouble,
-            this.Ribbon_Report_Weekly,
-            this.MemberContributionRate,
-            this.buttonItem7,
-            this.DifficutyDegree});
-            this.ribbonBar2.Location = new System.Drawing.Point(2, 0);
-            this.ribbonBar2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(685, 75);
-            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar2.TabIndex = 0;
-            this.ribbonBar2.Text = "报表";
+            this.itemContainer8,
+            this.RibbonBtn_Report_Weekly,
+            this.RibbonBtn_Report_MemberContributionRate});
+            this.RibbonBar_ReportMG.Location = new System.Drawing.Point(2, 0);
+            this.RibbonBar_ReportMG.Name = "RibbonBar_ReportMG";
+            this.RibbonBar_ReportMG.Size = new System.Drawing.Size(380, 70);
+            this.RibbonBar_ReportMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_ReportMG.TabIndex = 1;
+            this.RibbonBar_ReportMG.Text = "报表";
             // 
             // 
             // 
-            this.ribbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ReportMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_ReportMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // itemContainer5
             // 
@@ -1304,7 +1152,7 @@
             this.itemContainer5.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.itemContainer5.Name = "itemContainer5";
             this.itemContainer5.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.Ribbon_Report_ProjectInfo,
+            this.RibbonBtn_Report_ProjectInfo,
             this.RibbonBtn_Report_Plan});
             // 
             // 
@@ -1312,22 +1160,19 @@
             this.itemContainer5.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemContainer5.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
             // 
-            // itemContainer8
+            // RibbonBtn_Report_ProjectInfo
             // 
+            this.RibbonBtn_Report_ProjectInfo.Name = "RibbonBtn_Report_ProjectInfo";
+            this.RibbonBtn_Report_ProjectInfo.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_ProjectInfo.Text = "基本情况";
+            this.RibbonBtn_Report_ProjectInfo.Click += new System.EventHandler(this.Ribbon_Report_ProjectInfo_Click);
             // 
+            // RibbonBtn_Report_Plan
             // 
-            // 
-            this.itemContainer8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemContainer8.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemContainer8.Name = "itemContainer8";
-            this.itemContainer8.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.Ribbon_Repost_Cost,
-            this.Ribbon_Report_Earning,
-            this.Ribbon_Report_Receivables});
-            // 
-            // 
-            // 
-            this.itemContainer8.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBtn_Report_Plan.Name = "RibbonBtn_Report_Plan";
+            this.RibbonBtn_Report_Plan.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_Plan.Text = "项目计划";
+            this.RibbonBtn_Report_Plan.Click += new System.EventHandler(this.RibbonBtn_Report_Plan_Click);
             // 
             // itemContainer9
             // 
@@ -1338,67 +1183,83 @@
             this.itemContainer9.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.itemContainer9.Name = "itemContainer9";
             this.itemContainer9.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.Ribbon_Report_Subcontract,
-            this.Ribbon_Report_Supplier});
+            this.RibbonBtn_Report_Subcontract,
+            this.RibbonBtn_Report_Supplier});
             // 
             // 
             // 
             this.itemContainer9.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.itemContainer9.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
             // 
-            // Ribbon_Report_RecentWork
+            // RibbonBtn_Report_Subcontract
             // 
-            this.Ribbon_Report_RecentWork.Name = "Ribbon_Report_RecentWork";
-            this.Ribbon_Report_RecentWork.SubItemsExpandWidth = 14;
-            this.Ribbon_Report_RecentWork.Text = "近期工作";
-            this.Ribbon_Report_RecentWork.Click += new System.EventHandler(this.Ribbon_Report_RecentWork_Click);
+            this.RibbonBtn_Report_Subcontract.Name = "RibbonBtn_Report_Subcontract";
+            this.RibbonBtn_Report_Subcontract.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_Subcontract.Text = "分包信息";
+            this.RibbonBtn_Report_Subcontract.Click += new System.EventHandler(this.Ribbon_Report_Subcontract_Click);
             // 
-            // Ribbon_Report_ToBeSolvedTrouble
+            // RibbonBtn_Report_Supplier
             // 
-            this.Ribbon_Report_ToBeSolvedTrouble.Name = "Ribbon_Report_ToBeSolvedTrouble";
-            this.Ribbon_Report_ToBeSolvedTrouble.SubItemsExpandWidth = 14;
-            this.Ribbon_Report_ToBeSolvedTrouble.Text = "待解决问题";
-            this.Ribbon_Report_ToBeSolvedTrouble.Click += new System.EventHandler(this.Ribbon_Report_ToBeSolvedTrouble_Click);
+            this.RibbonBtn_Report_Supplier.Name = "RibbonBtn_Report_Supplier";
+            this.RibbonBtn_Report_Supplier.Text = "供应商信息";
+            this.RibbonBtn_Report_Supplier.Click += new System.EventHandler(this.Ribbon_Report_Supplier_Click);
             // 
-            // Ribbon_Report_Weekly
+            // itemContainer8
             // 
-            this.Ribbon_Report_Weekly.Name = "Ribbon_Report_Weekly";
-            this.Ribbon_Report_Weekly.SubItemsExpandWidth = 14;
-            this.Ribbon_Report_Weekly.Text = "周报";
-            this.Ribbon_Report_Weekly.Click += new System.EventHandler(this.Ribbon_Report_Weekly_Click);
             // 
-            // MemberContributionRate
             // 
-            this.MemberContributionRate.Name = "MemberContributionRate";
-            this.MemberContributionRate.SubItemsExpandWidth = 14;
-            this.MemberContributionRate.Text = "成员贡献率";
-            this.MemberContributionRate.Click += new System.EventHandler(this.MemberContributionRate_Click);
             // 
-            // buttonItem7
+            this.itemContainer8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer8.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemContainer8.Name = "itemContainer8";
+            this.itemContainer8.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBtn_Report_MemberExecutiveEfficiency,
+            this.RibbonBtn_Report_DifficutyDegree});
             // 
-            this.buttonItem7.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem7.Name = "buttonItem7";
-            this.buttonItem7.SubItemsExpandWidth = 14;
-            this.buttonItem7.Text = "人员执行效率";
-            this.buttonItem7.Click += new System.EventHandler(this.buttonItem7_Click);
             // 
-            // DifficutyDegree
             // 
-            this.DifficutyDegree.Name = "DifficutyDegree";
-            this.DifficutyDegree.SubItemsExpandWidth = 14;
-            this.DifficutyDegree.Text = "工作难度系数";
-            this.DifficutyDegree.Click += new System.EventHandler(this.DifficutyDegree_Click);
+            this.itemContainer8.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemContainer8.VerticalItemAlignment = DevComponents.DotNetBar.eVerticalItemsAlignment.Middle;
+            // 
+            // RibbonBtn_Report_MemberExecutiveEfficiency
+            // 
+            this.RibbonBtn_Report_MemberExecutiveEfficiency.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.RibbonBtn_Report_MemberExecutiveEfficiency.Name = "RibbonBtn_Report_MemberExecutiveEfficiency";
+            this.RibbonBtn_Report_MemberExecutiveEfficiency.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_MemberExecutiveEfficiency.Text = "人员执行效率";
+            this.RibbonBtn_Report_MemberExecutiveEfficiency.Click += new System.EventHandler(this.RibbonBtn_Report_MemberExecutiveEfficiency_Click);
+            // 
+            // RibbonBtn_Report_DifficutyDegree
+            // 
+            this.RibbonBtn_Report_DifficutyDegree.Name = "RibbonBtn_Report_DifficutyDegree";
+            this.RibbonBtn_Report_DifficutyDegree.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_DifficutyDegree.Text = "工作难度系数";
+            this.RibbonBtn_Report_DifficutyDegree.Click += new System.EventHandler(this.DifficutyDegree_Click);
+            // 
+            // RibbonBtn_Report_Weekly
+            // 
+            this.RibbonBtn_Report_Weekly.Name = "RibbonBtn_Report_Weekly";
+            this.RibbonBtn_Report_Weekly.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_Weekly.Text = "周报";
+            this.RibbonBtn_Report_Weekly.Click += new System.EventHandler(this.Ribbon_Report_Weekly_Click);
+            // 
+            // RibbonBtn_Report_MemberContributionRate
+            // 
+            this.RibbonBtn_Report_MemberContributionRate.Name = "RibbonBtn_Report_MemberContributionRate";
+            this.RibbonBtn_Report_MemberContributionRate.SubItemsExpandWidth = 14;
+            this.RibbonBtn_Report_MemberContributionRate.Text = "成员贡献率";
+            this.RibbonBtn_Report_MemberContributionRate.Click += new System.EventHandler(this.MemberContributionRate_Click);
             // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel4.Controls.Add(this.ribbonBar1);
+            this.ribbonPanel4.Controls.Add(this.RibbonBar_TemplateMG);
             this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(2, 0, 2, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(1065, 76);
+            this.ribbonPanel4.Size = new System.Drawing.Size(1065, 73);
             // 
             // 
             // 
@@ -1414,37 +1275,37 @@
             this.ribbonPanel4.TabIndex = 4;
             this.ribbonPanel4.Visible = false;
             // 
-            // ribbonBar1
+            // RibbonBar_TemplateMG
             // 
-            this.ribbonBar1.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_TemplateMG.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar1.ContainerControlProcessDialogKey = true;
-            this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar1.DragDropSupport = true;
-            this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBar_TemplateMG.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.RibbonBar_TemplateMG.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_TemplateMG.ContainerControlProcessDialogKey = true;
+            this.RibbonBar_TemplateMG.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RibbonBar_TemplateMG.DragDropSupport = true;
+            this.RibbonBar_TemplateMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_UpdateTemplate});
-            this.ribbonBar1.Location = new System.Drawing.Point(2, 0);
-            this.ribbonBar1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(75, 73);
-            this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar1.TabIndex = 0;
-            this.ribbonBar1.Text = "模板管理";
+            this.RibbonBar_TemplateMG.Location = new System.Drawing.Point(2, 0);
+            this.RibbonBar_TemplateMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.RibbonBar_TemplateMG.Name = "RibbonBar_TemplateMG";
+            this.RibbonBar_TemplateMG.Size = new System.Drawing.Size(75, 70);
+            this.RibbonBar_TemplateMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.RibbonBar_TemplateMG.TabIndex = 0;
+            this.RibbonBar_TemplateMG.Text = "模板管理";
             // 
             // 
             // 
-            this.ribbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_TemplateMG.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.RibbonBar_TemplateMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // RibbonBtn_UpdateTemplate
             // 
@@ -1457,11 +1318,11 @@
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 45);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(1181, 85);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1065, 73);
             // 
             // 
             // 
@@ -1477,30 +1338,30 @@
             this.ribbonPanel2.TabIndex = 2;
             this.ribbonPanel2.Visible = false;
             // 
-            // ribbonTabItem1
+            // TabItem_ProcessMG
             // 
-            this.ribbonTabItem1.Checked = true;
-            this.ribbonTabItem1.Name = "ribbonTabItem1";
-            this.ribbonTabItem1.Panel = this.ribbonPanel1;
-            this.ribbonTabItem1.Text = "项目过程管理";
+            this.TabItem_ProcessMG.Checked = true;
+            this.TabItem_ProcessMG.Name = "TabItem_ProcessMG";
+            this.TabItem_ProcessMG.Panel = this.ribbonPanel1;
+            this.TabItem_ProcessMG.Text = "项目过程管理";
             // 
-            // ribbonTabItem3
+            // TabItem_ReportMG
             // 
-            this.ribbonTabItem3.Name = "ribbonTabItem3";
-            this.ribbonTabItem3.Panel = this.ribbonPanel3;
-            this.ribbonTabItem3.Text = "报表";
+            this.TabItem_ReportMG.Name = "TabItem_ReportMG";
+            this.TabItem_ReportMG.Panel = this.ribbonPanel3;
+            this.TabItem_ReportMG.Text = "报表";
             // 
-            // ribbonTabItem4
+            // TabItem_TemplateMG
             // 
-            this.ribbonTabItem4.Name = "ribbonTabItem4";
-            this.ribbonTabItem4.Panel = this.ribbonPanel4;
-            this.ribbonTabItem4.Text = "模板/文件管理";
+            this.TabItem_TemplateMG.Name = "TabItem_TemplateMG";
+            this.TabItem_TemplateMG.Panel = this.ribbonPanel4;
+            this.TabItem_TemplateMG.Text = "模板/文件管理";
             // 
-            // ribbonTabItem2
+            // TabItem_PowerMG
             // 
-            this.ribbonTabItem2.Name = "ribbonTabItem2";
-            this.ribbonTabItem2.Panel = this.ribbonPanel2;
-            this.ribbonTabItem2.Text = "权限管理";
+            this.TabItem_PowerMG.Name = "TabItem_PowerMG";
+            this.TabItem_PowerMG.Panel = this.ribbonPanel2;
+            this.TabItem_PowerMG.Text = "权限管理";
             // 
             // MF_ProjectManagement
             // 
@@ -1787,6 +1648,7 @@
             this.Text = "基于WBS的项目管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainFrame_Load);
+            this.Shown += new System.EventHandler(this.MainFrame_Shown);
             this.CloseTabContextMenu.ResumeLayout(false);
             this.EditNodeMenu.ResumeLayout(false);
             this.EditProMenu.ResumeLayout(false);
@@ -1795,7 +1657,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.collapsibleSplitContainer1)).EndInit();
             this.collapsibleSplitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WbsTree)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bar_ToolBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainSuperTabControl)).EndInit();
             this.MainSuperTabControl.ResumeLayout(false);
             this.MainRibbonControl.ResumeLayout(false);
@@ -1811,7 +1673,7 @@
 
         private DevComponents.DotNetBar.RibbonControl MainRibbonControl;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel1;
-        private DevComponents.DotNetBar.RibbonBar WBSMG;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_WBSMG;
         private DevComponents.DotNetBar.ApplicationButton MF_ProjectManagement;
         private DevComponents.DotNetBar.ItemContainer itemContainer1;
         private DevComponents.DotNetBar.ItemContainer itemContainer2;
@@ -1819,7 +1681,7 @@
         private DevComponents.DotNetBar.ItemContainer itemContainer4;
         private DevComponents.DotNetBar.ButtonItem buttonItem12;
         private DevComponents.DotNetBar.ButtonItem buttonItem13;
-        private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem1;
+        private DevComponents.DotNetBar.RibbonTabItem TabItem_ProcessMG;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
@@ -1831,8 +1693,8 @@
         private DevComponents.DotNetBar.ButtonItem App_NewProject;
         private DevComponents.DotNetBar.ButtonItem btnTemplatePro;
         private DevComponents.DotNetBar.ButtonItem buttonItem5;
-        private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
-        private DevComponents.DotNetBar.RibbonBar SkateholderMG;
+        private DevComponents.DotNetBar.RibbonTabItem TabItem_PowerMG;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_SkateholderMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Stakeholder;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Communication;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_CommunicationMatrix;
@@ -1840,75 +1702,52 @@
         private System.Windows.Forms.ToolStripMenuItem CloseAllWindows;
         private System.Windows.Forms.ToolStripMenuItem CloseAllWindows_ExcludeSelf;
         private DevComponents.DotNetBar.SuperTabControl MainSuperTabControl;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar4;
-        private DevComponents.DotNetBar.RibbonBar ContractMG;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_OtherMG;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_ContractMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Supplier;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Contract;
         private DevComponents.DotNetBar.ItemContainer itemContainer6;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar6;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_InfoMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_PublishConfigure;
-        private DevComponents.DotNetBar.RibbonBar WarningMG;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_WarningMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_WarningConfigure;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_WarningList;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Risk;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Change;
         private DevComponents.DotNetBar.ItemContainer itemContainer7;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Routine;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Trouble;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Trouble;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Weekly;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar7;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_CostMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Cost;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Earning;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel3;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel4;
-        private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem3;
-        private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem4;
+        private DevComponents.DotNetBar.RibbonTabItem TabItem_ReportMG;
+        private DevComponents.DotNetBar.RibbonTabItem TabItem_TemplateMG;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_InfomationPublish;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_PublishHistory;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Setting;
         private DevComponents.DotNetBar.Metro.MetroStatusBar metroStatusBar1;
         private DevComponents.DotNetBar.Controls.CollapsibleSplitContainer collapsibleSplitContainer1;
         private DevComponents.DotNetBar.ButtonItem buttonItem9;
-        private DevComponents.DotNetBar.Bar bar1;
+        private DevComponents.DotNetBar.Bar Bar_ToolBar;
         private DevComponents.DotNetBar.ButtonItem btnReload;
         private DevComponents.DotNetBar.LabelItem labelItem1;
         private DevComponents.DotNetBar.TextBoxItem textBoxItem1;
         private DevComponents.DotNetBar.ButtonItem buttonItem10;
         private DevComponents.AdvTree.AdvTree WbsTree;
-        private DevComponents.AdvTree.Node node1;
-        private DevComponents.AdvTree.Node node2;
-        private DevComponents.AdvTree.Node node8;
-        private DevComponents.AdvTree.Node node3;
-        private DevComponents.AdvTree.Node node9;
-        private DevComponents.AdvTree.Node node10;
-        private DevComponents.AdvTree.Node node11;
-        private DevComponents.AdvTree.Node node4;
-        private DevComponents.AdvTree.Node node5;
-        private DevComponents.AdvTree.Node node6;
-        private DevComponents.AdvTree.Node node7;
         private DevComponents.AdvTree.NodeConnector nodeConnector1;
         private DevComponents.DotNetBar.ElementStyle elementStyle1;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_WeeklyHistory;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar1;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_TemplateMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_UpdateTemplate;
         private DevComponents.DotNetBar.GalleryContainer gcProjectlist;
         private DevComponents.DotNetBar.LabelItem labelItem8;
         private DevComponents.DotNetBar.ButtonItem buttonItem8;
         private DevComponents.DotNetBar.ItemContainer icProlist;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar2;
-        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Plan;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Repost_Cost;
-        private DevComponents.DotNetBar.ItemContainer itemContainer8;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_Earning;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_Receivables;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_ProjectInfo;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_RecentWork;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_ToBeSolvedTrouble;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_Weekly;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_Subcontract;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar3;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_ProjectMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_ProjectInfo;
         private DevComponents.DotNetBar.ItemContainer itemContainer10;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Milestone;
@@ -1925,24 +1764,30 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem11;
         private DevComponents.DotNetBar.ButtonItem buttonItem14;
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
-        private DevComponents.DotNetBar.ItemContainer itemContainer5;
-        private DevComponents.DotNetBar.ItemContainer itemContainer9;
-        private DevComponents.DotNetBar.ButtonItem Ribbon_Report_Supplier;
-        private DevComponents.DotNetBar.ButtonItem MemberContributionRate;
         private System.Windows.Forms.ContextMenuStrip EditProMenu;
         private System.Windows.Forms.ToolStripMenuItem toolProRename;
         private DevComponents.DotNetBar.ItemContainer itemContainer12;
-        private DevComponents.DotNetBar.ButtonItem btnProIn;
-        private DevComponents.DotNetBar.ButtonItem btnProOut;
-        private DevComponents.DotNetBar.ButtonItem buttonItem7;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_ProIn;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_ProOut;
         private DevComponents.DotNetBar.ElementStyle elementStyle2;
-        private DevComponents.DotNetBar.ButtonItem DifficutyDegree;
         private DevComponents.DotNetBar.ApplicationButton applicationButton2;
         private DevComponents.DotNetBar.GalleryContainer galleryContainer2;
         private DevComponents.DotNetBar.ButtonItem buttonItem16;
         private DevComponents.DotNetBar.ButtonItem buttonItem17;
         private DevComponents.DotNetBar.ButtonItem buttonItem18;
         private DevComponents.DotNetBar.ButtonItem buttonItem19;
+        private DevComponents.DotNetBar.RibbonBar RibbonBar_ReportMG;
+        private DevComponents.DotNetBar.ItemContainer itemContainer5;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_ProjectInfo;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Plan;
+        private DevComponents.DotNetBar.ItemContainer itemContainer9;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Subcontract;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Supplier;
+        private DevComponents.DotNetBar.ItemContainer itemContainer8;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_MemberExecutiveEfficiency;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_DifficutyDegree;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Weekly;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_MemberContributionRate;
     }
 }
 

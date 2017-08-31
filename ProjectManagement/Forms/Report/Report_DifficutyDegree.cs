@@ -26,6 +26,8 @@ namespace ProjectManagement.Forms.Report
         public Report_DifficutyDegree()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             //加载完成情况下拉框
             for (int i = 0; i < 3; i++)
             {

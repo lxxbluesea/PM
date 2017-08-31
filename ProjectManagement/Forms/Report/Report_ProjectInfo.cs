@@ -19,6 +19,8 @@ namespace ProjectManagement.Forms.Report
         public Report_ProjectInfo()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             var list = bll.GetProjects();
             superGridControl1.PrimaryGrid.DataSource = list;
             

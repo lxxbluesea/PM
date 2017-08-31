@@ -207,9 +207,9 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.DataPropertyName = "startedate";
+            this.gridColumn5.DataPropertyName = "StartDate";
             this.gridColumn5.HeaderText = "开始时间";
-            this.gridColumn5.Name = "StarteDate";
+            this.gridColumn5.Name = "StartDate";
             // 
             // gridColumn6
             // 

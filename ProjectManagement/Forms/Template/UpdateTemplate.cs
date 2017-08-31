@@ -34,6 +34,8 @@ namespace ProjectManagement.Forms.Template
         public UpdateTemplate()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             DataBind();
             DataBindTemplet();
         }

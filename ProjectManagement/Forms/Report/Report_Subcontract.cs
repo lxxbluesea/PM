@@ -30,6 +30,8 @@ namespace ProjectManagement.Forms.Report
         public Report_Subcontract()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             Init();
             ProjectBind();
         }

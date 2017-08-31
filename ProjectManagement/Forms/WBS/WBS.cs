@@ -463,6 +463,8 @@ namespace ProjectManagement.Forms.WBS
 
             _SelectJBXX = new WBSBLL().GetJBXX(_SelectNode.ID);
 
+            if (_SelectJBXX == null)
+                return;
             //上方节点信息
             txtParent.Text = JFW_Node.Parent.Text;
             txtParent.Tag = JFW_Node.Parent.Name;
@@ -474,7 +476,7 @@ namespace ProjectManagement.Forms.WBS
             txtJFWParent.Tag = JFW_Node.Parent.Name;
             txtJFW.Text = _SelectJBXX.Name;
             txtDesc.Text = _SelectJBXX.Desc;
-            dtStart.Value = (DateTime)_SelectJBXX.StarteDate;
+            dtStart.Value = (DateTime)_SelectJBXX.StartDate;
             dtEnd.Value = (DateTime)_SelectJBXX.EndDate;
             intWorkload.Value = int.Parse(_SelectJBXX.Workload.ToString());
 
@@ -550,7 +552,7 @@ namespace ProjectManagement.Forms.WBS
                 ID = "",
                 EndDate = dtEnd.Value,
                 // Manager = cbManager.SelectedItem == null ? "" : ((ComboItem)cbManager.SelectedItem).Value.ToString(),
-                StarteDate = dtStart.Value,
+                StartDate = dtStart.Value,
                 Workload = intWorkload.Value,
                 Weight = sdWeight.Value,
                 Name = txtJFW.Text,
@@ -600,7 +602,7 @@ namespace ProjectManagement.Forms.WBS
         {
             string jbxxid = _SelectJBXX.ID;
             _SelectJBXX.EndDate = dtEnd.Value;
-            _SelectJBXX.StarteDate = dtStart.Value;
+            _SelectJBXX.StartDate = dtStart.Value;
             _SelectJBXX.Workload = intWorkload.Value;
             _SelectJBXX.Name = txtJFW.Text;
             _SelectJBXX.Desc = txtDesc.Text;

@@ -24,6 +24,7 @@ namespace DataAccessDLL
             if (project == null)
                 return;
             project.ProjectLastUpdate = DateTime.Now;
+            project.UPDATED = DateTime.Now;
             s.Update(project);
         }
     }

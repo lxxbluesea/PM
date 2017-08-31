@@ -24,6 +24,8 @@ namespace ProjectManagement.Forms.Report
         public Report_Supplier()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             ProjectBind();
             Init();
         }

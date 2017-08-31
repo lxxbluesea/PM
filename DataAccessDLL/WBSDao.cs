@@ -28,7 +28,7 @@ namespace DataAccessDLL
                 if (string.IsNullOrEmpty(oldParentID))
                 {
                     //父节点不变
-                    sql = string.Format("select WBSNo from PNode where substr(ID,1,36)='{0}'", node.ParentID);
+                    sql = string.Format("select WBSNo from PNode where ID='{0}'", node.ParentID);
                     string wbsno = s.CreateSQLQuery(sql).DynamicList().FirstOrDefault().WBSNo;
                     if (!string.IsNullOrEmpty(wbsno))
                         wbsno += ".";
@@ -59,7 +59,7 @@ namespace DataAccessDLL
                 else
                 {
                     #region 更新新同级编号
-                    sql = string.Format("select WBSNo from PNode where substr(ID,1,36)='{0}'", node.ParentID);
+                    sql = string.Format("select WBSNo from PNode where ID='{0}'", node.ParentID);
                     string wbsno = s.CreateSQLQuery(sql).DynamicList().FirstOrDefault().WBSNo;
                     if (!string.IsNullOrEmpty(wbsno))
                         wbsno += ".";
@@ -72,7 +72,7 @@ namespace DataAccessDLL
                     s.CreateSQLQuery(sql).ExecuteUpdate();
 
                     #region 更新原同级编号
-                    sql = string.Format("select WBSNo from PNode where substr(ID,1,36)='{0}'", oldParentID);
+                    sql = string.Format("select WBSNo from PNode where ID='{0}'", oldParentID);
                     wbsno = s.CreateSQLQuery(sql).DynamicList().FirstOrDefault().WBSNo;
                     if (!string.IsNullOrEmpty(wbsno))
                         wbsno += ".";
@@ -120,8 +120,8 @@ namespace DataAccessDLL
                         entity.ID = Guid.NewGuid().ToString();
                         entity.Status = 1;
                         entity.CREATED = DateTime.Now;
-                        entity.JBXXID = jbxx.ID.Substring(0, 36);
-                        entity.Manager = entity.Manager.Substring(0, 36);
+                        entity.JBXXID = jbxx.ID;//.Substring(0, 36);
+                        entity.Manager = entity.Manager;//.Substring(0, 36);
                         s.Save(entity);
                     }
                 UpdateProject(s);//更新项目时间
@@ -154,13 +154,13 @@ namespace DataAccessDLL
                 s.Update(old_node);
                 if (listWork != null)
                 {
-                    s.CreateQuery("delete from DeliverablesWork where JBXXID='" + new_jbxx.ID.Substring(0, 36) + "';").ExecuteUpdate();
+                    s.CreateQuery("delete from DeliverablesWork where JBXXID='" + new_jbxx.ID + "';").ExecuteUpdate();
                     foreach (DeliverablesWork entity in listWork)
                     {
                         entity.ID = Guid.NewGuid().ToString();
                         entity.CREATED = DateTime.Now;
-                        entity.JBXXID = new_jbxx.ID.Substring(0, 36);
-                        entity.Manager = entity.Manager.Substring(0, 36);
+                        entity.JBXXID = new_jbxx.ID;
+                        entity.Manager = entity.Manager;
                         entity.Status = 1;
                         s.Save(entity);
                     }
@@ -214,15 +214,15 @@ namespace DataAccessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select j.id,j.name,j.Desc,parent.Name NodeName,strftime('%Y-%m-%d',j.StarteDate)StarteDate,strftime('%Y-%m-%d',j.EndDate)EndDate,");
+            sql.Append(" select j.id,j.name,j.Desc,parent.Name NodeName,strftime('%Y-%m-%d',j.StartDate)StartDate,strftime('%Y-%m-%d',j.EndDate)EndDate,");
             sql.Append(" j.Workload,j.Manager ");
-            sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=substr(n.ID,1,36) and n.status=1");
-            sql.Append(" left join PNode parent on n.ParentID=substr(parent.ID,1,36) and parent.status=1");
+            sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=n.ID and n.status=1");
+            sql.Append(" left join PNode parent on n.ParentID=parent.ID and parent.status=1");
             sql.Append(" where n.PID=@PID  and j.status=1 ");
             //开始日期
             if (!string.IsNullOrEmpty(startDate))
             {
-                sql.Append(" and date(j.StarteDate) >= date(@startDate)");
+                sql.Append(" and date(j.StartDate) >= date(@startDate)");
                 qf.Add(new QueryField() { Name = "startDate", Type = QueryFieldType.String, Value = DateTime.Parse(startDate).ToString("yyyy-MM-dd") });
             }
             //结束日期

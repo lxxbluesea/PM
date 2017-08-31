@@ -152,8 +152,8 @@ namespace DataAccessDLL
             sql.Append(" select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork, ");
             sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork  ");
             sql.Append(" from PNode p ");
-            sql.Append(" left join DeliverablesJBXX d on substr(p.ID,1,36) = d.NodeID and d.Status = 1 ");
-            sql.Append(" left join NodeProgress np on substr(p.ID,1,36) = np.NodeID and np.Status = 1 ");
+            sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1 ");
+            sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1 ");
             sql.Append(" where p.PID=@PID  and p.status=1");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
@@ -197,7 +197,7 @@ namespace DataAccessDLL
             sql.Append(" sum( case when HandleStatus <> 3 then 1 else 0 end) as TroubleLeave, ");
             sql.Append(" sum( case when HandleStatus <> 3 and EndDate < date('now') then 1 else 0 end) as TroubleRest ");
             sql.Append(" from Trouble t ");
-            sql.Append(" inner join PNode p on substr(p.ID,1,36) = t.NodeId and p.status = 1 ");
+            sql.Append(" inner join PNode p on p.ID = t.NodeId and p.status = 1 ");
             sql.Append(" where p.PID=@PID  and t.status=1)");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
@@ -215,13 +215,13 @@ namespace DataAccessDLL
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
             sql.Append(" select r.ID,r.Name,r.Desc,'日常工作' as WorkType from Routine r ");
-            sql.Append(" inner join PNode p on substr(p.ID,1,36) = r.NodeId and p.status = 1 ");
+            sql.Append(" inner join PNode p on p.ID = r.NodeId and p.status = 1 ");
             sql.Append(" where r.StartDate < date('now','+' || @Days || ' day') and r.status = 1 and p.PID=@PID ");
             sql.Append(" and r.FinishStatus != 3");
             sql.Append(" union all ");
             sql.Append(" select t.ID,t.Name,t.Desc,'项目问题' as WorkType from Trouble t  ");
-            sql.Append(" inner join PNode p on substr(p.ID,1,36) = t.NodeId and p.status = 1 ");
-            sql.Append(" where t.StarteDate < date('now','+' || @Days || ' day') and t.status = 1 and p.PID=@PID");
+            sql.Append(" inner join PNode p on p.ID = t.NodeId and p.status = 1 ");
+            sql.Append(" where t.StartDate < date('now','+' || @Days || ' day') and t.status = 1 and p.PID=@PID");
             sql.Append(" and t.HandleStatus != 3");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             qf.Add(new QueryField() { Name = "Days", Type = QueryFieldType.Numeric, Value = days });
@@ -263,7 +263,7 @@ namespace DataAccessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select p.ID Id,'项目交付物预警' as WarnningName, d.Name || '在期限内没有完成工作量' as WarnningContent from DeliverablesJBXX d  ");
-                sql.Append(" inner join PNode p on substr(p.ID,1,36) = d.NodeID ");
+                sql.Append(" inner join PNode p on p.ID = d.NodeID ");
                 sql.Append(" left join NodeProgress n on d.NodeID = n.NodeID ");
                 sql.Append(" where IFNULL(d.EndDate,date('2017-01-01')) < date('now') and IFNULL(n.PType,0) < 4 ");
                 sql.Append(" and d.status = 1 and n.status = 1 and p.status = 1 and p.PID=@PID ");
@@ -273,10 +273,10 @@ namespace DataAccessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select p.ID Id,'项目交付物预警' as WarnningName, d.Name || '的时间过去2/3,但工作量没有完成' as WarnningContent from DeliverablesJBXX d  ");
-                sql.Append(" inner join PNode p on substr(p.ID,1,36) = d.NodeID ");
+                sql.Append(" inner join PNode p on p.ID = d.NodeID ");
                 sql.Append(" left join NodeProgress n on d.NodeID = n.NodeID ");
-                sql.Append(" where (julianday(strftime('%Y-%m-%d','now'))-julianday(IFNULL(d.StarteDate,date('2017-01-01'))))/");
-                sql.Append("(julianday(IFNULL(d.EndDate,strftime('%Y-%m-%d','now')))-julianday(IFNULL(d.StarteDate,date('2017-01-01'))))");
+                sql.Append(" where (julianday(strftime('%Y-%m-%d','now'))-julianday(IFNULL(d.StartDate,date('2017-01-01'))))/");
+                sql.Append("(julianday(IFNULL(d.EndDate,strftime('%Y-%m-%d','now')))-julianday(IFNULL(d.StartDate,date('2017-01-01'))))");
                 sql.Append(" > 2/3 and IFNULL(n.PType,0) < 4 ");
                 sql.Append(" and d.status = 1 and n.status = 1 and p.status = 1 and p.PID=@PID ");
             }
@@ -286,7 +286,7 @@ namespace DataAccessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select d.ID Id,'项目问题预警' as WarnningName, '问题【' || d.Name || '】在期限内没有解决' as WarnningContent from Trouble d  ");
-                sql.Append(" inner join PNode p on substr(p.ID,1,36) = d.NodeID ");
+                sql.Append(" inner join PNode p on p.ID = d.NodeID ");
                 sql.Append(" where IFNULL(d.EndDate,date('2017-01-01')) < date('now') and d.HandleStatus <> 3");
                 sql.Append(" and d.status = 1 and p.status = 1 and p.PID=@PID ");
             }

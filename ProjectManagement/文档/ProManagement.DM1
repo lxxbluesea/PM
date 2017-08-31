@@ -1428,7 +1428,7 @@ String_Id,Data,Overflow,ConstantString,Row_Time_Stamp
 65,DTX,0,0,0
 66,Desc,0,0,0
 70,合同开始日期,0,0,0
-71,StarteDate,0,0,0
+71,StartDate,0,0,0
 72,合同结束日期,0,0,0
 73,EndDate,0,0,0
 74,实际开始日期,0,0,0

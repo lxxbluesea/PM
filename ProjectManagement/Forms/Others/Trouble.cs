@@ -193,40 +193,40 @@ namespace ProjectManagement.Forms.Others
             List<TroubleWork> listWork = new List<TroubleWork>();
             if (!GetEditManager(ref listWork, true)) return;//责任人如果填写无误
 
-            DomainDLL.Trouble obj = new DomainDLL.Trouble();
+            //DomainDLL.Trouble obj = new DomainDLL.Trouble();
 
             #region 赋值
             //项目问题ID
-            obj.ID = TroubleId;
+            //obj.ID = TroubleId;
             //NodeID
             //节点(如果关联结点未选择时，默认设定为项目结点)
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
-                obj.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
+                trouble.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                obj.NodeID = cmbNode.SelectedNode.Name.Substring(0, 36);
+                trouble.NodeID = cmbNode.SelectedNode.Name;//.Substring(0, 36);
             //问题名称
-            obj.Name = txtTroubleName.Text;
+            trouble.Name = txtTroubleName.Text;
             //问题描述
-            obj.Desc = txtTroubleDesc.Text;
+            trouble.Desc = txtTroubleDesc.Text;
             //处理结果
-            obj.HandleResult = txtTroubleResult.Text;
+            trouble.HandleResult = txtTroubleResult.Text;
             //开始日期
             if (!string.IsNullOrEmpty(txtStartDate.Text))
-                obj.StarteDate = DateTime.Parse(txtStartDate.Text);
+                trouble.StartDate = txtStartDate.Value;
             //结束日期
             if (!string.IsNullOrEmpty(txtEndDate.Text))
-                obj.EndDate = DateTime.Parse(txtEndDate.Text);
+                trouble.EndDate = txtEndDate.Value;
             //工作量
-            obj.Workload = intWorkload.Value;
+            trouble.Workload = intWorkload.Value;
             //状态
-            obj.Status = 1;
+            trouble.Status = 1;
 
             //问题级别
             if (cmbTroubleLevel.SelectedIndex > -1)
-                obj.Level = int.Parse(((ComboItem)cmbTroubleLevel.SelectedItem).Value.ToString());
+                trouble.Level = int.Parse(((ComboItem)cmbTroubleLevel.SelectedItem).Value.ToString());
             //处理情况
             if (cmbHandleStatus.SelectedIndex > -1)
-                obj.HandleStatus = int.Parse(((ComboItem)cmbHandleStatus.SelectedItem).Value.ToString());
+                trouble.HandleStatus = int.Parse(((ComboItem)cmbHandleStatus.SelectedItem).Value.ToString());
             #endregion
 
             bool IsEdit = false;
@@ -239,7 +239,7 @@ namespace ProjectManagement.Forms.Others
             }
 
             //保存
-            JsonResult result = troubleBLL.SaveTrouble(ProjectId, obj, listWork);
+            JsonResult result = troubleBLL.SaveTrouble(ProjectId, trouble, listWork);
             MessageHelper.ShowRstMsg(result.result);
             if (result.result)
             {
@@ -348,6 +348,10 @@ namespace ProjectManagement.Forms.Others
             _fileId = result.result ? (string)result.data : _fileId;
             if (result.result)
             {
+                txtFileDesc.Text = "";
+                txtFileName.Text = "";
+                txtFilePath.Text = "";
+                _fileId = string.Empty;
                 //附件列表加载
                 LoadFileList(TroubleId);
             }
@@ -516,7 +520,28 @@ namespace ProjectManagement.Forms.Others
         {
             //日常工作取得
             trouble = new DomainDLL.Trouble();
-            trouble = troubleBLL.GetTroubleObject(TroubleId, _nodeID);
+            if(gridTrouble.GetSelectedRows().Count>0)
+            {
+                GridRow row = (GridRow)gridTrouble.GetSelectedRows()[0];
+                trouble.ID = row.GetCell("ID").Value.ToString();
+                trouble.PID = row.GetCell("PID").Value.ToString();
+                trouble.NodeID = row.GetCell("NodeID").Value.ToString();
+                trouble.Name = row.GetCell("Name").Value.ToString();
+                trouble.Desc = row.GetCell("Desc").Value.ToString();
+                trouble.StartDate = DateTime.Parse(row.GetCell("StartDate").Value.ToString());
+                trouble.EndDate = DateTime.Parse(row.GetCell("EndDate").Value.ToString());
+                trouble.Level = int.Parse(row.GetCell("Level").Value.ToString());
+                trouble.HandleStatus = int.Parse(row.GetCell("HandleStatus").Value.ToString());
+                trouble.HandleResult = row.GetCell("HandleResult").Value.ToString();
+                trouble.Status = int.Parse(row.GetCell("Status").Value.ToString());
+                trouble.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+                trouble.Workload = int.Parse(row.GetCell("Workload").Value.ToString());
+                if(row.GetCell("UPDATED").Value!=null && row.GetCell("UPDATED").Value.ToString()!="")
+                {
+                    trouble.UPDATED = DateTime.Parse(row.GetCell("UPDATED").Value.ToString());
+                }
+            }
+            //trouble = troubleBLL.GetTroubleObject(TroubleId, _nodeID);
             if (!string.IsNullOrEmpty(trouble.ID))
             {
                 PNode parentNode = new WBSBLL().GetParentNode(trouble.NodeID); //日常工作挂靠的节点
@@ -531,8 +556,8 @@ namespace ProjectManagement.Forms.Others
                 //处理结果
                 txtTroubleResult.Text = trouble.HandleResult;
                 //开始日期
-                if (trouble.StarteDate.HasValue)
-                    txtStartDate.Text = trouble.StarteDate.Value.ToShortDateString();
+                if (trouble.StartDate.HasValue)
+                    txtStartDate.Value = trouble.StartDate.Value;
                 //结束日期
                 if (trouble.EndDate.HasValue)
                     txtEndDate.Text = trouble.EndDate.Value.ToShortDateString();
@@ -552,8 +577,8 @@ namespace ProjectManagement.Forms.Others
                 //txtCreated.Text = obj.CREATED.ToShortDateString();
 
                 //附件列表加载
-                LoadFileList(trouble.ID.Substring(0, 36));
-                LoadSpecFiles(trouble.ID.Substring(0, 36));
+                LoadFileList(trouble.ID);
+                LoadSpecFiles(trouble.ID);
 
                 txtFilePath.Text = string.Empty;
                 txtFileName.Text = string.Empty;
@@ -579,6 +604,7 @@ namespace ProjectManagement.Forms.Others
             DomainDLL.Trouble obj = troubleBLL.GetTroubleObject("", _nodeID);
             if (obj == null)
                 return;
+            trouble = obj;
             TroubleId = obj.ID;
             PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
             //节点
@@ -590,8 +616,8 @@ namespace ProjectManagement.Forms.Others
             //处理结果
             txtTroubleResult.Text = obj.HandleResult;
             //开始日期
-            if (obj.StarteDate.HasValue)
-                txtStartDate.Text = obj.StarteDate.Value.ToShortDateString();
+            if (obj.StartDate.HasValue)
+                txtStartDate.Value = obj.StartDate.Value;
             //结束日期
             if (obj.EndDate.HasValue)
                 txtEndDate.Text = obj.EndDate.Value.ToShortDateString();
@@ -927,6 +953,7 @@ namespace ProjectManagement.Forms.Others
         {
             if (trouble == null)
                 return;
+            troubleTrace = new TroubleTrace();
             var dt = troubleBLL.GetTroubleTrace(trouble.ID);
             TroubleTrace_Grid.PrimaryGrid.DataSource = dt;
         }
@@ -949,9 +976,39 @@ namespace ProjectManagement.Forms.Others
 
         private void btn_TroubleTrace_Save_Click(object sender, EventArgs e)
         {
+            //项目ID是否存在
+            if (string.IsNullOrEmpty(ProjectId))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+                return;
+            }
+            //项目问题是否创建
+            if (trouble == null)
+            {
+                MessageHelper.ShowMsg(MessageID.W000000006, MessageType.Alert, "问题内容");
+                return;
+            }
+            //文件名称未输入
+            if (string.IsNullOrEmpty(txt_TroubleTrace_Content.Text))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "跟进内容不能为空");
+                txt_TroubleTrace_Content.Focus();
+                return;
+            }
+            
+
+            troubleTrace.TroubleID = trouble.ID;
+            troubleTrace.Content = txt_TroubleTrace_Content.Text;
+            troubleTrace.TraceDate = DtTroubleTrace_Date.Value;
 
 
-            TroubleTrace_Clear();
+            JsonResult result = troubleBLL.SaveTroubleTrace(troubleTrace);
+            MessageHelper.ShowRstMsg(result.result);
+            if (result.result)
+            {
+                TroubleTrace_Clear();
+                LoadTroubleTrace();
+            }
         }
 
         private void TroubleTrace_Grid_CellClick(object sender, GridCellClickEventArgs e)

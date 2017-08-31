@@ -38,20 +38,6 @@ namespace ProjectManagement
         {
             InitializeComponent();
 
-            #region 配置绑定
-            LoadWorkDir();
-            LoadWeekly();
-            #endregion
-
-            //加载基础数据项
-            foreach (DictCategory category in Enum.GetValues(typeof(DictCategory)))
-            {
-                ComboItem item = new ComboItem();
-                item.Text = EnumsHelper.GetDescription(category);
-                item.Value = (int)category;
-                cbDictCategory.Items.Add(item);
-            }
-            cbDictCategory.SelectedIndexChanged += new System.EventHandler(LoadDictItems);
         }
 
         /// <summary>
@@ -154,6 +140,7 @@ namespace ProjectManagement
             if (string.IsNullOrEmpty(UserName))
             {
                 MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "用户名称");
+                txtUserName.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(WorkDir))
@@ -177,7 +164,10 @@ namespace ProjectManagement
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
+                {
                     txtWorkDir.Text = dialog.SelectedPath;
+                    txtWorkDir.BackColor = Color.White;
+                }
             }
         }
 
@@ -308,6 +298,15 @@ namespace ProjectManagement
         {
             txtUserName.Text = CommonHelper.GetConfigValue(ConstHelper.Config_UserName);
             txtWorkDir.Text = CommonHelper.GetConfigValue(ConstHelper.Config_WorkDir);
+
+            if(!System.IO.Directory.Exists(txtWorkDir.Text))
+            {
+                txtWorkDir.BackColor = Color.Red;
+                MessageBox.Show("工作目录不存在，请设置");
+                btnSelectDir_Click(null, null);
+                btnSaveConfig_Click(null, null);
+            }
+
         }
 
         /// <summary>
@@ -431,6 +430,34 @@ namespace ProjectManagement
             txtbox.Tag = ids;
         }
         #endregion
+
+        private void FormSetting_Shown(object sender, EventArgs e)
+        {
+            #region 配置绑定
+            LoadWorkDir();
+
+            //加载基础数据项
+            foreach (DictCategory category in Enum.GetValues(typeof(DictCategory)))
+            {
+                ComboItem item = new ComboItem();
+                item.Text = EnumsHelper.GetDescription(category);
+                item.Value = (int)category;
+                cbDictCategory.Items.Add(item);
+            }
+            cbDictCategory.SelectedIndexChanged += new System.EventHandler(LoadDictItems); 
+            
+            
+            if(string.IsNullOrEmpty(ProjectId))
+            {
+                panelWeekly.Enabled = false;
+                return;
+            }
+            LoadWeekly();
+            #endregion
+
+
+
+        }
 
 
     }

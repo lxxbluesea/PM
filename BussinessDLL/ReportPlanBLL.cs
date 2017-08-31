@@ -19,19 +19,19 @@ namespace BussinessDLL
         /// 2017/04/24(zhuguanjun)
         /// 2017/05/10(zhuguanjun)增加PID
         /// </summary>
-        /// <param name="StarteDate"></param>
+        /// <param name="StartDate"></param>
         /// <param name="EndDate"></param>
         /// <param name="PType"></param>
         /// <param name="Manager"></param>
         /// <param name="projectId"></param>
         /// <returns></returns>
-        public DataTable GetPlan(DateTime StarteDate, DateTime EndDate, int PType, string Manager,string projectId)
+        public DataTable GetPlan(DateTime StartDate, DateTime EndDate, int PType, string Manager,string projectId)
         {
             if (Manager != string.Empty)
             {
                 Manager = Manager.Substring(0, 36);
             }
-            return new ReportPlanDao().GetPlan(StarteDate, EndDate, PType, Manager, projectId);
+            return new ReportPlanDao().GetPlan(StartDate, EndDate, PType, Manager, projectId);
         }
 
         /// <summary>

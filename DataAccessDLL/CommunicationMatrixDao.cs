@@ -41,7 +41,7 @@ namespace DataAccessDLL
         {
             //StringBuilder sql = new StringBuilder();
             //sql.Append(" select s1.ID,s2.Name||'('||s2.CompanyName||')' as Name,s2.CompanyName || '-' || s2.Name as showName,s2.IsPublic from stakeholders s1, stakeholders s2");
-            //sql.Append(" where substr(s1.ID, 38) = '1' and substr(s1.ID, 1, 37) = substr(s2.ID, 1, 37)");
+            //sql.Append(" where s1.ID, 38) = '1' and s1.ID, 1, 37) = s2.ID, 1, 37)");
             //sql.Append(" and s2.PID=@PID  and s2.status=@Status order by s2.updated desc,s2.created desc");
             //DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qf);
             //return dt;
@@ -67,7 +67,7 @@ namespace DataAccessDLL
 
             #region 干系人
             StringBuilder sql = new StringBuilder();
-            //sql.Append(" select * from stakeholders s where s.PID=@PID and substr(s.Id,1,37)||'1'=@Id and s.Status=@Status");
+            //sql.Append(" select * from stakeholders s where s.PID=@PID and s.Id,1,37)||'1'=@Id and s.Status=@Status");
             //sql.Append(" order by s.UPDATED desc , s.CREATED desc");
             sql.Append(" select * from stakeholders s where s.PID=@PID and s.Id=@Id and s.Status=@Status");
             sql.Append(" order by s.CREATED asc");

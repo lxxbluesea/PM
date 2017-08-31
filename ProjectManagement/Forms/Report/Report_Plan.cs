@@ -32,6 +32,8 @@ namespace ProjectManagement.Forms.Report
         public Report_Plan()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             //完成状态下拉框
             DataHelper.LoadDictItems(cmbFinishStatus, DictCategory.PlanFinishStatus);
             cmbFinishStatus.SelectedIndex = 0;
@@ -93,7 +95,7 @@ namespace ProjectManagement.Forms.Report
 
             #region 项目计划
             List<string> columns;
-            columns = new List<string>() { "RowNo", "WBSNo", "Name", "Workload", "StarteDate", "EndDate", "Progress", "Manager" };
+            columns = new List<string>() { "RowNo", "WBSNo", "Name", "Workload", "StartDate", "EndDate", "Progress", "Manager" };
             Export(dt, excel, columns);
             #endregion
 

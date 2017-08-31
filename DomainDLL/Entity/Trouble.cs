@@ -44,7 +44,7 @@ namespace DomainDLL
         /// <summary>
         /// 开始日期
         /// </summary>
-        public virtual DateTime? StarteDate
+        public virtual DateTime? StartDate
         {
             get;
             set;

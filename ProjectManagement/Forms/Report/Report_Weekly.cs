@@ -15,6 +15,8 @@ namespace ProjectManagement.Forms.Report
         public Report_Weekly()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
         }
     }
 }

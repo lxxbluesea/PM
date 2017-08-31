@@ -25,7 +25,9 @@ namespace ProjectManagement.Forms.Report
         #endregion
         public Report_DifficutyDegreeNew()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             DataBind();
         }
 

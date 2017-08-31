@@ -34,7 +34,7 @@
             this.Namee = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.WBSNo = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.Workload = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.StarteDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.StartDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.EndDate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.Manager = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.Progress = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -146,7 +146,7 @@
             this.Namee,
             this.WBSNo,
             this.Workload,
-            this.StarteDate,
+            this.StartDate,
             this.EndDate,
             this.Manager,
             this.Progress,
@@ -185,14 +185,14 @@
             this.Workload.VisibleIndex = 2;
             this.Workload.Width = 129;
             // 
-            // StarteDate
+            // StartDate
             // 
-            this.StarteDate.Caption = "开始时间";
-            this.StarteDate.FieldName = "StarteDate";
-            this.StarteDate.Name = "StarteDate";
-            this.StarteDate.Visible = true;
-            this.StarteDate.VisibleIndex = 3;
-            this.StarteDate.Width = 128;
+            this.StartDate.Caption = "开始时间";
+            this.StartDate.FieldName = "StartDate";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Visible = true;
+            this.StartDate.VisibleIndex = 3;
+            this.StartDate.Width = 128;
             // 
             // EndDate
             // 
@@ -454,7 +454,7 @@
             // gridColumn5
             // 
             this.gridColumn5.HeaderText = "开始时间";
-            this.gridColumn5.Name = "StarteDate";
+            this.gridColumn5.Name = "StartDate";
             // 
             // gridColumn6
             // 
@@ -559,7 +559,7 @@
         private DevExpress.XtraTreeList.TreeList treeList1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn Namee;
         private DevExpress.XtraTreeList.Columns.TreeListColumn Workload;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn StarteDate;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn StartDate;
         private DevExpress.XtraTreeList.Columns.TreeListColumn EndDate;
         private DevExpress.XtraTreeList.Columns.TreeListColumn Manager;
         private DevExpress.XtraTreeList.Columns.TreeListColumn Progress;

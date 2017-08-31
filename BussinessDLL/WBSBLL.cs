@@ -231,7 +231,7 @@ namespace BussinessDLL
             if (string.IsNullOrEmpty(jbxxID))
                 return new List<DeliverablesWork>();
             StringBuilder sql = new StringBuilder();
-            sql.Append("select a.*,b.Name ManagerName from DeliverablesWork a inner join Stakeholders b on substr(a.Manager,1,36)=substr(b.ID,1,36) and b.status=1  ");
+            sql.Append("select a.*,b.Name ManagerName from DeliverablesWork a inner join Stakeholders b on a.Manager=b.ID and b.status=1  ");
             sql.Append(" where a.JBXXID=@JBXXID and a.Status=@Status");
             List<QueryField> qf = new List<QueryField>();
             qf.Add(new QueryField() { Name = "JBXXID", Type = QueryFieldType.String, Value = jbxxID.Substring(0, 36) });
@@ -386,7 +386,7 @@ namespace BussinessDLL
             //交付物
             sql.Append(" when 1 then (case when d.PType=5 then 1 ");
             sql.Append(" when c.EndDate<date('now') and (d.PType is null or d.PType<>5) then 3 ");
-            sql.Append(" when c.StarteDate>=date('now','+1 day') and (d.PType is null or d.PType<>5) then 0  else 2 end) ");
+            sql.Append(" when c.StartDate>=date('now','+1 day') and (d.PType is null or d.PType<>5) then 0  else 2 end) ");
             //日常
             sql.Append(" when 2 then (case when e.FinishStatus=3 then 1 ");
             sql.Append(" when e.EndDate<date('now') and (e.FinishStatus is null or e.FinishStatus<>3) then 3 ");
@@ -394,14 +394,14 @@ namespace BussinessDLL
             //问题
             sql.Append(" when 3 then (case when f.HandleStatus=3 then 1 ");
             sql.Append(" when f.EndDate<date('now') and (f.HandleStatus is null or f.HandleStatus<>3) then 3  ");
-            sql.Append(" when f.StarteDate>=date('now','+1 day') and (f.HandleStatus is null or f.HandleStatus<>3) then 0 else 2 end ) ");
+            sql.Append(" when f.StartDate>=date('now','+1 day') and (f.HandleStatus is null or f.HandleStatus<>3) then 0 else 2 end ) ");
 
             sql.Append(" else null end) else null end FinishStatus from pnode a ");
             sql.Append(" left join (select parentid,count(*)cc from pnode where status=1 and PID=@PID group by parentid)b on a.id=b.parentid   ");
-            sql.Append(" left join DeliverablesJBXX c on c.NodeID=substr(a.ID,1,36) and c.Status=1 and a.PType=1 ");
-            sql.Append(" left join NodeProgress d on d.NodeID=substr(a.ID,1,36) and d.Status=1 ");
-            sql.Append(" left join Routine e on e.NodeID=substr(a.ID,1,36) and e.Status=1 and a.PType=2  ");
-            sql.Append(" left join Trouble f on f.NodeID=substr(a.ID,1,36) and f.Status=1 and a.PType=3  ");
+            sql.Append(" left join DeliverablesJBXX c on c.NodeID=a.ID and c.Status=1 and a.PType=1 ");
+            sql.Append(" left join NodeProgress d on d.NodeID=a.ID and d.Status=1 ");
+            sql.Append(" left join Routine e on e.NodeID=a.ID and e.Status=1 and a.PType=2  ");
+            sql.Append(" left join Trouble f on f.NodeID=a.ID and f.Status=1 and a.PType=3  ");
             sql.Append(" where  a.status=1 and a.PID=@PID ");
             List<QueryField> qf = new List<QueryField>();
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = ProjectID });

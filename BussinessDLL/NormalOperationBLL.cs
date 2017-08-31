@@ -43,7 +43,7 @@ namespace BussinessDLL
         /// <returns></returns>
         public DeliverablesJBXX GetJBXX(string NodeID)
         {
-            DeliverablesJBXX entity = new DeliverablesJBXX();
+            DeliverablesJBXX entity = null;
             //NodeID = NodeID.Substring(0, 36);
             if (!string.IsNullOrEmpty(NodeID))
             {

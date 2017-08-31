@@ -66,8 +66,6 @@
             // 
             // groupPanel1
             // 
-            this.groupPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupPanel1.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -79,10 +77,11 @@
             this.groupPanel1.Controls.Add(this.txtTypeName);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel1.Location = new System.Drawing.Point(6, 6);
+            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(300, 585);
+            this.groupPanel1.Size = new System.Drawing.Size(300, 569);
             // 
             // 
             // 
@@ -123,12 +122,13 @@
             // 
             this.listBoxAdv1.BackgroundStyle.Class = "ListBoxAdv";
             this.listBoxAdv1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.listBoxAdv1.CheckStateMember = null;
             this.listBoxAdv1.ContainerControlProcessDialogKey = true;
             this.listBoxAdv1.DragDropSupport = true;
             this.listBoxAdv1.Location = new System.Drawing.Point(13, 2);
             this.listBoxAdv1.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAdv1.Name = "listBoxAdv1";
-            this.listBoxAdv1.Size = new System.Drawing.Size(273, 387);
+            this.listBoxAdv1.Size = new System.Drawing.Size(273, 371);
             this.listBoxAdv1.TabIndex = 3;
             this.listBoxAdv1.Text = "listBoxAdv1";
             // 
@@ -137,7 +137,7 @@
             this.btnSaveType.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveType.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveType.Location = new System.Drawing.Point(181, 534);
+            this.btnSaveType.Location = new System.Drawing.Point(85, 519);
             this.btnSaveType.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveType.Name = "btnSaveType";
             this.btnSaveType.Size = new System.Drawing.Size(56, 18);
@@ -151,7 +151,7 @@
             this.btnClearType.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearType.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearType.Location = new System.Drawing.Point(85, 534);
+            this.btnClearType.Location = new System.Drawing.Point(158, 519);
             this.btnClearType.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearType.Name = "btnClearType";
             this.btnClearType.Size = new System.Drawing.Size(56, 18);
@@ -171,7 +171,7 @@
             this.txtTypeDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTypeDesc.DisabledBackColor = System.Drawing.Color.White;
             this.txtTypeDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtTypeDesc.Location = new System.Drawing.Point(85, 448);
+            this.txtTypeDesc.Location = new System.Drawing.Point(85, 432);
             this.txtTypeDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtTypeDesc.Multiline = true;
             this.txtTypeDesc.Name = "txtTypeDesc";
@@ -187,7 +187,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(13, 450);
+            this.labelX3.Location = new System.Drawing.Point(13, 434);
             this.labelX3.Margin = new System.Windows.Forms.Padding(2);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(68, 18);
@@ -205,7 +205,7 @@
             this.txtTypeName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTypeName.DisabledBackColor = System.Drawing.Color.White;
             this.txtTypeName.ForeColor = System.Drawing.Color.Black;
-            this.txtTypeName.Location = new System.Drawing.Point(85, 413);
+            this.txtTypeName.Location = new System.Drawing.Point(85, 397);
             this.txtTypeName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTypeName.Name = "txtTypeName";
             this.txtTypeName.PreventEnterBeep = true;
@@ -219,7 +219,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(13, 414);
+            this.labelX2.Location = new System.Drawing.Point(13, 398);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(68, 18);
@@ -271,9 +271,6 @@
             // 
             // groupPanel2
             // 
-            this.groupPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
@@ -292,10 +289,11 @@
             this.groupPanel2.Controls.Add(this.textBoxX1);
             this.groupPanel2.Controls.Add(this.buttonX1);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(318, 6);
+            this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel2.Location = new System.Drawing.Point(305, 1);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(623, 581);
+            this.groupPanel2.Size = new System.Drawing.Size(664, 569);
             // 
             // 
             // 
@@ -334,7 +332,7 @@
             this.cmbType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbType.FormattingEnabled = true;
             this.cmbType.ItemHeight = 19;
-            this.cmbType.Location = new System.Drawing.Point(84, 409);
+            this.cmbType.Location = new System.Drawing.Point(84, 397);
             this.cmbType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(167, 25);
@@ -346,7 +344,7 @@
             this.btnClearTemplate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearTemplate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearTemplate.Location = new System.Drawing.Point(334, 530);
+            this.btnClearTemplate.Location = new System.Drawing.Point(413, 519);
             this.btnClearTemplate.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearTemplate.Name = "btnClearTemplate";
             this.btnClearTemplate.Size = new System.Drawing.Size(56, 18);
@@ -360,7 +358,7 @@
             this.btnSaveTemplate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveTemplate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveTemplate.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveTemplate.Location = new System.Drawing.Point(428, 530);
+            this.btnSaveTemplate.Location = new System.Drawing.Point(334, 519);
             this.btnSaveTemplate.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveTemplate.Name = "btnSaveTemplate";
             this.btnSaveTemplate.Size = new System.Drawing.Size(56, 18);
@@ -380,7 +378,7 @@
             this.txtTemplateDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTemplateDesc.DisabledBackColor = System.Drawing.Color.White;
             this.txtTemplateDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtTemplateDesc.Location = new System.Drawing.Point(334, 409);
+            this.txtTemplateDesc.Location = new System.Drawing.Point(334, 397);
             this.txtTemplateDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtTemplateDesc.Multiline = true;
             this.txtTemplateDesc.Name = "txtTemplateDesc";
@@ -396,7 +394,7 @@
             // 
             // 
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(267, 412);
+            this.labelX12.Location = new System.Drawing.Point(267, 400);
             this.labelX12.Margin = new System.Windows.Forms.Padding(2);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(80, 18);
@@ -410,7 +408,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(10, 412);
+            this.labelX4.Location = new System.Drawing.Point(10, 400);
             this.labelX4.Margin = new System.Windows.Forms.Padding(2);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(68, 18);
@@ -422,7 +420,7 @@
             this.btnChoose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnChoose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnChoose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnChoose.Location = new System.Drawing.Point(84, 450);
+            this.btnChoose.Location = new System.Drawing.Point(84, 438);
             this.btnChoose.Margin = new System.Windows.Forms.Padding(2);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(56, 18);
@@ -442,7 +440,7 @@
             this.txtTemplateSaveName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTemplateSaveName.DisabledBackColor = System.Drawing.Color.White;
             this.txtTemplateSaveName.ForeColor = System.Drawing.Color.Black;
-            this.txtTemplateSaveName.Location = new System.Drawing.Point(84, 480);
+            this.txtTemplateSaveName.Location = new System.Drawing.Point(84, 468);
             this.txtTemplateSaveName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTemplateSaveName.Name = "txtTemplateSaveName";
             this.txtTemplateSaveName.PreventEnterBeep = true;
@@ -456,7 +454,7 @@
             // 
             // 
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(10, 482);
+            this.labelX13.Location = new System.Drawing.Point(10, 470);
             this.labelX13.Margin = new System.Windows.Forms.Padding(2);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(80, 18);
@@ -470,7 +468,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(10, 448);
+            this.labelX11.Location = new System.Drawing.Point(10, 436);
             this.labelX11.Margin = new System.Windows.Forms.Padding(2);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(80, 18);
@@ -502,7 +500,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn9);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.superGridControl1.Size = new System.Drawing.Size(597, 354);
+            this.superGridControl1.Size = new System.Drawing.Size(638, 342);
             this.superGridControl1.TabIndex = 0;
             this.superGridControl1.Text = "superGridControl1";
             this.superGridControl1.RowClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs>(this.superGridControl1_RowClick);
@@ -565,7 +563,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 572);
+            this.ClientSize = new System.Drawing.Size(974, 572);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.Name = "UpdateTemplate";

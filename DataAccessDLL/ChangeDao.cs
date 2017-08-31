@@ -24,7 +24,7 @@ namespace DataAccessDLL
         {
             StringBuilder sql = new StringBuilder();
             //sql.Append(" select c1.ID,c2.Name from Change c1, Change c2");
-            //sql.Append(" where substr(c1.ID, 38) = '1' and substr(c1.ID, 1, 37) = substr(c2.ID, 1, 37)");
+            //sql.Append(" where c1.ID, 38) = '1' and c1.ID, 1, 37) = c2.ID, 1, 37)");
             sql.Append("select * from change");
             sql.Append(" where  PID=@PID  and  status=@Status and  Type=@Type order by  created asc");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qf);

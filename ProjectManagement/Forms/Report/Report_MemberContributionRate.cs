@@ -28,6 +28,8 @@ namespace ProjectManagement.Forms.Report
         public Report_MemberContributionRate()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             //加载完成情况下拉框
             for (int i = 0; i < 3; i++)
             {
@@ -99,7 +101,7 @@ namespace ProjectManagement.Forms.Report
 
             #region 项目计划
             List<string> columns;
-            columns = new List<string>() { "RowNo", "Source", "name", "desc", "startedate", "enddate", "workload", "zhanbi" };
+            columns = new List<string>() { "RowNo", "Source", "name", "desc", "StartDate", "enddate", "workload", "zhanbi" };
             Export(dt, excel, columns);
             #endregion
 

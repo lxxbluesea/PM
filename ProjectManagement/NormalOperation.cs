@@ -637,7 +637,7 @@ namespace ProjectManagement
             txtNode2.Text = bll.GetNode(CurrentNode.ParentID).Name;
             txtNode2.Tag = _jbxx.ID;
             txtJFW.Text = _jbxx.Name;
-            dtStart.Value = _jbxx.StarteDate == null ? DateTime.Now : (DateTime)_jbxx.StarteDate;
+            dtStart.Value = _jbxx.StartDate == null ? DateTime.Now : (DateTime)_jbxx.StartDate;
             dtEnd.Value = _jbxx.EndDate == null ? DateTime.Now : (DateTime)_jbxx.EndDate;
             intWorkload.Value = _jbxx.Workload == null ? 1 : (int)_jbxx.Workload;
             txtDesc.Text = _jbxx.Desc;
@@ -666,7 +666,7 @@ namespace ProjectManagement
             DeliverablesJBXX entity = new DeliverablesJBXX()
             {
                 Name = txtJFW.Text,
-                StarteDate = dtStart.Value,
+                StartDate = dtStart.Value,
                 EndDate = dtEnd.Value,
                 Workload = intWorkload.Value,
                 Weight = sdWeight.Value
@@ -714,7 +714,7 @@ namespace ProjectManagement
         {
             //交付物节点的修改
             _jbxx.Name = txtJFW.Text;
-            _jbxx.StarteDate = dtStart.Value;
+            _jbxx.StartDate = dtStart.Value;
             _jbxx.EndDate = dtEnd.Value;
             _jbxx.Workload = intWorkload.Value;
             _jbxx.Desc = txtDesc.Text;

@@ -29,6 +29,8 @@ namespace ProjectManagement.Forms.Report
         public Report_Earning()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             ProjectBind();
         }
 

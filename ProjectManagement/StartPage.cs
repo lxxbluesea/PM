@@ -49,6 +49,8 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void StartPage_Load(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ProjectId))
+                return;
             //加载项目成果
             LoadProjectResult();
 

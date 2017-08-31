@@ -37,7 +37,7 @@ namespace DataAccessDLL
             //sql.Append(" when r.EndDate<date('now') and (r.FinishStatus is null or r.FinishStatus<>3) then 3 ");
             //sql.Append(" when r.StartDate>=date('now','+1 day') and (r.FinishStatus is null or r.FinishStatus<>3) then 0 else 2 end FinishType ");
 
-            //sql.Append(" from Routine r inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1");
+            //sql.Append(" from Routine r inner join PNode p on r.NodeID = p.ID and p.Status = 1");
             //sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
             //sql.Append(" where r.status = 1 and p.PID = @PID ");
 
@@ -127,7 +127,7 @@ namespace DataAccessDLL
                     s.Update(oldNode);
 
                 //删除责任人
-                s.CreateQuery("delete from RoutineWork where RoutineID='" + oldeEntity.ID.Substring(0, 36) + "';").ExecuteUpdate();
+                s.CreateQuery("delete from RoutineWork where RoutineID='" + oldeEntity.ID + "';").ExecuteUpdate();
                 //保存新的责任人
                 if (listWork != null)
                     foreach (RoutineWork item in listWork)
@@ -226,7 +226,7 @@ namespace DataAccessDLL
         public List<RoutineFiles> GetFilesByNodeID(string NodeID)
         {
             List<QueryField> qf = new List<QueryField>();
-            qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Value = NodeID.Substring(0,36) });
+            qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Value = NodeID });
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT a.*  FROM RoutineFiles a");
             sql.Append(" LEFT JOIN Routine b ON a.RoutineID= b.ID and b.Status=1 ");
@@ -244,7 +244,7 @@ namespace DataAccessDLL
         public DataTable GetRoutineTrace(string routineID)
         {
             List<QueryField> qf = new List<QueryField>();
-            qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = routineID.Substring(0, 36) });
+            qf.Add(new QueryField() { Name = "RoutineID", Type = QueryFieldType.String, Value = routineID});
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT a.*  FROM RoutineTrace a");
             sql.Append(" WHERE a.Status =1 and a.RoutineID=@RoutineID order by a.CREATED asc ");

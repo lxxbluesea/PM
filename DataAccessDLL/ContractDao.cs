@@ -25,7 +25,7 @@ namespace DataAccessDLL
         {
             StringBuilder sql = new StringBuilder();
             //sql.Append(" select c1.ID,c2.A_Name||'('||c2.A_No||')' as A,c2.B_Name as B from SubContract c1, SubContract c2");
-            //sql.Append(" where substr(c1.ID, 38) = '1' and substr(c1.ID, 1, 37) = substr(c2.ID, 1, 37)");
+            //sql.Append(" where c1.ID, 38) = '1' and c1.ID, 1, 37) = c2.ID, 1, 37)");
             //sql.Append(" and c2.PID=@PID  and c2.status=@Status order by c2.A_No ");
             sql.Append("select * from subcontract where pid=@PID and status=@Status order by Created asc");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qf);
@@ -159,8 +159,8 @@ namespace DataAccessDLL
             #region  分包合同
             subContract = null;
             //sqlSub.Append(" select * from SubContract s");
-            ////sqlSub.Append(" where Status=@status and substr(s.Id,1,37)||'1'=@SubID");
-            //sqlSub.Append(" where Status=@status and substr(s.Id,1,36)=@SubID");
+            ////sqlSub.Append(" where Status=@status and s.Id,1,37)||'1'=@SubID");
+            //sqlSub.Append(" where Status=@status and s.Id=@SubID");
             //sqlSub.Append(" order by s.CREATED");
             //DataTable Sub = NHHelper.ExecuteDataTable(sqlSub.ToString(), qlist);
             //subContract = Sub == null ? new SubContract() : JsonHelper.TableToEntity<SubContract>(Sub);
@@ -239,7 +239,7 @@ namespace DataAccessDLL
         public DataTable GetSupplierList(List<QueryField> qlist)
         {
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select substr(s.ID, 1,36) as ID,s.Name  from Supplier s");
+            sql.Append(" select s.ID as ID,s.Name  from Supplier s");
             sql.Append(" where s.PID=@PID  and s.status=@Status order by s.Name ");
             DataTable dt = NHHelper.ExecuteDataTable(sql.ToString(), qlist);
             return dt;

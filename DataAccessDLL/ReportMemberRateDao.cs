@@ -17,12 +17,12 @@ namespace DataAccessDLL
         /// </summary>
         /// <param name="PID"></param>
         /// <returns></returns>
-        public DataTable GetMemberRate(string PID,DateTime Startedate,DateTime Enddate,int FinishStatus)
+        public DataTable GetMemberRate(string PID,DateTime StartDate,DateTime Enddate,int FinishStatus)
         {
             List<QueryField> qlist = new List<QueryField>();
             qlist.Add(new QueryField { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
             qlist.Add(new QueryField { Name = "PID", Type = QueryFieldType.String, Value = PID });
-            qlist.Add(new QueryField { Name = "StarteDate", Type = QueryFieldType.DateTime, Value = Startedate });
+            qlist.Add(new QueryField { Name = "StartDate", Type = QueryFieldType.DateTime, Value = StartDate });
             qlist.Add(new QueryField { Name = "EndDate", Type = QueryFieldType.DateTime, Value = Enddate });
             qlist.Add(new QueryField { Name = "FinishStatus", Type = QueryFieldType.Numeric, Value = FinishStatus });
 
@@ -34,12 +34,12 @@ namespace DataAccessDLL
             /*日常*/
             select * from (select 
            (select count(*)+1 from routinework rin where rw.Manager = rin.Manager and rin.created<rw.created) as RowNo,
-           '日常' as source, r.name as name,r.Desc,date(r.startdate) as startedate,date(r.enddate),r.workload,rw.workload as zhanbi,'1' as type,s.name as allname from routinework rw
-            left join stakeholders s on substr(s.id,1,36) = rw.Manager
-            left join routine r on rw.routineid = substr(r.id,1,36) 
+           '日常' as source, r.name as name,r.Desc,date(r.startdate) as StartDate,date(r.enddate),r.workload,rw.workload as zhanbi,'1' as type,s.name as allname from routinework rw
+            left join stakeholders s on s.id = rw.Manager
+            left join routine r on rw.routineid = r.id 
             where r.status = @status and s.pid =@pid and s.status =@status "+
             //日常 时间、完成情况
-            (Startedate != DateTime.MinValue?"and date(r.startdate)>=date(@StarteDate) ":"and 1=1 ")+ 
+            (StartDate != DateTime.MinValue?"and date(r.startdate)>=date(@StartDate) ":"and 1=1 ")+ 
             (Enddate != DateTime.MinValue?"and date(r.enddate )<=date(@EndDate)":"and 1=1 ")+
             (FinishStatus != 0 ? (FinishStatus == 3 ? "and r.finishstatus=3 " : "and r.finishstatus!=3") : "and 1=1 ") +
             @"
@@ -51,14 +51,14 @@ namespace DataAccessDLL
             (select count(*) from troublework where manager = dw.manager)
             + count(*)+1 from deliverableswork d             
             where dw.Manager = d.Manager and d.created<dw.created)as rowno,
-            '交付物' as source,d.name as name,d.Desc,date(d.startedate),date(d.enddate),d.workload,dw.workload as zhanbi,'3' as type ,s.name as allname from Deliverableswork dw
-            left join stakeholders s on substr(s.id,1,36) = dw.Manager
-            left join DeliverablesJBXX d on dw.JBXXid = substr(d.id,1,36) 
-            left join PNode  p on substr(p.id,1,36) = d.nodeid   
-            left join NodeProgress pg on pg.nodeid = substr(p.id,1,36)      
+            '交付物' as source,d.name as name,d.Desc,date(d.StartDate),date(d.enddate),d.workload,dw.workload as zhanbi,'3' as type ,s.name as allname from Deliverableswork dw
+            left join stakeholders s on s.id = dw.Manager
+            left join DeliverablesJBXX d on dw.JBXXid = d.id 
+            left join PNode  p on p.id = d.nodeid   
+            left join NodeProgress pg on pg.nodeid = p.id    
             where d.status = @status and s.pid =@pid and s.status =@status and pg.status = @status and p.status = 1 " +
             //交付物 时间、完成情况
-            (Startedate != DateTime.MinValue ? "and date(d.startedate)>=date(@StarteDate) " : "and 1=1 ") +
+            (StartDate != DateTime.MinValue ? "and date(d.StartDate)>=date(@StartDate) " : "and 1=1 ") +
             (Enddate != DateTime.MinValue ? "and date(d.enddate)<=date(@EndDate) " : "and 1=1 ") +
             (FinishStatus != 0 ? ( FinishStatus ==5?"and pg.ptype=5 ": "and pg.ptype!=5 ") : "and 1=1 ") +
             @"order by dw.manager,dw.created)
@@ -66,12 +66,12 @@ namespace DataAccessDLL
             /*问题*/
             select * from(
             select (select (select count(*) from routinework where manager = tw.manager)+ count(*)+1 from Troublework t where tw.Manager = t.Manager and t.created<tw.created)as rowno,
-            '问题' as source,t.name as name ,t.Desc,date(t.startedate),date(t.enddate),t.workload,tw.workload as zhanbi,'2' as type ,s.name as allname from Troublework tw
-            left join stakeholders s on substr(s.id,1,36) = tw.Manager
-            left join Trouble t on tw.troubleid = substr(t.id,1,36) 
+            '问题' as source,t.name as name ,t.Desc,date(t.StartDate),date(t.enddate),t.workload,tw.workload as zhanbi,'2' as type ,s.name as allname from Troublework tw
+            left join stakeholders s on s.id = tw.Manager
+            left join Trouble t on tw.troubleid = t.id 
             where t.status = 1 and s.pid =@pid  and s.status =@status " +
             //问题 时间、完成情况
-            (Startedate != DateTime.MinValue ? "and date(t.startedate)>=date(@StarteDate) " : "and 1=1 ") +
+            (StartDate != DateTime.MinValue ? "and date(t.StartDate)>=date(@StartDate) " : "and 1=1 ") +
             (Enddate != DateTime.MinValue ? "and date(t.enddate)<=date(@EndDate) " : "and 1=1 ") +
             (FinishStatus != 0 ? (FinishStatus == 5 ? "and t.handlestatus=3 " : "and t.handlestatus!=3 ") : "and 1=1 ") +
             @"order by tw.manager,tw.created)
@@ -83,54 +83,54 @@ namespace DataAccessDLL
             (
             select sum(workload) from (
              select sum(rw.workload) as workload from routinework rw 
-             left join stakeholders s on substr(s.id,1,36) = rw.Manager
-             left join  routine r on substr(r.id,1,36) = rw.routineid  
+             left join stakeholders s on s.id = rw.Manager
+             left join  routine r on r.id = rw.routineid  
              where s.PID =@pid and s.status=1 "+
              //日常
-            (Startedate != DateTime.MinValue ? "and date(r.startdate)>=date(@StarteDate) " : "and 1=1 ") +
+            (StartDate != DateTime.MinValue ? "and date(r.startdate)>=date(@StartDate) " : "and 1=1 ") +
             (Enddate != DateTime.MinValue ? "and date(r.enddate )<=date(@EndDate)" : "and 1=1 ") +
             (FinishStatus != 0 ? (FinishStatus == 5 ? "and r.finishstatus=5 " : "and r.finishstatus!=5 ") : "and 1=1 ") +
               @"union
             select sum(tw.workload) as workload from troublework tw 
-            left join stakeholders s on substr(s.id,1,36) = tw.Manager 
-            left join trouble t on substr(t.id,1,36) = tw.troubleid 
+            left join stakeholders s on s.id = tw.Manager 
+            left join trouble t on t.id = tw.troubleid 
             where s.PID =@pid and s.status=1 "+
             //问题 时间、完成情况
-            (Startedate != DateTime.MinValue ? "and date(t.startedate)>=date(@StarteDate) " : "and 1=1 ") +
+            (StartDate != DateTime.MinValue ? "and date(t.StartDate)>=date(@StartDate) " : "and 1=1 ") +
             (Enddate != DateTime.MinValue ? "and date(t.enddate)<=date(@EndDate) " : "and 1=1 ") +
             (FinishStatus != 0 ? (FinishStatus == 5 ? "and t.handleresult=5 " : "and t.handleresult!=5 ") : "and 1=1 ") +
               @"union
             select sum(dw.workload) as workload from deliverableswork dw  
-            left join stakeholders s on substr(s.id,1,36) = dw.Manager  
-            left join DeliverablesJBXX d on dw.JBXXid = substr(d.id,1,36)  
-            left join PNode  p on substr(p.id,1,36) = d.nodeid  
-            left join NodeProgress pg on pg.nodeid = substr(p.id,1,36)    
+            left join stakeholders s on s.id = dw.Manager  
+            left join DeliverablesJBXX d on dw.JBXXid = d.id  
+            left join PNode  p on p.id = d.nodeid  
+            left join NodeProgress pg on pg.nodeid = p.id    
             where s.PID =@pid and s.status=1 and pg.status = 1 and p.status = 1 " +
             //交付物 时间、完成情况
-            (Startedate != DateTime.MinValue ? "and date(d.startedate)>=date(@StarteDate) " : "and 1=1 ") +
+            (StartDate != DateTime.MinValue ? "and date(d.StartDate)>=date(@StartDate) " : "and 1=1 ") +
             (Enddate != DateTime.MinValue ? "and date(d.enddate)<=date(@EndDate) " : "and 1=1 ") +
             (FinishStatus != 0 ? (FinishStatus == 5 ? "and pg.ptype=5 " : "and pg.ptype!=5 ") : "and 1=1 ") +
               @"))
             as Source,
-            '天' as name,null as desc,null as startedate,null as enddate,null as workload,null as zhanbi,-2 as type,null as allname
+            '天' as name,null as desc,null as StartDate,null as enddate,null as workload,null as zhanbi,-2 as type,null as allname
             union
             /*人员*/
             select name as RowNo,'总工作量' as Source ,ifnull((select sum(zhanbi) from cte c where c.allname =s.name group by c.allname ),0) as name,'天' as desc,
-            '占比' as startedate,
+            '占比' as StartDate,
             cast(round(
             (select sum(zhanbi) from cte c where c.allname =s.name group by c.allname )*1.0/
             (
             select sum(workload) from (
               select sum(workload) as workload from routinework rw 
-              left join stakeholders s on substr(s.id,1,36) = rw.Manager 
+              left join stakeholders s on s.id = rw.Manager 
               where s.PID =@pid and s.status=1
               union
               select sum(workload) as workload from troublework tw 
-              left join stakeholders s on substr(s.id,1,36) = tw.Manager 
+              left join stakeholders s on s.id = tw.Manager 
               where s.PID =@pid and s.status=1
               union
               select sum(workload) as workload from deliverableswork dw 
-              left join stakeholders s on substr(s.id,1,36) = dw.Manager 
+              left join stakeholders s on s.id = dw.Manager 
               where s.PID =@pid and s.status=1
               )
              ),3

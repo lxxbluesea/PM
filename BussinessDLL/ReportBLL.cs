@@ -56,7 +56,7 @@ namespace BussinessDLL
                 //本周工作
                 sql.Append(" union  all ");
                 sql.Append(" select p.Name Type,r.Name,r.Desc,r.DealResult Result,'' Person,d.Name Status from Routine r ");
-                sql.Append(" inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1 ");
+                sql.Append(" inner join PNode p on r.NodeID = p.ID and p.Status = 1 ");
                 sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
                 sql.Append(" where r.status = 1 and r.FinishStatus=2 and p.PID=@PID and date(r.StartDate) >= date(@startDate) and (date(r.EndDate) <= date(@endDate) or r.EndDate is null )");
             }
@@ -73,9 +73,9 @@ namespace BussinessDLL
                 //本周交付物
                 sql.Append(" union  all ");
                 sql.Append(" select parent.Name Type,j.name,j.Desc,'' Result,j.Manager Person,'' Status ");
-                sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=substr(n.ID,1,36) and n.status=1");
-                sql.Append(" left join PNode parent on n.ParentID=substr(parent.ID,1,36) and parent.status=1");
-                sql.Append(" where j.status=1 and n.PID=@PID and date(j.StarteDate) >= date(@startDate) and (date(j.EndDate) <= date(@endDate) or j.EndDate is null ) ");
+                sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=n.ID and n.status=1");
+                sql.Append(" left join PNode parent on n.ParentID=parent.ID and parent.status=1");
+                sql.Append(" where j.status=1 and n.PID=@PID and date(j.StartDate) >= date(@startDate) and (date(j.EndDate) <= date(@endDate) or j.EndDate is null ) ");
             }
             qf.Add(new QueryField() { Name = "startDate", Type = QueryFieldType.String, Value = startDay.ToString("yyyy-MM-dd") });
             qf.Add(new QueryField() { Name = "endDate", Type = QueryFieldType.String, Value = endDay.ToString("yyyy-MM-dd") });
@@ -105,7 +105,7 @@ namespace BussinessDLL
                 //下周工作
                 sql.Append(" union  all ");
                 sql.Append(" select p.Name Type,r.Name,r.Desc,r.DealResult Result,'' Person,d.Name Status from Routine r ");
-                sql.Append(" inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1 ");
+                sql.Append(" inner join PNode p on r.NodeID = p.ID and p.Status = 1 ");
                 sql.Append(" left join DictItem d on r.FinishStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.WorkHandleStatus);
                 sql.Append(" where r.status = 1 and r.FinishStatus=1 and p.PID=@PID and (date(r.StartDate) >= date(@startDate) or date(r.EndDate) <= date(@endDate) )");
             }
@@ -122,9 +122,9 @@ namespace BussinessDLL
                 //下周交付物
                 sql.Append(" union  all ");
                 sql.Append(" select parent.Name Type,j.name,j.Desc,'' Result,j.Manager Person,'' Status ");
-                sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=substr(n.ID,1,36) and n.status=1");
-                sql.Append(" left join PNode parent on n.ParentID=substr(parent.ID,1,36) and parent.status=1");
-                sql.Append(" where j.status=1 and n.PID=@PID and (date(j.StarteDate) >= date(@startDate) or date(j.EndDate) <= date(@endDate) ) ");
+                sql.Append(" from DeliverablesJBXX j inner join PNode n on j.NodeID=n.ID and n.status=1");
+                sql.Append(" left join PNode parent on n.ParentID=parent.ID and parent.status=1");
+                sql.Append(" where j.status=1 and n.PID=@PID and (date(j.StartDate) >= date(@startDate) or date(j.EndDate) <= date(@endDate) ) ");
             }
             qf.Add(new QueryField() { Name = "startDate", Type = QueryFieldType.String, Value = startDay.ToString("yyyy-MM-dd") });
             qf.Add(new QueryField() { Name = "endDate", Type = QueryFieldType.String, Value = endDay.ToString("yyyy-MM-dd") });
@@ -151,8 +151,8 @@ namespace BussinessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select r.Name,r.Desc,r.HandleResult Result,s.Name Person,d.Name Status,strftime('%Y-%m-%d',r.HandleDate) HandleDate from Trouble r ");
-                sql.Append(" inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1 ");
-                sql.Append(" left join Stakeholders s on r.HandleMan = substr(s.ID,1,36) ");
+                sql.Append(" inner join PNode p on r.NodeID = p.ID and p.Status = 1 ");
+                sql.Append(" left join Stakeholders s on r.HandleMan = s.ID ");
                 sql.Append(" left join DictItem d on r.HandleStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.TroubleHandleStatus);
                 sql.Append(" where r.status = 1 and p.PID=@PID and r.HandleStatus=2 ");
                 sql.Append(" and date(r.HandleDate) >= date(@startDate) and date(r.HandleDate) <= date(@endDate) ");
@@ -163,8 +163,8 @@ namespace BussinessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select r.Name,r.Desc,r.HandleResult Result,s.Name Person,d.Name Status,strftime('%Y-%m-%d',r.HandleDate) HandleDate from Trouble r ");
-                sql.Append(" inner join PNode p on r.NodeID = substr(p.ID,1,36) and p.Status = 1 ");
-                sql.Append(" left join Stakeholders s on r.HandleMan = substr(s.ID,1,36) ");
+                sql.Append(" inner join PNode p on r.NodeID = p.ID and p.Status = 1 ");
+                sql.Append(" left join Stakeholders s on r.HandleMan = s.ID ");
                 sql.Append(" left join DictItem d on r.HandleStatus = d.No and d.DictNo = " + (int)CommonDLL.DictCategory.TroubleHandleStatus);
                 sql.Append(" where r.status = 1 and p.PID=@PID and r.HandleStatus=1 ");
                 sql.Append(" and date(r.EndDate) <= date(@endDate2) ");

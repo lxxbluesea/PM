@@ -323,6 +323,8 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void App_NewProject_Click(object sender, EventArgs e)
         {
+            if (!CheckSetting(false))
+                return;
             Forms.Project.NewProject newProject = new Forms.Project.NewProject(true);
             if (newProject.ShowDialog() == DialogResult.OK)
             {
@@ -349,7 +351,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Stakeholder_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Stakeholder.Stakeholder());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Stakeholder.Stakeholder());
         }
         /// <summary>
         /// 打开沟通方式界面
@@ -358,7 +363,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Communication_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Stakeholder.Communication());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Stakeholder.Communication());
         }
         /// <summary>
         /// 打开沟通分析矩阵
@@ -367,7 +375,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_CommunicationMatrix_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Stakeholder.CommunicationMatrix());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Stakeholder.CommunicationMatrix());
         }
         /// <summary>
         /// 打开供应商管理界面
@@ -376,7 +387,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Supplier_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Subcontract.Supplier());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Subcontract.Supplier());
         }
         /// <summary>
         /// 打开分包合同的管理界面
@@ -385,7 +399,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Contract_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Subcontract.Contract());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Subcontract.Contract());
         }
         /// <summary>
         /// 打开预警配置界面
@@ -394,7 +411,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_WarningConfigure_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Warning.WarningConfigure());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Warning.WarningConfigure());
         }
         /// <summary>
         /// 打开预警信息界面
@@ -403,7 +423,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_WarningList_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Warning.WarningList());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Warning.WarningList());
         }
 
         /// <summary>
@@ -414,7 +437,10 @@ namespace ProjectManagement
         private void RibbonBtn_PublishConfigure_Click(object sender, EventArgs e)
         {
 
-            ShowChildForm(new Forms.InfomationPublish.PublishConfigure());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.InfomationPublish.PublishConfigure());
 
         }
 
@@ -425,7 +451,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_PublishHistory_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.InfomationPublish.PublishHistory());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.InfomationPublish.PublishHistory());
         }
         /// <summary>
         /// 打开信息发布界面
@@ -434,7 +463,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_InfomationPublish_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.InfomationPublish.InfomationPublish());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.InfomationPublish.InfomationPublish());
         }
         /// <summary>
         /// 打开成本管理界面
@@ -443,7 +475,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Cost_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Income.Cost());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Income.Cost());
         }
         /// <summary>
         /// 打开收入管理界面
@@ -452,7 +487,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Earning_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Income.Earning());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Income.Earning());
         }
         /// <summary>
         /// 打开风险管理界面
@@ -461,7 +499,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Risk_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.Risk());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.Risk());
         }
         /// <summary>
         /// 打开变更管理界面
@@ -470,7 +511,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Change_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.Change());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.Change());
         }
         /// <summary>
         /// 打开日常工作界面
@@ -479,7 +523,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Routine_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.Routine(""));
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.Routine(""));
         }
         /// <summary>
         /// 打开问题管理界面
@@ -488,7 +535,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Trouble_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.Trouble(""));
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.Trouble(""));
         }
         /// <summary>
         /// 打开生成周报界面
@@ -497,7 +547,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Weekly_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.WeeklyPreview());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.WeeklyPreview());
         }
         /// <summary>
         /// 打开基础配置界面
@@ -506,7 +559,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Setting_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new FormSetting());
+            //if (string.IsNullOrEmpty(ProjectId))
+            //    MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            //else
+                ShowChildForm(new FormSetting());
         }
 
         /// <summary>
@@ -516,7 +572,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_WeeklyHistory_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Others.WeeklyHistory(null));
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Others.WeeklyHistory(null));
         }
 
         /// <summary>
@@ -526,7 +585,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_UpdateTemplate_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Template.UpdateTemplate());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Template.UpdateTemplate());
         }
 
         /// <summary>
@@ -536,7 +598,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_WBSCode_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.WBS.WBSCode());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.WBS.WBSCode());
         }
 
         /// <summary>
@@ -546,7 +611,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Repost_Cost_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Cost());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Cost());
         }
         /// <summary>
         /// 打开收入情况报表界面
@@ -555,7 +623,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_Earning_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Earning());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Earning());
         }
         /// <summary>
         /// 打开收款情况报表界面
@@ -564,7 +635,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_Receivables_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Receivables());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Receivables());
         }
 
         /// <summary>
@@ -575,7 +649,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void MemberContributionRate_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_MemberContributionRate());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_MemberContributionRate());
         }
 
         /// <summary>
@@ -627,7 +704,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Report_Plan_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Plan());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Plan());
         }
 
         /// <summary>
@@ -637,7 +717,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_ProjectInfo_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_ProjectInfo());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_ProjectInfo());
         }
         /// <summary>
         /// 打开分包信息报表的界面
@@ -646,7 +729,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_Subcontract_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Subcontract());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Subcontract());
         }
         /// <summary>
         /// 打开近期工作报表的界面
@@ -655,7 +741,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_RecentWork_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Recentwork());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Recentwork());
         }
         /// <summary>
         /// 打开待解决问题报表的界面
@@ -664,7 +753,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_ToBeSolvedTrouble_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_ToBeSolvedTrouble());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_ToBeSolvedTrouble());
         }
         /// <summary>
         /// 打开周报报表的界面
@@ -673,7 +765,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_Weekly_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Weekly());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Weekly());
         }
         /// <summary>
         /// 打开项目基本信息界面
@@ -682,7 +777,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_ProjectInfo_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Project.ProjectInfo());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Project.ProjectInfo());
         }
         /// <summary>
         /// 打开里程碑界面
@@ -691,7 +789,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Milestone_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Project.FormMilestone());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Project.FormMilestone());
         }
         /// <summary>
         /// 打开监理界面
@@ -700,7 +801,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Supervisor_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Project.FormSupervisor());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Project.FormSupervisor());
         }
         /// <summary>
         /// 打开收款界面
@@ -709,7 +813,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void RibbonBtn_Receivables_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Income.FormReceivables());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Income.FormReceivables());
         }
 
 
@@ -720,7 +827,10 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void Ribbon_Report_Supplier_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new Forms.Report.Report_Supplier());
+            if (string.IsNullOrEmpty(ProjectId))
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+            else
+                ShowChildForm(new Forms.Report.Report_Supplier());
         }
         /// <summary>
         /// 点击项目基本信息时
@@ -764,7 +874,15 @@ namespace ProjectManagement
         private void LoadProjects()
         {
             icProlist.SubItems.Clear();
+            WbsTree.Nodes.Clear();
+            MainSuperTabControl.Tabs.Clear();
+
+            startPage = new StartPage();
+            ShowChildForm(startPage);
+
             List<Project> listPro = bll.GetProList();
+            if (listPro.Count == 0)
+                return;
             foreach (Project project in listPro)
             {
                 ButtonItem item = new ButtonItem();
@@ -782,8 +900,8 @@ namespace ProjectManagement
                 ProjectNo = icProlist.SubItems[0].Tag.ToString();
                 DataHelper.SetMainTreeDate(WbsTree, ProjectId);//绑定树形数据
                 MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
-                startPage = new StartPage();
-                ShowChildForm(startPage);//创建启动窗体
+                //startPage = new StartPage();
+                //ShowChildForm(startPage);//创建启动窗体
                 ////ShowChildForm(new ProjectInfo());//显示项目的基本信息
                 ////加载项目的基本信息tab
                 //SuperTabItem tabItem = MainSuperTabControl.CreateTab("基本信息");
@@ -1018,6 +1136,12 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void btnProIn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ProjectId))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+                return;
+            }
+            
             string Filter = "Excel文件|*.xls;*.xlsx";
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Title = "Excel文件";
@@ -1120,7 +1244,7 @@ namespace ProjectManagement
                             ID = Guid.NewGuid().ToString() + "-1",
                             NodeID = node.ID.Substring(0, 36),
                             Name = node.Name,
-                            StarteDate = dt1,
+                            StartDate = dt1,
                             EndDate = dt2,
                             Workload = workload,
                             Weight = weight,
@@ -1154,6 +1278,11 @@ namespace ProjectManagement
         /// <param name="e"></param>
         private void btnProOut_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ProjectId))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
+                return;
+            }
             try
             {
                 string addr_model = FileHelper.GetUploadPath(UploadType.WeeklyModel, "", "") + ConstHelper.Config_WBSModel;//模板地址
@@ -1233,7 +1362,7 @@ namespace ProjectManagement
                 {
                     excel.SetCells(rowIndex, 3, "是");
                     DeliverablesJBXX jbxx = wbsBll.GetJBXX(child.ID);
-                    excel.SetCells(rowIndex, 4, jbxx.StarteDate == null ? "" : ((DateTime)jbxx.StarteDate).ToString("yyyy年MM月dd日"));
+                    excel.SetCells(rowIndex, 4, jbxx.StartDate == null ? "" : ((DateTime)jbxx.StartDate).ToString("yyyy年MM月dd日"));
                     excel.SetCells(rowIndex, 5, jbxx.EndDate == null ? "" : ((DateTime)jbxx.EndDate).ToString("yyyy年MM月dd日"));
                     excel.SetCells(rowIndex, 6, jbxx.Workload == null ? "" : ((int)jbxx.Workload).ToString());
                     excel.SetCells(rowIndex, 7, jbxx.Weight == null ? "" : ((int)jbxx.Weight).ToString());
@@ -1263,6 +1392,38 @@ namespace ProjectManagement
         private void DifficutyDegree_Click(object sender, EventArgs e)
         {
             ShowChildForm(new Forms.Report.Report_DifficutyDegreeNew());
+        }
+
+        private void RibbonBtn_Report_MemberExecutiveEfficiency_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new Forms.Report.Report_PersonnelExecutiveEfficiency());
+        }
+
+        private void MainFrame_Shown(object sender, EventArgs e)
+        {
+            CheckSetting(true);
+        }
+        /// <summary>
+        /// 检查工作目录是否存在，如果不存在则弹出对话框进行设置
+        /// </summary>
+        bool CheckSetting(bool flag)
+        {
+            string dir = CommonHelper.GetConfigValue(ConstHelper.Config_WorkDir);
+
+            if (!System.IO.Directory.Exists(dir))
+            {
+                if (flag)
+                {
+                    ShowChildForm(new FormSetting());
+                }
+                else
+                {
+                    MessageBox.Show("工作目录不存在，请打开基本信息进行设置");
+
+                }
+                return false;
+            }
+            return true;
         }
     }
 }

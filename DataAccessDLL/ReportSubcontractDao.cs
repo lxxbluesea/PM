@@ -56,7 +56,7 @@ namespace DataAccessDLL
             sql.Append(" select s.ID as KeyFieldName,s.PID as ParentFieldName,s.B_Name,d.Name as SupplierName,");
             sql.Append(" s.B_No,s.A_No,s.A_Name,s.CompanyName,s.Amount,s.SignDate,s.Desc");
             sql.AppendFormat(@" from Subcontract s left join Project p on s.PID = p.ID  
-                          left join Supplier d on substr(d.ID,1,36) = s.CompanyName and d.Status=@Status  
+                          left join Supplier d on d.ID = s.CompanyName and d.Status=@Status  
                           where s.Status = @Status and p.ID is not null");
             //交合
             sql.Append(" union");

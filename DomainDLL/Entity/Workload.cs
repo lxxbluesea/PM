@@ -50,7 +50,7 @@ namespace DomainDLL
         /// <summary>
         /// 开始时间
         /// </summary>
-        public virtual DateTime StarteDate
+        public virtual DateTime StartDate
         {
             get;
             set;
