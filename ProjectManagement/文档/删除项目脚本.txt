@@ -1,0 +1,55 @@
+delete from changeFiles where changeid in (select id from change where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from change where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from communicationFXFA where cid in (select id from communication where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from communication where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from contractFiles where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from contractjbxx where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from contractqkms where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from contractxmzq where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from cost where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from income where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from milestones where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from pubinfo where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from pubinfofiles where pubid in (select id from pubinfo where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from receivables where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from report_weekly where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from report_weeklyfiles where reportid in (select id from report_weekly where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from risk where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from routineFiles where routineid in (select id from routine where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from routineTrace where routineid in (select id from routine where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from routinework where routineid in (select id from routine where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from routine where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from setting where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from stakeholders where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from subcontractfiles where subid in(select id from subcontract where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from subcontractLCB where subid in(select id from subcontract where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from subcontractSKXX where subid in(select id from subcontract where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from subcontract where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+
+delete from supervisorjudge where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+delete from supervisor where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from supplier where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from troubleFiles where troubleid in (select id from trouble where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from troubleTrace where troubleid in (select id from trouble where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from troublework where troubleid in (select id from trouble where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b');
+delete from trouble where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from wbscode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from nodeprogress where nodeid in(select id from pnode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b' );
+delete from DeliverablesFiles where nodeid in(select id from pnode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b' );
+delete from DeliverablesWork where jbxxid in(select id from DeliverablesJBXX where nodeid in (select id from pnode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b' ));
+delete from DeliverablesJBXX where nodeid in(select id from pnode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b' );
+delete from pnode where pid='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
+
+delete from project where id='b3f8785b-a9c5-441a-89a5-a16f992fdc2b';
