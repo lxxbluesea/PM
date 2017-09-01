@@ -157,7 +157,7 @@ namespace ProjectManagement.Forms.Others
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
                 routine.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                routine.NodeID = cmbNode.SelectedNode.Name.Substring(0, 36);
+                routine.NodeID = cmbNode.SelectedNode.Name;
             //工作名称
             routine.Name = txtWorkName.Text;
             //工作描述
@@ -222,7 +222,7 @@ namespace ProjectManagement.Forms.Others
             //文件ID
             file.ID = _fileId;
             //日常工作ID
-            file.RoutineID = WorkId.Substring(0, 36);
+            file.RoutineID = WorkId;
             //文件路径
             file.Name = txtFileName.Text;
             //文件描述

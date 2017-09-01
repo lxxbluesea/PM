@@ -120,8 +120,8 @@ namespace DataAccessDLL
                         entity.ID = Guid.NewGuid().ToString();
                         entity.Status = 1;
                         entity.CREATED = DateTime.Now;
-                        entity.JBXXID = jbxx.ID;//.Substring(0, 36);
-                        entity.Manager = entity.Manager;//.Substring(0, 36);
+                        entity.JBXXID = jbxx.ID;//;
+                        entity.Manager = entity.Manager;//;
                         s.Save(entity);
                     }
                 UpdateProject(s);//更新项目时间

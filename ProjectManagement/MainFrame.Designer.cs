@@ -126,12 +126,12 @@
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
-            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
-            this.App_NewProject = new DevComponents.DotNetBar.ButtonItem();
-            this.btnTemplatePro = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_CreateProject = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_NewProject = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_TemplatePro = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_ProjectOutput = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_ProjectChange = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_ProjectStop = new DevComponents.DotNetBar.ButtonItem();
             this.gcProjectlist = new DevComponents.DotNetBar.GalleryContainer();
             this.labelItem8 = new DevComponents.DotNetBar.LabelItem();
             this.icProlist = new DevComponents.DotNetBar.ItemContainer();
@@ -147,6 +147,7 @@
             this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem18 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem19 = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_ProjectList = new DevComponents.DotNetBar.ButtonItem();
             this.CloseTabContextMenu.SuspendLayout();
             this.EditNodeMenu.SuspendLayout();
             this.EditProMenu.SuspendLayout();
@@ -1422,60 +1423,61 @@
             this.itemContainer3.MinimumSize = new System.Drawing.Size(120, 0);
             this.itemContainer3.Name = "itemContainer3";
             this.itemContainer3.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem2,
-            this.buttonItem3,
-            this.buttonItem4,
-            this.buttonItem5});
+            this.BtnItem_CreateProject,
+            this.BtnItem_ProjectList,
+            this.BtnItem_ProjectOutput,
+            this.BtnItem_ProjectChange,
+            this.BtnItem_ProjectStop});
             // 
             // 
             // 
             this.itemContainer3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // buttonItem2
+            // BtnItem_CreateProject
             // 
-            this.buttonItem2.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem2.Name = "buttonItem2";
-            this.buttonItem2.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.App_NewProject,
-            this.btnTemplatePro});
-            this.buttonItem2.SubItemsExpandWidth = 24;
-            this.buttonItem2.Text = "项目创建";
+            this.BtnItem_CreateProject.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BtnItem_CreateProject.Name = "BtnItem_CreateProject";
+            this.BtnItem_CreateProject.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.BtnItem_NewProject,
+            this.BtnItem_TemplatePro});
+            this.BtnItem_CreateProject.SubItemsExpandWidth = 24;
+            this.BtnItem_CreateProject.Text = "项目创建";
             // 
-            // App_NewProject
+            // BtnItem_NewProject
             // 
-            this.App_NewProject.Name = "App_NewProject";
-            this.App_NewProject.Text = "创建新项目";
-            this.App_NewProject.Click += new System.EventHandler(this.App_NewProject_Click);
+            this.BtnItem_NewProject.Name = "BtnItem_NewProject";
+            this.BtnItem_NewProject.Text = "创建新项目";
+            this.BtnItem_NewProject.Click += new System.EventHandler(this.App_NewProject_Click);
             // 
-            // btnTemplatePro
+            // BtnItem_TemplatePro
             // 
-            this.btnTemplatePro.BeginGroup = true;
-            this.btnTemplatePro.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnTemplatePro.Name = "btnTemplatePro";
-            this.btnTemplatePro.SubItemsExpandWidth = 24;
-            this.btnTemplatePro.Text = "模板创建新项目";
+            this.BtnItem_TemplatePro.BeginGroup = true;
+            this.BtnItem_TemplatePro.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BtnItem_TemplatePro.Name = "BtnItem_TemplatePro";
+            this.BtnItem_TemplatePro.SubItemsExpandWidth = 24;
+            this.BtnItem_TemplatePro.Text = "模板创建新项目";
             // 
-            // buttonItem3
+            // BtnItem_ProjectOutput
             // 
-            this.buttonItem3.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 24;
-            this.buttonItem3.Text = "项目导出";
+            this.BtnItem_ProjectOutput.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BtnItem_ProjectOutput.Name = "BtnItem_ProjectOutput";
+            this.BtnItem_ProjectOutput.SubItemsExpandWidth = 24;
+            this.BtnItem_ProjectOutput.Text = "项目导出";
             // 
-            // buttonItem4
+            // BtnItem_ProjectChange
             // 
-            this.buttonItem4.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem4.Name = "buttonItem4";
-            this.buttonItem4.SubItemsExpandWidth = 24;
-            this.buttonItem4.Text = "项目交接";
+            this.BtnItem_ProjectChange.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BtnItem_ProjectChange.Name = "BtnItem_ProjectChange";
+            this.BtnItem_ProjectChange.SubItemsExpandWidth = 24;
+            this.BtnItem_ProjectChange.Text = "项目交接";
             // 
-            // buttonItem5
+            // BtnItem_ProjectStop
             // 
-            this.buttonItem5.BeginGroup = true;
-            this.buttonItem5.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.SubItemsExpandWidth = 24;
-            this.buttonItem5.Text = "项目中止/峻工";
+            this.BtnItem_ProjectStop.BeginGroup = true;
+            this.BtnItem_ProjectStop.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.BtnItem_ProjectStop.Name = "BtnItem_ProjectStop";
+            this.BtnItem_ProjectStop.SubItemsExpandWidth = 24;
+            this.BtnItem_ProjectStop.Text = "项目中止/峻工";
             // 
             // gcProjectlist
             // 
@@ -1634,6 +1636,11 @@
             this.buttonItem19.SubItemsExpandWidth = 24;
             this.buttonItem19.Text = "E&xit";
             // 
+            // BtnItem_ProjectList
+            // 
+            this.BtnItem_ProjectList.Name = "BtnItem_ProjectList";
+            this.BtnItem_ProjectList.Text = "项目列表";
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1685,14 +1692,14 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
-        private DevComponents.DotNetBar.ButtonItem buttonItem4;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_CreateProject;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_ProjectOutput;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_ProjectChange;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_CreateWBS;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
-        private DevComponents.DotNetBar.ButtonItem App_NewProject;
-        private DevComponents.DotNetBar.ButtonItem btnTemplatePro;
-        private DevComponents.DotNetBar.ButtonItem buttonItem5;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_NewProject;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_TemplatePro;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_ProjectStop;
         private DevComponents.DotNetBar.RibbonTabItem TabItem_PowerMG;
         private DevComponents.DotNetBar.RibbonBar RibbonBar_SkateholderMG;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Stakeholder;
@@ -1788,6 +1795,7 @@
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_DifficutyDegree;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Weekly;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_MemberContributionRate;
+        private DevComponents.DotNetBar.ButtonItem BtnItem_ProjectList;
     }
 }
 

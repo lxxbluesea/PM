@@ -283,7 +283,7 @@ namespace ProjectManagement.Forms.InfomationPublish
         /// <param name="ProjectID"></param>
         void SetSubTreeData(IList<PNode> listNode, PNode parent, DevComponents.AdvTree.Node node)
         {
-            string parentID = parent.ID.Substring(0, 36);
+            string parentID = parent.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No);
             if (children.Count<PNode>() < 1)
             {

@@ -1197,7 +1197,7 @@ namespace ProjectManagement
                         #region 第一级节点
                         node.ID = Guid.NewGuid().ToString() + "-1";
                         node.PID = project.ID;
-                        node.ParentID = topNode.ID.Substring(0, 36);
+                        node.ParentID = topNode.ID;
                         node.WBSNo = no;
                         node.No = int.Parse(no);
                         node.Name = excel.ReadCell(row, 2).Trim();//wbs名称
@@ -1348,7 +1348,7 @@ namespace ProjectManagement
         /// <param name="ProjectID"></param>
         private void SetSubTreeData(IList<PNode> listNode, PNode parent, ExcelHelper excel, ref int rowIndex)
         {
-            string parentID = parent.ID.Substring(0, 36);
+            string parentID = parent.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No);
             if (children.Count<PNode>() < 1)
             {

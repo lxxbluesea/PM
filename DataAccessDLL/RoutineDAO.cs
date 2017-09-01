@@ -92,7 +92,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = entity.ID;//.Substring(0, 36);
+                        item.RoutineID = entity.ID;//;
                         s.Save(item);
                     }
                 UpdateProject(s);//更新项目时间
@@ -135,7 +135,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = newEntity.ID;//.Substring(0, 36);
+                        item.RoutineID = newEntity.ID;//;
                         s.Save(item);
                     }
 
@@ -178,7 +178,7 @@ namespace DataAccessDLL
                         item.ID = Guid.NewGuid().ToString();
                         item.Status = 1;
                         item.CREATED = DateTime.Now;
-                        item.RoutineID = newEntity.ID;//.Substring(0, 36);
+                        item.RoutineID = newEntity.ID;//;
                         s.Save(item);
                     }
 

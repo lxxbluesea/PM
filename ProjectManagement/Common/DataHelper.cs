@@ -65,7 +65,7 @@ namespace ProjectManagement
         /// <param name="ProjectID"></param>
         private static void SetMainSubTreeData(IList<PNode> listNode, PNode parent, DevComponents.AdvTree.Node node)
         {
-            string parentID = parent.ID.Substring(0, 36);
+            string parentID = parent.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No).OrderByDescending(t => t.No.HasValue);
             if (children.Count<PNode>() < 1)
             {
@@ -179,7 +179,7 @@ namespace ProjectManagement
         /// <param name="ProjectID"></param>
         private static void SetSubTreeData(IList<PNode> listNode, PNode parent, DevComponents.AdvTree.Node node)
         {
-            string parentID = parent.ID.Substring(0, 36);
+            string parentID = parent.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No);
             if (children.Count<PNode>() < 1)
             {
@@ -349,7 +349,7 @@ namespace ProjectManagement
         /// <param name="ProjectID"></param>
         private static void SetSubTreeDataWithCheckBox(IList<PNode> listNode, PNode parent, DevComponents.AdvTree.Node node,string[] checks)
         {
-            string parentID = parent.ID.Substring(0, 36);
+            string parentID = parent.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No);
             if (children.Count<PNode>() < 1)
             {

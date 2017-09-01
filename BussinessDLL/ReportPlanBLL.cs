@@ -27,10 +27,10 @@ namespace BussinessDLL
         /// <returns></returns>
         public DataTable GetPlan(DateTime StartDate, DateTime EndDate, int PType, string Manager,string projectId)
         {
-            if (Manager != string.Empty)
-            {
-                Manager = Manager.Substring(0, 36);
-            }
+            //if (Manager != string.Empty)
+            //{
+            //    Manager = Manager;
+            //}
             return new ReportPlanDao().GetPlan(StartDate, EndDate, PType, Manager, projectId);
         }
 

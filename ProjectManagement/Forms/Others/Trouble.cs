@@ -203,7 +203,7 @@ namespace ProjectManagement.Forms.Others
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
                 trouble.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                trouble.NodeID = cmbNode.SelectedNode.Name;//.Substring(0, 36);
+                trouble.NodeID = cmbNode.SelectedNode.Name;//;
             //问题名称
             trouble.Name = txtTroubleName.Text;
             //问题描述
@@ -323,7 +323,7 @@ namespace ProjectManagement.Forms.Others
             //文件ID
             file.ID = _fileId;
             //项目问题ID
-            file.TroubleID = TroubleId.Substring(0, 36);
+            file.TroubleID = TroubleId;
             //文件路径
             file.Name = txtFileName.Text;
             //文件描述
@@ -479,7 +479,7 @@ namespace ProjectManagement.Forms.Others
                 {
                     DomainDLL.TroubleFiles entity = new DomainDLL.TroubleFiles();
                     entity.ID = button.Tag == null ? "" : button.Tag.ToString();
-                    entity.TroubleID = TroubleId.Substring(0, 36);
+                    entity.TroubleID = TroubleId;
                     entity.Path = FileHelper.UploadFile(dialog.FileName, UploadType.Trouble, ProjectId, _nodeID);
                     switch (Type)
                     {

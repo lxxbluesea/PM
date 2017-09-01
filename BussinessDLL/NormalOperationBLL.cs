@@ -22,7 +22,7 @@ namespace BussinessDLL
             PNode entity = new PNode();
             if (!string.IsNullOrEmpty(NodeID))
             {
-                //NodeID = NodeID.Substring(0, 36);
+                //NodeID = NodeID;
                 if (!string.IsNullOrEmpty(NodeID))
                 {
                     List<QueryField> qf = new List<QueryField>();
@@ -44,7 +44,7 @@ namespace BussinessDLL
         public DeliverablesJBXX GetJBXX(string NodeID)
         {
             DeliverablesJBXX entity = null;
-            //NodeID = NodeID.Substring(0, 36);
+            //NodeID = NodeID;
             if (!string.IsNullOrEmpty(NodeID))
             {
                 List<QueryField> qf = new List<QueryField>();
@@ -69,7 +69,7 @@ namespace BussinessDLL
         {
             NodeProgress entity = new NodeProgress();
             //if (NodeID.Length > 36)
-            //    NodeID = NodeID.Substring(0, 36);
+            //    NodeID = NodeID;
             if (!string.IsNullOrEmpty(NodeID))
             {
                 List<QueryField> qf = new List<QueryField>();
@@ -95,7 +95,7 @@ namespace BussinessDLL
             try
             {
                 string _id;
-                //entity.NodeID = entity.NodeID.Substring(0, 36);
+                //entity.NodeID = entity.NodeID;
                 if (string.IsNullOrEmpty(entity.ID))
                     new Repository<DeliverablesFiles>().Insert(entity, true, out _id);
                 else
@@ -129,7 +129,7 @@ namespace BussinessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             //if (NodeID.Length > 36)
-            //    NodeID = NodeID.Substring(0, 36);
+            //    NodeID = NodeID;
             qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Comparison = QueryFieldComparison.like, Value = NodeID });
             qf.Add(new QueryField() { Name = "Status", Comparison = QueryFieldComparison.eq, Type = QueryFieldType.Numeric, Value = 1 });
             SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
@@ -149,7 +149,7 @@ namespace BussinessDLL
             try
             {
                 string _id;
-                //entity.NodeID = entity.NodeID.Substring(0, 36);
+                //entity.NodeID = entity.NodeID;
                 if (string.IsNullOrEmpty(entity.ID))
                     new Repository<NodeProgress>().Insert(entity, true, out _id);
                 else

@@ -98,7 +98,7 @@ namespace BussinessDLL
                         node = new PNode();
                         node.ID = Guid.NewGuid().ToString();// +"-1";
                         node.Name = entity.Name;
-                        node.ParentID = entity.NodeID;//.Substring(0, 36);
+                        node.ParentID = entity.NodeID;//;
                         node.PID = ProjectId;
                         node.PType = 3;
                         node.Status = 1;
@@ -106,7 +106,7 @@ namespace BussinessDLL
                     }
                     #endregion
                     #region 新插入实体
-                    //entity.NodeID = node == null ? null : node.ID.Substring(0, 36);
+                    //entity.NodeID = node == null ? null : node.ID;
                     entity.ID = Guid.NewGuid().ToString();// +"-1";
                     entity.CREATED = DateTime.Now;
                     entity.Status = 1;
@@ -154,7 +154,7 @@ namespace BussinessDLL
                     //    else
                     //        newNode.ID = oldNode.ID.Substring(0, 36) + "-" + (int.Parse(oldNode.ID.Substring(37)) + 1).ToString();
                     //    newNode.Name = entity.Name;
-                    //    newNode.ParentID = entity.NodeID.Substring(0, 36);
+                    //    newNode.ParentID = entity.NodeID;
                     //    newNode.PID = ProjectId;
                     //    newNode.PType = 3;
                     //    newNode.Status = 1;
@@ -164,7 +164,7 @@ namespace BussinessDLL
                     //#region 新插入实体
                     //string hisNo = oldEntity.ID.Substring(37);
                     //entity.ID = oldEntity.ID.Substring(0, 36) + "-" + (int.Parse(hisNo) + 1).ToString();
-                    //entity.NodeID = newNode == null ? null : newNode.ID.Substring(0, 36);
+                    //entity.NodeID = newNode == null ? null : newNode.ID;
                     //entity.Status = 1;
                     //entity.CREATED = DateTime.Now;
                     //#endregion

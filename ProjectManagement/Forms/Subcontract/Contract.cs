@@ -375,7 +375,7 @@ namespace ProjectManagement.Forms.Subcontract
             dtiSignDate.Value = entity.SignDate.Value;
             CREATED = entity.CREATED;
             _id = entity.ID;//实际id
-            SubID = entity.ID.Substring(0, 36);//版本id
+            SubID = entity.ID;//版本id
             #endregion
 
             //附件信息

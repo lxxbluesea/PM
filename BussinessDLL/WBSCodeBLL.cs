@@ -127,7 +127,7 @@ namespace BussinessDLL
         private void SetChildWBSNo(List<PNode> listNode, PNode pnode, int step, DomainDLL.WBSCode[] wbscodeArray)
         {
             step++;
-            string parentID = pnode.ID.Substring(0, 36);
+            string parentID = pnode.ID;
             IEnumerable<PNode> children = listNode.Where(t => t.ParentID == parentID).OrderBy(t => t.No);
             if (children.Count<PNode>() < 1)
             {

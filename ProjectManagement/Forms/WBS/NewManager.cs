@@ -105,7 +105,7 @@ namespace ProjectManagement.Forms.WBS
             {
                 ComboItem item = new ComboItem();
                 item.Text = list[i].Name;
-                item.Tag = list[i].ID.Substring(0, 36);
+                item.Tag = list[i].ID;
                 if (string.IsNullOrEmpty(ManagerID))
                 {
                     if (list[i].IsPublic == 1)

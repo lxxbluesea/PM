@@ -43,7 +43,7 @@ namespace BussinessDLL
             {
                 string _id;
                 if (node.ParentID.Length > 36)
-                    node.ParentID = node.ParentID.Substring(0, 36);
+                    node.ParentID = node.ParentID;
                 if (string.IsNullOrEmpty(node.ID))
                 {
                     List<PNode> list = GetChildren(node.ParentID).Where(t => t.PType == 0 || t.PType == 1).ToList();
@@ -114,7 +114,7 @@ namespace BussinessDLL
                 node.Status = 1;
                 node.CREATED = DateTime.Now;
                 node.No = newNO + 1;
-                node.ParentID = newParentID.Substring(0, 36);
+                node.ParentID = newParentID;
                 node.WBSNo = GetWBSNo(node.ParentID)+node.No.ToString();
 
                 dao.UpdateNode(node, oldNode, node.ParentID.Equals(oldNode.ParentID) ? "" : oldNode.ParentID);
@@ -143,14 +143,14 @@ namespace BussinessDLL
             try
             {
                 node.ID = Guid.NewGuid().ToString() + "-1";
-                node.ParentID = node.ParentID.Substring(0, 36);
+                node.ParentID = node.ParentID;
                 node.No = GetChildren(node.ParentID).Count() + 1;
                 node.WBSNo = GetWBSNo(node.ParentID) + node.No.ToString();
                 node.Status = 1;
                 node.CREATED = DateTime.Now;
 
                 jbxx.ID = Guid.NewGuid().ToString() + "-1";
-                jbxx.NodeID = node.ID.Substring(0, 36);
+                jbxx.NodeID = node.ID;
                 jbxx.Status = 1;
                 jbxx.CREATED = DateTime.Now;
 
@@ -190,7 +190,7 @@ namespace BussinessDLL
                 #region jbxx
                 DeliverablesJBXX old_jbxx = new Repository<DeliverablesJBXX>().Get(new_jbxx.ID);
                 new_jbxx.ID = new_jbxx.ID.Substring(0, 36) + "-" + (int.Parse(new_jbxx.ID.Substring(37)) + 1).ToString();
-                new_jbxx.NodeID = new_jbxx.NodeID.Substring(0, 36);
+                new_jbxx.NodeID = new_jbxx.NodeID;
                 new_jbxx.Status = 1;
                 new_jbxx.CREATED = DateTime.Now;
                 old_jbxx.Status = 0;
