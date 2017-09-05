@@ -18,7 +18,10 @@
       <column name="ParentID" sql-type="varchar" not-null="false"/>
     </property>
     <property name="Name" type="String">
-      <column name="Name" sql-type="nvarchar" not-null="false"/>
+      <column name="Name" sql-type="nvarchar" not-null="false"/>      
+    </property>
+    <property name="Desc" type="String">
+      <column name="Desc" sql-type="varchar" not-null="false"/>
     </property>
     <property name="PType" type="Int32">
       <column name="PType" sql-type="int" not-null="false"/>

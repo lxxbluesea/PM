@@ -221,6 +221,8 @@ namespace ProjectManagement.Forms.Others
             //状态
             trouble.Status = 1;
 
+            //trouble.PID = ProjectId;
+
             //问题级别
             if (cmbTroubleLevel.SelectedIndex > -1)
                 trouble.Level = int.Parse(((ComboItem)cmbTroubleLevel.SelectedItem).Value.ToString());
@@ -258,6 +260,10 @@ namespace ProjectManagement.Forms.Others
                     FileHelper.MoveFloder(oldPath, FileHelper.GetWorkdir() + FileHelper.GetUploadPath(UploadType.Trouble, ProjectId, _nodeID));
                 #endregion
             }
+            //else
+            //{
+
+            //}
 
 
         }

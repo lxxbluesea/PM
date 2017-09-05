@@ -870,8 +870,8 @@ namespace ProjectManagement
             {
                 //第一次加载 
                 EmailFiles = list;
-                string headPath = FileHelper.GetFilePath(UploadType.WBS, ProjectId, CurrentNode.ID, "");
-                EmailFiles.ForEach(t => t.Path = headPath + t.Path);
+                //string headPath = FileHelper.GetFilePath(UploadType.WBS, ProjectId, CurrentNode.ID, "");
+                //EmailFiles.ForEach(t => t.Path = headPath + t.Path);
                 gridPFile.PrimaryGrid.DataSource = EmailFiles;
             }
         }

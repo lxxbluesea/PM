@@ -251,7 +251,7 @@ namespace ProjectManagement
                 Directory.CreateDirectory(workDir);
             }
 
-            return workDir;
+            return workDir+"\\";
         }
 
         /// <summary>
@@ -451,13 +451,17 @@ namespace ProjectManagement
         public static void DownLoadFile(UploadType type, string projectId, string nodeId, string fileName)
         {
             string filePath = string.Empty;
+
             filePath = FileHelper.GetFilePath(type, projectId, nodeId, fileName);
             if (!File.Exists(filePath))
             {
                 //文件已不存在
                 MessageHelper.ShowMsg(MessageID.W000000003, MessageType.Alert);
                 return;
+
             }
+
+            //filePath = fileName;
             try
             {
                 //打开文件夹下载

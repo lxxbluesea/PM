@@ -129,6 +129,7 @@
             this.BtnItem_CreateProject = new DevComponents.DotNetBar.ButtonItem();
             this.BtnItem_NewProject = new DevComponents.DotNetBar.ButtonItem();
             this.BtnItem_TemplatePro = new DevComponents.DotNetBar.ButtonItem();
+            this.BtnItem_ProjectList = new DevComponents.DotNetBar.ButtonItem();
             this.BtnItem_ProjectOutput = new DevComponents.DotNetBar.ButtonItem();
             this.BtnItem_ProjectChange = new DevComponents.DotNetBar.ButtonItem();
             this.BtnItem_ProjectStop = new DevComponents.DotNetBar.ButtonItem();
@@ -147,7 +148,6 @@
             this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem18 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem19 = new DevComponents.DotNetBar.ButtonItem();
-            this.BtnItem_ProjectList = new DevComponents.DotNetBar.ButtonItem();
             this.CloseTabContextMenu.SuspendLayout();
             this.EditNodeMenu.SuspendLayout();
             this.EditProMenu.SuspendLayout();
@@ -1457,6 +1457,12 @@
             this.BtnItem_TemplatePro.SubItemsExpandWidth = 24;
             this.BtnItem_TemplatePro.Text = "模板创建新项目";
             // 
+            // BtnItem_ProjectList
+            // 
+            this.BtnItem_ProjectList.Name = "BtnItem_ProjectList";
+            this.BtnItem_ProjectList.Text = "项目列表";
+            this.BtnItem_ProjectList.Click += new System.EventHandler(this.BtnItem_ProjectList_Click);
+            // 
             // BtnItem_ProjectOutput
             // 
             this.BtnItem_ProjectOutput.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
@@ -1635,11 +1641,6 @@
             this.buttonItem19.Name = "buttonItem19";
             this.buttonItem19.SubItemsExpandWidth = 24;
             this.buttonItem19.Text = "E&xit";
-            // 
-            // BtnItem_ProjectList
-            // 
-            this.BtnItem_ProjectList.Name = "BtnItem_ProjectList";
-            this.BtnItem_ProjectList.Text = "项目列表";
             // 
             // MainFrame
             // 

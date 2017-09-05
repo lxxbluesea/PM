@@ -45,7 +45,7 @@
             this.Btn_OK.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.Btn_OK.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.Btn_OK.Location = new System.Drawing.Point(407, 382);
-            this.Btn_OK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_OK.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_OK.Name = "Btn_OK";
             this.Btn_OK.Size = new System.Drawing.Size(56, 18);
             this.Btn_OK.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -58,7 +58,7 @@
             this.Btn_Cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.Btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Btn_Cancel.Location = new System.Drawing.Point(491, 382);
-            this.Btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(56, 18);
             this.Btn_Cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -81,8 +81,9 @@
             this.groupPanel1.Controls.Add(this.labelX1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(12, 6);
-            this.groupPanel1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.groupPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(495, 269);
             // 
@@ -151,7 +152,7 @@
             this.txtName.DisabledBackColor = System.Drawing.Color.White;
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(200, 97);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(184, 21);
@@ -168,7 +169,7 @@
             this.txtNo.DisabledBackColor = System.Drawing.Color.White;
             this.txtNo.ForeColor = System.Drawing.Color.Black;
             this.txtNo.Location = new System.Drawing.Point(200, 58);
-            this.txtNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtNo.Name = "txtNo";
             this.txtNo.PreventEnterBeep = true;
             this.txtNo.Size = new System.Drawing.Size(184, 21);
@@ -181,7 +182,7 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Location = new System.Drawing.Point(115, 99);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(102, 18);
             this.labelX2.TabIndex = 0;
@@ -194,7 +195,7 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Location = new System.Drawing.Point(115, 60);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(102, 18);
             this.labelX1.TabIndex = 0;
@@ -210,6 +211,7 @@
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.Btn_OK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NewProject";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

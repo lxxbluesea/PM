@@ -42,8 +42,8 @@ namespace BussinessDLL
             try
             {
                 string _id;
-                if (node.ParentID.Length > 36)
-                    node.ParentID = node.ParentID;
+                //if (node.ParentID.Length > 36)
+                //    node.ParentID = node.ParentID;
                 if (string.IsNullOrEmpty(node.ID))
                 {
                     List<PNode> list = GetChildren(node.ParentID).Where(t => t.PType == 0 || t.PType == 1).ToList();
@@ -142,21 +142,21 @@ namespace BussinessDLL
             JsonResult jsonreslut = new JsonResult();
             try
             {
-                node.ID = Guid.NewGuid().ToString() + "-1";
+                node.ID = Guid.NewGuid().ToString();// +"-1";
                 node.ParentID = node.ParentID;
                 node.No = GetChildren(node.ParentID).Count() + 1;
                 node.WBSNo = GetWBSNo(node.ParentID) + node.No.ToString();
                 node.Status = 1;
                 node.CREATED = DateTime.Now;
 
-                jbxx.ID = Guid.NewGuid().ToString() + "-1";
+                jbxx.ID = Guid.NewGuid().ToString();// +"-1";
                 jbxx.NodeID = node.ID;
                 jbxx.Status = 1;
                 jbxx.CREATED = DateTime.Now;
 
                 NodeProgress entity = new NodeProgress()
                 {
-                    ID = Guid.NewGuid().ToString() + "-1",
+                    ID = Guid.NewGuid().ToString(),
                     NodeID = jbxx.NodeID,
                     PType = 1,
                     Status = 1,
@@ -188,25 +188,27 @@ namespace BussinessDLL
             try
             {
                 #region jbxx
-                DeliverablesJBXX old_jbxx = new Repository<DeliverablesJBXX>().Get(new_jbxx.ID);
-                new_jbxx.ID = new_jbxx.ID.Substring(0, 36) + "-" + (int.Parse(new_jbxx.ID.Substring(37)) + 1).ToString();
-                new_jbxx.NodeID = new_jbxx.NodeID;
+                //DeliverablesJBXX old_jbxx = new Repository<DeliverablesJBXX>().Get(new_jbxx.ID);
+                //new_jbxx.ID = new_jbxx.ID.Substring(0, 36) + "-" + (int.Parse(new_jbxx.ID.Substring(37)) + 1).ToString();
+                //new_jbxx.NodeID = new_jbxx.NodeID;
                 new_jbxx.Status = 1;
-                new_jbxx.CREATED = DateTime.Now;
-                old_jbxx.Status = 0;
-                old_jbxx.UPDATED = DateTime.Now;
+                //new_jbxx.CREATED = DateTime.Now;
+                //old_jbxx.Status = 0;
+                new_jbxx.UPDATED = DateTime.Now;
                 #endregion
                 #region pnode
                 PNode new_node = GetNode(new_jbxx.NodeID);
-                PNode old_node = GetNode(new_jbxx.NodeID);
+                //PNode old_node = GetNode(new_jbxx.NodeID);
                 new_node.Name = new_jbxx.Name;
                 new_node.Status = 1;
                 new_node.CREATED = DateTime.Now;
-                new_node.ID = new_node.ID.Substring(0, 36) + "-" + (int.Parse(new_node.ID.Substring(37)) + 1).ToString();
-                old_node.Status = 0;
-                old_node.UPDATED = DateTime.Now;
+                
+                //new_node.ID = new_node.ID.Substring(0, 36) + "-" + (int.Parse(new_node.ID.Substring(37)) + 1).ToString();
+                //old_node.Status = 0;
+                //old_node.UPDATED = DateTime.Now;
                 #endregion
-                dao.UpdatedDeliverables(new_jbxx, old_jbxx, new_node, old_node, listWorkx);
+                //dao.UpdatedDeliverables(new_jbxx, old_jbxx, new_node, old_node, listWorkx);
+                dao.UpdatedDeliverables(new_jbxx, new_node, listWorkx);
                 jsonreslut.data = new_node.ID;
                 jsonreslut.result = true;
                 jsonreslut.msg = "保存成功！";

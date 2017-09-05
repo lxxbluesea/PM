@@ -38,6 +38,9 @@
     <property name="IsPublic" type="Int32">
       <column name="IsPublic" sql-type="int" not-null="false"/>
     </property>
+    <property name="IsManage" type="Int32">
+      <column name="IsManage" sql-type="int" not-null="false"/>
+    </property>
     <property name="SendType" type="Int32">
       <column name="SendType" sql-type="int" not-null="false"/>
     </property>

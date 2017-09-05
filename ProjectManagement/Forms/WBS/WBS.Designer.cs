@@ -44,10 +44,19 @@
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.panelNode = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.line1 = new DevComponents.DotNetBar.Controls.Line();
+            this.txt_edit_node_desc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_Desc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnClear = new DevComponents.DotNetBar.ButtonX();
+            this.btn_save_node = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
+            this.txt_edit_node_name = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNode = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtParent = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelJFW = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -204,10 +213,19 @@
             this.panelNode.BackColor = System.Drawing.Color.Transparent;
             this.panelNode.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelNode.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelNode.Controls.Add(this.labelX13);
+            this.panelNode.Controls.Add(this.line1);
+            this.panelNode.Controls.Add(this.txt_edit_node_desc);
+            this.panelNode.Controls.Add(this.txt_Desc);
             this.panelNode.Controls.Add(this.btnClear);
+            this.panelNode.Controls.Add(this.btn_save_node);
             this.panelNode.Controls.Add(this.btnSave);
+            this.panelNode.Controls.Add(this.txt_edit_node_name);
             this.panelNode.Controls.Add(this.txtNode);
+            this.panelNode.Controls.Add(this.labelX12);
             this.panelNode.Controls.Add(this.txtParent);
+            this.panelNode.Controls.Add(this.labelX8);
+            this.panelNode.Controls.Add(this.labelX2);
             this.panelNode.Controls.Add(this.labelX3);
             this.panelNode.Controls.Add(this.labelX1);
             this.panelNode.DisabledBackColor = System.Drawing.Color.Empty;
@@ -245,33 +263,115 @@
             // 
             this.panelNode.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.panelNode.TabIndex = 1;
-            this.panelNode.Text = "添加结点";
+            this.panelNode.Text = "添加子结点";
+            // 
+            // labelX13
+            // 
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Location = new System.Drawing.Point(109, 183);
+            this.labelX13.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(82, 18);
+            this.labelX13.TabIndex = 0;
+            this.labelX13.Text = "当前结点信息";
+            // 
+            // line1
+            // 
+            this.line1.Location = new System.Drawing.Point(-3, 180);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(297, 23);
+            this.line1.TabIndex = 5;
+            this.line1.Text = "line1";
+            // 
+            // txt_edit_node_desc
+            // 
+            // 
+            // 
+            // 
+            this.txt_edit_node_desc.Border.Class = "TextBoxBorder";
+            this.txt_edit_node_desc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_edit_node_desc.Location = new System.Drawing.Point(86, 262);
+            this.txt_edit_node_desc.Multiline = true;
+            this.txt_edit_node_desc.Name = "txt_edit_node_desc";
+            this.txt_edit_node_desc.PreventEnterBeep = true;
+            this.txt_edit_node_desc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_edit_node_desc.Size = new System.Drawing.Size(199, 62);
+            this.txt_edit_node_desc.TabIndex = 2;
+            // 
+            // txt_Desc
+            // 
+            // 
+            // 
+            // 
+            this.txt_Desc.Border.Class = "TextBoxBorder";
+            this.txt_Desc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_Desc.Location = new System.Drawing.Point(86, 65);
+            this.txt_Desc.Multiline = true;
+            this.txt_Desc.Name = "txt_Desc";
+            this.txt_Desc.PreventEnterBeep = true;
+            this.txt_Desc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_Desc.Size = new System.Drawing.Size(199, 62);
+            this.txt_Desc.TabIndex = 2;
             // 
             // btnClear
             // 
             this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Location = new System.Drawing.Point(166, 65);
+            this.btnClear.Location = new System.Drawing.Point(166, 145);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(56, 18);
             this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClear.TabIndex = 3;
+            this.btnClear.TabIndex = 4;
             this.btnClear.Text = "清空";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btn_save_node
+            // 
+            this.btn_save_node.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_save_node.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_save_node.Location = new System.Drawing.Point(86, 342);
+            this.btn_save_node.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save_node.Name = "btn_save_node";
+            this.btn_save_node.Size = new System.Drawing.Size(56, 18);
+            this.btn_save_node.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_save_node.TabIndex = 3;
+            this.btn_save_node.Text = "保存";
+            this.btn_save_node.Click += new System.EventHandler(this.btn_save_node_Click);
             // 
             // btnSave
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(86, 65);
+            this.btnSave.Location = new System.Drawing.Point(86, 145);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 18);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txt_edit_node_name
+            // 
+            this.txt_edit_node_name.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txt_edit_node_name.Border.Class = "TextBoxBorder";
+            this.txt_edit_node_name.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_edit_node_name.DisabledBackColor = System.Drawing.Color.White;
+            this.txt_edit_node_name.ForeColor = System.Drawing.Color.Black;
+            this.txt_edit_node_name.Location = new System.Drawing.Point(86, 229);
+            this.txt_edit_node_name.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_edit_node_name.Name = "txt_edit_node_name";
+            this.txt_edit_node_name.PreventEnterBeep = true;
+            this.txt_edit_node_name.Size = new System.Drawing.Size(199, 21);
+            this.txt_edit_node_name.TabIndex = 1;
             // 
             // txtNode
             // 
@@ -289,6 +389,20 @@
             this.txtNode.PreventEnterBeep = true;
             this.txtNode.Size = new System.Drawing.Size(199, 21);
             this.txtNode.TabIndex = 1;
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Location = new System.Drawing.Point(9, 265);
+            this.labelX12.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(82, 18);
+            this.labelX12.TabIndex = 0;
+            this.labelX12.Text = "结点描述：";
             // 
             // txtParent
             // 
@@ -308,6 +422,34 @@
             this.txtParent.Size = new System.Drawing.Size(199, 21);
             this.txtParent.TabIndex = 0;
             // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(4, 230);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(82, 18);
+            this.labelX8.TabIndex = 0;
+            this.labelX8.Text = "*结点名称：";
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(4, 65);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(2);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(82, 18);
+            this.labelX2.TabIndex = 0;
+            this.labelX2.Text = "子结点描述：";
+            // 
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
@@ -315,12 +457,12 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(9, 33);
+            this.labelX3.Location = new System.Drawing.Point(-2, 34);
             this.labelX3.Margin = new System.Windows.Forms.Padding(2);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(82, 18);
+            this.labelX3.Size = new System.Drawing.Size(93, 18);
             this.labelX3.TabIndex = 0;
-            this.labelX3.Text = "*结点名称：";
+            this.labelX3.Text = "*子结点名称：";
             // 
             // labelX1
             // 
@@ -329,7 +471,7 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(9, 4);
+            this.labelX1.Location = new System.Drawing.Point(-2, 5);
             this.labelX1.Margin = new System.Windows.Forms.Padding(2);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(82, 18);
@@ -929,5 +1071,14 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_Desc;
+        private DevComponents.DotNetBar.LabelX labelX13;
+        private DevComponents.DotNetBar.Controls.Line line1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_edit_node_desc;
+        private DevComponents.DotNetBar.ButtonX btn_save_node;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_edit_node_name;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.LabelX labelX8;
+        private DevComponents.DotNetBar.LabelX labelX2;
     }
 }

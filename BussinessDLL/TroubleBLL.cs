@@ -110,8 +110,17 @@ namespace BussinessDLL
                     entity.ID = Guid.NewGuid().ToString();// +"-1";
                     entity.CREATED = DateTime.Now;
                     entity.Status = 1;
+                    entity.PID = ProjectId;
                     #endregion
-                    dao.AddTrouble(entity, node, listWork);
+                    try
+                    {
+                        dao.AddTrouble(entity, node, listWork);
+                    }
+                    catch (Exception ex)
+                    {
+                        entity.ID = null;
+                        throw ex;
+                    }
                 }
                 //编辑
                 else

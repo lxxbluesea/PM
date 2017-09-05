@@ -91,8 +91,8 @@ namespace DomainDLL
             set;
         }
         /// <summary>
-        /// 是否默认发布
-        /// 是否为项目经理
+        /// 
+        /// 是否为项目经理，和项目经理用反了
         /// </summary>
         public virtual int IsPublic
         {
@@ -135,5 +135,14 @@ namespace DomainDLL
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// 是否为公用资源，这项目经理用反了
+        /// </summary>
+        public virtual int IsManage
+        {
+            get;
+            set;
+        }
     }
 }

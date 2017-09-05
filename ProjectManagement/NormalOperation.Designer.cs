@@ -130,8 +130,9 @@
             // panelJFW
             // 
             this.panelJFW.AllowDrop = true;
-            this.panelJFW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelJFW.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelJFW.AutoScroll = true;
             this.panelJFW.AutoScrollMinSize = new System.Drawing.Size(100, 0);
             this.panelJFW.AutoSize = true;
@@ -157,10 +158,10 @@
             this.panelJFW.Controls.Add(this.labelX10);
             this.panelJFW.Controls.Add(this.labelX4);
             this.panelJFW.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelJFW.Location = new System.Drawing.Point(2, 118);
+            this.panelJFW.Location = new System.Drawing.Point(0, 115);
             this.panelJFW.Margin = new System.Windows.Forms.Padding(2);
             this.panelJFW.Name = "panelJFW";
-            this.panelJFW.Size = new System.Drawing.Size(295, 386);
+            this.panelJFW.Size = new System.Drawing.Size(299, 421);
             // 
             // 
             // 
@@ -205,7 +206,7 @@
             this.sdWeight.Name = "sdWeight";
             this.sdWeight.Size = new System.Drawing.Size(187, 18);
             this.sdWeight.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.sdWeight.TabIndex = 21;
+            this.sdWeight.TabIndex = 6;
             this.sdWeight.Text = "1";
             this.sdWeight.Value = 1;
             this.sdWeight.ValueChanged += new System.EventHandler(this.sdWeight_ValueChanged);
@@ -229,12 +230,12 @@
             this.btnAddManager.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddManager.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddManager.Location = new System.Drawing.Point(2, 340);
+            this.btnAddManager.Location = new System.Drawing.Point(0, 375);
             this.btnAddManager.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddManager.Name = "btnAddManager";
             this.btnAddManager.Size = new System.Drawing.Size(66, 18);
             this.btnAddManager.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAddManager.TabIndex = 20;
+            this.btnAddManager.TabIndex = 7;
             this.btnAddManager.Text = "添加责任人";
             this.btnAddManager.Click += new System.EventHandler(this.btnAddManager_Click);
             // 
@@ -260,7 +261,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn15);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(283, 81);
+            this.gridManager.Size = new System.Drawing.Size(283, 126);
             this.gridManager.TabIndex = 19;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -314,7 +315,7 @@
             this.txtNode2.PreventEnterBeep = true;
             this.txtNode2.ReadOnly = true;
             this.txtNode2.Size = new System.Drawing.Size(200, 21);
-            this.txtNode2.TabIndex = 5;
+            this.txtNode2.TabIndex = 0;
             // 
             // txtJFW
             // 
@@ -331,7 +332,7 @@
             this.txtJFW.Name = "txtJFW";
             this.txtJFW.PreventEnterBeep = true;
             this.txtJFW.Size = new System.Drawing.Size(200, 21);
-            this.txtJFW.TabIndex = 6;
+            this.txtJFW.TabIndex = 1;
             // 
             // txtDesc
             // 
@@ -345,7 +346,7 @@
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.PreventEnterBeep = true;
             this.txtDesc.Size = new System.Drawing.Size(200, 66);
-            this.txtDesc.TabIndex = 15;
+            this.txtDesc.TabIndex = 2;
             // 
             // labelX18
             // 
@@ -366,12 +367,12 @@
             this.btnClearJBXX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearJBXX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearJBXX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearJBXX.Location = new System.Drawing.Point(82, 340);
+            this.btnClearJBXX.Location = new System.Drawing.Point(80, 375);
             this.btnClearJBXX.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearJBXX.Name = "btnClearJBXX";
             this.btnClearJBXX.Size = new System.Drawing.Size(56, 18);
             this.btnClearJBXX.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearJBXX.TabIndex = 13;
+            this.btnClearJBXX.TabIndex = 8;
             this.btnClearJBXX.Text = "清空";
             this.btnClearJBXX.Click += new System.EventHandler(this.btnClearJBXX_Click);
             // 
@@ -380,12 +381,12 @@
             this.btnSaveJBXX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveJBXX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveJBXX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveJBXX.Location = new System.Drawing.Point(153, 340);
+            this.btnSaveJBXX.Location = new System.Drawing.Point(151, 375);
             this.btnSaveJBXX.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveJBXX.Name = "btnSaveJBXX";
             this.btnSaveJBXX.Size = new System.Drawing.Size(56, 18);
             this.btnSaveJBXX.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveJBXX.TabIndex = 12;
+            this.btnSaveJBXX.TabIndex = 9;
             this.btnSaveJBXX.Text = "保存";
             this.btnSaveJBXX.Click += new System.EventHandler(this.btnSaveJBXX_Click);
             // 
@@ -402,7 +403,7 @@
             this.intWorkload.Name = "intWorkload";
             this.intWorkload.ShowUpDown = true;
             this.intWorkload.Size = new System.Drawing.Size(200, 21);
-            this.intWorkload.TabIndex = 9;
+            this.intWorkload.TabIndex = 5;
             this.intWorkload.Value = 1;
             // 
             // dtEnd
@@ -453,7 +454,7 @@
             this.dtEnd.Name = "dtEnd";
             this.dtEnd.Size = new System.Drawing.Size(200, 21);
             this.dtEnd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtEnd.TabIndex = 8;
+            this.dtEnd.TabIndex = 4;
             // 
             // dtStart
             // 
@@ -503,7 +504,7 @@
             this.dtStart.Name = "dtStart";
             this.dtStart.Size = new System.Drawing.Size(200, 21);
             this.dtStart.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtStart.TabIndex = 7;
+            this.dtStart.TabIndex = 3;
             this.dtStart.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
             // labelX9
@@ -593,7 +594,7 @@
             this.panelNode.Location = new System.Drawing.Point(0, 0);
             this.panelNode.Margin = new System.Windows.Forms.Padding(2);
             this.panelNode.Name = "panelNode";
-            this.panelNode.Size = new System.Drawing.Size(299, 114);
+            this.panelNode.Size = new System.Drawing.Size(299, 111);
             // 
             // 
             // 
@@ -634,7 +635,7 @@
             this.btnClearNode.Name = "btnClearNode";
             this.btnClearNode.Size = new System.Drawing.Size(56, 18);
             this.btnClearNode.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearNode.TabIndex = 4;
+            this.btnClearNode.TabIndex = 2;
             this.btnClearNode.Text = "清空";
             this.btnClearNode.Click += new System.EventHandler(this.btnClearNode_Click);
             // 
@@ -681,7 +682,7 @@
             this.txtNode.Name = "txtNode";
             this.txtNode.PreventEnterBeep = true;
             this.txtNode.Size = new System.Drawing.Size(200, 21);
-            this.txtNode.TabIndex = 2;
+            this.txtNode.TabIndex = 1;
             // 
             // txtParent
             // 
@@ -699,7 +700,7 @@
             this.txtParent.PreventEnterBeep = true;
             this.txtParent.ReadOnly = true;
             this.txtParent.Size = new System.Drawing.Size(200, 21);
-            this.txtParent.TabIndex = 1;
+            this.txtParent.TabIndex = 0;
             // 
             // labelX3
             // 
@@ -757,7 +758,7 @@
             this.panelContent.Location = new System.Drawing.Point(308, 1);
             this.panelContent.Margin = new System.Windows.Forms.Padding(2);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(300, 504);
+            this.panelContent.Size = new System.Drawing.Size(300, 536);
             // 
             // 
             // 
@@ -786,7 +787,7 @@
             // 
             // 
             this.panelContent.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelContent.TabIndex = 2;
+            this.panelContent.TabIndex = 1;
             this.panelContent.Text = "内容更新";
             // 
             // btnClearProgress
@@ -794,12 +795,12 @@
             this.btnClearProgress.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearProgress.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearProgress.Location = new System.Drawing.Point(73, 150);
+            this.btnClearProgress.Location = new System.Drawing.Point(73, 182);
             this.btnClearProgress.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearProgress.Name = "btnClearProgress";
             this.btnClearProgress.Size = new System.Drawing.Size(56, 18);
             this.btnClearProgress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearProgress.TabIndex = 23;
+            this.btnClearProgress.TabIndex = 1;
             this.btnClearProgress.Text = "清空";
             this.btnClearProgress.Click += new System.EventHandler(this.btnClearProgress_Click);
             // 
@@ -808,12 +809,12 @@
             this.btnSaveProgress.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveProgress.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveProgress.Location = new System.Drawing.Point(192, 150);
+            this.btnSaveProgress.Location = new System.Drawing.Point(192, 182);
             this.btnSaveProgress.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveProgress.Name = "btnSaveProgress";
             this.btnSaveProgress.Size = new System.Drawing.Size(56, 18);
             this.btnSaveProgress.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveProgress.TabIndex = 22;
+            this.btnSaveProgress.TabIndex = 2;
             this.btnSaveProgress.Text = "保存";
             this.btnSaveProgress.Click += new System.EventHandler(this.btnSaveProgress_Click);
             // 
@@ -833,20 +834,20 @@
             this.txtProgressDesc.Location = new System.Drawing.Point(3, 52);
             this.txtProgressDesc.Multiline = true;
             this.txtProgressDesc.Name = "txtProgressDesc";
-            this.txtProgressDesc.Size = new System.Drawing.Size(287, 89);
-            this.txtProgressDesc.TabIndex = 20;
+            this.txtProgressDesc.Size = new System.Drawing.Size(287, 121);
+            this.txtProgressDesc.TabIndex = 0;
             // 
             // btnClearFile
             // 
             this.btnClearFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearFile.Location = new System.Drawing.Point(73, 456);
+            this.btnClearFile.Location = new System.Drawing.Point(73, 488);
             this.btnClearFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearFile.Name = "btnClearFile";
             this.btnClearFile.Size = new System.Drawing.Size(56, 18);
             this.btnClearFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearFile.TabIndex = 19;
+            this.btnClearFile.TabIndex = 8;
             this.btnClearFile.Text = "清空";
             this.btnClearFile.Click += new System.EventHandler(this.btnClearFile_Click);
             // 
@@ -855,12 +856,12 @@
             this.btnSaveFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveFile.Location = new System.Drawing.Point(192, 456);
+            this.btnSaveFile.Location = new System.Drawing.Point(192, 488);
             this.btnSaveFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveFile.Name = "btnSaveFile";
             this.btnSaveFile.Size = new System.Drawing.Size(56, 18);
             this.btnSaveFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveFile.TabIndex = 18;
+            this.btnSaveFile.TabIndex = 9;
             this.btnSaveFile.Text = "保存";
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
@@ -869,12 +870,12 @@
             this.buttonX8.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonX8.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX8.Location = new System.Drawing.Point(233, 344);
+            this.buttonX8.Location = new System.Drawing.Point(233, 376);
             this.buttonX8.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX8.Name = "buttonX8";
             this.buttonX8.Size = new System.Drawing.Size(56, 18);
             this.buttonX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX8.TabIndex = 0;
+            this.buttonX8.TabIndex = 6;
             this.buttonX8.Text = "上传";
             this.buttonX8.Visible = false;
             // 
@@ -883,12 +884,12 @@
             this.btnSelectFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSelectFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSelectFile.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSelectFile.Location = new System.Drawing.Point(233, 310);
+            this.btnSelectFile.Location = new System.Drawing.Point(233, 342);
             this.btnSelectFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(56, 18);
             this.btnSelectFile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSelectFile.TabIndex = 15;
+            this.btnSelectFile.TabIndex = 4;
             this.btnSelectFile.Text = "选择";
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
@@ -903,14 +904,14 @@
             this.txtFileDesc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtFileDesc.DisabledBackColor = System.Drawing.Color.White;
             this.txtFileDesc.ForeColor = System.Drawing.Color.Black;
-            this.txtFileDesc.Location = new System.Drawing.Point(73, 379);
+            this.txtFileDesc.Location = new System.Drawing.Point(73, 411);
             this.txtFileDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileDesc.Multiline = true;
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtFileDesc.Size = new System.Drawing.Size(216, 63);
-            this.txtFileDesc.TabIndex = 17;
+            this.txtFileDesc.TabIndex = 7;
             // 
             // txtFileName
             // 
@@ -923,12 +924,12 @@
             this.txtFileName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtFileName.DisabledBackColor = System.Drawing.Color.White;
             this.txtFileName.ForeColor = System.Drawing.Color.Black;
-            this.txtFileName.Location = new System.Drawing.Point(73, 342);
+            this.txtFileName.Location = new System.Drawing.Point(73, 374);
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
             this.txtFileName.Size = new System.Drawing.Size(155, 21);
-            this.txtFileName.TabIndex = 16;
+            this.txtFileName.TabIndex = 5;
             // 
             // txtFilePath
             // 
@@ -941,12 +942,12 @@
             this.txtFilePath.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtFilePath.DisabledBackColor = System.Drawing.Color.White;
             this.txtFilePath.ForeColor = System.Drawing.Color.Black;
-            this.txtFilePath.Location = new System.Drawing.Point(73, 308);
+            this.txtFilePath.Location = new System.Drawing.Point(73, 340);
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
             this.txtFilePath.Size = new System.Drawing.Size(155, 21);
-            this.txtFilePath.TabIndex = 14;
+            this.txtFilePath.TabIndex = 3;
             // 
             // labelX12
             // 
@@ -955,7 +956,7 @@
             // 
             // 
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(0, 382);
+            this.labelX12.Location = new System.Drawing.Point(0, 414);
             this.labelX12.Margin = new System.Windows.Forms.Padding(2);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(80, 18);
@@ -969,7 +970,7 @@
             // 
             // 
             this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(0, 345);
+            this.labelX13.Location = new System.Drawing.Point(0, 377);
             this.labelX13.Margin = new System.Windows.Forms.Padding(2);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(80, 18);
@@ -983,7 +984,7 @@
             // 
             // 
             this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(0, 310);
+            this.labelX11.Location = new System.Drawing.Point(0, 342);
             this.labelX11.Margin = new System.Windows.Forms.Padding(2);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(80, 18);
@@ -996,7 +997,7 @@
             this.gridFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridFile.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridFile.ForeColor = System.Drawing.Color.Black;
-            this.gridFile.Location = new System.Drawing.Point(5, 178);
+            this.gridFile.Location = new System.Drawing.Point(5, 210);
             this.gridFile.Margin = new System.Windows.Forms.Padding(2);
             this.gridFile.Name = "gridFile";
             // 
@@ -1168,7 +1169,7 @@
             this.panelPub.Location = new System.Drawing.Point(613, 1);
             this.panelPub.Margin = new System.Windows.Forms.Padding(2);
             this.panelPub.Name = "panelPub";
-            this.panelPub.Size = new System.Drawing.Size(437, 504);
+            this.panelPub.Size = new System.Drawing.Size(433, 536);
             // 
             // 
             // 
@@ -1197,46 +1198,49 @@
             // 
             // 
             this.panelPub.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelPub.TabIndex = 3;
+            this.panelPub.TabIndex = 2;
             this.panelPub.Text = "信息发布";
             // 
             // btnPAdd
             // 
             this.btnPAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnPAdd.Location = new System.Drawing.Point(58, 454);
+            this.btnPAdd.Location = new System.Drawing.Point(58, 489);
             this.btnPAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnPAdd.Name = "btnPAdd";
             this.btnPAdd.Size = new System.Drawing.Size(69, 18);
             this.btnPAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnPAdd.TabIndex = 5;
+            this.btnPAdd.TabIndex = 7;
             this.btnPAdd.Text = "添加附件";
             this.btnPAdd.Click += new System.EventHandler(this.btnPAdd_Click);
             // 
             // btnPSend
             // 
             this.btnPSend.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPSend.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnPSend.Location = new System.Drawing.Point(212, 455);
+            this.btnPSend.Location = new System.Drawing.Point(212, 490);
             this.btnPSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnPSend.Name = "btnPSend";
             this.btnPSend.Size = new System.Drawing.Size(50, 18);
             this.btnPSend.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnPSend.TabIndex = 8;
+            this.btnPSend.TabIndex = 9;
             this.btnPSend.Text = "发送";
             this.btnPSend.Click += new System.EventHandler(this.btnPSend_Click);
             // 
             // Btn_Cancel
             // 
             this.Btn_Cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.Btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Btn_Cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.Btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Btn_Cancel.Location = new System.Drawing.Point(276, 455);
+            this.Btn_Cancel.Location = new System.Drawing.Point(276, 490);
             this.Btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(50, 18);
             this.Btn_Cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.Btn_Cancel.TabIndex = 8;
+            this.Btn_Cancel.TabIndex = 10;
             this.Btn_Cancel.Text = "关闭";
             // 
             // btnAddCC
@@ -1244,12 +1248,12 @@
             this.btnAddCC.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddCC.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddCC.Location = new System.Drawing.Point(368, 42);
+            this.btnAddCC.Location = new System.Drawing.Point(364, 42);
             this.btnAddCC.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCC.Name = "btnAddCC";
             this.btnAddCC.Size = new System.Drawing.Size(56, 18);
             this.btnAddCC.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAddCC.TabIndex = 7;
+            this.btnAddCC.TabIndex = 3;
             this.btnAddCC.Text = "添加";
             this.btnAddCC.Click += new System.EventHandler(this.btnAddCC_Click);
             // 
@@ -1258,35 +1262,36 @@
             this.btnAddSend.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAddSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddSend.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddSend.Location = new System.Drawing.Point(368, 6);
+            this.btnAddSend.Location = new System.Drawing.Point(364, 6);
             this.btnAddSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddSend.Name = "btnAddSend";
             this.btnAddSend.Size = new System.Drawing.Size(56, 18);
             this.btnAddSend.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAddSend.TabIndex = 7;
+            this.btnAddSend.TabIndex = 1;
             this.btnAddSend.Text = "添加";
             this.btnAddSend.Click += new System.EventHandler(this.btnAddSend_Click);
             // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(149, 454);
+            this.buttonX1.Location = new System.Drawing.Point(149, 489);
             this.buttonX1.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(50, 18);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 6;
+            this.buttonX1.TabIndex = 8;
             this.buttonX1.Text = "草稿";
             // 
             // gridPFile
             // 
-            this.gridPFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridPFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridPFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridPFile.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridPFile.ForeColor = System.Drawing.Color.Black;
-            this.gridPFile.Location = new System.Drawing.Point(59, 287);
+            this.gridPFile.Location = new System.Drawing.Point(59, 322);
             this.gridPFile.Margin = new System.Windows.Forms.Padding(2);
             this.gridPFile.Name = "gridPFile";
             // 
@@ -1299,8 +1304,8 @@
             this.gridPFile.PrimaryGrid.Columns.Add(this.gridColumn9);
             this.gridPFile.PrimaryGrid.Columns.Add(this.gridColumn10);
             this.gridPFile.PrimaryGrid.Columns.Add(this.gridColumn11);
-            this.gridPFile.Size = new System.Drawing.Size(365, 152);
-            this.gridPFile.TabIndex = 4;
+            this.gridPFile.Size = new System.Drawing.Size(361, 152);
+            this.gridPFile.TabIndex = 6;
             this.gridPFile.Text = "superGridControl1";
             this.gridPFile.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridPFile_CellClick);
             // 
@@ -1333,7 +1338,8 @@
             // 
             // txtPContent
             // 
-            this.txtPContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPContent.BackColor = System.Drawing.Color.White;
             // 
@@ -1349,8 +1355,8 @@
             this.txtPContent.Name = "txtPContent";
             this.txtPContent.PreventEnterBeep = true;
             this.txtPContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPContent.Size = new System.Drawing.Size(365, 178);
-            this.txtPContent.TabIndex = 3;
+            this.txtPContent.Size = new System.Drawing.Size(361, 200);
+            this.txtPContent.TabIndex = 5;
             // 
             // txtPTitle
             // 
@@ -1368,8 +1374,8 @@
             this.txtPTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtPTitle.Name = "txtPTitle";
             this.txtPTitle.PreventEnterBeep = true;
-            this.txtPTitle.Size = new System.Drawing.Size(365, 21);
-            this.txtPTitle.TabIndex = 2;
+            this.txtPTitle.Size = new System.Drawing.Size(361, 21);
+            this.txtPTitle.TabIndex = 4;
             this.txtPTitle.Text = "交付物名称+完成度";
             // 
             // txtPCC
@@ -1388,8 +1394,8 @@
             this.txtPCC.Margin = new System.Windows.Forms.Padding(2);
             this.txtPCC.Name = "txtPCC";
             this.txtPCC.PreventEnterBeep = true;
-            this.txtPCC.Size = new System.Drawing.Size(305, 21);
-            this.txtPCC.TabIndex = 1;
+            this.txtPCC.Size = new System.Drawing.Size(301, 21);
+            this.txtPCC.TabIndex = 2;
             // 
             // labelX2
             // 
@@ -1399,10 +1405,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(2, 290);
+            this.labelX2.Location = new System.Drawing.Point(-4, 322);
             this.labelX2.Margin = new System.Windows.Forms.Padding(2);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(194, 18);
+            this.labelX2.Size = new System.Drawing.Size(190, 18);
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "附件列表：";
             // 
@@ -1448,7 +1454,7 @@
             this.txtPSend.Margin = new System.Windows.Forms.Padding(2);
             this.txtPSend.Name = "txtPSend";
             this.txtPSend.PreventEnterBeep = true;
-            this.txtPSend.Size = new System.Drawing.Size(305, 21);
+            this.txtPSend.Size = new System.Drawing.Size(301, 21);
             this.txtPSend.TabIndex = 0;
             // 
             // labelX16
@@ -1484,8 +1490,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(5, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 504);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(299, 536);
+            this.panel1.TabIndex = 0;
             // 
             // NormalOperation
             // 
@@ -1493,7 +1499,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(100, 100);
-            this.ClientSize = new System.Drawing.Size(1056, 507);
+            this.ClientSize = new System.Drawing.Size(1052, 539);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPub);
             this.Controls.Add(this.panelContent);

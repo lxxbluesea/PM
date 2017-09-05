@@ -386,6 +386,54 @@ namespace DataAccessDLL
         }
 
         /// <summary>
+        /// 获取一览，针对干系人的
+        /// </summary>
+        /// <param name="queryList"></param>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+        public virtual IList<T> GetListForStakeholder(List<QueryField> queryList, SortField sort)
+        {
+            ICriteria crit = Session.CreateCriteria<T>();
+            if (queryList != null)
+            {
+                bool flag = false;
+                foreach (var query in queryList)
+                {
+                    if (query.Name == "IsManage")
+                    {
+                        flag = true;
+                    }
+                }
+                foreach (var query in queryList)
+                {
+                    if (flag)
+                    {
+                        if (query.Name == "PID")
+                            continue;
+                        if (query.Name == "IsManage")
+                        {
+                            crit.Add(Restrictions.Or(Restrictions.Eq("IsManage", query.Value), Restrictions.Eq("PID", queryList[0].Value)));
+                        }
+                        else
+                            crit.Add(GetExpression(query));
+                    }
+                    else
+                    {
+                        crit.Add(GetExpression(query));
+                    }
+                    
+
+                }
+            }
+            // Copy current ICriteria instance to the new one for getting the pagination records.
+            ICriteria pageCrit = CriteriaTransformer.Clone(crit);
+            if (sort != null)
+            {
+                crit.AddOrder(GetOrder(sort));
+            }
+            return crit.List<T>();
+        }
+        /// <summary>
         /// 获取一览
         /// </summary>
         /// <param name="queryList"></param>
@@ -398,8 +446,8 @@ namespace DataAccessDLL
             {
                 foreach (var query in queryList)
                 {
-                    crit.Add(GetExpression(query));
-                }
+                    crit.Add(GetExpression(query));                    
+                }               
             }
             // Copy current ICriteria instance to the new one for getting the pagination records.
             ICriteria pageCrit = CriteriaTransformer.Clone(crit);

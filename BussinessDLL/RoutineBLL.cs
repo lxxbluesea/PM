@@ -55,8 +55,16 @@ namespace BussinessDLL
                     entity.Status = 1;
                     entity.Weight = 1;
                     #endregion
-                    dao.AddRoutine(entity, node, listWork);
-                    jsonreslut.data = entity.ID;
+                    try
+                    {
+                        dao.AddRoutine(entity, node, listWork);
+                        jsonreslut.data = entity.ID;
+                    }
+                    catch (Exception ex)
+                    {
+                        entity.ID = null;
+                        throw ex;
+                    }
                 }
                 //编辑
                 else

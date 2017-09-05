@@ -100,7 +100,7 @@ namespace ProjectManagement.Forms.WBS
             int SelectedIndex = -1;
             intWorkload.Value = WorkLoad;
             intActualWorkload.Value = ActualWorkLoad;
-            List<Stakeholders> list = new StakeholdersBLL().GetList(ProjectId, null);//所有可选人
+            List<Stakeholders> list = new StakeholdersBLL().GetList(ProjectId, 1);//所有可选人
             for (int i = 0; i < list.Count; i++)
             {
                 ComboItem item = new ComboItem();
@@ -111,7 +111,7 @@ namespace ProjectManagement.Forms.WBS
                     if (list[i].IsPublic == 1)
                         SelectedIndex = i;
                 }
-                else if (list[i].ID.Substring(0, 36).Equals(ManagerID))
+                else if (list[i].ID.Equals(ManagerID))
                     SelectedIndex = i;
                 cbManager.Items.Add(item);
             }

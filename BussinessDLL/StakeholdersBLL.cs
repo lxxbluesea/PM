@@ -68,11 +68,13 @@ namespace BussinessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = ProjectID });
-            if (SendType != null)
-                qf.Add(new QueryField() { Name = "SendType", Type = QueryFieldType.Numeric, Value = SendType });
+            //if (SendType != null)
+            //    qf.Add(new QueryField() { Name = "SendType", Type = QueryFieldType.Numeric, Value = SendType });
+            if (SendType != null && SendType != 0)
+                qf.Add(new QueryField() { Name = "IsManage", Type = QueryFieldType.Numeric, Value = SendType });
             qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
             SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
-            List<Stakeholders> list = new Repository<Stakeholders>().GetList(qf, sf) as List<Stakeholders>;
+            List<Stakeholders> list = new Repository<Stakeholders>().GetListForStakeholder(qf, sf) as List<Stakeholders>;
             return list;
 
         }

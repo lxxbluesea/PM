@@ -69,5 +69,14 @@ namespace DomainDLL
             get;
             set;
         }
+
+        /// <summary>
+        /// 说明
+        /// </summary>
+        public virtual string Desc
+        {
+            get;
+            set;
+        }
     }
 }

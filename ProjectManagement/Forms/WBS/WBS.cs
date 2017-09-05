@@ -102,6 +102,7 @@ namespace ProjectManagement.Forms.WBS
             {
                 PID = ProjectId,
                 Name = txtNode.Text,
+                Desc=txt_Desc.Text,
                 ParentID = txtParent.Tag == null ? "" : txtParent.Tag.ToString(),
                 PType = 0
             };
@@ -125,7 +126,8 @@ namespace ProjectManagement.Forms.WBS
             #endregion
 
             JsonResult result = bll.SaveNode(node);
-            MessageBox.Show(result.msg);
+            if (!result.result)
+                MessageBox.Show(result.msg);
             if (result.result)
             {
                 ClearNode();
@@ -258,15 +260,20 @@ namespace ProjectManagement.Forms.WBS
             {
                 reName.Close();
                 _SelectNode = node;
-                DataHelper.SetTreeDate(advTree1, ProjectId);//绑定树形数据
-                DataHelper.SetTreeSelectByValue(advTree1, _SelectNode.ID);
-                FileHelper.WBSMoveFloder(UploadType.WBS,_SelectNode.ID);//迁移文件夹
-
-                //主框更新
-                MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
-                mainForm.ReloadCurrentNode(node);
-                mainForm.RelaodTree();
+                ReloadNode(_SelectNode);
             }
+        }
+
+        void ReloadNode(PNode node)
+        {
+            DataHelper.SetTreeDate(advTree1, ProjectId);//绑定树形数据
+            DataHelper.SetTreeSelectByValue(advTree1, _SelectNode.ID);
+            FileHelper.WBSMoveFloder(UploadType.WBS, _SelectNode.ID);//迁移文件夹
+
+            //主框更新
+            MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
+            mainForm.ReloadCurrentNode(node);
+            mainForm.RelaodTree();
         }
 
         /// <summary>
@@ -500,8 +507,15 @@ namespace ProjectManagement.Forms.WBS
 
             txtParent.Text = node.Text;
             txtParent.Tag = node.Name;
+            
             txtJFWParent.Text = node.Text;
             txtJFWParent.Tag = node.Name;
+
+            _SelectNode = JsonHelper.StringToEntity<PNode>(node.TagString);
+
+            txt_edit_node_name.Text = _SelectNode.Name;
+            txt_edit_node_desc.Text = _SelectNode.Desc;
+
         }
         /// <summary>
         /// 上方节点信息清空
@@ -511,6 +525,7 @@ namespace ProjectManagement.Forms.WBS
         {
             txtNode.Clear();
             txtNode.Tag = "";
+            txt_Desc.Clear();
             //txtParent.Clear();
             //txtParent.Tag = "";
         }
@@ -674,6 +689,25 @@ namespace ProjectManagement.Forms.WBS
         }
 
         #endregion
+
+        private void btn_save_node_Click(object sender, EventArgs e)
+        {
+            if (_SelectNode != null)
+            {
+                _SelectNode.Name = txt_edit_node_name.Text;
+                _SelectNode.Desc = txt_edit_node_desc.Text;
+                JsonResult result=bll.SaveNode(_SelectNode);
+                MessageBox.Show(result.msg);
+                if(result.result)
+                {
+                    ReloadNode(_SelectNode);
+                }
+            }
+            else
+            {
+                MessageBox.Show("当前结点为空");
+            }
+        }
 
 
     }

@@ -1425,5 +1425,15 @@ namespace ProjectManagement
             }
             return true;
         }
+
+        private void BtnItem_ProjectList_Click(object sender, EventArgs e)
+        {
+            Forms.Project.ProjectList pl = new Forms.Project.ProjectList();
+            if (pl.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+
+        }
     }
 }

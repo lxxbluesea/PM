@@ -148,6 +148,7 @@ namespace ProjectManagement.Forms.Stakeholder
             stakeholders.Name = txtName.Text.ToString();
             //项目经理
             stakeholders.IsPublic = cbIspublic.Checked ? 1 : 0;
+            stakeholders.IsManage = cb_IsManage.Checked ? 1 : 0;
             //发送方式
             ComboItem cbisend = (ComboItem)cmbSendType.SelectedItem;
             if (cbisend != null)
@@ -195,6 +196,8 @@ namespace ProjectManagement.Forms.Stakeholder
             stakeholders.Wechat = row.Cells["Wechat"].Value.ToString();
             if (row.Cells["IsPublic"].Value.ToString() != "")
                 stakeholders.IsPublic = int.Parse(row.Cells["IsPublic"].Value.ToString());
+            if (row.Cells["IsManage"].Value.ToString() != "")
+                stakeholders.IsManage = int.Parse(row.Cells["IsManage"].Value.ToString());
             if (row.Cells["SendType"].Value.ToString()!="")
                 stakeholders.SendType = int.Parse(row.Cells["SendType"].Value.ToString());
             stakeholders.Status = int.Parse(row.Cells["Status"].Value.ToString());
@@ -220,11 +223,17 @@ namespace ProjectManagement.Forms.Stakeholder
             DataHelper.SetComboBoxSelectItemByValue(cmbType, stakeholders.Type.ToString());
             DataHelper.SetComboBoxSelectItemByValue(cmbSendType, stakeholders.SendType.ToString());
             cbIspublic.CheckValue = stakeholders.IsPublic;
+            cb_IsManage.CheckValue = stakeholders.IsManage;
             dtiCreated.Value = stakeholders.CREATED;
             //cbIspublic.CheckValue = Convert.ToInt32(string.IsNullOrEmpty(row.Cells["IsPublic"].Value.ToString()) ? "0" : row.Cells["IsPublic"].Value.ToString());
             //ID = row.Cells["ID"].Value.ToString();
             //dtiCreated.Value = string.IsNullOrEmpty(ID) ? DateTime.Now : Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
             //CREATED = Convert.ToDateTime(row.Cells["CREATED"].Value.ToString());
+
+            if (ProjectId == stakeholders.PID)
+                groupPanel2.Enabled = true;
+            else
+                groupPanel2.Enabled = false;
 
         }
         #endregion

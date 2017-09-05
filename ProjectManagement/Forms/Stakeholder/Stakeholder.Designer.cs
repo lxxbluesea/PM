@@ -48,6 +48,7 @@
             this.gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.cmbSendType = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -58,6 +59,7 @@
             this.dtiCreated = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.btnClear = new DevComponents.DotNetBar.ButtonX();
+            this.cb_IsManage = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.cbIspublic = new DevComponents.DotNetBar.Controls.CheckBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtWechat = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -172,6 +174,7 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn13);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn14);
             this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn15);
+            this.superGridControl1.PrimaryGrid.Columns.Add(this.gridColumn2);
             this.superGridControl1.PrimaryGrid.MultiSelect = false;
             this.superGridControl1.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.RowWithCellHighlight;
             this.superGridControl1.Size = new System.Drawing.Size(934, 276);
@@ -303,6 +306,12 @@
             this.gridColumn15.Name = "Status";
             this.gridColumn15.Visible = false;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.HeaderText = "公共资源";
+            this.gridColumn2.Name = "IsManage";
+            this.gridColumn2.Visible = false;
+            // 
             // groupPanel2
             // 
             this.groupPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -317,6 +326,7 @@
             this.groupPanel2.Controls.Add(this.dtiCreated);
             this.groupPanel2.Controls.Add(this.btnSave);
             this.groupPanel2.Controls.Add(this.btnClear);
+            this.groupPanel2.Controls.Add(this.cb_IsManage);
             this.groupPanel2.Controls.Add(this.cbIspublic);
             this.groupPanel2.Controls.Add(this.labelX9);
             this.groupPanel2.Controls.Add(this.txtWechat);
@@ -528,13 +538,27 @@
             this.btnClear.Text = "清空";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // cb_IsManage
+            // 
+            // 
+            // 
+            // 
+            this.cb_IsManage.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.cb_IsManage.Location = new System.Drawing.Point(541, 108);
+            this.cb_IsManage.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_IsManage.Name = "cb_IsManage";
+            this.cb_IsManage.Size = new System.Drawing.Size(75, 18);
+            this.cb_IsManage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cb_IsManage.TabIndex = 11;
+            this.cb_IsManage.Text = "公共资源";
+            // 
             // cbIspublic
             // 
             // 
             // 
             // 
             this.cbIspublic.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.cbIspublic.Location = new System.Drawing.Point(541, 105);
+            this.cbIspublic.Location = new System.Drawing.Point(541, 74);
             this.cbIspublic.Margin = new System.Windows.Forms.Padding(2);
             this.cbIspublic.Name = "cbIspublic";
             this.cbIspublic.Size = new System.Drawing.Size(75, 18);
@@ -886,5 +910,7 @@
         private DevComponents.DotNetBar.LabelX labelX11;
         private Control.PagerControl pagerControl1;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20;
+        private DevComponents.DotNetBar.Controls.CheckBoxX cb_IsManage;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2;
     }
 }

@@ -177,6 +177,48 @@ namespace DataAccessDLL
             }
         }
 
+
+        /// <summary>
+        /// 交付物节点的修改
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="hisFlg"></param>
+        /// <param name="id"></param>
+        public virtual void UpdatedDeliverables(DeliverablesJBXX new_jbxx, PNode new_node,  List<DeliverablesWork> listWork)
+        {
+            ISession s = NHHelper.GetCurrentSession();
+            try
+            {
+                s.BeginTransaction();
+                s.Update(new_jbxx);
+                s.Update(new_node);
+                //s.Update(old_jbxx);
+                //s.Update(old_node);
+                if (listWork != null)
+                {
+                    s.CreateQuery("delete from DeliverablesWork where JBXXID='" + new_jbxx.ID + "';").ExecuteUpdate();
+                    foreach (DeliverablesWork entity in listWork)
+                    {
+                        entity.ID = Guid.NewGuid().ToString();
+                        entity.CREATED = DateTime.Now;
+                        entity.JBXXID = new_jbxx.ID;
+                        entity.Manager = entity.Manager;
+                        entity.Status = 1;
+                        s.Save(entity);
+                    }
+                }
+                UpdateProject(s);//更新项目时间
+                s.Transaction.Commit();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                s.Transaction.Rollback();
+                s.Close();
+                throw new Exception("更新失败", ex);
+            }
+        }
+
         /// <summary>
         /// 根据项目ID取得项目结点ID
         /// Created:2017.04.07(Xuxb)

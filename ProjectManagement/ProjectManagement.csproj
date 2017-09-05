@@ -261,6 +261,12 @@
     <Compile Include="Forms\Project\ProjectInfo.Designer.cs">
       <DependentUpon>ProjectInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Project\ProjectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Project\ProjectList.Designer.cs">
+      <DependentUpon>ProjectList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Project\Supervisor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -526,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Project\ProjectInfo.resx">
       <DependentUpon>ProjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Project\ProjectList.resx">
+      <DependentUpon>ProjectList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Project\Supervisor.resx">
       <DependentUpon>Supervisor.cs</DependentUpon>
