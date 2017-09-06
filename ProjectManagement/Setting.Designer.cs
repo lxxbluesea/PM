@@ -445,7 +445,7 @@
             this.panelSend.ContainerControlProcessDialogKey = true;
             this.panelSend.DragDropSupport = true;
             this.panelSend.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.panelSend.Location = new System.Drawing.Point(71, 27);
+            this.panelSend.Location = new System.Drawing.Point(71, 28);
             this.panelSend.Name = "panelSend";
             this.panelSend.Size = new System.Drawing.Size(220, 200);
             this.panelSend.TabIndex = 5;
@@ -521,7 +521,7 @@
             this.panelCopyTo.ContainerControlProcessDialogKey = true;
             this.panelCopyTo.DragDropSupport = true;
             this.panelCopyTo.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.panelCopyTo.Location = new System.Drawing.Point(71, 53);
+            this.panelCopyTo.Location = new System.Drawing.Point(71, 54);
             this.panelCopyTo.Name = "panelCopyTo";
             this.panelCopyTo.Size = new System.Drawing.Size(220, 200);
             this.panelCopyTo.TabIndex = 6;
@@ -532,12 +532,12 @@
             // 
             this.btnSaveWeekly.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSaveWeekly.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveWeekly.Location = new System.Drawing.Point(149, 245);
+            this.btnSaveWeekly.Location = new System.Drawing.Point(70, 254);
             this.btnSaveWeekly.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveWeekly.Name = "btnSaveWeekly";
             this.btnSaveWeekly.Size = new System.Drawing.Size(56, 18);
             this.btnSaveWeekly.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveWeekly.TabIndex = 6;
+            this.btnSaveWeekly.TabIndex = 5;
             this.btnSaveWeekly.Text = "保存";
             this.btnSaveWeekly.Click += new System.EventHandler(this.btnSaveWeekly_Click);
             // 
@@ -545,12 +545,12 @@
             // 
             this.btnClearWeekly.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearWeekly.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearWeekly.Location = new System.Drawing.Point(62, 245);
+            this.btnClearWeekly.Location = new System.Drawing.Point(159, 254);
             this.btnClearWeekly.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearWeekly.Name = "btnClearWeekly";
             this.btnClearWeekly.Size = new System.Drawing.Size(56, 18);
             this.btnClearWeekly.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnClearWeekly.TabIndex = 5;
+            this.btnClearWeekly.TabIndex = 6;
             this.btnClearWeekly.Text = "清空";
             this.btnClearWeekly.Click += new System.EventHandler(this.btnClearWeekly_Click);
             // 

@@ -877,12 +877,15 @@ namespace ProjectManagement
             WbsTree.Nodes.Clear();
             MainSuperTabControl.Tabs.Clear();
 
-            startPage = new StartPage();
-            ShowChildForm(startPage);
+
 
             List<Project> listPro = bll.GetProList();
             if (listPro.Count == 0)
+            {
+                startPage = new StartPage();
+                ShowChildForm(startPage);
                 return;
+            }
             foreach (Project project in listPro)
             {
                 ButtonItem item = new ButtonItem();
@@ -900,8 +903,8 @@ namespace ProjectManagement
                 ProjectNo = icProlist.SubItems[0].Tag.ToString();
                 DataHelper.SetMainTreeDate(WbsTree, ProjectId);//绑定树形数据
                 //MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
-                //startPage = new StartPage();
-                //ShowChildForm(startPage);//创建启动窗体
+                startPage = new StartPage();
+                ShowChildForm(startPage);//创建启动窗体
                 ////ShowChildForm(new ProjectInfo());//显示项目的基本信息
                 ////加载项目的基本信息tab
                 //SuperTabItem tabItem = MainSuperTabControl.CreateTab("基本信息");

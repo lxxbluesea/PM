@@ -337,7 +337,7 @@ namespace ProjectManagement
             }
             #endregion
             #region 发送
-            List<Stakeholders> listSendTo = new StakeholdersBLL().GetList(ProjectId, null);//所有可选人
+            List<Stakeholders> listSendTo = new StakeholdersBLL().GetList(ProjectId, 1);//所有可选人
             string configSendTo = setting.WeeklySend;//配置里的发送人
             configSendTo = string.IsNullOrEmpty(configSendTo) ? "" : configSendTo;
             foreach (Stakeholders member in listSendTo)
@@ -358,7 +358,7 @@ namespace ProjectManagement
             }
             #endregion
             #region 抄送
-            List<Stakeholders> listCopyTo = new StakeholdersBLL().GetList(ProjectId, null);//所有可选人
+            List<Stakeholders> listCopyTo = new StakeholdersBLL().GetList(ProjectId, 1);//所有可选人
             string configCopyTo = setting.WeeklyCC;//配置里的发送人
             configCopyTo = string.IsNullOrEmpty(configCopyTo) ? "" : configCopyTo;
             foreach (Stakeholders member in listCopyTo)

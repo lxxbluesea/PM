@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelJFW = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panelContent = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnClearProgress = new DevComponents.DotNetBar.ButtonX();
             this.txtProgressDesc = new System.Windows.Forms.TextBox();
             this.btnSaveProgress = new DevComponents.DotNetBar.ButtonX();
@@ -84,7 +84,7 @@
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.panelNode = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panelPub = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnPAdd = new DevComponents.DotNetBar.ButtonX();
             this.txtPSend = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnPSend = new DevComponents.DotNetBar.ButtonX();
@@ -112,7 +112,7 @@
             this.txtParent = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.panelContent = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panelNode = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.txt_edit_node_desc = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -120,78 +120,78 @@
             this.txt_edit_node_name = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelX20 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.panelPub = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.panelJFW.SuspendLayout();
+            this.txt_Desc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.panelJFW = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStart)).BeginInit();
-            this.panelNode.SuspendLayout();
-            this.panelContent.SuspendLayout();
             this.panelPub.SuspendLayout();
+            this.panelNode.SuspendLayout();
+            this.panelJFW.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelJFW
+            // panelContent
             // 
-            this.panelJFW.AllowDrop = true;
-            this.panelJFW.AutoScroll = true;
-            this.panelJFW.AutoScrollMinSize = new System.Drawing.Size(100, 0);
-            this.panelJFW.BackColor = System.Drawing.Color.Transparent;
-            this.panelJFW.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelJFW.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.panelJFW.Controls.Add(this.btnClearProgress);
-            this.panelJFW.Controls.Add(this.txtProgressDesc);
-            this.panelJFW.Controls.Add(this.btnSaveProgress);
-            this.panelJFW.Controls.Add(this.label1);
-            this.panelJFW.Controls.Add(this.txtFilePath);
-            this.panelJFW.Controls.Add(this.btnClearFile);
-            this.panelJFW.Controls.Add(this.btnSaveFile);
-            this.panelJFW.Controls.Add(this.txtFileName);
-            this.panelJFW.Controls.Add(this.buttonX8);
-            this.panelJFW.Controls.Add(this.gridFile);
-            this.panelJFW.Controls.Add(this.btnSelectFile);
-            this.panelJFW.Controls.Add(this.txtFileDesc);
-            this.panelJFW.Controls.Add(this.bar1);
-            this.panelJFW.Controls.Add(this.labelX12);
-            this.panelJFW.Controls.Add(this.labelX13);
-            this.panelJFW.Controls.Add(this.labelX11);
-            this.panelJFW.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelJFW.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelJFW.Location = new System.Drawing.Point(585, 1);
-            this.panelJFW.Margin = new System.Windows.Forms.Padding(2);
-            this.panelJFW.Name = "panelJFW";
-            this.panelJFW.Size = new System.Drawing.Size(300, 536);
-            // 
-            // 
-            // 
-            this.panelJFW.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelJFW.Style.BackColorGradientAngle = 90;
-            this.panelJFW.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelJFW.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelJFW.Style.BorderBottomWidth = 1;
-            this.panelJFW.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelJFW.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelJFW.Style.BorderLeftWidth = 1;
-            this.panelJFW.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelJFW.Style.BorderRightWidth = 1;
-            this.panelJFW.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelJFW.Style.BorderTopWidth = 1;
-            this.panelJFW.Style.CornerDiameter = 4;
-            this.panelJFW.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.panelJFW.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.panelJFW.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelJFW.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.panelContent.AllowDrop = true;
+            this.panelContent.AutoScroll = true;
+            this.panelContent.AutoScrollMinSize = new System.Drawing.Size(100, 0);
+            this.panelContent.BackColor = System.Drawing.Color.Transparent;
+            this.panelContent.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelContent.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelContent.Controls.Add(this.btnClearProgress);
+            this.panelContent.Controls.Add(this.txtProgressDesc);
+            this.panelContent.Controls.Add(this.btnSaveProgress);
+            this.panelContent.Controls.Add(this.label1);
+            this.panelContent.Controls.Add(this.txtFilePath);
+            this.panelContent.Controls.Add(this.btnClearFile);
+            this.panelContent.Controls.Add(this.btnSaveFile);
+            this.panelContent.Controls.Add(this.txtFileName);
+            this.panelContent.Controls.Add(this.buttonX8);
+            this.panelContent.Controls.Add(this.gridFile);
+            this.panelContent.Controls.Add(this.btnSelectFile);
+            this.panelContent.Controls.Add(this.txtFileDesc);
+            this.panelContent.Controls.Add(this.bar1);
+            this.panelContent.Controls.Add(this.labelX12);
+            this.panelContent.Controls.Add(this.labelX13);
+            this.panelContent.Controls.Add(this.labelX11);
+            this.panelContent.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelContent.Location = new System.Drawing.Point(585, 1);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(300, 536);
             // 
             // 
             // 
-            this.panelJFW.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelContent.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelContent.Style.BackColorGradientAngle = 90;
+            this.panelContent.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelContent.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelContent.Style.BorderBottomWidth = 1;
+            this.panelContent.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelContent.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelContent.Style.BorderLeftWidth = 1;
+            this.panelContent.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelContent.Style.BorderRightWidth = 1;
+            this.panelContent.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelContent.Style.BorderTopWidth = 1;
+            this.panelContent.Style.CornerDiameter = 4;
+            this.panelContent.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.panelContent.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.panelContent.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelContent.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.panelJFW.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelJFW.TabIndex = 2;
-            this.panelJFW.Text = "更新交付物";
+            this.panelContent.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.panelContent.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelContent.TabIndex = 2;
+            this.panelContent.Text = "更新交付物";
             // 
             // btnClearProgress
             // 
@@ -720,7 +720,7 @@
             this.btnClearJBXX.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClearJBXX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClearJBXX.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClearJBXX.Location = new System.Drawing.Point(172, 491);
+            this.btnClearJBXX.Location = new System.Drawing.Point(160, 491);
             this.btnClearJBXX.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearJBXX.Name = "btnClearJBXX";
             this.btnClearJBXX.Size = new System.Drawing.Size(56, 18);
@@ -808,6 +808,7 @@
             this.dtEnd.Size = new System.Drawing.Size(207, 21);
             this.dtEnd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtEnd.TabIndex = 4;
+            this.dtEnd.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
             // dtStart
             // 
@@ -930,63 +931,63 @@
             this.labelX4.TabIndex = 0;
             this.labelX4.Text = "*交付物名称：";
             // 
-            // panelNode
+            // panelPub
             // 
-            this.panelNode.BackColor = System.Drawing.Color.Transparent;
-            this.panelNode.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelNode.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.panelNode.Controls.Add(this.btnPAdd);
-            this.panelNode.Controls.Add(this.txtPSend);
-            this.panelNode.Controls.Add(this.btnPSend);
-            this.panelNode.Controls.Add(this.Btn_Cancel);
-            this.panelNode.Controls.Add(this.txtPCC);
-            this.panelNode.Controls.Add(this.btnAddCC);
-            this.panelNode.Controls.Add(this.txtPTitle);
-            this.panelNode.Controls.Add(this.btnAddSend);
-            this.panelNode.Controls.Add(this.txtPContent);
-            this.panelNode.Controls.Add(this.gridPFile);
-            this.panelNode.Controls.Add(this.buttonX1);
-            this.panelNode.Controls.Add(this.labelX14);
-            this.panelNode.Controls.Add(this.labelX15);
-            this.panelNode.Controls.Add(this.labelX16);
-            this.panelNode.Controls.Add(this.labelX17);
-            this.panelNode.Controls.Add(this.labelX2);
-            this.panelNode.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelNode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNode.Location = new System.Drawing.Point(885, 1);
-            this.panelNode.Margin = new System.Windows.Forms.Padding(2);
-            this.panelNode.Name = "panelNode";
-            this.panelNode.Size = new System.Drawing.Size(365, 536);
-            // 
-            // 
-            // 
-            this.panelNode.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelNode.Style.BackColorGradientAngle = 90;
-            this.panelNode.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelNode.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelNode.Style.BorderBottomWidth = 1;
-            this.panelNode.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelNode.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelNode.Style.BorderLeftWidth = 1;
-            this.panelNode.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelNode.Style.BorderRightWidth = 1;
-            this.panelNode.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelNode.Style.BorderTopWidth = 1;
-            this.panelNode.Style.CornerDiameter = 4;
-            this.panelNode.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.panelNode.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.panelNode.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelNode.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.panelPub.BackColor = System.Drawing.Color.Transparent;
+            this.panelPub.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelPub.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelPub.Controls.Add(this.btnPAdd);
+            this.panelPub.Controls.Add(this.txtPSend);
+            this.panelPub.Controls.Add(this.btnPSend);
+            this.panelPub.Controls.Add(this.Btn_Cancel);
+            this.panelPub.Controls.Add(this.txtPCC);
+            this.panelPub.Controls.Add(this.btnAddCC);
+            this.panelPub.Controls.Add(this.txtPTitle);
+            this.panelPub.Controls.Add(this.btnAddSend);
+            this.panelPub.Controls.Add(this.txtPContent);
+            this.panelPub.Controls.Add(this.gridPFile);
+            this.panelPub.Controls.Add(this.buttonX1);
+            this.panelPub.Controls.Add(this.labelX14);
+            this.panelPub.Controls.Add(this.labelX15);
+            this.panelPub.Controls.Add(this.labelX16);
+            this.panelPub.Controls.Add(this.labelX17);
+            this.panelPub.Controls.Add(this.labelX2);
+            this.panelPub.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelPub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPub.Location = new System.Drawing.Point(885, 1);
+            this.panelPub.Margin = new System.Windows.Forms.Padding(2);
+            this.panelPub.Name = "panelPub";
+            this.panelPub.Size = new System.Drawing.Size(365, 536);
             // 
             // 
             // 
-            this.panelNode.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelPub.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelPub.Style.BackColorGradientAngle = 90;
+            this.panelPub.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelPub.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelPub.Style.BorderBottomWidth = 1;
+            this.panelPub.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelPub.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelPub.Style.BorderLeftWidth = 1;
+            this.panelPub.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelPub.Style.BorderRightWidth = 1;
+            this.panelPub.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelPub.Style.BorderTopWidth = 1;
+            this.panelPub.Style.CornerDiameter = 4;
+            this.panelPub.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.panelPub.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.panelPub.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelPub.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.panelNode.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelNode.TabIndex = 3;
-            this.panelNode.Text = "信息发布";
+            this.panelPub.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.panelPub.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelPub.TabIndex = 3;
+            this.panelPub.Text = "信息发布";
             // 
             // btnPAdd
             // 
@@ -1359,62 +1360,62 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "*当前结点：";
             // 
-            // panelContent
+            // panelNode
             // 
-            this.panelContent.AutoScroll = true;
-            this.panelContent.BackColor = System.Drawing.Color.Transparent;
-            this.panelContent.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelContent.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.panelContent.Controls.Add(this.labelX8);
-            this.panelContent.Controls.Add(this.line1);
-            this.panelContent.Controls.Add(this.txt_edit_node_desc);
-            this.panelContent.Controls.Add(this.btn_save_node);
-            this.panelContent.Controls.Add(this.txt_edit_node_name);
-            this.panelContent.Controls.Add(this.labelX19);
-            this.panelContent.Controls.Add(this.labelX20);
-            this.panelContent.Controls.Add(this.textBoxX1);
-            this.panelContent.Controls.Add(this.txtParent);
-            this.panelContent.Controls.Add(this.btnClearNode);
-            this.panelContent.Controls.Add(this.btnSaveNode);
-            this.panelContent.Controls.Add(this.txtNode);
-            this.panelContent.Controls.Add(this.labelX1);
-            this.panelContent.Controls.Add(this.labelX3);
-            this.panelContent.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelContent.Location = new System.Drawing.Point(5, 1);
-            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(280, 536);
-            // 
-            // 
-            // 
-            this.panelContent.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelContent.Style.BackColorGradientAngle = 90;
-            this.panelContent.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelContent.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelContent.Style.BorderBottomWidth = 1;
-            this.panelContent.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelContent.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelContent.Style.BorderLeftWidth = 1;
-            this.panelContent.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelContent.Style.BorderRightWidth = 1;
-            this.panelContent.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelContent.Style.BorderTopWidth = 1;
-            this.panelContent.Style.CornerDiameter = 4;
-            this.panelContent.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.panelContent.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.panelContent.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelContent.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.panelNode.AutoScroll = true;
+            this.panelNode.BackColor = System.Drawing.Color.Transparent;
+            this.panelNode.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelNode.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelNode.Controls.Add(this.labelX8);
+            this.panelNode.Controls.Add(this.line1);
+            this.panelNode.Controls.Add(this.txt_edit_node_desc);
+            this.panelNode.Controls.Add(this.btn_save_node);
+            this.panelNode.Controls.Add(this.txt_edit_node_name);
+            this.panelNode.Controls.Add(this.labelX19);
+            this.panelNode.Controls.Add(this.labelX20);
+            this.panelNode.Controls.Add(this.txt_Desc);
+            this.panelNode.Controls.Add(this.txtParent);
+            this.panelNode.Controls.Add(this.btnClearNode);
+            this.panelNode.Controls.Add(this.btnSaveNode);
+            this.panelNode.Controls.Add(this.txtNode);
+            this.panelNode.Controls.Add(this.labelX1);
+            this.panelNode.Controls.Add(this.labelX3);
+            this.panelNode.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelNode.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelNode.Location = new System.Drawing.Point(5, 1);
+            this.panelNode.Margin = new System.Windows.Forms.Padding(2);
+            this.panelNode.Name = "panelNode";
+            this.panelNode.Size = new System.Drawing.Size(280, 536);
             // 
             // 
             // 
-            this.panelContent.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelNode.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelNode.Style.BackColorGradientAngle = 90;
+            this.panelNode.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelNode.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelNode.Style.BorderBottomWidth = 1;
+            this.panelNode.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelNode.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelNode.Style.BorderLeftWidth = 1;
+            this.panelNode.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelNode.Style.BorderRightWidth = 1;
+            this.panelNode.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelNode.Style.BorderTopWidth = 1;
+            this.panelNode.Style.CornerDiameter = 4;
+            this.panelNode.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.panelNode.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.panelNode.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelNode.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.panelContent.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelContent.TabIndex = 0;
-            this.panelContent.Text = "添加/编辑结点";
+            this.panelNode.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.panelNode.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelNode.TabIndex = 0;
+            this.panelNode.Text = "添加/编辑结点";
             // 
             // labelX8
             // 
@@ -1464,6 +1465,7 @@
             this.btn_save_node.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btn_save_node.TabIndex = 7;
             this.btn_save_node.Text = "保存";
+            this.btn_save_node.Click += new System.EventHandler(this.btn_save_node_Click);
             // 
             // txt_edit_node_name
             // 
@@ -1510,80 +1512,80 @@
             this.labelX20.TabIndex = 10;
             this.labelX20.Text = "*结点名称：";
             // 
-            // textBoxX1
+            // txt_Desc
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(69, 63);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.PreventEnterBeep = true;
-            this.textBoxX1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxX1.Size = new System.Drawing.Size(202, 80);
-            this.textBoxX1.TabIndex = 2;
+            this.txt_Desc.Border.Class = "TextBoxBorder";
+            this.txt_Desc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_Desc.Location = new System.Drawing.Point(69, 63);
+            this.txt_Desc.Multiline = true;
+            this.txt_Desc.Name = "txt_Desc";
+            this.txt_Desc.PreventEnterBeep = true;
+            this.txt_Desc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_Desc.Size = new System.Drawing.Size(202, 80);
+            this.txt_Desc.TabIndex = 2;
             // 
-            // panelPub
+            // panelJFW
             // 
-            this.panelPub.BackColor = System.Drawing.Color.Transparent;
-            this.panelPub.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelPub.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.panelPub.Controls.Add(this.sdWeight);
-            this.panelPub.Controls.Add(this.labelX7);
-            this.panelPub.Controls.Add(this.btnAddManager);
-            this.panelPub.Controls.Add(this.labelX5);
-            this.panelPub.Controls.Add(this.gridManager);
-            this.panelPub.Controls.Add(this.labelX6);
-            this.panelPub.Controls.Add(this.txtNode2);
-            this.panelPub.Controls.Add(this.labelX9);
-            this.panelPub.Controls.Add(this.txtJFW);
-            this.panelPub.Controls.Add(this.dtStart);
-            this.panelPub.Controls.Add(this.txtDesc);
-            this.panelPub.Controls.Add(this.dtEnd);
-            this.panelPub.Controls.Add(this.intWorkload);
-            this.panelPub.Controls.Add(this.btnClearJBXX);
-            this.panelPub.Controls.Add(this.btnSaveJBXX);
-            this.panelPub.Controls.Add(this.labelX10);
-            this.panelPub.Controls.Add(this.labelX4);
-            this.panelPub.Controls.Add(this.labelX18);
-            this.panelPub.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelPub.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelPub.Location = new System.Drawing.Point(285, 1);
-            this.panelPub.Margin = new System.Windows.Forms.Padding(2);
-            this.panelPub.Name = "panelPub";
-            this.panelPub.Size = new System.Drawing.Size(300, 536);
-            // 
-            // 
-            // 
-            this.panelPub.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelPub.Style.BackColorGradientAngle = 90;
-            this.panelPub.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelPub.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelPub.Style.BorderBottomWidth = 1;
-            this.panelPub.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelPub.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelPub.Style.BorderLeftWidth = 1;
-            this.panelPub.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelPub.Style.BorderRightWidth = 1;
-            this.panelPub.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.panelPub.Style.BorderTopWidth = 1;
-            this.panelPub.Style.CornerDiameter = 4;
-            this.panelPub.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.panelPub.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.panelPub.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelPub.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.panelJFW.BackColor = System.Drawing.Color.Transparent;
+            this.panelJFW.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelJFW.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelJFW.Controls.Add(this.sdWeight);
+            this.panelJFW.Controls.Add(this.labelX7);
+            this.panelJFW.Controls.Add(this.btnAddManager);
+            this.panelJFW.Controls.Add(this.labelX5);
+            this.panelJFW.Controls.Add(this.gridManager);
+            this.panelJFW.Controls.Add(this.labelX6);
+            this.panelJFW.Controls.Add(this.txtNode2);
+            this.panelJFW.Controls.Add(this.labelX9);
+            this.panelJFW.Controls.Add(this.txtJFW);
+            this.panelJFW.Controls.Add(this.dtStart);
+            this.panelJFW.Controls.Add(this.txtDesc);
+            this.panelJFW.Controls.Add(this.dtEnd);
+            this.panelJFW.Controls.Add(this.intWorkload);
+            this.panelJFW.Controls.Add(this.btnClearJBXX);
+            this.panelJFW.Controls.Add(this.btnSaveJBXX);
+            this.panelJFW.Controls.Add(this.labelX10);
+            this.panelJFW.Controls.Add(this.labelX4);
+            this.panelJFW.Controls.Add(this.labelX18);
+            this.panelJFW.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelJFW.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelJFW.Location = new System.Drawing.Point(285, 1);
+            this.panelJFW.Margin = new System.Windows.Forms.Padding(2);
+            this.panelJFW.Name = "panelJFW";
+            this.panelJFW.Size = new System.Drawing.Size(300, 536);
             // 
             // 
             // 
-            this.panelPub.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelJFW.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelJFW.Style.BackColorGradientAngle = 90;
+            this.panelJFW.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelJFW.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelJFW.Style.BorderBottomWidth = 1;
+            this.panelJFW.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelJFW.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelJFW.Style.BorderLeftWidth = 1;
+            this.panelJFW.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelJFW.Style.BorderRightWidth = 1;
+            this.panelJFW.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.panelJFW.Style.BorderTopWidth = 1;
+            this.panelJFW.Style.CornerDiameter = 4;
+            this.panelJFW.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.panelJFW.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.panelJFW.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelJFW.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.panelPub.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelPub.TabIndex = 1;
-            this.panelPub.Text = "添加/编辑交付物";
+            this.panelJFW.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.panelJFW.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.panelJFW.TabIndex = 1;
+            this.panelJFW.Text = "添加/编辑交付物";
             // 
             // NormalOperation
             // 
@@ -1592,29 +1594,29 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(100, 100);
             this.ClientSize = new System.Drawing.Size(1255, 539);
-            this.Controls.Add(this.panelNode);
-            this.Controls.Add(this.panelJFW);
             this.Controls.Add(this.panelPub);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelJFW);
+            this.Controls.Add(this.panelNode);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NormalOperation";
             this.Text = "当前操作";
-            this.panelJFW.ResumeLayout(false);
-            this.panelJFW.PerformLayout();
+            this.panelContent.ResumeLayout(false);
+            this.panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStart)).EndInit();
-            this.panelNode.ResumeLayout(false);
-            this.panelContent.ResumeLayout(false);
             this.panelPub.ResumeLayout(false);
+            this.panelNode.ResumeLayout(false);
+            this.panelJFW.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.Controls.GroupPanel panelJFW;
+        private DevComponents.DotNetBar.Controls.GroupPanel panelContent;
         private DevComponents.Editors.IntegerInput intWorkload;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtEnd;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtStart;
@@ -1625,12 +1627,12 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNode2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtJFW;
-        private DevComponents.DotNetBar.Controls.GroupPanel panelNode;
+        private DevComponents.DotNetBar.Controls.GroupPanel panelPub;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNode;
         private DevComponents.DotNetBar.Controls.TextBoxX txtParent;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.GroupPanel panelContent;
+        private DevComponents.DotNetBar.Controls.GroupPanel panelNode;
         private DevComponents.DotNetBar.ButtonX btnClearJBXX;
         private DevComponents.DotNetBar.ButtonX btnSaveJBXX;
         private DevComponents.DotNetBar.ButtonX btnClearNode;
@@ -1663,7 +1665,7 @@
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6;
-        private DevComponents.DotNetBar.Controls.GroupPanel panelPub;
+        private DevComponents.DotNetBar.Controls.GroupPanel panelJFW;
         private DevComponents.DotNetBar.ButtonX btnPAdd;
         private DevComponents.DotNetBar.ButtonX btnPSend;
         private DevComponents.DotNetBar.ButtonX Btn_Cancel;
@@ -1700,7 +1702,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProgressDesc;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_Desc;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.Controls.Line line1;
         private DevComponents.DotNetBar.Controls.TextBoxX txt_edit_node_desc;

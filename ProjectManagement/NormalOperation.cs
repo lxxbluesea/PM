@@ -62,25 +62,33 @@ namespace ProjectManagement
         /// </summary>
         private void btnSaveNode_Click(object sender, EventArgs e)
         {
-            CurrentNode.Name = txtNode.Text;
+            PNode node = new PNode()
+            {
+                PID = ProjectId,
+                Name = txtNode.Text,
+                Desc = txt_Desc.Text,
+                ParentID = CurrentNode.ID,
+                PType = 0
+            };
+            //CurrentNode.Name = txtNode.Text;
             #region 检查
-            if (string.IsNullOrEmpty(CurrentNode.PID))
+            if (string.IsNullOrEmpty(node.PID))
             {
                 MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "项目");
                 return;
             }
-            if (string.IsNullOrEmpty(CurrentNode.ParentID))
+            if (string.IsNullOrEmpty(node.ParentID))
             {
                 MessageHelper.ShowMsg(MessageID.W000000002, MessageType.Alert, "上级节点");
                 return;
             }
-            if (string.IsNullOrEmpty(CurrentNode.Name))
+            if (string.IsNullOrEmpty(node.Name))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "节点名称");
                 return;
             }
             #endregion
-            JsonResult result = new WBSBLL().SaveNode(CurrentNode);
+            JsonResult result = new WBSBLL().SaveNode(node);
             MessageBox.Show(result.msg);
             if (result.result)
             {
@@ -567,9 +575,10 @@ namespace ProjectManagement
             if (CurrentNode.PType == 1)
             {
                 //是交付物节点
-                panelNode.Enabled = false;
-                panelContent.Enabled = true;
                 panelPub.Enabled = true;
+                panelNode.Enabled = false;
+                panelJFW.Enabled = true;
+                panelContent.Enabled = true;
                 LoadJBXX();
                 LoadFile(true);
                 LoadPubInfo();
@@ -578,9 +587,10 @@ namespace ProjectManagement
             {
                 //panelJFW.Enabled = false;
                 //LoadManager();
+                panelPub.Enabled = true;
                 panelNode.Enabled = true;
+                panelJFW.Enabled = true;
                 panelContent.Enabled = false;
-                panelPub.Enabled = false;
                 ClearJBXX();
             }
         }
@@ -623,6 +633,9 @@ namespace ProjectManagement
             txtParent.Text = CurrentNode.Name;
             txtNode2.Text = CurrentNode.Name;
             txtNode.Text = "";
+
+            txt_edit_node_name.Text = CurrentNode.Name;
+            txt_edit_node_desc.Text = CurrentNode.Desc;
             //txtParent.Text = bll.GetNode(CurrentNode.ParentID).Name;
             //txtNode.Text = CurrentNode.Name;
             //txtNode2.Text = CurrentNode.Name;
@@ -735,7 +748,7 @@ namespace ProjectManagement
             {
                 CurrentNode.Name = _jbxx.Name;
                 CurrentNode.ID = result.data.ToString();
-                txtNode.Text = _jbxx.Name;
+                //txtNode.Text = _jbxx.Name;
                 FileHelper.WBSMoveFloder(UploadType.WBS,CurrentNode.ID);//迁移文件夹
                 //主框更新
                 MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
@@ -754,13 +767,15 @@ namespace ProjectManagement
         private void ClearJBXX()
         {
             txtJFW.Clear();
-            dtStart.Value = DateTime.Parse("0001/1/1 0:00:00");
-            dtEnd.Value = DateTime.Parse("0001/1/1 0:00:00");
+            dtStart.Value = DateTime.Now;
+            dtEnd.Value = DateTime.Now;
             intWorkload.Value = 1;
             sdWeight.Value = 1;
             txtDesc.Clear();
             listWork = null;
             gridManager.PrimaryGrid.DataSource = null;
+            gridFile.PrimaryGrid.DataSource = null;
+            gridPFile.PrimaryGrid.DataSource = null;
         }
 #endregion
 
@@ -927,6 +942,34 @@ namespace ProjectManagement
             #endregion
         }
         #endregion
+
+        private void btn_save_node_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_edit_node_name.Text))
+            {
+                MessageBox.Show("结点名称不能为空");
+                txt_edit_node_name.Focus();
+                return;
+            }
+
+            CurrentNode.Name = txt_edit_node_name.Text;
+            CurrentNode.Desc = txt_edit_node_desc.Text;
+            JsonResult result = new WBSBLL().SaveNode(CurrentNode);
+            MessageBox.Show(result.msg);
+            if (result.result)
+            {
+                txtNode2.Text = CurrentNode.Name;
+                txtParent.Text = CurrentNode.Name;
+
+                FileHelper.WBSMoveFloder(UploadType.WBS, CurrentNode.ID);//迁移文件夹
+                //主框更新
+                MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
+                mainForm.RelaodTree();
+            }
+            else
+                CurrentNode = bll.GetNode(CurrentNode.ID);//恢复原有数据
+
+        }
 
         #endregion
 
