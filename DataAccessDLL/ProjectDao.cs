@@ -286,7 +286,7 @@ namespace DataAccessDLL
             {
                 sql.Append(" union all ");
                 sql.Append(" select d.ID Id,'项目问题预警' as WarnningName, '问题【' || d.Name || '】在期限内没有解决' as WarnningContent from Trouble d  ");
-                sql.Append(" inner join PNode p on p.ID = d.NodeID ");
+                sql.Append(" inner join PNode p on p.ID = d.PnodeID ");
                 sql.Append(" where IFNULL(d.EndDate,date('2017-01-01')) < date('now') and d.HandleStatus <> 3");
                 sql.Append(" and d.status = 1 and p.status = 1 and p.PID=@PID ");
             }
