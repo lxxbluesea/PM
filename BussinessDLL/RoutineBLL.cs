@@ -70,7 +70,7 @@ namespace BussinessDLL
                 //编辑
                 else
                 {
-                    PNode node = new WBSBLL().GetNode(entity.ParentNodeID);
+                    PNode node = new WBSBLL().GetNode(entity.PnodeID);
                     if (node != null)
                     {
                         node.Name = entity.Name;
@@ -81,7 +81,7 @@ namespace BussinessDLL
                         node.UPDATED = DateTime.Now;
                     }
                     entity.UPDATED = DateTime.Now;
-                    entity.PnodeID = node.ID;
+                    //entity.PnodeID = node.ID;
                     dao.UpdateRoutine(entity, node, listWork);
                     //dao.UpdateRoutine(entity, oldEntity, newNode, oldNode, listWork);
                     jsonreslut.data = entity.ID;

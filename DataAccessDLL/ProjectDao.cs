@@ -197,7 +197,7 @@ namespace DataAccessDLL
             sql.Append(" sum( case when HandleStatus <> 3 then 1 else 0 end) as TroubleLeave, ");
             sql.Append(" sum( case when HandleStatus <> 3 and EndDate < date('now') then 1 else 0 end) as TroubleRest ");
             sql.Append(" from Trouble t ");
-            sql.Append(" inner join PNode p on p.ID = t.NodeId and p.status = 1 ");
+            sql.Append(" inner join PNode p on p.ID = t.ParentNodeId and p.status = 1 ");
             sql.Append(" where p.PID=@PID  and t.status=1)");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
@@ -215,12 +215,12 @@ namespace DataAccessDLL
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
             sql.Append(" select r.ID,r.Name,r.Desc,'日常工作' as WorkType from Routine r ");
-            sql.Append(" inner join PNode p on p.ID = r.NodeId and p.status = 1 ");
+            sql.Append(" inner join PNode p on p.ID = r.ParentNodeId and p.status = 1 ");
             sql.Append(" where r.StartDate < date('now','+' || @Days || ' day') and r.status = 1 and p.PID=@PID ");
             sql.Append(" and r.FinishStatus != 3");
             sql.Append(" union all ");
             sql.Append(" select t.ID,t.Name,t.Desc,'项目问题' as WorkType from Trouble t  ");
-            sql.Append(" inner join PNode p on p.ID = t.NodeId and p.status = 1 ");
+            sql.Append(" inner join PNode p on p.ID = t.ParentNodeId and p.status = 1 ");
             sql.Append(" where t.StartDate < date('now','+' || @Days || ' day') and t.status = 1 and p.PID=@PID");
             sql.Append(" and t.HandleStatus != 3");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });

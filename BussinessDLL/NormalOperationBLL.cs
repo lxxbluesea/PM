@@ -26,7 +26,7 @@ namespace BussinessDLL
                 if (!string.IsNullOrEmpty(NodeID))
                 {
                     List<QueryField> qf = new List<QueryField>();
-                    qf.Add(new QueryField() { Name = "ID", Comparison = QueryFieldComparison.like, Type = QueryFieldType.String, Value = NodeID });
+                    qf.Add(new QueryField() { Name = "ID", Comparison = QueryFieldComparison.eq, Type = QueryFieldType.String, Value = NodeID });
                     qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
                     SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
                     List<PNode> list = new Repository<PNode>().GetList(qf, sf) as List<PNode>;

@@ -27,7 +27,8 @@ namespace BussinessDLL
         public PNode GetParentNode(string NodeID)
         {
             PNode node = GetNode(NodeID);
-            return GetNode(node.ParentID);
+            return node;
+            //return GetNode(node.ParentID);
         }
 
         /// <summary>

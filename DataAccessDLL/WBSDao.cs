@@ -229,7 +229,7 @@ namespace DataAccessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select ID from PNode where ParentID is null and PID = @PID ");
+            sql.Append(" select ID from PNode where (ParentID is null or ParentID ='') and PID = @PID ");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = projectId });
 
             DataSet ds = NHHelper.ExecuteDataset(sql.ToString(), qf);
