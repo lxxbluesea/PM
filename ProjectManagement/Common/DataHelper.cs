@@ -50,6 +50,7 @@ namespace ProjectManagement
                     Name = parent.ID,
                     Text = parent.Name,
                     Tag = JsonHelper.EntityToString<PNode>(parent),
+                    //Tag=parent,
                 };
                 SetMainSubTreeData(listNode, parent, node);
                 node.Style = null;//项目节点

@@ -8,8 +8,11 @@
     <property name="PID" type="String">
       <column name="PID" sql-type="varchar" not-null="true"/>
     </property>
-    <property name="NodeID" type="String">
-      <column name="NodeID" sql-type="varchar" not-null="true"/>
+    <property name="ParentNodeID" type="String">
+      <column name="ParentNodeID" sql-type="varchar" not-null="true"/>
+    </property>
+    <property name="PnodeID" type="String">
+      <column name="PnodeID" sql-type="varchar" not-null="true"/>
     </property>
     <property name="Name" type="String">
       <column name="Name" sql-type="nvarchar" not-null="false"/>

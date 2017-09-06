@@ -128,6 +128,7 @@
             this.txt_TroubleTrace_Content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
@@ -745,6 +746,7 @@
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn33);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn34);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn17);
+            this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn35);
             this.gridTrouble.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
             this.gridTrouble.Size = new System.Drawing.Size(294, 446);
             this.gridTrouble.TabIndex = 0;
@@ -816,7 +818,7 @@
             // 
             // gridColumn23
             // 
-            this.gridColumn23.Name = "NodeID";
+            this.gridColumn23.Name = "ParentNodeID";
             this.gridColumn23.Visible = false;
             // 
             // gridColumn29
@@ -1721,6 +1723,11 @@
             this.labelX21.TabIndex = 6;
             this.labelX21.Text = "跟进日期：";
             // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Name = "PnodeID";
+            this.gridColumn35.Visible = false;
+            // 
             // Trouble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1851,5 +1858,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17;
+        private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35;
     }
 }

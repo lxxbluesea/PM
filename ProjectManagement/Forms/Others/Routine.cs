@@ -60,8 +60,9 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         public Routine(string nodeID)
         {
-            _nodeID = nodeID;
             InitializeComponent();
+            _nodeID = nodeID;
+
         }
         /// <summary>
         /// 画面加载时
@@ -155,9 +156,9 @@ namespace ProjectManagement.Forms.Others
             #region 赋值
             //节点(如果关联结点未选择时，默认设定为项目结点)
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
-                routine.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
+                routine.ParentNodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                routine.NodeID = cmbNode.SelectedNode.Name;
+                routine.ParentNodeID = cmbNode.SelectedNode.Name;
             //工作名称
             routine.Name = txtWorkName.Text;
             //工作描述
@@ -233,7 +234,7 @@ namespace ProjectManagement.Forms.Others
             //上传文件名
             if (_fileSelectFlg)
             {
-                file.Path = FileHelper.UploadFile(txtFilePath.Text, UploadType.Routine, ProjectId, routine.NodeID);
+                file.Path = FileHelper.UploadFile(txtFilePath.Text, UploadType.Routine, ProjectId, routine.ParentNodeID);
             }
             else
             {
@@ -507,7 +508,7 @@ namespace ProjectManagement.Forms.Others
         {
             _nodeID = NodeID;
             DomainDLL.Routine obj = routineBLL.GetRoutineObject("", _nodeID);
-            PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
+            PNode parentNode = new WBSBLL().GetParentNode(obj.ParentNodeID); //日常工作挂靠的节点
             DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
             WorkId = obj.ID;
             txtWorkName.Text = obj.Name;
@@ -535,9 +536,9 @@ namespace ProjectManagement.Forms.Others
             routine = new DomainDLL.Routine();
             routine = routineBLL.GetRoutineObject(WorkId, _nodeID);
             //DomainDLL.Routine obj = routineBLL.GetRoutineObject(WorkId, _nodeID);
-            PNode parentNode = new WBSBLL().GetParentNode(routine.NodeID); //日常工作挂靠的节点
+            PNode parentNode = new WBSBLL().GetParentNode(routine.ParentNodeID); //日常工作挂靠的节点
             DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
-            _nodeID = routine.NodeID;
+            _nodeID = routine.ParentNodeID;
             WorkId = routine.ID;
             txtWorkName.Text = routine.Name;
             txtDesc.Text = routine.Desc;//工作描述
@@ -670,6 +671,7 @@ namespace ProjectManagement.Forms.Others
         private void ClearWork()
         {
             routine = new DomainDLL.Routine();
+            WorkId = null;
             //节点
             cmbNode.SelectedIndex = -1;
             //工作名称

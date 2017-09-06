@@ -36,12 +36,12 @@ namespace BussinessDLL
                 {
                     #region 新增WBS节点
                     PNode node = null;
-                    if (!string.IsNullOrEmpty(entity.NodeID))
+                    if (!string.IsNullOrEmpty(entity.ParentNodeID))
                     {
                         node = new PNode();
                         node.ID = Guid.NewGuid().ToString();
                         node.Name = entity.Name;
-                        node.ParentID = entity.NodeID;//;
+                        node.ParentID = entity.ParentNodeID;//;
                         node.PID = ProjectID;
                         node.PType = 2;
                         node.Status = 1;
@@ -53,6 +53,7 @@ namespace BussinessDLL
                     entity.ID = Guid.NewGuid().ToString();// +"-1";
                     entity.CREATED = DateTime.Now;
                     entity.Status = 1;
+                    entity.PnodeID = node.ID;
                     entity.Weight = 1;
                     #endregion
                     try
@@ -69,17 +70,18 @@ namespace BussinessDLL
                 //编辑
                 else
                 {
-                    PNode node = new WBSBLL().GetNode(entity.NodeID);
+                    PNode node = new WBSBLL().GetNode(entity.ParentNodeID);
                     if (node != null)
                     {
                         node.Name = entity.Name;
-                        //node.ParentID = entity.NodeID;
+                        node.ParentID = entity.ParentNodeID;
                         //node.PID = ProjectID;
                         //node.PType = 2;
                         //node.Status = 1;
                         node.UPDATED = DateTime.Now;
                     }
                     entity.UPDATED = DateTime.Now;
+                    entity.PnodeID = node.ID;
                     dao.UpdateRoutine(entity, node, listWork);
                     //dao.UpdateRoutine(entity, oldEntity, newNode, oldNode, listWork);
                     jsonreslut.data = entity.ID;
@@ -239,7 +241,7 @@ namespace BussinessDLL
             if (!string.IsNullOrEmpty(nodeID))
             {
                 List<QueryField> qf = new List<QueryField>();
-                qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Value = nodeID.Substring(0, 36) + "%", Comparison = QueryFieldComparison.like });
+                qf.Add(new QueryField() { Name = "PnodeID", Type = QueryFieldType.String, Value = nodeID, Comparison = QueryFieldComparison.eq });
                 qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
                 entity = new Repository<Routine>().FindSingle(qf) as Routine;
             }
@@ -260,9 +262,9 @@ namespace BussinessDLL
             {
                 List<QueryField> qf = new List<QueryField>();
                 if (!string.IsNullOrEmpty(ID))
-                    qf.Add(new QueryField() { Name = "ID", Type = QueryFieldType.String, Value = ID.Substring(0, 36) + "%", Comparison = QueryFieldComparison.like });
+                    qf.Add(new QueryField() { Name = "ID", Type = QueryFieldType.String, Value = ID, Comparison = QueryFieldComparison.eq });
                 else if (!string.IsNullOrEmpty(NodeID))
-                    qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Value = NodeID.Substring(0, 36) + "%", Comparison = QueryFieldComparison.like });
+                    qf.Add(new QueryField() { Name = "PnodeID", Type = QueryFieldType.String, Value = NodeID, Comparison = QueryFieldComparison.eq });
                 qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
                 entity = new Repository<Routine>().FindSingle(qf) as Routine;
             }

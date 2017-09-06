@@ -402,8 +402,8 @@ namespace BussinessDLL
             sql.Append(" left join (select parentid,count(*)cc from pnode where status=1 and PID=@PID group by parentid)b on a.id=b.parentid   ");
             sql.Append(" left join DeliverablesJBXX c on c.NodeID=a.ID and c.Status=1 and a.PType=1 ");
             sql.Append(" left join NodeProgress d on d.NodeID=a.ID and d.Status=1 ");
-            sql.Append(" left join Routine e on e.NodeID=a.ID and e.Status=1 and a.PType=2  ");
-            sql.Append(" left join Trouble f on f.NodeID=a.ID and f.Status=1 and a.PType=3  ");
+            sql.Append(" left join Routine e on e.ParentNodeID=a.ID and e.Status=1 and a.PType=2  ");
+            sql.Append(" left join Trouble f on f.ParentNodeID=a.ID and f.Status=1 and a.PType=3  ");
             sql.Append(" where  a.status=1 and a.PID=@PID ");
             List<QueryField> qf = new List<QueryField>();
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = ProjectID });

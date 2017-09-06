@@ -899,7 +899,7 @@ namespace ProjectManagement
                 ProjectName = icProlist.SubItems[0].Text;
                 ProjectNo = icProlist.SubItems[0].Tag.ToString();
                 DataHelper.SetMainTreeDate(WbsTree, ProjectId);//绑定树形数据
-                MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
+                //MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
                 //startPage = new StartPage();
                 //ShowChildForm(startPage);//创建启动窗体
                 ////ShowChildForm(new ProjectInfo());//显示项目的基本信息
@@ -931,8 +931,14 @@ namespace ProjectManagement
         /// </summary>
         public void OpenRoutine()
         {
+            //if (WbsTree.SelectedNode == null)
+            //    return;
+            //DevComponents.AdvTree.Node node = WbsTree.SelectedNode;
             if (nodeRoutine == null)
+            {
+                //nodeRoutine = new Forms.Others.Routine(WbsTree.SelectedNode.Name);
                 nodeRoutine = new Forms.Others.Routine(CurrentNode.ID);
+            }
             else
                 nodeRoutine.LoadContent(CurrentNode.ID);
             ShowChildForm(nodeRoutine);

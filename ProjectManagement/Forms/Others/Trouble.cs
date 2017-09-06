@@ -58,8 +58,9 @@ namespace ProjectManagement.Forms.Others
 
         public Trouble(string nodeID)
         {
-            _nodeID = nodeID;
             InitializeComponent();
+            _nodeID = nodeID;
+
         }
 
         /// <summary>
@@ -80,7 +81,10 @@ namespace ProjectManagement.Forms.Others
             DataHelper.LoadDictItems(cmbHandleStatus, DictCategory.TroubleHandleStatus);
 
             //加载画面内容
-            LoadPageData();
+            if (string.IsNullOrEmpty(_nodeID))
+                LoadPageData();
+            else
+                LoadPageData(_nodeID);
             //加载问题列表
             Search();
         }
@@ -201,9 +205,9 @@ namespace ProjectManagement.Forms.Others
             //NodeID
             //节点(如果关联结点未选择时，默认设定为项目结点)
             if (cmbNode.SelectedIndex < 0 || string.IsNullOrEmpty(cmbNode.SelectedNode.Name))
-                trouble.NodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
+                trouble.ParentNodeID = DataHelper.GetNodeIdByProjectId(ProjectId);
             else
-                trouble.NodeID = cmbNode.SelectedNode.Name;//;
+                trouble.ParentNodeID = cmbNode.SelectedNode.Name;//;
             //问题名称
             trouble.Name = txtTroubleName.Text;
             //问题描述
@@ -524,14 +528,15 @@ namespace ProjectManagement.Forms.Others
         /// </summary>
         private void LoadPageData()
         {
-            //日常工作取得
+            //问题列表取得
             trouble = new DomainDLL.Trouble();
             if(gridTrouble.GetSelectedRows().Count>0)
             {
                 GridRow row = (GridRow)gridTrouble.GetSelectedRows()[0];
                 trouble.ID = row.GetCell("ID").Value.ToString();
                 trouble.PID = row.GetCell("PID").Value.ToString();
-                trouble.NodeID = row.GetCell("NodeID").Value.ToString();
+                trouble.ParentNodeID = row.GetCell("ParentNodeID").Value.ToString();
+                trouble.PnodeID = row.GetCell("PnodeID").Value.ToString();
                 trouble.Name = row.GetCell("Name").Value.ToString();
                 trouble.Desc = row.GetCell("Desc").Value.ToString();
                 trouble.StartDate = DateTime.Parse(row.GetCell("StartDate").Value.ToString());
@@ -550,11 +555,11 @@ namespace ProjectManagement.Forms.Others
             //trouble = troubleBLL.GetTroubleObject(TroubleId, _nodeID);
             if (!string.IsNullOrEmpty(trouble.ID))
             {
-                PNode parentNode = new WBSBLL().GetParentNode(trouble.NodeID); //日常工作挂靠的节点
+                PNode parentNode = new WBSBLL().GetParentNode(trouble.ParentNodeID); //日常工作挂靠的节点
                 //节点
                 DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
                 TroubleId = trouble.ID;
-                _nodeID = trouble.NodeID;
+                _nodeID = trouble.ParentNodeID;
                 //问题名称
                 txtTroubleName.Text = trouble.Name;
                 //问题描述
@@ -612,9 +617,9 @@ namespace ProjectManagement.Forms.Others
                 return;
             trouble = obj;
             TroubleId = obj.ID;
-            PNode parentNode = new WBSBLL().GetParentNode(obj.NodeID); //日常工作挂靠的节点
+            //PNode parentNode = new WBSBLL().GetParentNode(obj.ParentNodeID); //日常工作挂靠的节点
             //节点
-            DataHelper.SetComboxTreeSelectByValue(cmbNode, parentNode.ID);
+            DataHelper.SetComboxTreeSelectByValue(cmbNode, obj.ParentNodeID);
             //问题名称
             txtTroubleName.Text = obj.Name;
             //问题描述

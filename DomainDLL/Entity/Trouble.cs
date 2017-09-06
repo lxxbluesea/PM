@@ -18,9 +18,17 @@ namespace DomainDLL
             set;
         }
         /// <summary>
-        /// 节点ID
+        /// 父节点ID
         /// </summary>
-        public virtual string NodeID
+        public virtual string ParentNodeID
+        {
+            get;
+            set;
+        }
+        /// <summary>
+        /// Pnode节点ID
+        /// </summary>
+        public virtual string PnodeID
         {
             get;
             set;
