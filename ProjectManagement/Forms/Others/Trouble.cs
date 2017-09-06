@@ -488,7 +488,7 @@ namespace ProjectManagement.Forms.Others
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     DomainDLL.TroubleFiles entity = new DomainDLL.TroubleFiles();
-                    entity.ID = button.Tag == null ? "" : button.Tag.ToString();
+                    //entity.ID = button.Tag == null ? "" : button.Tag.ToString();
                     entity.TroubleID = TroubleId;
                     entity.Path = FileHelper.UploadFile(dialog.FileName, UploadType.Trouble, ProjectId, _nodeID);
                     switch (Type)
@@ -636,6 +636,8 @@ namespace ProjectManagement.Forms.Others
             DataHelper.SetComboBoxSelectItemByValue(cmbTroubleLevel, obj.Level.ToString());
             //处理情况
             DataHelper.SetComboBoxSelectItemByValue(cmbHandleStatus, obj.HandleStatus.ToString());
+
+
             //处理日期
             //if (obj.HandleDate.HasValue)
             //    txtHandleDate.Text = obj.HandleDate.Value.ToShortDateString();
@@ -647,7 +649,8 @@ namespace ProjectManagement.Forms.Others
             var list = troubleBLL.GetTroubleWorkList(obj.ID);
             gridManager.PrimaryGrid.DataSource = list;
             //附件列表加载
-            LoadFileList(obj.ID.Substring(0, 36));
+            LoadSpecFiles(trouble.ID);
+            LoadFileList(obj.ID);
 
             txtFilePath.Text = string.Empty;
             txtFileName.Text = string.Empty;

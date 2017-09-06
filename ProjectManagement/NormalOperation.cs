@@ -620,9 +620,12 @@ namespace ProjectManagement
         /// </summary>
         private void LoadNodeInfo()
         {
-            txtParent.Text = bll.GetNode(CurrentNode.ParentID).Name;
-            txtNode.Text = CurrentNode.Name;
+            txtParent.Text = CurrentNode.Name;
             txtNode2.Text = CurrentNode.Name;
+            txtNode.Text = "";
+            //txtParent.Text = bll.GetNode(CurrentNode.ParentID).Name;
+            //txtNode.Text = CurrentNode.Name;
+            //txtNode2.Text = CurrentNode.Name;
         }
 
         #region 交付物基本信息

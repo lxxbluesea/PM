@@ -300,7 +300,7 @@
             this.txt_edit_node_desc.PreventEnterBeep = true;
             this.txt_edit_node_desc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_edit_node_desc.Size = new System.Drawing.Size(199, 62);
-            this.txt_edit_node_desc.TabIndex = 2;
+            this.txt_edit_node_desc.TabIndex = 6;
             // 
             // txt_Desc
             // 
@@ -339,7 +339,7 @@
             this.btn_save_node.Name = "btn_save_node";
             this.btn_save_node.Size = new System.Drawing.Size(56, 18);
             this.btn_save_node.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btn_save_node.TabIndex = 3;
+            this.btn_save_node.TabIndex = 7;
             this.btn_save_node.Text = "保存";
             this.btn_save_node.Click += new System.EventHandler(this.btn_save_node_Click);
             // 
@@ -371,7 +371,7 @@
             this.txt_edit_node_name.Name = "txt_edit_node_name";
             this.txt_edit_node_name.PreventEnterBeep = true;
             this.txt_edit_node_name.Size = new System.Drawing.Size(199, 21);
-            this.txt_edit_node_name.TabIndex = 1;
+            this.txt_edit_node_name.TabIndex = 5;
             // 
             // txtNode
             // 
@@ -518,7 +518,7 @@
             // 
             // 
             this.panelJFW.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.panelJFW.TabIndex = 6;
+            this.panelJFW.TabIndex = 0;
             this.panelJFW.Text = "创建WBS";
             // 
             // sdWeight
@@ -993,7 +993,7 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 8;
+            this.groupPanel1.TabIndex = 2;
             this.groupPanel1.Text = "添加交付物";
             // 
             // WBS

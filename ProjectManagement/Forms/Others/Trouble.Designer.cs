@@ -78,6 +78,7 @@
             this.gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.txtSearchEnd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSearchStart = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtSearchKey = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -128,7 +129,6 @@
             this.txt_TroubleTrace_Content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
@@ -856,6 +856,11 @@
             this.gridColumn17.Name = "PID";
             this.gridColumn17.Visible = false;
             // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Name = "PnodeID";
+            this.gridColumn35.Visible = false;
+            // 
             // txtSearchEnd
             // 
             // 
@@ -1135,6 +1140,7 @@
             this.lbl3.TabIndex = 26;
             this.lbl3.TabStop = true;
             this.lbl3.Text = "解决方案";
+            this.lbl3.Visible = false;
             this.lbl3.Click += new System.EventHandler(this.lbl_Click);
             // 
             // lbl2
@@ -1148,6 +1154,7 @@
             this.lbl2.TabIndex = 26;
             this.lbl2.TabStop = true;
             this.lbl2.Text = "问题分析";
+            this.lbl2.Visible = false;
             this.lbl2.Click += new System.EventHandler(this.lbl_Click);
             // 
             // lbl1
@@ -1161,6 +1168,7 @@
             this.lbl1.TabIndex = 26;
             this.lbl1.TabStop = true;
             this.lbl1.Text = "问题原因";
+            this.lbl1.Visible = false;
             this.lbl1.Click += new System.EventHandler(this.lbl_Click);
             // 
             // labelX20
@@ -1722,11 +1730,6 @@
             this.labelX21.Size = new System.Drawing.Size(75, 23);
             this.labelX21.TabIndex = 6;
             this.labelX21.Text = "跟进日期：";
-            // 
-            // gridColumn35
-            // 
-            this.gridColumn35.Name = "PnodeID";
-            this.gridColumn35.Visible = false;
             // 
             // Trouble
             // 
