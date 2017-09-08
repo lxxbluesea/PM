@@ -384,35 +384,106 @@ namespace BussinessDLL
         /// <returns></returns>
         public List<PNode> GetNodesWithStatus(string ProjectID)
         {
-            StringBuilder sql = new StringBuilder();
-            sql.Append("  select a.*,CASE WHEN b.cc is Null then ( case a.PType  ");
-            //交付物
-            sql.Append(" when 1 then (case when d.PType=5 then 1 ");
-            sql.Append(" when c.EndDate<date('now') and (d.PType is null or d.PType<>5) then 3 ");
-            sql.Append(" when c.StartDate>=date('now','+1 day') and (d.PType is null or d.PType<>5) then 0  else 2 end) ");
-            //日常
-            sql.Append(" when 2 then (case when e.FinishStatus=3 then 1 ");
-            sql.Append(" when e.EndDate<date('now') and (e.FinishStatus is null or e.FinishStatus<>3) then 3 ");
-            sql.Append(" when e.StartDate>=date('now','+1 day') and (e.FinishStatus is null or e.FinishStatus<>3) then 0 else 2 end ) ");
-            //问题
-            sql.Append(" when 3 then (case when f.HandleStatus=3 then 1 ");
-            sql.Append(" when f.EndDate<date('now') and (f.HandleStatus is null or f.HandleStatus<>3) then 3  ");
-            sql.Append(" when f.StartDate>=date('now','+1 day') and (f.HandleStatus is null or f.HandleStatus<>3) then 0 else 2 end ) ");
+            //StringBuilder sql = new StringBuilder();
+            //sql.Append("  select a.*,CASE WHEN b.cc is Null then ( case a.PType  ");
+            ////交付物
+            //sql.Append(" when 1 then (case when d.PType=5 then 1 ");
+            //sql.Append(" when c.EndDate<date('now') and (d.PType is null or d.PType<>5) then 3 ");
+            //sql.Append(" when c.StartDate>=date('now','+1 day') and (d.PType is null or d.PType<>5) then 0  else 2 end) ");
+            ////日常
+            //sql.Append(" when 2 then (case when e.FinishStatus=3 then 1 ");
+            //sql.Append(" when e.EndDate<date('now') and (e.FinishStatus is null or e.FinishStatus<>3) then 3 ");
+            //sql.Append(" when e.StartDate>=date('now','+1 day') and (e.FinishStatus is null or e.FinishStatus<>3) then 0 else 2 end ) ");
+            ////问题
+            //sql.Append(" when 3 then (case when f.HandleStatus=3 then 1 ");
+            //sql.Append(" when f.EndDate<date('now') and (f.HandleStatus is null or f.HandleStatus<>3) then 3  ");
+            //sql.Append(" when f.StartDate>=date('now','+1 day') and (f.HandleStatus is null or f.HandleStatus<>3) then 0 else 2 end ) ");
 
-            sql.Append(" else null end) else null end FinishStatus from pnode a ");
-            sql.Append(" left join (select parentid,count(*)cc from pnode where status=1 and PID=@PID group by parentid)b on a.id=b.parentid   ");
-            sql.Append(" left join DeliverablesJBXX c on c.NodeID=a.ID and c.Status=1 and a.PType=1 ");
-            sql.Append(" left join NodeProgress d on d.NodeID=a.ID and d.Status=1 ");
-            sql.Append(" left join Routine e on e.ParentNodeID=a.ID and e.Status=1 and a.PType=2  ");
-            sql.Append(" left join Trouble f on f.ParentNodeID=a.ID and f.Status=1 and a.PType=3  ");
-            sql.Append(" where  a.status=1 and a.PID=@PID ");
+            //sql.Append(" else null end) else null end FinishStatus from pnode a ");
+            //sql.Append(" left join (select parentid,count(*)cc from pnode where status=1 and PID=@PID group by parentid)b on a.id=b.parentid   ");
+            //sql.Append(" left join DeliverablesJBXX c on c.NodeID=a.ID and c.Status=1 and a.PType=1 ");
+            //sql.Append(" left join NodeProgress d on d.NodeID=a.ID and d.Status=1 ");
+            //sql.Append(" left join Routine e on e.ParentNodeID=a.ID and e.Status=1 and a.PType=2  ");
+            //sql.Append(" left join Trouble f on f.ParentNodeID=a.ID and f.Status=1 and a.PType=3  ");
+            //sql.Append(" where  a.status=1 and a.PID=@PID ");
+            //List<QueryField> qf = new List<QueryField>();
+            //qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = ProjectID });
+            //DataSet ds = NHHelper.ExecuteDataset(sql.ToString(), qf);
+            //if (ds == null || ds.Tables.Count == 0)
+            //    return new List<PNode>();
+            //else
+            //    return JsonHelper.TableToList<PNode>(ds.Tables[0]);
+
+
+            StringBuilder sql = new StringBuilder();
+            sql.Append(" select *,0 as FinishStatus from pnode where pid=@PID");
             List<QueryField> qf = new List<QueryField>();
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = ProjectID });
-            DataSet ds = NHHelper.ExecuteDataset(sql.ToString(), qf);
-            if (ds == null || ds.Tables.Count == 0)
+            DataTable dt1 = NHHelper.ExecuteDataTable(sql.ToString(), qf);
+
+            sql.Clear();
+
+            sql.Append("select 1 as ptype, n.nodeid,d.startdate,d.enddate,n.ptype as finishstatus from nodeprogress n left join deliverablesjbxx d on n.nodeid=d.nodeid ");
+            sql.Append(" where n.nodeid in (select id from pnode where pid=@PID )");
+            sql.Append(" union ");
+            sql.Append(" select 2 as ptype, pnodeid,startdate,enddate,finishstatus from routine r where pnodeid in (select id from pnode where pid=@PID)");
+            sql.Append(" union");
+            sql.Append(" select 3 as ptype, pnodeid,startdate,enddate,handlestatus as finishstatus from trouble t where pnodeid in (select id from pnode where pid=@PID)");
+
+            DataTable dt2 = NHHelper.ExecuteDataTable(sql.ToString(), qf);
+
+
+            if (dt1 == null || dt1.Rows.Count == 0)
                 return new List<PNode>();
             else
-                return JsonHelper.TableToList<PNode>(ds.Tables[0]);
+            {
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    string sql1 = " ptype =" + dr["ptype"].ToString() + " and nodeid='" + dr["id"] + "'";
+                    if (dt2.Select(sql1).Length <= 0)
+                        continue;
+                    DataRow dr1 = dt2.Select(sql1)[0];
+                    if (dr1 != null)
+                    {
+                        switch (int.Parse(dr["ptype"].ToString()))
+                        {
+                            case 1:
+                                if (dr1["finishstatus"].ToString() == "5")
+                                {
+                                    dr["FinishStatus"] = 1;
+                                    continue;
+                                }
+                                break;
+                            case 2:                                
+                            case 3:
+                                if (dr1["finishstatus"].ToString() == "3")
+                                {
+                                    dr["FinishStatus"] = 1;
+                                    continue;
+                                }
+                                break;
+
+                        }
+                        if (DateTime.Now.Date>= DateTime.Parse(dr1["startdate"].ToString()).Date && DateTime.Now.Date <= DateTime.Parse(dr1["enddate"].ToString()).Date)
+                        {
+                            dr["FinishStatus"] = 2;
+                            continue;
+                        }
+                        if (DateTime.Now.Date < DateTime.Parse(dr1["startdate"].ToString()).Date)
+                        {
+                            dr["FinishStatus"] = 0;
+                            continue;
+                        }
+                        if (DateTime.Now.Date > DateTime.Parse(dr1["enddate"].ToString()).Date)
+                        {
+                            dr["FinishStatus"] = 3;
+                            continue;
+                        }
+                    }
+
+                }
+                return JsonHelper.TableToList<PNode>(dt1);
+            }
         }
 
 

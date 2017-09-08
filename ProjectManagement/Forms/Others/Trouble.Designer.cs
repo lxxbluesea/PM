@@ -670,7 +670,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(222, 73);
+            this.btnSearch.Location = new System.Drawing.Point(222, 68);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(56, 18);
@@ -685,7 +685,7 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(3, 75);
+            this.labelX10.Location = new System.Drawing.Point(3, 70);
             this.labelX10.Margin = new System.Windows.Forms.Padding(2);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(82, 18);
@@ -698,7 +698,7 @@
             // 
             // 
             this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(2, 44);
+            this.labelX9.Location = new System.Drawing.Point(2, 39);
             this.labelX9.Margin = new System.Windows.Forms.Padding(2);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(82, 18);
@@ -711,7 +711,7 @@
             // 
             // 
             this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(2, 13);
+            this.labelX8.Location = new System.Drawing.Point(2, 8);
             this.labelX8.Margin = new System.Windows.Forms.Padding(2);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(82, 18);
@@ -720,11 +720,13 @@
             // 
             // gridTrouble
             // 
+            this.gridTrouble.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridTrouble.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.gridTrouble.Dock = System.Windows.Forms.DockStyle.Top;
             this.gridTrouble.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridTrouble.ForeColor = System.Drawing.Color.Black;
-            this.gridTrouble.Location = new System.Drawing.Point(0, 0);
+            this.gridTrouble.Location = new System.Drawing.Point(0, 99);
             this.gridTrouble.Margin = new System.Windows.Forms.Padding(2);
             this.gridTrouble.Name = "gridTrouble";
             // 
@@ -748,8 +750,8 @@
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn17);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn35);
             this.gridTrouble.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridTrouble.Size = new System.Drawing.Size(294, 446);
-            this.gridTrouble.TabIndex = 0;
+            this.gridTrouble.Size = new System.Drawing.Size(294, 447);
+            this.gridTrouble.TabIndex = 1;
             this.gridTrouble.Text = "superGridControl1";
             this.gridTrouble.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridTrouble_CellClick);
             this.gridTrouble.DataBindingComplete += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridDataBindingCompleteEventArgs>(this.gridTrouble_DataBindingComplete);
@@ -871,7 +873,7 @@
             this.txtSearchEnd.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtSearchEnd.ButtonDropDown.Visible = true;
             this.txtSearchEnd.IsPopupCalendarOpen = false;
-            this.txtSearchEnd.Location = new System.Drawing.Point(72, 43);
+            this.txtSearchEnd.Location = new System.Drawing.Point(72, 38);
             this.txtSearchEnd.Margin = new System.Windows.Forms.Padding(2);
             // 
             // 
@@ -921,7 +923,7 @@
             this.txtSearchStart.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtSearchStart.ButtonDropDown.Visible = true;
             this.txtSearchStart.IsPopupCalendarOpen = false;
-            this.txtSearchStart.Location = new System.Drawing.Point(72, 12);
+            this.txtSearchStart.Location = new System.Drawing.Point(72, 7);
             this.txtSearchStart.Margin = new System.Windows.Forms.Padding(2);
             // 
             // 
@@ -971,7 +973,7 @@
             this.txtSearchKey.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtSearchKey.DisabledBackColor = System.Drawing.Color.White;
             this.txtSearchKey.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchKey.Location = new System.Drawing.Point(72, 71);
+            this.txtSearchKey.Location = new System.Drawing.Point(72, 66);
             this.txtSearchKey.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchKey.Name = "txtSearchKey";
             this.txtSearchKey.PreventEnterBeep = true;
@@ -1481,8 +1483,8 @@
             this.panelEx1.Controls.Add(this.labelX10);
             this.panelEx1.Controls.Add(this.labelX9);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
-            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx1.Location = new System.Drawing.Point(0, 446);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
             this.panelEx1.Size = new System.Drawing.Size(294, 100);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
@@ -1492,7 +1494,7 @@
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 1;
+            this.panelEx1.TabIndex = 0;
             // 
             // groupPanel4
             // 

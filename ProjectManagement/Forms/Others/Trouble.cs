@@ -581,6 +581,12 @@ namespace ProjectManagement.Forms.Others
                 DataHelper.SetComboBoxSelectItemByValue(cmbTroubleLevel, trouble.Level.ToString());
                 //处理情况
                 DataHelper.SetComboBoxSelectItemByValue(cmbHandleStatus, trouble.HandleStatus.ToString());
+
+                if (DateTime.Now.Date >= trouble.StartDate.Value.Date && DateTime.Now.Date <= trouble.EndDate.Value.Date)
+                {
+                    trouble.HandleStatus = 4;
+
+                }
                 //处理日期
                 //if (obj.HandleDate.HasValue)
                 //    txtHandleDate.Text = obj.HandleDate.Value.ToShortDateString();
@@ -637,6 +643,11 @@ namespace ProjectManagement.Forms.Others
             //处理情况
             DataHelper.SetComboBoxSelectItemByValue(cmbHandleStatus, obj.HandleStatus.ToString());
 
+            if (DateTime.Now.Date >= trouble.StartDate.Value.Date && DateTime.Now.Date <= trouble.EndDate.Value.Date)
+            {
+                trouble.HandleStatus = 4;
+
+            }
 
             //处理日期
             //if (obj.HandleDate.HasValue)

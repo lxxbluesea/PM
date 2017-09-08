@@ -149,12 +149,56 @@ namespace DataAccessDLL
         {
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
-            sql.Append(" select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork, ");
-            sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork  ");
+
+            sql.Append("select sum(TotalWork) as TotalWork,sum(CompleteWork) as CompleteWork  from ");
+            sql.Append(" (select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork,  ");
+            sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork ");
             sql.Append(" from PNode p ");
-            sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1 ");
-            sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1 ");
-            sql.Append(" where p.PID=@PID  and p.status=1");
+            sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1  ");
+            sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1  ");
+            sql.Append(" where p.PID=@PID  and p.status=1 ");
+            sql.Append(" union");
+            sql.Append(" select sum(workload) TotalWork, case when finishstatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" from routine  where PID=@PID  and status=1");
+            sql.Append(" union");
+            sql.Append(" select sum(workload) TotalWork,   case when HandleStatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" from trouble where PID=@PID  and status=1)");
+
+            //sql.Append(" select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork, ");
+            //sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork  ");
+            //sql.Append(" from PNode p ");
+            //sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1 ");
+            //sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1 ");
+            //sql.Append(" where p.PID=@PID  and p.status=1");
+
+            qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
+            return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
+        }
+        /// <summary>
+        /// 项目成果取得，并且把日常工作、问题和交付物分开
+        /// Created:20170328(xuxb)
+        /// </summary>
+        /// <param name="PID"></param>
+        /// <returns></returns>
+        public DataTable GetProjectResultForDetail(string PID)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            StringBuilder sql = new StringBuilder();
+
+            sql.Append("select 0 as type, case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork,  ");
+            sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork   ");
+            sql.Append(" from PNode p  ");
+            sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1  ");
+            sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1  ");
+            sql.Append(" where p.PID=@PID  and p.status=1 ");
+            sql.Append(" union");
+            sql.Append(" select 1 as type,sum(workload) TotalWork, case when finishstatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" from routine  where PID=@PID  and status=1");
+            sql.Append(" union");
+            sql.Append(" select 2 as type,sum(workload) TotalWork,   case when HandleStatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" from trouble where PID=@PID  and status=1)");
+
+
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
         }

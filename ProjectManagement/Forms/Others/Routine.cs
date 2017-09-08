@@ -496,6 +496,7 @@ namespace ProjectManagement.Forms.Others
             }
             else
             {
+                ClearWork();//清空
                 LoadContent();//加载日常工作内容
                 LoadFileList();//加载日常工作文件列表
             }
@@ -548,6 +549,13 @@ namespace ProjectManagement.Forms.Others
             if (routine.EndDate.HasValue)//结束日期
                 txtEndDate.Text = routine.EndDate.Value.ToShortDateString();
             DataHelper.SetComboBoxSelectItemByValue(cmbResultStatus, routine.FinishStatus.ToString());//完成情况
+
+            if (DateTime.Now.Date >= routine.StartDate.Value.Date && DateTime.Now.Date <= routine.EndDate.Value.Date)
+            {
+                routine.FinishStatus = 4;
+                
+            }
+
             txtCreateDate.Text = routine.CREATED.ToShortDateString();//添加日期
             intWorkload.Value = (int)routine.Workload;//工作量
 

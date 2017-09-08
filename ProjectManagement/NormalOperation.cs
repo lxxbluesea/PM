@@ -683,6 +683,7 @@ namespace ProjectManagement
             {
                 Name = txtJFW.Text,
                 StartDate = dtStart.Value,
+                Desc=txtDesc.Text,
                 EndDate = dtEnd.Value,
                 Workload = intWorkload.Value,
                 Weight = sdWeight.Value

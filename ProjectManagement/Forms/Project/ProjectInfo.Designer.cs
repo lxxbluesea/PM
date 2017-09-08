@@ -110,9 +110,8 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btnSaveQKMS = new DevComponents.DotNetBar.ButtonX();
             this.txtInfo = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtSignDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTEnd)).BeginInit();
@@ -121,7 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStart)).BeginInit();
             this.groupPanel3.SuspendLayout();
-            this.groupPanel4.SuspendLayout();
+            this.groupPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -199,7 +198,7 @@
             // 
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel1.TabIndex = 5;
+            this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "附件信息";
             // 
             // lblFile1
@@ -1618,22 +1617,8 @@
             // 
             // 
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel3.TabIndex = 7;
+            this.groupPanel3.TabIndex = 0;
             this.groupPanel3.Text = "基本信息";
-            // 
-            // btnSaveQKMS
-            // 
-            this.btnSaveQKMS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSaveQKMS.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSaveQKMS.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSaveQKMS.Location = new System.Drawing.Point(0, 565);
-            this.btnSaveQKMS.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSaveQKMS.Name = "btnSaveQKMS";
-            this.btnSaveQKMS.Size = new System.Drawing.Size(339, 18);
-            this.btnSaveQKMS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSaveQKMS.TabIndex = 23;
-            this.btnSaveQKMS.Text = "保存";
-            this.btnSaveQKMS.Click += new System.EventHandler(this.btnSaveQKMS_Click);
             // 
             // txtInfo
             // 
@@ -1652,60 +1637,54 @@
             this.txtInfo.Size = new System.Drawing.Size(339, 583);
             this.txtInfo.TabIndex = 0;
             // 
-            // groupPanel4
+            // groupPanel2
             // 
-            this.groupPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupPanel4.AutoScroll = true;
-            this.groupPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel4.Controls.Add(this.btnSaveQKMS);
-            this.groupPanel4.Controls.Add(this.txtInfo);
-            this.groupPanel4.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel4.Location = new System.Drawing.Point(605, 1);
-            this.groupPanel4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(345, 607);
+            this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.txtInfo);
+            this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
+            this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel2.Location = new System.Drawing.Point(605, 1);
+            this.groupPanel2.Name = "groupPanel2";
+            this.groupPanel2.Size = new System.Drawing.Size(345, 607);
             // 
             // 
             // 
-            this.groupPanel4.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel4.Style.BackColorGradientAngle = 90;
-            this.groupPanel4.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel4.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel4.Style.BorderBottomWidth = 1;
-            this.groupPanel4.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel4.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel4.Style.BorderLeftWidth = 1;
-            this.groupPanel4.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel4.Style.BorderRightWidth = 1;
-            this.groupPanel4.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel4.Style.BorderTopWidth = 1;
-            this.groupPanel4.Style.CornerDiameter = 4;
-            this.groupPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel4.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel4.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel4.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.groupPanel2.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel2.Style.BackColorGradientAngle = 90;
+            this.groupPanel2.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel2.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderBottomWidth = 1;
+            this.groupPanel2.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel2.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderLeftWidth = 1;
+            this.groupPanel2.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderRightWidth = 1;
+            this.groupPanel2.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel2.Style.BorderTopWidth = 1;
+            this.groupPanel2.Style.CornerDiameter = 4;
+            this.groupPanel2.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel2.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             // 
             // 
             // 
-            this.groupPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel2.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.groupPanel4.TabIndex = 8;
-            this.groupPanel4.Text = "情况描述";
+            this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.groupPanel2.TabIndex = 2;
+            this.groupPanel2.Text = "项目基本情况";
             // 
             // ProjectInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 610);
+            this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
-            this.Controls.Add(this.groupPanel4);
             this.Controls.Add(this.groupPanel3);
             this.Name = "ProjectInfo";
             this.Text = "项目基本信息";
@@ -1718,7 +1697,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtTStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStart)).EndInit();
             this.groupPanel3.ResumeLayout(false);
-            this.groupPanel4.ResumeLayout(false);
+            this.groupPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1764,9 +1743,7 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.ButtonX btnSaveQKMS;
         private DevComponents.DotNetBar.Controls.RichTextBoxEx txtInfo;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private DevComponents.DotNetBar.ButtonX btnFClear;
         private DevComponents.DotNetBar.ButtonX btnFSave;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFDesc;
@@ -1810,5 +1787,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5;
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtB_Name;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
     }
 }

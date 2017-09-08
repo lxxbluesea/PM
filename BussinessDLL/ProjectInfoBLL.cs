@@ -283,7 +283,16 @@ namespace BussinessDLL
         {
             return dao.GetProjectResult(PID);
         }
-
+        /// <summary>
+        /// 取得项目成果
+        /// Created:20170329(xuxb)
+        /// </summary>
+        /// <param name="PID"></param>
+        /// <returns></returns>
+        public DataTable GetProjectResultForDetail(string PID)
+        {
+            return dao.GetProjectResultForDetail(PID);
+        }
         /// <summary>
         /// 取得项目风险
         /// Created:20170329(xuxb)

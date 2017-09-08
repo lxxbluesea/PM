@@ -118,7 +118,7 @@ namespace ProjectManagement
         /// <summary>
         /// 节点背景色
         /// Created:20170607(ChengMengjia)
-        /// 未开始的没有背景色（值为0），已完成的为蓝色（1），正在执行的为黄色（2），超期的为红色（3）
+        /// 未开始的没有背景色（值为1），已完成的为蓝色（3），正在执行的为黄色（2），超期的为红色（4）
         /// </summary>
         /// <param name="status"></param>
         /// <returns></returns>
@@ -127,17 +127,17 @@ namespace ProjectManagement
             CellVisualStyles style = new CellVisualStyles();
             switch (status)
             {
-                case 1:
+                case 3:
                     style.Default.Background.Color1 = Color.CornflowerBlue;
                     break;
                 case 2:
                     style.Default.Background.Color1 = Color.Orange;
                     break;
-                case 3:
+                case 4:
                     style.Default.Background.Color1 = Color.Red;
                     style.Default.TextColor = Color.White;
                     break;
-                default:
+                case 1:
                     style.Default.Background.Color1 = Color.Transparent;
                     break;
             }
