@@ -15,7 +15,23 @@ namespace ProjectManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFrame());
+            Forms.Project.ProjectList pl = new Forms.Project.ProjectList();
+            if (pl.ShowDialog() == DialogResult.OK)
+            {
+                MainFrame mf;
+                if (pl.ProjectCount > 0)
+                {
+                    mf = new MainFrame(pl.CurrentProject);
+                }
+                else
+                {
+                    mf = new MainFrame();
+                }
+                Application.Run(mf);
+                //Application.Run(new MainFrame());
+
+            }
+
         }
     }
 }

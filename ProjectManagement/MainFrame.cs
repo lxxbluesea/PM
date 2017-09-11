@@ -23,6 +23,7 @@ namespace ProjectManagement
         MainFrameBLL bll = new MainFrameBLL();
         ProjectBLL proBLL = new ProjectBLL();
         WBSBLL wbsBll = new WBSBLL();
+        DomainDLL.Project tmppro;
         #endregion
 
         #region 画面变量
@@ -42,7 +43,11 @@ namespace ProjectManagement
         {
             InitializeComponent();
         }
-
+        public MainFrame(DomainDLL.Project p)
+        {
+            InitializeComponent();
+            tmppro = p;
+        }
         /// <summary>
         /// 初始化主窗体
         /// </summary>
@@ -886,6 +891,7 @@ namespace ProjectManagement
                 ShowChildForm(startPage);
                 return;
             }
+            RibbonBtn_ProjectList.SubItems.Clear();
             foreach (Project project in listPro)
             {
                 ButtonItem item = new ButtonItem();
@@ -894,13 +900,23 @@ namespace ProjectManagement
                 item.Tag = project.No;
                 item.Click += new System.EventHandler(Prolist_Item_Click);
                 icProlist.SubItems.Add(item);
+                RibbonBtn_ProjectList.SubItems.Add(item);
             }
             //默认选择第一个项目
             if (listPro.Count > 0)
             {
-                ProjectId = icProlist.SubItems[0].Name;
-                ProjectName = icProlist.SubItems[0].Text;
-                ProjectNo = icProlist.SubItems[0].Tag.ToString();
+                if (tmppro == null)
+                {
+                    ProjectId = icProlist.SubItems[0].Name;
+                    ProjectName = icProlist.SubItems[0].Text;
+                    ProjectNo = icProlist.SubItems[0].Tag.ToString();
+                }
+                else
+                {
+                    ProjectId = tmppro.ID;
+                    ProjectName = tmppro.Name;
+                    ProjectNo = tmppro.No;
+                }
                 DataHelper.SetMainTreeDate(WbsTree, ProjectId);//绑定树形数据
                 //MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
                 startPage = new StartPage();
@@ -1411,6 +1427,11 @@ namespace ProjectManagement
         private void MainFrame_Shown(object sender, EventArgs e)
         {
             CheckSetting(true);
+            //if(CheckSetting(true))
+            //{
+            //    BtnItem_ProjectList_Click(null, null);
+            //}
+
         }
         /// <summary>
         /// 检查工作目录是否存在，如果不存在则弹出对话框进行设置
@@ -1440,9 +1461,31 @@ namespace ProjectManagement
             Forms.Project.ProjectList pl = new Forms.Project.ProjectList();
             if (pl.ShowDialog() == DialogResult.OK)
             {
-                
+                tmppro = pl.CurrentProject;
+                //ButtonItem item = (ButtonItem)sender;
+                if (tmppro.ID == ProjectId)
+                    return;//点击的就是当前选中项目
+                if (MessageHelper.ShowMsg(MessageID.I000000003, MessageType.Confirm) == DialogResult.OK)
+                {
+                    ProjectId = tmppro.ID;
+                    ProjectName = tmppro.Name;
+                    ProjectNo = tmppro.No;
+                    DataHelper.SetMainTreeDate(WbsTree, ProjectId);//绑定树形数据
+                    _SelectedNodeID = null;
+                    CurrentNode = null;
+                    MainSuperTabControl.Tabs.Clear();//初始化TabControl的Tabs
+                    ShowChildForm(new StartPage());//创建启动窗体
+                    ////ShowChildForm(new ProjectInfo());//显示项目的基本信息
+                    ////加载项目的基本信息tab
+                    //SuperTabItem tabItem = MainSuperTabControl.CreateTab("基本信息");
+                    //tabItem.Text = "基本信息";
+                    //tabItem.Name = "ProjectInfo";
+                    //MainSuperTabControl.SelectedTabIndex = 0;//首页做为第一个页面
+                }
+                CurrentNode = null;//当前无选中节点
             }
 
         }
+
     }
 }

@@ -121,5 +121,17 @@ namespace BussinessDLL
             string projectName = new Repository<Project>().Get(projectId).Name;
             return projectName + "\\";
         }
+        /// <summary>
+        /// 获取所有有效项目
+        /// Created:2017.3.24(ChengMengjia)
+        /// </summary>
+        /// <returns></returns>
+        public List<Project> GetProList()
+        {
+            List<QueryField> qf = new List<QueryField>();
+            //qf.Add(new QueryField() { Name = "Status", Type = QueryFieldType.Numeric, Value = 1 });
+            SortField sf = new SortField() { Name = "ProjectLastUpdate", Direction = SortDirection.Desc };
+            return new Repository<Project>().GetList(qf, sf) as List<Project>;
+        }
     }
 }

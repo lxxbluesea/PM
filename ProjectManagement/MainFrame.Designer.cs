@@ -99,6 +99,7 @@
             this.RibbonBtn_CreateWBS = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer12 = new DevComponents.DotNetBar.ItemContainer();
             this.RibbonBar_ProjectMG = new DevComponents.DotNetBar.RibbonBar();
+            this.RibbonBtn_ProjectList = new DevComponents.DotNetBar.ButtonItem();
             this.RibbonBtn_ProjectInfo = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer10 = new DevComponents.DotNetBar.ItemContainer();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
@@ -148,6 +149,7 @@
             this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem18 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem19 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.CloseTabContextMenu.SuspendLayout();
             this.EditNodeMenu.SuspendLayout();
             this.EditProMenu.SuspendLayout();
@@ -651,7 +653,7 @@
             this.itemContainer7,
             this.RibbonBtn_Weekly,
             this.RibbonBtn_Setting});
-            this.RibbonBar_OtherMG.Location = new System.Drawing.Point(904, 0);
+            this.RibbonBar_OtherMG.Location = new System.Drawing.Point(959, 0);
             this.RibbonBar_OtherMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_OtherMG.Name = "RibbonBar_OtherMG";
             this.RibbonBar_OtherMG.Size = new System.Drawing.Size(288, 70);
@@ -730,7 +732,7 @@
             this.RibbonBar_CostMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Cost,
             this.itemContainer11});
-            this.RibbonBar_CostMG.Location = new System.Drawing.Point(775, 0);
+            this.RibbonBar_CostMG.Location = new System.Drawing.Point(830, 0);
             this.RibbonBar_CostMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_CostMG.Name = "RibbonBar_CostMG";
             this.RibbonBar_CostMG.Size = new System.Drawing.Size(129, 70);
@@ -787,7 +789,7 @@
             this.RibbonBar_InfoMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_InfomationPublish,
             this.RibbonBtn_PublishConfigure});
-            this.RibbonBar_InfoMG.Location = new System.Drawing.Point(635, 0);
+            this.RibbonBar_InfoMG.Location = new System.Drawing.Point(690, 0);
             this.RibbonBar_InfoMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_InfoMG.Name = "RibbonBar_InfoMG";
             this.RibbonBar_InfoMG.Size = new System.Drawing.Size(140, 70);
@@ -835,7 +837,7 @@
             this.RibbonBar_WarningMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_WarningConfigure,
             this.RibbonBtn_WarningList});
-            this.RibbonBar_WarningMG.Location = new System.Drawing.Point(516, 0);
+            this.RibbonBar_WarningMG.Location = new System.Drawing.Point(571, 0);
             this.RibbonBar_WarningMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_WarningMG.Name = "RibbonBar_WarningMG";
             this.RibbonBar_WarningMG.Size = new System.Drawing.Size(119, 70);
@@ -883,7 +885,7 @@
             this.RibbonBar_ContractMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Supplier,
             this.RibbonBtn_Contract});
-            this.RibbonBar_ContractMG.Location = new System.Drawing.Point(402, 0);
+            this.RibbonBar_ContractMG.Location = new System.Drawing.Point(457, 0);
             this.RibbonBar_ContractMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_ContractMG.Name = "RibbonBar_ContractMG";
             this.RibbonBar_ContractMG.Size = new System.Drawing.Size(114, 70);
@@ -930,7 +932,7 @@
             this.RibbonBar_SkateholderMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_Stakeholder,
             this.itemContainer6});
-            this.RibbonBar_SkateholderMG.Location = new System.Drawing.Point(259, 0);
+            this.RibbonBar_SkateholderMG.Location = new System.Drawing.Point(314, 0);
             this.RibbonBar_SkateholderMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_SkateholderMG.Name = "RibbonBar_SkateholderMG";
             this.RibbonBar_SkateholderMG.Size = new System.Drawing.Size(143, 70);
@@ -987,7 +989,7 @@
             this.RibbonBar_WBSMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.RibbonBtn_CreateWBS,
             this.itemContainer12});
-            this.RibbonBar_WBSMG.Location = new System.Drawing.Point(138, 0);
+            this.RibbonBar_WBSMG.Location = new System.Drawing.Point(193, 0);
             this.RibbonBar_WBSMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_WBSMG.Name = "RibbonBar_WBSMG";
             this.RibbonBar_WBSMG.Size = new System.Drawing.Size(121, 70);
@@ -1042,12 +1044,13 @@
             this.RibbonBar_ProjectMG.Dock = System.Windows.Forms.DockStyle.Left;
             this.RibbonBar_ProjectMG.DragDropSupport = true;
             this.RibbonBar_ProjectMG.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.RibbonBtn_ProjectList,
             this.RibbonBtn_ProjectInfo,
             this.itemContainer10});
             this.RibbonBar_ProjectMG.Location = new System.Drawing.Point(2, 0);
             this.RibbonBar_ProjectMG.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.RibbonBar_ProjectMG.Name = "RibbonBar_ProjectMG";
-            this.RibbonBar_ProjectMG.Size = new System.Drawing.Size(136, 70);
+            this.RibbonBar_ProjectMG.Size = new System.Drawing.Size(191, 70);
             this.RibbonBar_ProjectMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.RibbonBar_ProjectMG.TabIndex = 0;
             this.RibbonBar_ProjectMG.Text = "项目信息";
@@ -1059,6 +1062,15 @@
             // 
             // 
             this.RibbonBar_ProjectMG.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // RibbonBtn_ProjectList
+            // 
+            this.RibbonBtn_ProjectList.Name = "RibbonBtn_ProjectList";
+            this.RibbonBtn_ProjectList.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.buttonItem2});
+            this.RibbonBtn_ProjectList.SubItemsExpandWidth = 14;
+            this.RibbonBtn_ProjectList.Text = "项目列表";
+            this.RibbonBtn_ProjectList.Click += new System.EventHandler(this.BtnItem_ProjectList_Click);
             // 
             // RibbonBtn_ProjectInfo
             // 
@@ -1086,6 +1098,7 @@
             // 
             // ribbonPanel3
             // 
+            this.ribbonPanel3.AutoSize = true;
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel3.Controls.Add(this.RibbonBar_ReportMG);
             this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1131,7 +1144,7 @@
             this.RibbonBtn_Report_MemberContributionRate});
             this.RibbonBar_ReportMG.Location = new System.Drawing.Point(2, 0);
             this.RibbonBar_ReportMG.Name = "RibbonBar_ReportMG";
-            this.RibbonBar_ReportMG.Size = new System.Drawing.Size(380, 70);
+            this.RibbonBar_ReportMG.Size = new System.Drawing.Size(337, 70);
             this.RibbonBar_ReportMG.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.RibbonBar_ReportMG.TabIndex = 1;
             this.RibbonBar_ReportMG.Text = "报表";
@@ -1642,6 +1655,11 @@
             this.buttonItem19.SubItemsExpandWidth = 24;
             this.buttonItem19.Text = "E&xit";
             // 
+            // buttonItem2
+            // 
+            this.buttonItem2.Name = "buttonItem2";
+            this.buttonItem2.Text = "buttonItem2";
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1797,6 +1815,8 @@
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_Weekly;
         private DevComponents.DotNetBar.ButtonItem RibbonBtn_Report_MemberContributionRate;
         private DevComponents.DotNetBar.ButtonItem BtnItem_ProjectList;
+        private DevComponents.DotNetBar.ButtonItem RibbonBtn_ProjectList;
+        private DevComponents.DotNetBar.ButtonItem buttonItem2;
     }
 }
 

@@ -30,7 +30,7 @@
         {
             this.Btn_Cancel = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.listBoxAdv1 = new DevComponents.DotNetBar.ListBoxAdv();
+            this.LB_ProjectList = new DevComponents.DotNetBar.ListBoxAdv();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +51,10 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.listBoxAdv1);
+            this.groupPanel1.Controls.Add(this.LB_ProjectList);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupPanel1.IsShadowEnabled = true;
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);
             this.groupPanel1.Name = "groupPanel1";
@@ -87,25 +88,25 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "项目列表";
+            this.groupPanel1.Text = "项目列表，双击打开";
             // 
-            // listBoxAdv1
+            // LB_ProjectList
             // 
-            this.listBoxAdv1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.listBoxAdv1.AutoScroll = true;
+            this.LB_ProjectList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LB_ProjectList.AutoScroll = true;
             // 
             // 
             // 
-            this.listBoxAdv1.BackgroundStyle.Class = "ListBoxAdv";
-            this.listBoxAdv1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.listBoxAdv1.CheckStateMember = null;
-            this.listBoxAdv1.ContainerControlProcessDialogKey = true;
-            this.listBoxAdv1.DragDropSupport = true;
-            this.listBoxAdv1.Location = new System.Drawing.Point(113, 0);
-            this.listBoxAdv1.Name = "listBoxAdv1";
-            this.listBoxAdv1.Size = new System.Drawing.Size(242, 277);
-            this.listBoxAdv1.TabIndex = 0;
-            this.listBoxAdv1.Text = "listBoxAdv1";
+            this.LB_ProjectList.BackgroundStyle.Class = "ListBoxAdv";
+            this.LB_ProjectList.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LB_ProjectList.ContainerControlProcessDialogKey = true;
+            this.LB_ProjectList.DragDropSupport = true;
+            this.LB_ProjectList.ItemSpacing = 2;
+            this.LB_ProjectList.Location = new System.Drawing.Point(113, 0);
+            this.LB_ProjectList.Name = "LB_ProjectList";
+            this.LB_ProjectList.Size = new System.Drawing.Size(242, 272);
+            this.LB_ProjectList.TabIndex = 0;
+            this.LB_ProjectList.ItemDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LB_ProjectList_ItemDoubleClick);
             // 
             // ProjectList
             // 
@@ -118,8 +119,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ProjectList";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectList";
+            this.Load += new System.EventHandler(this.ProjectList_Load);
             this.groupPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -129,7 +131,7 @@
 
         private DevComponents.DotNetBar.ButtonX Btn_Cancel;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.ListBoxAdv listBoxAdv1;
+        private DevComponents.DotNetBar.ListBoxAdv LB_ProjectList;
 
     }
 }
