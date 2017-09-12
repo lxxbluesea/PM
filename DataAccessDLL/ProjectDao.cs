@@ -285,7 +285,7 @@ namespace DataAccessDLL
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
             //项目更新预警
-            sql.Append(" select '' Id,'项目更新预警' as WarnningName, @Days1 || '天内没有更新项目' as WarnningContent from Project ");
+            sql.Append(" select '' Id,'【项目更新预警】' as WarnningName, @Days1 || '天内没有更新项目' as WarnningContent from Project ");
             sql.Append(" where IFNULL(ProjectLastUpdate,date('2017-01-01')) < date('now','-' || @Days1 || ' day') ");
             sql.Append(" and ID=@PID ");
 
@@ -296,7 +296,7 @@ namespace DataAccessDLL
             if (openFlg[0])
             {
                 sql.Append(" union all ");
-                sql.Append(" select '' Id,'项目预警' as WarnningName, Tag || '的成本超出预算' as WarnningContent from Cost where IFNULL(Remaining,0) < 0  ");
+                sql.Append(" select '' Id,'【项目预警】' as WarnningName, Tag || '的成本超出预算' as WarnningContent from Cost where IFNULL(Remaining,0) < 0  ");
                 sql.Append(" and status = 1 and PID=@PID ");
             }
 
@@ -305,7 +305,7 @@ namespace DataAccessDLL
             if (openFlg[1])
             {
                 sql.Append(" union all ");
-                sql.Append(" select p.ID Id,'项目交付物预警' as WarnningName, d.Name || '在期限内没有完成工作量' as WarnningContent from DeliverablesJBXX d  ");
+                sql.Append(" select p.ID Id,d.Name||'【交付物预警】' as WarnningName, d.Name || '在期限内没有完成工作量' as WarnningContent from DeliverablesJBXX d  ");
                 sql.Append(" inner join PNode p on p.ID = d.NodeID ");
                 sql.Append(" left join NodeProgress n on d.NodeID = n.NodeID ");
                 sql.Append(" where IFNULL(d.EndDate,date('2017-01-01')) < date('now') and IFNULL(n.PType,0) < 4 ");
@@ -315,7 +315,7 @@ namespace DataAccessDLL
             if (openFlg[2])
             {
                 sql.Append(" union all ");
-                sql.Append(" select p.ID Id,'项目交付物预警' as WarnningName, d.Name || '的时间过去2/3,但工作量没有完成' as WarnningContent from DeliverablesJBXX d  ");
+                sql.Append(" select p.ID Id,d.Name||'【交付物预警】' as WarnningName, d.Name || '的时间过去2/3,但工作量没有完成' as WarnningContent from DeliverablesJBXX d  ");
                 sql.Append(" inner join PNode p on p.ID = d.NodeID ");
                 sql.Append(" left join NodeProgress n on d.NodeID = n.NodeID ");
                 sql.Append(" where (julianday(strftime('%Y-%m-%d','now'))-julianday(IFNULL(d.StartDate,date('2017-01-01'))))/");
@@ -328,7 +328,7 @@ namespace DataAccessDLL
             if (openFlg[3])
             {
                 sql.Append(" union all ");
-                sql.Append(" select d.ID Id,'项目问题预警' as WarnningName, '问题【' || d.Name || '】在期限内没有解决' as WarnningContent from Trouble d  ");
+                sql.Append(" select d.ID Id,d.Name||'【问题预警】' as WarnningName, '问题【' || d.Name || '】在期限内没有解决' as WarnningContent from Trouble d  ");
                 sql.Append(" inner join PNode p on p.ID = d.PnodeID ");
                 sql.Append(" where IFNULL(d.EndDate,date('2017-01-01')) < date('now') and d.HandleStatus <> 3");
                 sql.Append(" and d.status = 1 and p.status = 1 and p.PID=@PID ");
