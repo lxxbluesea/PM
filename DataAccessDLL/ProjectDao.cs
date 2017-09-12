@@ -151,17 +151,17 @@ namespace DataAccessDLL
             StringBuilder sql = new StringBuilder();
 
             sql.Append("select sum(TotalWork) as TotalWork,sum(CompleteWork) as CompleteWork  from ");
-            sql.Append(" (select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork,  ");
-            sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork ");
+            sql.Append(" (select sum(d.Workload) as TotalWork, ");
+            sql.Append(" sum(case when ((np.PType - 1)/4)=1 then workload end) CompleteWork ");
             sql.Append(" from PNode p ");
             sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1  ");
             sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1  ");
             sql.Append(" where p.PID=@PID  and p.status=1 ");
             sql.Append(" union");
-            sql.Append(" select sum(workload) TotalWork, case when finishstatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" select sum(workload) TotalWork, sum(case when finishstatus=3 then workload end) CompleteWork   ");
             sql.Append(" from routine  where PID=@PID  and status=1");
             sql.Append(" union");
-            sql.Append(" select sum(workload) TotalWork,   case when HandleStatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" select sum(workload) TotalWork,   sum(case when HandleStatus=3 then workload end) CompleteWork   ");
             sql.Append(" from trouble where PID=@PID  and status=1)");
 
             //sql.Append(" select case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork, ");
@@ -185,17 +185,17 @@ namespace DataAccessDLL
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
 
-            sql.Append("select 0 as type, case when sum(d.Workload) is null then 0 else sum(d.Workload) end as TotalWork,  ");
-            sql.Append(" case when sum(d.WorkLoad * (np.PType - 1)/4) is null then 0 else sum(d.WorkLoad * (np.PType - 1)/4) end as CompleteWork   ");
+            sql.Append("select 0 as type, sum(d.Workload) as TotalWork,");
+            sql.Append(" sum(case when ((np.PType - 1)/4)=1 then workload end) CompleteWork ");
             sql.Append(" from PNode p  ");
             sql.Append(" left join DeliverablesJBXX d on p.ID = d.NodeID and d.Status = 1  ");
             sql.Append(" left join NodeProgress np on p.ID = np.NodeID and np.Status = 1  ");
             sql.Append(" where p.PID=@PID  and p.status=1 ");
             sql.Append(" union");
-            sql.Append(" select 1 as type,sum(workload) TotalWork, case when finishstatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" select 1 as type,sum(workload) TotalWork,sum(case when finishstatus=3 then workload end) CompleteWork ");
             sql.Append(" from routine  where PID=@PID  and status=1");
             sql.Append(" union");
-            sql.Append(" select 2 as type,sum(workload) TotalWork,   case when HandleStatus=3 then sum(workload) end as CompleteWork ");
+            sql.Append(" select 2 as type,sum(workload) TotalWork,sum(case when HandleStatus=3 then workload end) CompleteWork ");
             sql.Append(" from trouble where PID=@PID  and status=1)");
 
 
@@ -236,13 +236,12 @@ namespace DataAccessDLL
             StringBuilder sql = new StringBuilder();
             sql.Append(" select IFNULL(TroubleTotal,0) as TroubleTotal,IFNULL(TroubleHandle,0) as TroubleHandle,");
             sql.Append(" IFNULL(TroubleLeave,0) as TroubleLeave,IFNULL(TroubleRest,0) as TroubleRest from (");
-            sql.Append(" select count(1) as TroubleTotal,  ");
-            sql.Append(" sum(case when HandleStatus = 3 then 1 else 0 end) as TroubleHandle, ");
-            sql.Append(" sum( case when HandleStatus <> 3 then 1 else 0 end) as TroubleLeave, ");
-            sql.Append(" sum( case when HandleStatus <> 3 and EndDate < date('now') then 1 else 0 end) as TroubleRest ");
+            sql.Append(" select count(t.id) as TroubleTotal,  ");
+            sql.Append(" sum(case when HandleStatus = 3 then 1 else 0 end) as TroubleHandle,  ");
+            sql.Append(" sum(case when HandleStatus =2 and date('now')>strftime('%Y-%m-%d ',enddate) then 1  else 0 end) as TroubleRest ,");
+            sql.Append(" sum(case when HandleStatus =1 or (HandleStatus =2 and date('now')<=strftime('%Y-%m-%d ',enddate) ) then 1 else 0 end ) as TroubleLeave  ");
             sql.Append(" from Trouble t ");
-            sql.Append(" inner join PNode p on p.ID = t.ParentNodeId and p.status = 1 ");
-            sql.Append(" where p.PID=@PID  and t.status=1)");
+            sql.Append(" where PID=@PID  and t.status=1)");
             qf.Add(new QueryField() { Name = "PID", Type = QueryFieldType.String, Value = PID });
             return NHHelper.ExecuteDataset(sql.ToString(), qf).Tables[0];
         }

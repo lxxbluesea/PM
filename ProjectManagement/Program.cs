@@ -28,9 +28,8 @@ namespace ProjectManagement
                     mf = new MainFrame();
                 }
                 Application.Run(mf);
-                //Application.Run(new MainFrame());
-
             }
+            //Application.Run(new MainFrame());
 
         }
     }
