@@ -339,6 +339,32 @@ namespace BussinessDLL
             return dao.GetFilesByNodeID(NodeID);
         }
 
+        public List<string> GetRoutineAndTrace(string nodeid)
+        {
+            List<string> list = new List<string>();
+            DataTable dt = dao.GetRoutineAndTrace(nodeid);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string str = "";
+                    if (i == 0)
+                    {
+                        str += nodeid + "*【工作名称：" + dt.Rows[i]["name"].ToString() + "】\r\n\t【时间要求】：\r\n\t\t" + dt.Rows[i]["startdate"].ToString() + "至" + dt.Rows[i]["enddate"].ToString() + "\r\n\t【内容描述】：\r\n\t\t" + dt.Rows[i]["desc"].ToString().Replace("\r\n", "") + "\r\n";
+                        list.Add(str);
+                        str = "";
+                        str += nodeid + "*\t【跟进情况】：\r\n\t\t" + dt.Rows[i]["tracedate"].ToString() + "," + dt.Rows[i]["content"].ToString().Replace("\r\n", "") + "\r\n";
+                    }
+                    else
+                        str += nodeid + "*\t\t" + dt.Rows[i]["tracedate"].ToString() + "," + dt.Rows[i]["content"].ToString().Replace("\r\n", "") + "\r\n";
+
+                    list.Add(str);
+                }
+            }
+
+            return list;
+        }
+
         /// <summary>
         /// 获取日常工作负责人列表
         /// 2017/06/01(zhuguanjun)

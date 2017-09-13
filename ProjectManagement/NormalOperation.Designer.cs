@@ -612,8 +612,9 @@
             // 
             // gridManager
             // 
-            this.gridManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gridManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridManager.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridManager.ForeColor = System.Drawing.Color.Black;
@@ -1189,6 +1190,7 @@
             // 
             // gridColumn20
             // 
+            this.gridColumn20.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.DisplayedCells;
             this.gridColumn20.FillWeight = 200;
             this.gridColumn20.HeaderText = "跟进内容";
             this.gridColumn20.Name = "Content";
@@ -1431,7 +1433,7 @@
             // 
             // 
             this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(6, 83);
+            this.labelX14.Location = new System.Drawing.Point(1, 83);
             this.labelX14.Margin = new System.Windows.Forms.Padding(2);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(71, 18);
@@ -1444,7 +1446,7 @@
             // 
             // 
             this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(6, 58);
+            this.labelX15.Location = new System.Drawing.Point(1, 58);
             this.labelX15.Margin = new System.Windows.Forms.Padding(2);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(71, 18);
@@ -1457,7 +1459,7 @@
             // 
             // 
             this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(6, 30);
+            this.labelX16.Location = new System.Drawing.Point(1, 30);
             this.labelX16.Margin = new System.Windows.Forms.Padding(2);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(71, 18);
@@ -1470,7 +1472,7 @@
             // 
             // 
             this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX17.Location = new System.Drawing.Point(6, 5);
+            this.labelX17.Location = new System.Drawing.Point(1, 5);
             this.labelX17.Margin = new System.Windows.Forms.Padding(2);
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(71, 18);

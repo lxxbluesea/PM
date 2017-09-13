@@ -99,9 +99,19 @@ namespace ProjectManagement.Forms.Stakeholder
         private void btnSave_Click(object sender, EventArgs e)
         {
             #region 检查
+            if (string.IsNullOrEmpty(txtCompanyName.Text.ToString()))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "公司名称");
+                return;
+            }
             if (string.IsNullOrEmpty(txtName.Text.ToString()))
             {
                 MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "姓名");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtEmail.Text.ToString()))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "电子信箱");
                 return;
             }
             int flag = 0;//没有选项目经理

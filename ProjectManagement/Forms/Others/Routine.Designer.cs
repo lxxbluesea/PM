@@ -243,6 +243,7 @@
             // btnAddManager
             // 
             this.btnAddManager.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddManager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddManager.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAddManager.Location = new System.Drawing.Point(6, 520);
             this.btnAddManager.Margin = new System.Windows.Forms.Padding(2);
@@ -255,8 +256,8 @@
             // 
             // gridManager
             // 
-            this.gridManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.gridManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.gridManager.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridManager.ForeColor = System.Drawing.Color.Black;
@@ -275,7 +276,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(264, 121);
+            this.gridManager.Size = new System.Drawing.Size(288, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -333,6 +334,7 @@
             // btnWorkClear
             // 
             this.btnWorkClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnWorkClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnWorkClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnWorkClear.Location = new System.Drawing.Point(164, 520);
             this.btnWorkClear.Margin = new System.Windows.Forms.Padding(2);
@@ -346,6 +348,7 @@
             // btnWorkSave
             // 
             this.btnWorkSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnWorkSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnWorkSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnWorkSave.Location = new System.Drawing.Point(91, 520);
             this.btnWorkSave.Margin = new System.Windows.Forms.Padding(2);
@@ -767,7 +770,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(182, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(176, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -786,7 +789,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(237, 21);
+            this.txtFileName.Size = new System.Drawing.Size(231, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -833,7 +836,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(237, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(231, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -854,7 +857,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(258, 116);
+            this.buttonX5.Location = new System.Drawing.Point(252, 116);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(51, 21);
@@ -1608,7 +1611,7 @@
             this.txt_routineTrace_content.Name = "txt_routineTrace_content";
             this.txt_routineTrace_content.PreventEnterBeep = true;
             this.txt_routineTrace_content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_routineTrace_content.Size = new System.Drawing.Size(266, 53);
+            this.txt_routineTrace_content.Size = new System.Drawing.Size(260, 53);
             this.txt_routineTrace_content.TabIndex = 1;
             // 
             // labelX17

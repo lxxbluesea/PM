@@ -720,13 +720,11 @@
             // 
             // gridTrouble
             // 
-            this.gridTrouble.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridTrouble.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.gridTrouble.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTrouble.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.gridTrouble.ForeColor = System.Drawing.Color.Black;
-            this.gridTrouble.Location = new System.Drawing.Point(0, 99);
+            this.gridTrouble.Location = new System.Drawing.Point(0, 100);
             this.gridTrouble.Margin = new System.Windows.Forms.Padding(2);
             this.gridTrouble.Name = "gridTrouble";
             // 
@@ -750,7 +748,7 @@
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn17);
             this.gridTrouble.PrimaryGrid.Columns.Add(this.gridColumn35);
             this.gridTrouble.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridTrouble.Size = new System.Drawing.Size(294, 447);
+            this.gridTrouble.Size = new System.Drawing.Size(294, 446);
             this.gridTrouble.TabIndex = 1;
             this.gridTrouble.Text = "superGridControl1";
             this.gridTrouble.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridTrouble_CellClick);
@@ -1432,8 +1430,8 @@
             this.groupPanel1.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.panelEx1);
             this.groupPanel1.Controls.Add(this.gridTrouble);
+            this.groupPanel1.Controls.Add(this.panelEx1);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupPanel1.Location = new System.Drawing.Point(5, 1);

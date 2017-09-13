@@ -11,7 +11,7 @@ namespace BussinessDLL
 {
     public partial class WBSBLL
     {
-
+        //NormalOperationDAO dao = new NormalOperationDAO();
         /// <summary>
         /// 获得WBS节点
         /// Created:2017.3.29(ChengMengjia)
@@ -155,6 +155,30 @@ namespace BussinessDLL
             return list;
         }
 
+        public List<string> GetNodeAndTrace(string nodeid)
+        {
+            List<string> list = new List<string>();
+            DataTable dt = dao.GetNodeAndTrace(nodeid);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string str = "";
+                    if (i == 0)
+                    {
+                        str += nodeid + "*【工作名称：" + dt.Rows[i]["name"].ToString() + "】\r\n\t【时间要求】：\r\n\t\t" + dt.Rows[i]["startdate"].ToString() + "至" + dt.Rows[i]["enddate"].ToString() + "\r\n\t【内容描述】：\r\n\t\t" + dt.Rows[i]["desc"].ToString().Replace("\r\n", "") + "\r\n";
+                        list.Add(str);
+                        str = "";
+                        str += nodeid + "*\t【跟进情况】：\r\n\t\t" + dt.Rows[i]["tracedate"].ToString() + "," + dt.Rows[i]["content"].ToString().Replace("\r\n","") + "\r\n";
+                    }
+                    else
+                        str += nodeid + "*\t\t" + dt.Rows[i]["tracedate"].ToString() + "," + dt.Rows[i]["content"].ToString().Replace("\r\n", "") + "\r\n";
+
+                    list.Add(str);
+                }
+            }
+            return list;
+        }
 
         /// <summary>
         /// 交付物进度更新

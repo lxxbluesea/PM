@@ -278,5 +278,18 @@ namespace DataAccessDLL
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
         }
 
+        public DataTable GetNodeAndTrace(string nodeid)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            qf.Add(new QueryField() { Name = "Pnodeid", Type = QueryFieldType.String, Value = nodeid });
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select d.name,d.desc ,nt.tracedate,nt.content,startdate,enddate from deliverablesjbxx d ");
+            sql.Append("left join nodeprogress n on d.nodeid=n.nodeid ");
+            sql.Append("left join nodetrace nt on nt.nodeid=n.nodeid ");
+
+            sql.Append("where d.nodeid= @Pnodeid  order by traceDate asc");
+            return NHHelper.ExecuteDataTable(sql.ToString(), qf);
+        }
+
     }
 }

@@ -29,15 +29,23 @@ namespace ProjectManagement.Forms.InfomationPublish
 
         #region 画面变量
         List<DeliverablesFiles> EmailFiles = new List<DeliverablesFiles>();//邮件附件
+        List<string> emailtitle = new List<string>();
+        List<string> emailcontent = new List<string>();
+
         #endregion
 
         #region 事件
         public InfomationPublish()
         {
             InitializeComponent();
+
             LoadTree();
+
             LoadPubInfo();
+
             LoadEmailFile();
+
+            InitWBSControls();
         }
 
         /// <summary>
@@ -185,10 +193,13 @@ namespace ProjectManagement.Forms.InfomationPublish
         /// <param name="e"></param>
         private void wbsTree_AfterCheck(object sender, DevComponents.AdvTree.AdvTreeCellEventArgs e)
         {
-            List<DevComponents.AdvTree.Node> checkedNodes = wbsTree.CheckedNodes;
-            txtTitle.Text = checkedNodes.Count > 0 ? checkedNodes[0].Text : "";//以第一个选中节点的名字命名
+            //List<DevComponents.AdvTree.Node> checkedNodes = wbsTree.CheckedNodes;
+            //txtTitle.Text = checkedNodes.Count > 0 ? checkedNodes[0].Text : "";//以第一个选中节点的名字命名
 
             PNode node = JsonHelper.StringToEntity<PNode>(e.Cell.TagString);
+
+            build_emailtitleAndcontent(node, e.Cell.Checked);
+
             if (e.Cell.Checked)
             {
                 switch (node.PType)
@@ -208,7 +219,7 @@ namespace ProjectManagement.Forms.InfomationPublish
                         if (listR.Count > 0)
                         {
                             foreach (var r in listR)
-                                EmailFiles.Add(new DeliverablesFiles() { Name = r.Name, Path = r.Path, NodeID = node.ID.Substring(0, 36) });
+                                EmailFiles.Add(new DeliverablesFiles() { Name = r.Name, Path = r.Path, NodeID = node.ID });
                             LoadEmailFile();
                         }
                         break;
@@ -218,7 +229,7 @@ namespace ProjectManagement.Forms.InfomationPublish
                         if (listT.Count > 0)
                         {
                             foreach (var r in listT)
-                                EmailFiles.Add(new DeliverablesFiles() { Name = r.Name, Path = r.Path, NodeID = node.ID.Substring(0, 36) });
+                                EmailFiles.Add(new DeliverablesFiles() { Name = r.Name, Path = r.Path, NodeID = node.ID });
                             LoadEmailFile();
                         }
                         break;
@@ -229,10 +240,11 @@ namespace ProjectManagement.Forms.InfomationPublish
             {
                 int oldCount = EmailFiles.Count();
                 //取消选中
-                EmailFiles = EmailFiles.Where(t => !t.NodeID.Equals(node.ID.Substring(0, 36))).ToList();
+                EmailFiles = EmailFiles.Where(t => !t.NodeID.Equals(node.ID)).ToList();
                 if (EmailFiles.Count != oldCount)
                     LoadEmailFile();
             }
+
         }
 
         /// <summary>
@@ -243,8 +255,19 @@ namespace ProjectManagement.Forms.InfomationPublish
         /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
-            MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
-            mainForm.CloseTab(this.Name);
+            if (txtContent.Text == "")
+            {
+                MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
+                mainForm.CloseTab(this.Name);
+            }
+            else
+            {
+                if (MessageBox.Show("有未发送内容，是否真的关闭？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    MainFrame mainForm = (MainFrame)this.Parent.TopLevelControl;
+                    mainForm.CloseTab(this.Name);
+                }
+            }
         }
 
         #endregion
@@ -330,6 +353,7 @@ namespace ProjectManagement.Forms.InfomationPublish
                     txtCC.Text += member.Email + "(" + member.Name + ")" + ";";
                 }
             #endregion
+            emailtitle.Add(wbsTree.Nodes[0].Text);
         }
 
         /// <summary>
@@ -347,5 +371,92 @@ namespace ProjectManagement.Forms.InfomationPublish
             gridFile.PrimaryGrid.DataSource = EmailFiles;
         }
         #endregion
+
+
+        #region 生成邮件内容--刘学贤--2017-9-13
+        /// <summary>
+        /// 初始化筛选控件
+        /// </summary>
+        void InitWBSControls()
+        {
+            int weekofday = (int)DateTime.Today.DayOfWeek;
+            dt_startDate.Value = DateTime.Today.AddDays(1 - weekofday);
+            dt_endDate.Value = dt_startDate.Value.AddDays(4);
+            List<Stakeholders> list = new StakeholdersBLL().GetList(ProjectId, 1);
+            list.Add(new Stakeholders());
+            cbbox_employee.DataSource = list;
+            cbbox_employee.SelectedIndex = list.Count - 1;
+        }
+        /// <summary>
+        /// 清除查询条件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_clearn_Click(object sender, EventArgs e)
+        {
+            InitWBSControls();
+        }
+
+        void build_emailtitleAndcontent(PNode node, bool flag)
+        {
+            if (flag)
+            {
+                switch (node.PType)
+                {
+                    case 1:
+                        emailtitle.Add(node.ID + "*" + node.Name);
+                        emailcontent.AddRange(wbsBll.GetNodeAndTrace(node.ID));
+                        break;
+                    case 2:
+                        emailtitle.Add(node.ID + "*" + node.Name);
+                        emailcontent.AddRange(routineBll.GetRoutineAndTrace(node.ID));
+                        break;
+                    case 3:
+                        emailtitle.Add(node.ID + "*" + node.Name);
+                        emailcontent.AddRange(troubleBll.GetTroubleAndTrace(node.ID));
+                        break;
+                }
+            }
+            else
+            {
+                emailtitle.RemoveAll(j=>j.Contains(node.ID));
+                emailcontent.RemoveAll(j => j.Contains(node.ID));
+                //for (int i = 0; i < emailtitle.Count; i++)
+                //{
+                //    if (emailtitle[i].Contains(node.ID))
+                //    {
+                        
+                //        emailtitle.RemoveAt(i);
+                //    }
+                //}
+                //for (int i = 0; i < emailcontent.Count; i++)
+                //{
+                //    if (emailcontent[i].Contains(node.ID))
+                //    {
+                //        emailcontent.RemoveAt(i);
+                //    }
+                //}
+
+            }
+            txtTitle.Text = "";
+            foreach (string s in emailtitle)
+            {
+                if (string.IsNullOrEmpty(s))
+                    continue;
+                txtTitle.Text += s.Substring(s.IndexOf("*") + 1)+"-";
+            }
+            txtContent.Text = "";
+            foreach (string s in emailcontent)
+            {
+                if (string.IsNullOrEmpty(s))
+                    continue;
+                txtContent.Text += s.Substring(s.IndexOf("*") + 1);
+            }
+
+        }
+
+        #endregion
+
+
     }
 }

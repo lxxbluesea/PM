@@ -657,7 +657,7 @@
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(88, 18);
             this.labelX7.TabIndex = 0;
-            this.labelX7.Text = "邮箱：";
+            this.labelX7.Text = "*邮箱：";
             // 
             // labelX5
             // 

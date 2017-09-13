@@ -8,7 +8,8 @@ using System.Text;
 
 namespace DataAccessDLL
 {
-    public class NormalOperationDAO
+    public class NormalOperationDAO:BaseDao
     {
+
     }
 }

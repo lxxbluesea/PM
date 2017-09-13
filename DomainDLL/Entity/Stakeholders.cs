@@ -144,5 +144,11 @@ namespace DomainDLL
             get;
             set;
         }
+
+        public override string ToString()
+        {
+            return string.IsNullOrEmpty(Name) ? "" : Name;
+            //return base.ToString();
+        }
     }
 }

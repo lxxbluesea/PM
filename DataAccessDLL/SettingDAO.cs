@@ -16,7 +16,7 @@ namespace DataAccessDLL
         /// <returns></returns>
         public IList<dynamic> GetMemberList(string ProjectID, string IDs)
         {
-            string sql = "select * from Stakeholders where PID=:PID and ID in ("+IDs+")";
+            string sql = "select * from Stakeholders where PID=:PID or ismanage=1 and ID in (" + IDs + ")";
             ISQLQuery query = NHHelper.GetCurrentSession().CreateSQLQuery(sql.ToString());
             query.SetString("PID", ProjectID);
             return query.DynamicList();

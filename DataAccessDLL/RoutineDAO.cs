@@ -230,7 +230,7 @@ namespace DataAccessDLL
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT a.*  FROM RoutineFiles a");
             sql.Append(" LEFT JOIN Routine b ON a.RoutineID= b.ID and b.Status=1 ");
-            sql.Append(" WHERE a.Status =1 and b.NodeID=@NodeID ");
+            sql.Append(" WHERE a.Status =1 and b.pNodeID=@NodeID ");
             DataSet ds = NHHelper.ExecuteDataset(sql.ToString(), qf);
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -240,6 +240,16 @@ namespace DataAccessDLL
             {
                 return new List<RoutineFiles>();
             }
+        }
+        public DataTable GetRoutineAndTrace(string nodeid)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            qf.Add(new QueryField() { Name = "Pnodeid", Type = QueryFieldType.String, Value = nodeid });
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select r.name,r.desc,rt.tracedate,rt.content ,r.startdate,r.enddate from routine r ");
+            sql.Append("left join routinetrace rt on rt.routineid=r.id ");
+            sql.Append(" where r.pnodeid= @Pnodeid  order by traceDate asc");
+            return NHHelper.ExecuteDataTable(sql.ToString(), qf);
         }
         public DataTable GetRoutineTrace(string routineID)
         {
@@ -251,6 +261,8 @@ namespace DataAccessDLL
             return NHHelper.ExecuteDataTable(sql.ToString(), qf);
 
         }
+
+
 
     }
 }

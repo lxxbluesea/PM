@@ -110,8 +110,9 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.txtInfo = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtInfo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btn_SaveInfo = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtSignDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTEnd)).BeginInit();
@@ -1620,28 +1621,12 @@
             this.groupPanel3.TabIndex = 0;
             this.groupPanel3.Text = "基本信息";
             // 
-            // txtInfo
-            // 
-            // 
-            // 
-            // 
-            this.txtInfo.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.txtInfo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Location = new System.Drawing.Point(0, 0);
-            this.txtInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Rtf = "{\\rtf1\\ansi\\ansicpg936\\deff0\\deflang1033\\deflangfe2052{\\fonttbl{\\f0\\fnil\\fcharset" +
-    "134 \\\'cb\\\'ce\\\'cc\\\'e5;}}\r\n\\viewkind4\\uc1\\pard\\lang2052\\f0\\fs18\\par\r\n}\r\n";
-            this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.txtInfo.Size = new System.Drawing.Size(339, 583);
-            this.txtInfo.TabIndex = 0;
-            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.txtInfo);
+            this.groupPanel2.Controls.Add(this.btn_SaveInfo);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.Location = new System.Drawing.Point(605, 1);
@@ -1677,6 +1662,35 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 2;
             this.groupPanel2.Text = "项目基本情况";
+            // 
+            // txtInfo
+            // 
+            // 
+            // 
+            // 
+            this.txtInfo.Border.Class = "TextBoxBorder";
+            this.txtInfo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 0);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.PreventEnterBeep = true;
+            this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtInfo.Size = new System.Drawing.Size(339, 560);
+            this.txtInfo.TabIndex = 1;
+            // 
+            // btn_SaveInfo
+            // 
+            this.btn_SaveInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_SaveInfo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_SaveInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_SaveInfo.Location = new System.Drawing.Point(0, 560);
+            this.btn_SaveInfo.Name = "btn_SaveInfo";
+            this.btn_SaveInfo.Size = new System.Drawing.Size(339, 23);
+            this.btn_SaveInfo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_SaveInfo.TabIndex = 0;
+            this.btn_SaveInfo.Text = "保存";
+            this.btn_SaveInfo.Click += new System.EventHandler(this.btnSaveQKMS_Click);
             // 
             // ProjectInfo
             // 
@@ -1743,7 +1757,6 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.RichTextBoxEx txtInfo;
         private DevComponents.DotNetBar.ButtonX btnFClear;
         private DevComponents.DotNetBar.ButtonX btnFSave;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFDesc;
@@ -1788,5 +1801,7 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtB_Name;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtInfo;
+        private DevComponents.DotNetBar.ButtonX btn_SaveInfo;
     }
 }

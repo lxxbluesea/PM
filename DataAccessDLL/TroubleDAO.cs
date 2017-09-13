@@ -297,7 +297,7 @@ namespace DataAccessDLL
             StringBuilder sql = new StringBuilder();
             sql.Append(" SELECT a.*  FROM TroubleFiles a");
             sql.Append(" LEFT JOIN Trouble b ON a.TroubleID= b.ID and b.Status=1 ");
-            sql.Append(" WHERE a.Status =1 and b.NodeID=@NodeID ");
+            sql.Append(" WHERE a.Status =1 and b.pNodeID=@NodeID ");
             if (type != null)
             {
                 sql.Append(" and a.Type=@Type ");
@@ -314,6 +314,17 @@ namespace DataAccessDLL
             {
                 return new List<TroubleFiles>();
             }
+        }
+
+        public DataTable GetTroubleAndTrace(string nodeid)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            qf.Add(new QueryField() { Name = "Pnodeid", Type = QueryFieldType.String, Value = nodeid });
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select t.name,t.desc,tt.tracedate,tt.content ,t.startdate,t.enddate from trouble t ");
+            sql.Append("left join troubletrace tt on tt.troubleid=t.id ");
+            sql.Append(" where t.pnodeid= @Pnodeid  order by traceDate asc");
+            return NHHelper.ExecuteDataTable(sql.ToString(), qf);
         }
     }
 }
