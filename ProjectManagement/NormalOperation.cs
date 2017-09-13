@@ -15,6 +15,7 @@ using DevComponents.Editors;
 using System.Net.Mail;
 using System.IO;
 using System.Net.Mime;
+using DevComponents.DotNetBar.SuperGrid;
 
 namespace ProjectManagement
 {
@@ -34,6 +35,8 @@ namespace ProjectManagement
 
         List<DeliverablesWork> listWork;//责任人列表
         List<DeliverablesFiles> EmailFiles;
+
+        NodeTrace nodeTrace;
         #endregion
 
         #region 事件
@@ -571,6 +574,7 @@ namespace ProjectManagement
         public void init()
         {
             LoadNodeInfo();//当前节点信息加载
+            GetNodeTrace();
             SetProgress();//当前节点进度
             if (CurrentNode.PType == 1)
             {
@@ -595,6 +599,16 @@ namespace ProjectManagement
             }
         }
 
+        /// <summary>
+        /// 清空跟进信息
+        /// </summary>
+        void NodeTrace_Clear()
+        {
+            nodeTrace = new DomainDLL.NodeTrace();
+            NodeTrace_Grid.PrimaryGrid.DataSource = null;
+            dt_NodeTrace_TraceDate.Value = DateTime.Now;
+            txt_NodeTrace_content.Text = "";
+        }
 
         /// <summary>
         /// 根据选择设置文本框内显示值
@@ -974,11 +988,78 @@ namespace ProjectManagement
 
         #endregion
 
+        private void NodeTrace_Grid_RowClick(object sender, DevComponents.DotNetBar.SuperGrid.GridRowClickEventArgs e)
+        {
+            nodeTrace = new NodeTrace();
+            if (NodeTrace_Grid.GetSelectedRows().Count > 0)
+            {
+                GridRow row = (GridRow)NodeTrace_Grid.GetSelectedRows()[0];
+                nodeTrace.ID = row.GetCell("ID").Value.ToString();
+                nodeTrace.NodeID = row.GetCell("NodeID").Value.ToString();
+                nodeTrace.Content = row.GetCell("Content").Value.ToString();
+                nodeTrace.TraceDate = DateTime.Parse(row.GetCell("TraceDate").Value.ToString());
+                nodeTrace.CREATED = DateTime.Parse(row.GetCell("CREATED").Value.ToString());
+                nodeTrace.Status = int.Parse(row.GetCell("Status").Value.ToString());
+                if (row.GetCell("UPDATED").Value != null && row.GetCell("UPDATED").Value.ToString() != "")
+                {
+                    nodeTrace.UPDATED = DateTime.Parse(row.GetCell("UPDATED").Value.ToString());
+                }
+
+                dt_NodeTrace_TraceDate.Value = nodeTrace.TraceDate;
+                txt_NodeTrace_content.Text = nodeTrace.Content;
+
+            }
+        }
+
+        private void btn_routineTrace_Clear_Click(object sender, EventArgs e)
+        {
+            nodeTrace = new DomainDLL.NodeTrace();
+            //RoutineTrace_Grid.PrimaryGrid.DataSource = null;
+            dt_NodeTrace_TraceDate.Value = DateTime.Now;
+            txt_NodeTrace_content.Text = "";
+        }
+
+        private void btn_routineTrace_Save_Click(object sender, EventArgs e)
+        {
+            //保存前检查            
+            //文件名称未输入
+            if (string.IsNullOrEmpty(txt_NodeTrace_content.Text))
+            {
+                MessageHelper.ShowMsg(MessageID.W000000001, MessageType.Alert, "内容不能为空");
+                txt_NodeTrace_content.Focus();
+                return;
+            }
+            nodeTrace.NodeID = CurrentNode.ID;
+            nodeTrace.Content = txt_NodeTrace_content.Text;
+            nodeTrace.TraceDate = dt_NodeTrace_TraceDate.Value;
+
+            JsonResult result = bll.SaveNodeTrace(nodeTrace);
+            MessageHelper.ShowRstMsg(result.result);
+            if (result.result)
+            {
+                NodeTrace_Clear();
+                GetNodeTrace();
+            }
+        }
 
 
+        void GetNodeTrace()
+        {
+            dt_NodeTrace_TraceDate.Value = DateTime.Now;
+            nodeTrace = new NodeTrace();
+            List<NodeTrace> list = bll.GetNodeTrace(CurrentNode.ID);
+            
+            NodeTrace_Grid.PrimaryGrid.DataSource = list;
+        }
 
-
-
+        private void NodeTrace_Grid_DataBindingComplete(object sender, GridDataBindingCompleteEventArgs e)
+        {
+            int count = NodeTrace_Grid.PrimaryGrid.Rows.Count;
+            for(int i=0;i<count;i++)
+            {
+                ((GridRow)NodeTrace_Grid.PrimaryGrid.Rows[i]).GetCell("RowNo").Value = i + 1;
+            }
+        }
 
     }
 

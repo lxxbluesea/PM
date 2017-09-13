@@ -91,6 +91,7 @@
             this.gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.gridColumn48 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.txtSearchEnd = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -129,7 +130,6 @@
             this.txt_routineTrace_content = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intWorkload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEndDate)).BeginInit();
@@ -275,7 +275,7 @@
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn16);
             this.gridManager.PrimaryGrid.Columns.Add(this.gridColumn18);
             this.gridManager.PrimaryGrid.SelectionGranularity = DevComponents.DotNetBar.SuperGrid.SelectionGranularity.Row;
-            this.gridManager.Size = new System.Drawing.Size(276, 121);
+            this.gridManager.Size = new System.Drawing.Size(264, 121);
             this.gridManager.TabIndex = 20;
             this.gridManager.Text = "superGridControl1";
             this.gridManager.CellClick += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellClickEventArgs>(this.gridManager_CellClick);
@@ -767,7 +767,7 @@
             this.txtFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.PreventEnterBeep = true;
-            this.txtFilePath.Size = new System.Drawing.Size(194, 21);
+            this.txtFilePath.Size = new System.Drawing.Size(182, 21);
             this.txtFilePath.TabIndex = 0;
             // 
             // txtFileName
@@ -786,7 +786,7 @@
             this.txtFileName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PreventEnterBeep = true;
-            this.txtFileName.Size = new System.Drawing.Size(249, 21);
+            this.txtFileName.Size = new System.Drawing.Size(237, 21);
             this.txtFileName.TabIndex = 1;
             // 
             // btnFileClear
@@ -833,7 +833,7 @@
             this.txtFileDesc.Name = "txtFileDesc";
             this.txtFileDesc.PreventEnterBeep = true;
             this.txtFileDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtFileDesc.Size = new System.Drawing.Size(249, 54);
+            this.txtFileDesc.Size = new System.Drawing.Size(237, 54);
             this.txtFileDesc.TabIndex = 2;
             // 
             // labelX12
@@ -854,7 +854,7 @@
             this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(270, 116);
+            this.buttonX5.Location = new System.Drawing.Point(258, 116);
             this.buttonX5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonX5.Name = "buttonX5";
             this.buttonX5.Size = new System.Drawing.Size(51, 21);
@@ -1114,6 +1114,11 @@
             // 
             this.gridColumn48.Name = "Workload";
             this.gridColumn48.Visible = false;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Name = "PnodeID";
+            this.gridColumn25.Visible = false;
             // 
             // panelEx1
             // 
@@ -1603,7 +1608,7 @@
             this.txt_routineTrace_content.Name = "txt_routineTrace_content";
             this.txt_routineTrace_content.PreventEnterBeep = true;
             this.txt_routineTrace_content.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_routineTrace_content.Size = new System.Drawing.Size(249, 53);
+            this.txt_routineTrace_content.Size = new System.Drawing.Size(266, 53);
             this.txt_routineTrace_content.TabIndex = 1;
             // 
             // labelX17
@@ -1631,11 +1636,6 @@
             this.labelX16.Size = new System.Drawing.Size(75, 23);
             this.labelX16.TabIndex = 0;
             this.labelX16.Text = "跟进日期：";
-            // 
-            // gridColumn25
-            // 
-            this.gridColumn25.Name = "PnodeID";
-            this.gridColumn25.Visible = false;
             // 
             // Routine
             // 

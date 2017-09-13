@@ -138,6 +138,25 @@ namespace BussinessDLL
         }
 
         /// <summary>
+        /// 文件获取
+        ///  Created:20170913(liuxx)
+        /// </summary>
+        /// <param name="NodeID"></param>
+        /// <returns></returns>
+        public List<NodeTrace> GetNodeTrace(string NodeID)
+        {
+            List<QueryField> qf = new List<QueryField>();
+            //if (NodeID.Length > 36)
+            //    NodeID = NodeID;
+            qf.Add(new QueryField() { Name = "NodeID", Type = QueryFieldType.String, Comparison = QueryFieldComparison.eq, Value = NodeID });
+            qf.Add(new QueryField() { Name = "Status", Comparison = QueryFieldComparison.eq, Type = QueryFieldType.Numeric, Value = 1 });
+            SortField sf = new SortField() { Name = "CREATED", Direction = SortDirection.Desc };
+            List<NodeTrace> list = new Repository<NodeTrace>().GetList(qf, sf) as List<NodeTrace>;
+            return list;
+        }
+
+
+        /// <summary>
         /// 交付物进度更新
         ///  Created:20170330(ChengMengjia)
         /// </summary>
@@ -179,6 +198,33 @@ namespace BussinessDLL
         {
             return dao.GetJFWList( startDate,  endDate, PID);
         }
-
+        /// <summary>
+        /// 交付物跟进情况保存
+        ///  Created:20170913(liuxx)
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public JsonResult SaveNodeTrace(NodeTrace entity)
+        {
+            JsonResult jsonreslut = new JsonResult();
+            try
+            {
+                string _id;
+                if (string.IsNullOrEmpty(entity.ID))
+                    new Repository<NodeTrace>().Insert(entity, true, out _id);
+                else
+                    new Repository<NodeTrace>().Update(entity, true, out _id);
+                jsonreslut.data = _id;
+                jsonreslut.result = true;
+                jsonreslut.msg = "保存成功！";
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteException(ex, LogType.BussinessDLL);
+                jsonreslut.result = false;
+                jsonreslut.msg = ex.Message;
+            }
+            return jsonreslut;
+        }
     }
 }
