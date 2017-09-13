@@ -68,6 +68,14 @@
             this.gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pe_sendto = new DevComponents.DotNetBar.PanelEx();
+            this.ip_sendto = new DevComponents.DotNetBar.ItemPanel();
+            this.panelEx4 = new DevComponents.DotNetBar.PanelEx();
+            this.btn_sendtoclose = new DevComponents.DotNetBar.ButtonX();
+            this.pe_ccto = new DevComponents.DotNetBar.PanelEx();
+            this.ip_ccto = new DevComponents.DotNetBar.ItemPanel();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.btn_cctoclose = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btn_build = new DevComponents.DotNetBar.ButtonX();
@@ -85,6 +93,10 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.wbsTree)).BeginInit();
             this.groupPanel1.SuspendLayout();
+            this.pe_sendto.SuspendLayout();
+            this.panelEx4.SuspendLayout();
+            this.pe_ccto.SuspendLayout();
+            this.panelEx3.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_endDate)).BeginInit();
@@ -269,8 +281,11 @@
             this.txtCC.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtCC.Name = "txtCC";
             this.txtCC.PreventEnterBeep = true;
+            this.txtCC.ReadOnly = true;
             this.txtCC.Size = new System.Drawing.Size(485, 21);
             this.txtCC.TabIndex = 1;
+            this.txtCC.Click += new System.EventHandler(this.txtSend_Click);
+            this.txtCC.Leave += new System.EventHandler(this.txtSend_Leave);
             // 
             // labelX5
             // 
@@ -328,8 +343,11 @@
             this.txtSend.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSend.Name = "txtSend";
             this.txtSend.PreventEnterBeep = true;
+            this.txtSend.ReadOnly = true;
             this.txtSend.Size = new System.Drawing.Size(485, 21);
             this.txtSend.TabIndex = 0;
+            this.txtSend.Click += new System.EventHandler(this.txtSend_Click);
+            this.txtSend.Leave += new System.EventHandler(this.txtSend_Leave);
             // 
             // labelX1
             // 
@@ -507,6 +525,8 @@
             this.groupPanel1.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.pe_sendto);
+            this.groupPanel1.Controls.Add(this.pe_ccto);
             this.groupPanel1.Controls.Add(this.btnAddFile);
             this.groupPanel1.Controls.Add(this.btnSend);
             this.groupPanel1.Controls.Add(this.btnClose);
@@ -559,6 +579,142 @@
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "信息发布";
+            // 
+            // pe_sendto
+            // 
+            this.pe_sendto.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pe_sendto.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pe_sendto.Controls.Add(this.ip_sendto);
+            this.pe_sendto.Controls.Add(this.panelEx4);
+            this.pe_sendto.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pe_sendto.Location = new System.Drawing.Point(64, 24);
+            this.pe_sendto.Name = "pe_sendto";
+            this.pe_sendto.Size = new System.Drawing.Size(200, 221);
+            this.pe_sendto.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pe_sendto.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pe_sendto.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pe_sendto.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pe_sendto.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pe_sendto.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pe_sendto.Style.GradientAngle = 90;
+            this.pe_sendto.TabIndex = 9;
+            this.pe_sendto.Text = "panelEx2";
+            this.pe_sendto.Visible = false;
+            // 
+            // ip_sendto
+            // 
+            // 
+            // 
+            // 
+            this.ip_sendto.BackgroundStyle.Class = "ItemPanel";
+            this.ip_sendto.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ip_sendto.ContainerControlProcessDialogKey = true;
+            this.ip_sendto.DragDropSupport = true;
+            this.ip_sendto.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.ip_sendto.Location = new System.Drawing.Point(0, 0);
+            this.ip_sendto.Name = "ip_sendto";
+            this.ip_sendto.Size = new System.Drawing.Size(200, 190);
+            this.ip_sendto.TabIndex = 1;
+            this.ip_sendto.Text = "itemPanel1";
+            // 
+            // panelEx4
+            // 
+            this.panelEx4.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx4.Controls.Add(this.btn_sendtoclose);
+            this.panelEx4.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx4.Location = new System.Drawing.Point(0, 190);
+            this.panelEx4.Name = "panelEx4";
+            this.panelEx4.Size = new System.Drawing.Size(200, 31);
+            this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx4.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx4.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx4.Style.GradientAngle = 90;
+            this.panelEx4.TabIndex = 0;
+            // 
+            // btn_sendtoclose
+            // 
+            this.btn_sendtoclose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_sendtoclose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_sendtoclose.Location = new System.Drawing.Point(63, 4);
+            this.btn_sendtoclose.Name = "btn_sendtoclose";
+            this.btn_sendtoclose.Size = new System.Drawing.Size(75, 23);
+            this.btn_sendtoclose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_sendtoclose.TabIndex = 0;
+            this.btn_sendtoclose.Text = "关闭";
+            this.btn_sendtoclose.Click += new System.EventHandler(this.btn_sendtoclose_Click);
+            // 
+            // pe_ccto
+            // 
+            this.pe_ccto.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pe_ccto.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.pe_ccto.Controls.Add(this.ip_ccto);
+            this.pe_ccto.Controls.Add(this.panelEx3);
+            this.pe_ccto.DisabledBackColor = System.Drawing.Color.Empty;
+            this.pe_ccto.Location = new System.Drawing.Point(64, 53);
+            this.pe_ccto.Name = "pe_ccto";
+            this.pe_ccto.Size = new System.Drawing.Size(200, 221);
+            this.pe_ccto.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.pe_ccto.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.pe_ccto.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.pe_ccto.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.pe_ccto.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.pe_ccto.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.pe_ccto.Style.GradientAngle = 90;
+            this.pe_ccto.TabIndex = 9;
+            this.pe_ccto.Text = "panelEx2";
+            this.pe_ccto.Visible = false;
+            // 
+            // ip_ccto
+            // 
+            // 
+            // 
+            // 
+            this.ip_ccto.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ip_ccto.ContainerControlProcessDialogKey = true;
+            this.ip_ccto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ip_ccto.DragDropSupport = true;
+            this.ip_ccto.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.ip_ccto.Location = new System.Drawing.Point(0, 0);
+            this.ip_ccto.Name = "ip_ccto";
+            this.ip_ccto.Size = new System.Drawing.Size(200, 190);
+            this.ip_ccto.TabIndex = 1;
+            this.ip_ccto.Text = "itemPanel1";
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.btn_cctoclose);
+            this.panelEx3.DisabledBackColor = System.Drawing.Color.Empty;
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelEx3.Location = new System.Drawing.Point(0, 190);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(200, 31);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 0;
+            // 
+            // btn_cctoclose
+            // 
+            this.btn_cctoclose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_cctoclose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_cctoclose.Location = new System.Drawing.Point(63, 4);
+            this.btn_cctoclose.Name = "btn_cctoclose";
+            this.btn_cctoclose.Size = new System.Drawing.Size(75, 23);
+            this.btn_cctoclose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_cctoclose.TabIndex = 0;
+            this.btn_cctoclose.Text = "关闭";
+            this.btn_cctoclose.Click += new System.EventHandler(this.btn_sendtoclose_Click);
             // 
             // groupPanel2
             // 
@@ -884,6 +1040,10 @@
             this.Text = "信息发布";
             ((System.ComponentModel.ISupportInitialize)(this.wbsTree)).EndInit();
             this.groupPanel1.ResumeLayout(false);
+            this.pe_sendto.ResumeLayout(false);
+            this.panelEx4.ResumeLayout(false);
+            this.pe_ccto.ResumeLayout(false);
+            this.panelEx3.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dt_endDate)).EndInit();
@@ -949,5 +1109,13 @@
         private DevComponents.DotNetBar.ButtonX btn_select;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbbox_employee;
         private DevComponents.DotNetBar.ButtonX btn_build;
+        private DevComponents.DotNetBar.PanelEx pe_ccto;
+        private DevComponents.DotNetBar.ItemPanel ip_ccto;
+        private DevComponents.DotNetBar.PanelEx panelEx3;
+        private DevComponents.DotNetBar.ButtonX btn_cctoclose;
+        private DevComponents.DotNetBar.PanelEx pe_sendto;
+        private DevComponents.DotNetBar.ItemPanel ip_sendto;
+        private DevComponents.DotNetBar.PanelEx panelEx4;
+        private DevComponents.DotNetBar.ButtonX btn_sendtoclose;
     }
 }

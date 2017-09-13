@@ -709,7 +709,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="图标.ico" />
     <Content Include="文档\图标.ico" />
     <Content Include="文档\图标.png" />
     <Content Include="文档\图标1-01.ico" />

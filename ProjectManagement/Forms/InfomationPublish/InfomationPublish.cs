@@ -15,6 +15,7 @@ using System.Net.Mail;
 using System.IO;
 using System.Net.Mime;
 using System.Text.RegularExpressions;
+using DevComponents.DotNetBar.Controls;
 
 namespace ProjectManagement.Forms.InfomationPublish
 {
@@ -41,11 +42,14 @@ namespace ProjectManagement.Forms.InfomationPublish
 
             LoadTree();
 
-            LoadPubInfo();
+            //LoadPubInfo();
 
             LoadEmailFile();
 
             InitWBSControls();
+
+            emailtitle.Add(wbsTree.Nodes[0].Text);
+
         }
 
         /// <summary>
@@ -353,7 +357,7 @@ namespace ProjectManagement.Forms.InfomationPublish
                     txtCC.Text += member.Email + "(" + member.Name + ")" + ";";
                 }
             #endregion
-            emailtitle.Add(wbsTree.Nodes[0].Text);
+            //emailtitle.Add(wbsTree.Nodes[0].Text);
         }
 
         /// <summary>
@@ -386,6 +390,8 @@ namespace ProjectManagement.Forms.InfomationPublish
             list.Add(new Stakeholders());
             cbbox_employee.DataSource = list;
             cbbox_employee.SelectedIndex = list.Count - 1;
+
+            InitStakeholders();
         }
         /// <summary>
         /// 清除查询条件
@@ -421,21 +427,6 @@ namespace ProjectManagement.Forms.InfomationPublish
             {
                 emailtitle.RemoveAll(j=>j.Contains(node.ID));
                 emailcontent.RemoveAll(j => j.Contains(node.ID));
-                //for (int i = 0; i < emailtitle.Count; i++)
-                //{
-                //    if (emailtitle[i].Contains(node.ID))
-                //    {
-                        
-                //        emailtitle.RemoveAt(i);
-                //    }
-                //}
-                //for (int i = 0; i < emailcontent.Count; i++)
-                //{
-                //    if (emailcontent[i].Contains(node.ID))
-                //    {
-                //        emailcontent.RemoveAt(i);
-                //    }
-                //}
 
             }
             txtTitle.Text = "";
@@ -454,8 +445,109 @@ namespace ProjectManagement.Forms.InfomationPublish
             }
 
         }
+        
+        void InitStakeholders()
+        {
+            #region 发送和抄送
+            List<Stakeholders> listSendTo = new StakeholdersBLL().GetList(ProjectId, 1);//所有可选人
+            ip_sendto.Items.Clear();
+            ip_ccto.Items.Clear();
+            foreach (Stakeholders member in listSendTo)
+            {
+                CheckBoxItem item = new CheckBoxItem();
+                item.Name = member.ID;
+                item.Text = member.Name;
+                item.Tag = member;
+                item.Click += item_Click;
+                ip_sendto.Items.Add(item);
+            }
+            foreach (Stakeholders member in listSendTo)
+            {
+                CheckBoxItem item = new CheckBoxItem();
+                item.Name = member.ID;
+                item.Text = member.Name;
+                item.Tag = member;
+                item.Click += item_Click;
+                ip_ccto.Items.Add(item);
+            }
+            #endregion
 
+        }
+
+        void item_Click(object sender, EventArgs e)
+        {
+            CheckBoxItem item = sender as CheckBoxItem;
+            if (item == null)
+                return;
+            Stakeholders employee = item.Tag as Stakeholders;
+            if (employee == null)
+                return;
+            string email = employee.Email + "(" + employee.Name + ");";
+            if (pe_sendto.Visible)
+            {
+                if (item.Checked)
+                {
+                    txtSend.Text += email;
+                }
+                else
+                {
+                    if (txtSend.Text.Contains(email))
+                        txtSend.Text = txtSend.Text.Replace(email, "");
+                }
+            }
+            if (pe_ccto.Visible)
+            {
+                if (item.Checked)
+                {
+                    txtCC.Text += email;
+                }
+                else
+                {
+                    if (txtCC.Text.Contains(email))
+                        txtCC.Text = txtCC.Text.Replace(email, "");
+                }
+            }
+        }
+        
         #endregion
+
+        private void txtSend_Click(object sender, EventArgs e)
+        {
+            //pe_sendto.Visible = !pe_sendto.Visible;
+            //pe_ccto.Visible = !pe_ccto.Visible;
+            if (((TextBoxX)sender).Name == "txtSend")
+            {
+                pe_sendto.Visible = !pe_sendto.Visible;
+                pe_ccto.Visible = false;
+            }
+            else
+            {
+                pe_ccto.Visible = !pe_ccto.Visible;
+                pe_sendto.Visible = false;
+            }
+        }
+
+        private void btn_sendtoclose_Click(object sender, EventArgs e)
+        {
+            if (((ButtonX)sender).Name == "btn_sendtoclose")
+            {
+                pe_sendto.Visible = false;
+            }
+            else
+            {
+                pe_ccto.Visible = false;
+            }
+        }
+
+        private void txtSend_Leave(object sender, EventArgs e)
+        {
+            //if (((TextBoxX)sender).Name == "txtSend")
+            //{
+            //    pe_sendto.Visible = false;
+            //}
+            //else { pe_ccto.Visible = false; }
+        }
+
 
 
     }
