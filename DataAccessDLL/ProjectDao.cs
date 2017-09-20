@@ -150,7 +150,9 @@ namespace DataAccessDLL
             List<QueryField> qf = new List<QueryField>();
             StringBuilder sql = new StringBuilder();
 
-            sql.Append("select sum(TotalWork) as TotalWork,sum(CompleteWork) as CompleteWork  from ");
+            //sql.Append("select sum(TotalWork) as TotalWork,sum(CompleteWork) as CompleteWork  from ");
+
+            sql.Append("select case when sum(TotalWork) is null then 0 else sum(TotalWork) end as TotalWork,case when sum(CompleteWork) is null then 0 else sum(CompleteWork) end as CompleteWork  from ");
             sql.Append(" (select sum(d.Workload) as TotalWork, ");
             sql.Append(" sum(case when ((np.PType - 1)/4)=1 then workload end) CompleteWork ");
             sql.Append(" from PNode p ");
